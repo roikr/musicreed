@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 513}}";
+			sepNavSelRange = "{487, 0}";
+			sepNavVisRange = "{0, 649}";
+		};
+	};
+	1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1287}}";
+			sepNavSelRange = "{2712, 0}";
+			sepNavVisRange = "{0, 1276}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* Musicreed */ = {
+		activeExec = 0;
+		executables = (
+			E48615D913694F15000851FA /* Musicreed */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {844, 515}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 243}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 845}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 918}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = E48615D913694F15000851FA /* Musicreed */;
+		activeSDKPreference = iphoneos4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Musicreed */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Musicreed */,
+		);
+		codeSenseManager = E48615E513694F34000851FA /* Code sense */;
+		executables = (
+			E48615D913694F15000851FA /* Musicreed */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					832,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 325685548;
+			PBXWorkspaceStateSaveDate = 325685548;
+		};
+		perUserProjectItems = {
+			E4DD0DED1369911900DB1B03 /* PBXTextBookmark */ = E4DD0DED1369911900DB1B03 /* PBXTextBookmark */;
+			E4DD0DF01369911900DB1B03 /* PBXTextBookmark */ = E4DD0DF01369911900DB1B03 /* PBXTextBookmark */;
+			E4DD0DF11369911900DB1B03 /* PBXTextBookmark */ = E4DD0DF11369911900DB1B03 /* PBXTextBookmark */;
+			E4DD0E3613699A6000DB1B03 /* PlistBookmark */ = E4DD0E3613699A6000DB1B03 /* PlistBookmark */;
+			E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3913699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3913699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3A13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3A13699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */;
+			E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */ = E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */;
+		};
+		sourceControlManager = E48615E413694F34000851FA /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E48615D913694F15000851FA /* Musicreed */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Musicreed;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	E48615E413694F34000851FA /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	E48615E513694F34000851FA /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E48615E613694F81000851FA /* ScalesTable.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 536}}";
+			sepNavSelRange = "{343, 0}";
+			sepNavVisRange = "{0, 487}";
+		};
+	};
+	E48615E713694F81000851FA /* ScalesTable.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6082, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6133, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6183, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6886}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 3224}}";
+			sepNavSelRange = "{4244, 0}";
+			sepNavVisRange = "{1890, 827}";
+		};
+	};
+	E4DD0D7F1369787600DB1B03 /* systems.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 524}}";
+			sepNavSelRange = "{447, 0}";
+			sepNavVisRange = "{0, 447}";
+		};
+	};
+	E4DD0D8D1369791700DB1B03 /* MusicalSystem.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {603, 520}}";
+			sepNavSelRange = "{379, 21}";
+			sepNavVisRange = "{0, 478}";
+		};
+	};
+	E4DD0D8E1369791700DB1B03 /* MusicalSystem.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {603, 520}}";
+			sepNavSelRange = "{304, 0}";
+			sepNavVisRange = "{0, 720}";
+		};
+	};
+	E4DD0D901369792400DB1B03 /* MusicalScale.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 536}}";
+			sepNavSelRange = "{233, 0}";
+			sepNavVisRange = "{0, 332}";
+			sepNavWindowFrame = "{{15, 197}, {894, 826}}";
+		};
+	};
+	E4DD0D911369792400DB1B03 /* MusicalScale.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 536}}";
+			sepNavSelRange = "{217, 47}";
+			sepNavVisRange = "{0, 351}";
+		};
+	};
+	E4DD0DED1369911900DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4DD0D7F1369787600DB1B03 /* systems.xml */;
+		name = "systems.xml: 21";
+		rLen = 0;
+		rLoc = 447;
+		rType = 0;
+		vrLen = 447;
+		vrLoc = 0;
+	};
+	E4DD0DF01369911900DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4DD0D8D1369791700DB1B03 /* MusicalSystem.h */;
+		name = "MusicalSystem.h: 20";
+		rLen = 21;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 478;
+		vrLoc = 0;
+	};
+	E4DD0DF11369911900DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4DD0D8E1369791700DB1B03 /* MusicalSystem.m */;
+		name = "MusicalSystem.m: 17";
+		rLen = 0;
+		rLoc = 304;
+		rType = 0;
+		vrLen = 720;
+		vrLoc = 0;
+	};
+	E4DD0E3613699A6000DB1B03 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Musicreed-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIStatusBarHidden,
+		);
+		name = "/Users/roikr/Desktop/Musicreed/Musicreed-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */;
+		name = "MusicreedViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 243;
+		vrLoc = 0;
+	};
+	E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */;
+		name = "MusicreedAppDelegate.h: 21";
+		rLen = 0;
+		rLoc = 487;
+		rType = 0;
+		vrLen = 649;
+		vrLoc = 0;
+	};
+	E4DD0E3913699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4DD0D911369792400DB1B03 /* MusicalScale.m */;
+		name = "MusicalScale.m: 16";
+		rLen = 47;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 0;
+	};
+	E4DD0E3A13699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4DD0D901369792400DB1B03 /* MusicalScale.h */;
+		name = "MusicalScale.h: 15";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 332;
+		vrLoc = 0;
+	};
+	E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */;
+		name = "MusicreedAppDelegate.m: 86";
+		rLen = 0;
+		rLoc = 2712;
+		rType = 0;
+		vrLen = 1276;
+		vrLoc = 0;
+	};
+	E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */;
+		name = "MusicreedViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 0;
+	};
+	E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E613694F81000851FA /* ScalesTable.h */;
+		name = "ScalesTable.h: 17";
+		rLen = 0;
+		rLoc = 343;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 0;
+	};
+	E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
+		name = "ScalesTable.m: 31";
+		rLen = 0;
+		rLoc = 476;
+		rType = 0;
+		vrLen = 691;
+		vrLoc = 139;
+	};
+	E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
+		name = "ScalesTable.m: 26";
+		rLen = 0;
+		rLoc = 381;
+		rType = 0;
+		vrLen = 696;
+		vrLoc = 139;
+	};
+}

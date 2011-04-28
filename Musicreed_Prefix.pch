@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'Musicreed' target in the 'Musicreed' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
