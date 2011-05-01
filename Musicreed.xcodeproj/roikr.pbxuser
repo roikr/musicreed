@@ -11,7 +11,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1965, 1287}}";
 			sepNavSelRange = "{2712, 0}";
-			sepNavVisRange = "{0, 1276}";
+			sepNavVisRange = "{1938, 902}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Musicreed */ = {
@@ -22,16 +22,16 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {844, 515}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 530}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 243}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1010, 845}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 871}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 918}";
+			sepNavVisRange = "{0, 835}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -41,6 +41,8 @@
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Musicreed */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Musicreed */,
+		);
+		breakpoints = (
 		);
 		codeSenseManager = E48615E513694F34000851FA /* Code sense */;
 		executables = (
@@ -69,27 +71,136 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 325685548;
-			PBXWorkspaceStateSaveDate = 325685548;
+			PBXPerProjectTemplateStateSaveDate = 325927574;
+			PBXWorkspaceStateSaveDate = 325927574;
 		};
 		perUserProjectItems = {
+			E400FE20136D56FE006A18DD /* PBXTextBookmark */ = E400FE20136D56FE006A18DD /* PBXTextBookmark */;
+			E400FE21136D56FE006A18DD /* PBXTextBookmark */ = E400FE21136D56FE006A18DD /* PBXTextBookmark */;
+			E400FE3B136D5BB0006A18DD /* PBXTextBookmark */ = E400FE3B136D5BB0006A18DD /* PBXTextBookmark */;
+			E400FE4F136D62B8006A18DD /* PBXTextBookmark */ = E400FE4F136D62B8006A18DD /* PBXTextBookmark */;
+			E400FE50136D62B8006A18DD /* PBXTextBookmark */ = E400FE50136D62B8006A18DD /* PBXTextBookmark */;
+			E400FE82136D65DF006A18DD /* PBXTextBookmark */ = E400FE82136D65DF006A18DD /* PBXTextBookmark */;
+			E400FE8C136D66A5006A18DD /* PlistBookmark */ = E400FE8C136D66A5006A18DD /* PlistBookmark */;
+			E400FE8D136D66A5006A18DD /* PBXTextBookmark */ = E400FE8D136D66A5006A18DD /* PBXTextBookmark */;
+			E400FE8E136D66A5006A18DD /* PBXTextBookmark */ = E400FE8E136D66A5006A18DD /* PBXTextBookmark */;
 			E4DD0DED1369911900DB1B03 /* PBXTextBookmark */ = E4DD0DED1369911900DB1B03 /* PBXTextBookmark */;
 			E4DD0DF01369911900DB1B03 /* PBXTextBookmark */ = E4DD0DF01369911900DB1B03 /* PBXTextBookmark */;
 			E4DD0DF11369911900DB1B03 /* PBXTextBookmark */ = E4DD0DF11369911900DB1B03 /* PBXTextBookmark */;
-			E4DD0E3613699A6000DB1B03 /* PlistBookmark */ = E4DD0E3613699A6000DB1B03 /* PlistBookmark */;
-			E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */;
 			E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */;
 			E4DD0E3913699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3913699A6000DB1B03 /* PBXTextBookmark */;
 			E4DD0E3A13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3A13699A6000DB1B03 /* PBXTextBookmark */;
-			E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */;
-			E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */;
-			E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */;
-			E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */ = E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */;
-			E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */ = E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E48615E413694F34000851FA /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	E400FE03136D50A7006A18DD /* ScaleCell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 530}}";
+			sepNavSelRange = "{204, 0}";
+			sepNavVisRange = "{0, 213}";
+		};
+	};
+	E400FE04136D50A7006A18DD /* ScaleCell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {935, 546}}";
+			sepNavSelRange = "{712, 0}";
+			sepNavVisRange = "{320, 400}";
+		};
+	};
+	E400FE20136D56FE006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */;
+		name = "MusicreedViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 243;
+		vrLoc = 0;
+	};
+	E400FE21136D56FE006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */;
+		name = "MusicreedAppDelegate.m: 86";
+		rLen = 0;
+		rLoc = 2712;
+		rType = 0;
+		vrLen = 902;
+		vrLoc = 1938;
+	};
+	E400FE3B136D5BB0006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */;
+		name = "MusicreedViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 0;
+	};
+	E400FE4F136D62B8006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E400FE03136D50A7006A18DD /* ScaleCell.h */;
+		name = "ScaleCell.h: 13";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 213;
+		vrLoc = 0;
+	};
+	E400FE50136D62B8006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E613694F81000851FA /* ScalesTable.h */;
+		name = "ScalesTable.h: 26";
+		rLen = 0;
+		rLoc = 581;
+		rType = 0;
+		vrLen = 587;
+		vrLoc = 0;
+	};
+	E400FE82136D65DF006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
+		name = "ScalesTable.m: 169";
+		rLen = 0;
+		rLoc = 4364;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 3550;
+	};
+	E400FE8C136D66A5006A18DD /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Musicreed-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIAppFonts,
+			1,
+		);
+		name = "/Users/roikr/Developer/Musicreed/Musicreed-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	E400FE8D136D66A5006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E400FE04136D50A7006A18DD /* ScaleCell.m */;
+		name = "ScaleCell.m: 27";
+		rLen = 0;
+		rLoc = 672;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 19;
+	};
+	E400FE8E136D66A5006A18DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
+		name = "ScalesTable.m: 170";
+		rLen = 0;
+		rLoc = 4432;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 3837;
 	};
 	E48615D913694F15000851FA /* Musicreed */ = {
 		isa = PBXExecutable;
@@ -98,7 +209,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -139,17 +250,17 @@
 	};
 	E48615E613694F81000851FA /* ScalesTable.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1010, 536}}";
+			sepNavIntBoundsRect = "{{0, 0}, {895, 382}}";
 			sepNavSelRange = "{343, 0}";
-			sepNavVisRange = "{0, 487}";
+			sepNavVisRange = "{0, 587}";
 		};
 	};
 	E48615E713694F81000851FA /* ScalesTable.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6082, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6133, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6183, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6886}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1118, 3224}}";
-			sepNavSelRange = "{4244, 0}";
-			sepNavVisRange = "{1890, 827}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6289, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6340, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6390, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7093}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {895, 3575}}";
+			sepNavSelRange = "{359, 0}";
+			sepNavVisRange = "{38, 470}";
 		};
 	};
 	E4DD0D7F1369787600DB1B03 /* systems.xml */ = {
@@ -218,28 +329,6 @@
 		vrLen = 720;
 		vrLoc = 0;
 	};
-	E4DD0E3613699A6000DB1B03 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Musicreed-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			UIStatusBarHidden,
-		);
-		name = "/Users/roikr/Desktop/Musicreed/Musicreed-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	E4DD0E3713699A6000DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */;
-		name = "MusicreedViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 243;
-		vrLoc = 0;
-	};
 	E4DD0E3813699A6000DB1B03 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */;
@@ -269,55 +358,5 @@
 		rType = 0;
 		vrLen = 332;
 		vrLoc = 0;
-	};
-	E4DD0E3B13699A6000DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */;
-		name = "MusicreedAppDelegate.m: 86";
-		rLen = 0;
-		rLoc = 2712;
-		rType = 0;
-		vrLen = 1276;
-		vrLoc = 0;
-	};
-	E4DD0E3C13699A6000DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */;
-		name = "MusicreedViewController.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 918;
-		vrLoc = 0;
-	};
-	E4DD0E3D13699A6000DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E48615E613694F81000851FA /* ScalesTable.h */;
-		name = "ScalesTable.h: 17";
-		rLen = 0;
-		rLoc = 343;
-		rType = 0;
-		vrLen = 487;
-		vrLoc = 0;
-	};
-	E4DD0E3E13699A6000DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
-		name = "ScalesTable.m: 31";
-		rLen = 0;
-		rLoc = 476;
-		rType = 0;
-		vrLen = 691;
-		vrLoc = 139;
-	};
-	E4DD0E6813699AE200DB1B03 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E48615E713694F81000851FA /* ScalesTable.m */;
-		name = "ScalesTable.m: 26";
-		rLen = 0;
-		rLoc = 381;
-		rType = 0;
-		vrLen = 696;
-		vrLoc = 139;
 	};
 }

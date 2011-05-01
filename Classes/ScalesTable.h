@@ -15,8 +15,13 @@
 	MusicalSystem *currentMusicalSystem;
 	NSMutableArray *parsedMusicalSystems;
 	
+	UITableViewCell *scaleCell;
+	
 }
 
 @property (nonatomic, retain) MusicalSystem *currentMusicalSystem;
 @property (nonatomic, retain) NSMutableArray *parsedMusicalSystems;
+
+@property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
+
 @end

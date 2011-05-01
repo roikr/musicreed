@@ -20,6 +20,8 @@
 @synthesize currentMusicalSystem;
 @synthesize parsedMusicalSystems;
 
+@synthesize scaleCell;
+
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -100,8 +102,10 @@ static NSString * const kScaleElementName = @"scale";
 		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"]];
 		self.currentMusicalSystem = system;
 		[system release];
+		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
     } else if ([elementName isEqualToString:kScaleElementName]) {
 		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]];
+		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
 	} 
 }
 
@@ -121,7 +125,7 @@ static NSString * const kScaleElementName = @"scale";
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSLog(@"foundCharacters: %@",[parseError description]);
+    NSLog(@"parseErrorOccurred: %@",[parseError description]);
 }
 
 
@@ -148,16 +152,21 @@ static NSString * const kScaleElementName = @"scale";
     
     static NSString *CellIdentifier = @"MusicalScaleCell";
     
+	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+		[[NSBundle mainBundle] loadNibNamed:@"ScaleCell" owner:self options:nil];
+        cell = scaleCell;
+        self.scaleCell = nil;
+	} 
+
 	
 	// Configure the cell...
 	
 	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:indexPath.section];
 	NSArray *scales = system.scales;
 	MusicalScale *scale = [scales objectAtIndex:indexPath.row];
+	//UILabel *label = (UILabel *)[cell viewWithTag:1];
 	cell.textLabel.text =scale.name;
     
     
