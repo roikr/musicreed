@@ -8,6 +8,9 @@
 
 #import "MusicreedAppDelegate.h"
 #import "MusicreedViewController.h"
+#import <OpenGLES/EAGL.h>
+#import "EAGLView.h"
+#include "testApp.h"
 
 
 
@@ -17,6 +20,8 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize viewController;
+@synthesize eAGLView;
+@synthesize OFSAptr;
 
 
 #pragma mark -
@@ -25,11 +30,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-
+	self.OFSAptr = new testApp;
+	self.eAGLView.OFSAptr = self.OFSAptr;
+	self.OFSAptr->setup();
+	
     // Add the view controller's view to the window and display.
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
-	
+	[self.eAGLView startAnimation];
     return YES;
 }
 
@@ -47,6 +55,7 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+	[self.eAGLView stopAnimation];
 }
 
 
@@ -54,6 +63,7 @@
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
+	[self.eAGLView startAnimation];
 }
 
 
@@ -69,6 +79,7 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+	[self.eAGLView stopAnimation];
 }
 
 
@@ -85,6 +96,7 @@
 - (void)dealloc {
 	[navigationController release];
     [viewController release];
+	[eAGLView release];
     [window release];
     [super dealloc];
 }

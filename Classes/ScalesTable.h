@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MusicalSystem.h"
 
+@class MusicalScale;
 @interface ScalesTable : UITableViewController<NSXMLParserDelegate> {
 	
 	
@@ -17,11 +18,14 @@
 	
 	UITableViewCell *scaleCell;
 	
+	MusicalScale *currentScale;
+	
 }
 
 @property (nonatomic, retain) MusicalSystem *currentMusicalSystem;
 @property (nonatomic, retain) NSMutableArray *parsedMusicalSystems;
 
 @property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
+@property (nonatomic, retain) MusicalScale *currentScale;
 
 @end

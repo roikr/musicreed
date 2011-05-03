@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MusicreedViewController : UIViewController {
+@class ScalesTable;
 
+@interface MusicreedViewController : UIViewController {
+	UILabel *scaleLabel;
+	ScalesTable *scalesTable;
 }
+
+@property (nonatomic,retain) IBOutlet UILabel *scaleLabel;
+@property (nonatomic,retain) ScalesTable *scalesTable;
+
+- (void)chooseScale:(id)sender;
 
 @end
 

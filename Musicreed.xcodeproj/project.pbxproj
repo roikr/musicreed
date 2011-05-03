@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* MusicreedAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* MusicreedAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MusicreedAppDelegate.mm */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -20,6 +20,16 @@
 		E400FE4D136D5D15006A18DD /* ScaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E400FE4C136D5D15006A18DD /* ScaleCell.xib */; };
 		E400FE72136D64B1006A18DD /* Maiandra GD Demi Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E400FE71136D64B1006A18DD /* Maiandra GD Demi Bold.ttf */; };
 		E48615E913694F81000851FA /* ScalesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E48615E713694F81000851FA /* ScalesTable.m */; };
+		E490649013700BD90034C2F5 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E490648F13700BD90034C2F5 /* EAGLView.mm */; };
+		E49064AB137024FF0034C2F5 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49064A9137024FF0034C2F5 /* testApp.mm */; };
+		E49064BC137026460034C2F5 /* ofMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49064B8137026460034C2F5 /* ofMain.mm */; };
+		E49064BD137026460034C2F5 /* ofxiPhoneExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49064BB137026460034C2F5 /* ofxiPhoneExtras.mm */; };
+		E49064D5137027040034C2F5 /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49064D1137027040034C2F5 /* easing.cpp */; };
+		E49064D6137027040034C2F5 /* ofMainExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49064D4137027040034C2F5 /* ofMainExt.mm */; };
+		E49064DC137029970034C2F5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064DB137029970034C2F5 /* OpenGLES.framework */; };
+		E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064E1137029E20034C2F5 /* QuartzCore.framework */; };
+		E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065C11370393E0034C2F5 /* CustomFontLabel.m */; };
+		E49065CC13703A090034C2F5 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065CB13703A090034C2F5 /* CustomButton.m */; };
 		E4DD0D801369787600DB1B03 /* systems.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4DD0D7F1369787600DB1B03 /* systems.xml */; };
 		E4DD0D8F1369791700DB1B03 /* MusicalSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD0D8E1369791700DB1B03 /* MusicalSystem.m */; };
 		E4DD0D921369792400DB1B03 /* MusicalScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD0D911369792400DB1B03 /* MusicalScale.m */; };
@@ -29,12 +39,12 @@
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicreedAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicreedAppDelegate.m; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MusicreedAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MusicreedAppDelegate.mm; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Musicreed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicreed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* MusicreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicreedViewController.xib; sourceTree = "<group>"; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		2899E5210DE3E06400AC0155 /* MusicreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MusicreedViewController.xib; path = ../MusicreedViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicreedViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicreedViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,16 +53,35 @@
 		E400FE03136D50A7006A18DD /* ScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleCell.h; sourceTree = "<group>"; };
 		E400FE04136D50A7006A18DD /* ScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleCell.m; sourceTree = "<group>"; };
 		E400FE0F136D5350006A18DD /* MAIAN.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAIAN.TTF; sourceTree = "<group>"; };
-		E400FE4C136D5D15006A18DD /* ScaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleCell.xib; sourceTree = "<group>"; };
+		E400FE4C136D5D15006A18DD /* ScaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScaleCell.xib; path = ../ScaleCell.xib; sourceTree = "<group>"; };
 		E400FE71136D64B1006A18DD /* Maiandra GD Demi Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maiandra GD Demi Bold.ttf"; sourceTree = "<group>"; };
 		E48615E613694F81000851FA /* ScalesTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesTable.h; sourceTree = "<group>"; };
 		E48615E713694F81000851FA /* ScalesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesTable.m; sourceTree = "<group>"; };
+		E490648E13700BD90034C2F5 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		E490648F13700BD90034C2F5 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		E49064A8137024FF0034C2F5 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = "../of_preRelease_v0061_osxSL_FAT/apps/My iPhone Apps/emptyExample/src/testApp.h"; sourceTree = SOURCE_ROOT; };
+		E49064A9137024FF0034C2F5 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = "../of_preRelease_v0061_osxSL_FAT/apps/My iPhone Apps/emptyExample/src/testApp.mm"; sourceTree = SOURCE_ROOT; };
+		E49064B7137026460034C2F5 /* ofMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMain.h; sourceTree = "<group>"; };
+		E49064B8137026460034C2F5 /* ofMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMain.mm; sourceTree = "<group>"; };
+		E49064B9137026460034C2F5 /* ofTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTypes.h; sourceTree = "<group>"; };
+		E49064BA137026460034C2F5 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
+		E49064BB137026460034C2F5 /* ofxiPhoneExtras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExtras.mm; sourceTree = "<group>"; };
+		E49064D1137027040034C2F5 /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
+		E49064D2137027040034C2F5 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
+		E49064D3137027040034C2F5 /* ofMainExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMainExt.h; sourceTree = "<group>"; };
+		E49064D4137027040034C2F5 /* ofMainExt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMainExt.mm; sourceTree = "<group>"; };
+		E49064DB137029970034C2F5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E49064E1137029E20034C2F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E49065C01370393E0034C2F5 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
+		E49065C11370393E0034C2F5 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
+		E49065CA13703A090034C2F5 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		E49065CB13703A090034C2F5 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		E4DD0D7F1369787600DB1B03 /* systems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = systems.xml; sourceTree = "<group>"; };
 		E4DD0D8D1369791700DB1B03 /* MusicalSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicalSystem.h; sourceTree = "<group>"; };
 		E4DD0D8E1369791700DB1B03 /* MusicalSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicalSystem.m; sourceTree = "<group>"; };
 		E4DD0D901369792400DB1B03 /* MusicalScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicalScale.h; sourceTree = "<group>"; };
 		E4DD0D911369792400DB1B03 /* MusicalScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicalScale.m; sourceTree = "<group>"; };
-		E4DD0DFD1369913600DB1B03 /* ScalesTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScalesTable.xib; sourceTree = "<group>"; };
+		E4DD0DFD1369913600DB1B03 /* ScalesTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScalesTable.xib; path = ../ScalesTable.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +92,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				E49064DC137029970034C2F5 /* OpenGLES.framework in Frameworks */,
+				E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,13 +104,23 @@
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */,
-				1D3623250D0F684500981E51 /* MusicreedAppDelegate.m */,
+				1D3623250D0F684500981E51 /* MusicreedAppDelegate.mm */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				E490648E13700BD90034C2F5 /* EAGLView.h */,
+				E490648F13700BD90034C2F5 /* EAGLView.mm */,
 				28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MusicreedViewController.m */,
+				2899E5210DE3E06400AC0155 /* MusicreedViewController.xib */,
 				E48615E613694F81000851FA /* ScalesTable.h */,
 				E48615E713694F81000851FA /* ScalesTable.m */,
+				E4DD0DFD1369913600DB1B03 /* ScalesTable.xib */,
 				E400FE03136D50A7006A18DD /* ScaleCell.h */,
 				E400FE04136D50A7006A18DD /* ScaleCell.m */,
+				E400FE4C136D5D15006A18DD /* ScaleCell.xib */,
+				E49065C01370393E0034C2F5 /* CustomFontLabel.h */,
+				E49065C11370393E0034C2F5 /* CustomFontLabel.m */,
+				E49065CA13703A090034C2F5 /* CustomButton.h */,
+				E49065CB13703A090034C2F5 /* CustomButton.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -95,8 +136,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E4DD0D8C136978F000DB1B03 /* Model Classes */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				E49064A6137024DA0034C2F5 /* src */,
+				E4DD0D8C136978F000DB1B03 /* Model Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -118,12 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				E400FE71136D64B1006A18DD /* Maiandra GD Demi Bold.ttf */,
-				E400FE4C136D5D15006A18DD /* ScaleCell.xib */,
 				E400FE0F136D5350006A18DD /* MAIAN.TTF */,
-				E4DD0DFD1369913600DB1B03 /* ScalesTable.xib */,
 				E4DD0D7F1369787600DB1B03 /* systems.xml */,
-				2899E5210DE3E06400AC0155 /* MusicreedViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Musicreed-Info.plist */,
 			);
 			name = Resources;
@@ -132,12 +170,58 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E49064E1137029E20034C2F5 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				E49064DB137029970034C2F5 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		E49064A6137024DA0034C2F5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E49064CF137026F50034C2F5 /* addons */,
+				E49064B6137026460034C2F5 /* myOF */,
+				E49064A8137024FF0034C2F5 /* testApp.h */,
+				E49064A9137024FF0034C2F5 /* testApp.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		E49064B6137026460034C2F5 /* myOF */ = {
+			isa = PBXGroup;
+			children = (
+				E49064B7137026460034C2F5 /* ofMain.h */,
+				E49064B8137026460034C2F5 /* ofMain.mm */,
+				E49064B9137026460034C2F5 /* ofTypes.h */,
+				E49064BA137026460034C2F5 /* ofxiPhoneExtras.h */,
+				E49064BB137026460034C2F5 /* ofxiPhoneExtras.mm */,
+			);
+			name = myOF;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/myOF";
+			sourceTree = SOURCE_ROOT;
+		};
+		E49064CF137026F50034C2F5 /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				E49064D0137027040034C2F5 /* common */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		E49064D0137027040034C2F5 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E49064D1137027040034C2F5 /* easing.cpp */,
+				E49064D2137027040034C2F5 /* easing.h */,
+				E49064D3137027040034C2F5 /* ofMainExt.h */,
+				E49064D4137027040034C2F5 /* ofMainExt.mm */,
+			);
+			name = common;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/common";
+			sourceTree = SOURCE_ROOT;
 		};
 		E4DD0D8C136978F000DB1B03 /* Model Classes */ = {
 			isa = PBXGroup;
@@ -217,12 +301,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* MusicreedAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* MusicreedAppDelegate.mm in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MusicreedViewController.m in Sources */,
 				E48615E913694F81000851FA /* ScalesTable.m in Sources */,
 				E4DD0D8F1369791700DB1B03 /* MusicalSystem.m in Sources */,
 				E4DD0D921369792400DB1B03 /* MusicalScale.m in Sources */,
 				E400FE05136D50A7006A18DD /* ScaleCell.m in Sources */,
+				E490649013700BD90034C2F5 /* EAGLView.mm in Sources */,
+				E49064AB137024FF0034C2F5 /* testApp.mm in Sources */,
+				E49064BC137026460034C2F5 /* ofMain.mm in Sources */,
+				E49064BD137026460034C2F5 /* ofxiPhoneExtras.mm in Sources */,
+				E49064D5137027040034C2F5 /* easing.cpp in Sources */,
+				E49064D6137027040034C2F5 /* ofMainExt.mm in Sources */,
+				E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */,
+				E49065CC13703A090034C2F5 /* CustomButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +330,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Musicreed_Prefix.pch;
+				HEADER_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include";
 				INFOPLIST_FILE = "Musicreed-Info.plist";
+				LIBRARY_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib";
+				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
 			};
 			name = Debug;

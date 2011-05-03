@@ -7,9 +7,13 @@
 //
 
 #import "MusicreedViewController.h"
+#import "ScalesTable.h"
+#import "MusicalScale.h"
 
 @implementation MusicreedViewController
 
+@synthesize scaleLabel;
+@synthesize scalesTable;
 
 
 /*
@@ -30,12 +34,16 @@
 */
 
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	if (self.scalesTable == nil) {
+		self.scalesTable = [[ScalesTable alloc] initWithNibName:@"ScalesTable" bundle:nil];
+	}
 }
-*/
+
 
 
 /*
@@ -45,6 +53,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	NSLog(@"MusicreedViewController::viewWillAppear");
+	if (self.scalesTable) {
+		scaleLabel.text = self.scalesTable.currentScale.name;
+	}
+}
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -61,6 +78,11 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+- (void)chooseScale:(id)sender {
+	
+	[self presentModalViewController:self.scalesTable animated:YES];
 }
 
 @end

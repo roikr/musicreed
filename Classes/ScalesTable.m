@@ -21,6 +21,7 @@
 @synthesize parsedMusicalSystems;
 
 @synthesize scaleCell;
+@synthesize currentScale;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -75,8 +76,14 @@
 	
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"systems" ofType:@"xml"]]];
 	self.parsedMusicalSystems = [NSMutableArray array];
+	
 	[parser setDelegate:self];
 	[parser parse];
+	
+	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:0];
+	self.currentScale = [system.scales objectAtIndex:0];
+	
+	 
 }
 
 
@@ -232,6 +239,10 @@ static NSString * const kScaleElementName = @"scale";
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
+	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:indexPath.section];
+	self.currentScale = [system.scales objectAtIndex:indexPath.row];
+	[self.parentViewController dismissModalViewControllerAnimated:YES];
+	
 }
 
 
