@@ -20,6 +20,8 @@
 	
 	MusicalScale *currentScale;
 	
+	UIView *backgroundView;
+	
 }
 
 @property (nonatomic, retain) MusicalSystem *currentMusicalSystem;
@@ -27,5 +29,6 @@
 
 @property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
 @property (nonatomic, retain) MusicalScale *currentScale;
+@property (nonatomic, retain) IBOutlet UIView *backgroundView;
 
 @end

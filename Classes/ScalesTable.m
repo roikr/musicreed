@@ -22,6 +22,7 @@
 
 @synthesize scaleCell;
 @synthesize currentScale;
+@synthesize backgroundView;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -34,6 +35,7 @@
 		[self parse];
 	}
 	
+	((UITableView *)self.view).backgroundView = self.backgroundView;
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;

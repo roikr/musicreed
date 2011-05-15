@@ -16,6 +16,7 @@
     if (self = [super initWithCoder: decoder])
     {
         [self.textLabel setFont: [UIFont fontWithName: @"Maiandra GD" size: self.textLabel.font.pointSize]];
+		[self.textLabel setTextColor:[UIColor whiteColor]];
     }
     return self;
 }
