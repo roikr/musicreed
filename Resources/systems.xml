@@ -1,6 +1,6 @@
 <systems>
 	<system name="Arabic">
-		<scale name="Mohammedan"/>
+		<scale name="Mohammedan" scale="0" mode="1" note="1.75" filename="mohammedan"/>
 		<scale name="Nahawand Hijaz"/>
 		<scale name="Nikriz"/>
 		<scale name="Hijaz"/>

@@ -4,8 +4,15 @@
 //#include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #include "ofxAudioFile.h"
+#include "ofxAudioInstrument.h"
 #include "ofxiTexture.h"
 #include "Disc.h"
+
+
+struct scale {
+	vector<float> notes;
+	float firstNote;
+};
 
 
 class testApp : public ofSimpleApp {
@@ -31,7 +38,7 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
-	ofxAudioFile click;
+	
 	
 	Disc inner;
 	Disc outer;
@@ -41,8 +48,18 @@ public:
 		
 	
 	ofPoint center;
-	float scale;
+	float scaleFactor;
 
+	ofxAudioInstrument instrument;
+	int bufferSize;
+	
+	bool bKeyDown;
+	int lastKey;
+	int lastArp;
+	
+	vector <scale> scales;
+	vector <float> leaves;
+	
 	
 };
 

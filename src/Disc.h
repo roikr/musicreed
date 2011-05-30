@@ -9,13 +9,14 @@
 
 #include "ofMain.h"
 #include "ofxiTexture.h"
+#include "ofxAudioFile.h"
 
 class Disc {
 	
 public:
-	Disc():alpha(0),omega(0),daccel(0),bNewSect(false),bDown(false) {};
+	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false) {};
 	
-	void setup(string filename);
+	void setup(string filename,string clickFilename,int bufferSize);
 	void update();
 	void draw();
 	void exit();
@@ -24,21 +25,30 @@ public:
 	void touchMoved(ofPoint &pos);
 	void touchUp(ofPoint &pos);
 	
-	bool getIsNewSect();
-	void resetNewSectFlag();
+	void updatePhi(float phi);
+		
+	ofxAudioFile click;
 	
-	float alpha;
+	float phi;
+	
 	float omega;
-	float daccel;
+	float alpha;
 	float innerRadius;
 	float outerRadius;
 	ofxiTexture texture;
 	
 	ofPoint pos;
-	bool bNewSect;
+	int lastTime;
 	
 	bool bDown;
-	int lastTime;
+	
+	int startAnim;
+	float startPhi;
+	float endPhi;
+	bool bRotate;
+	
+	vector <float> stops;
+	bool bPlaying;
 	
 	
 };

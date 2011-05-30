@@ -36,6 +36,12 @@
 		E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064E1137029E20034C2F5 /* QuartzCore.framework */; };
 		E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065C11370393E0034C2F5 /* CustomFontLabel.m */; };
 		E49065CC13703A090034C2F5 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065CB13703A090034C2F5 /* CustomButton.m */; };
+		E4946021138A582A00B395CB /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4946019138A582A00B395CB /* tinyxml.cpp */; };
+		E4946022138A582A00B395CB /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E494601B138A582A00B395CB /* tinyxmlerror.cpp */; };
+		E4946023138A582A00B395CB /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E494601C138A582A00B395CB /* tinyxmlparser.cpp */; };
+		E4946024138A582A00B395CB /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E494601E138A582A00B395CB /* ofxXmlSettings.cpp */; };
+		E4DF6DEE138278C100F96763 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6DEA138278C100F96763 /* ofxAudioInstrument.cpp */; };
+		E4DF6DEF138278C100F96763 /* ofxAudioSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6DEC138278C100F96763 /* ofxAudioSample.cpp */; };
 		E4E6509D137FF7CA00DFCE6E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E65099137FF7CA00DFCE6E /* MainWindow.xib */; };
 		E4E6509E137FF7CA00DFCE6E /* MusicreedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */; };
 		E4E6509F137FF7CA00DFCE6E /* ScaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */; };
@@ -44,6 +50,7 @@
 		E4E650A5137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */; };
 		E4E650A6137FF7F700DFCE6E /* systems.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4E650A3137FF7F700DFCE6E /* systems.xml */; };
 		E4E650AF137FF84700DFCE6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E650AE137FF84700DFCE6E /* main.m */; };
+		E4FE2C1B13893A490034BE2F /* ofxColorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C1113893A490034BE2F /* ofxColorBase.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +110,16 @@
 		E49065C11370393E0034C2F5 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
 		E49065CA13703A090034C2F5 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		E49065CB13703A090034C2F5 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		E4946019138A582A00B395CB /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		E494601A138A582A00B395CB /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		E494601B138A582A00B395CB /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		E494601C138A582A00B395CB /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		E494601E138A582A00B395CB /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		E494601F138A582A00B395CB /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		E4DF6DEA138278C100F96763 /* ofxAudioInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioInstrument.cpp; sourceTree = "<group>"; };
+		E4DF6DEB138278C100F96763 /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
+		E4DF6DEC138278C100F96763 /* ofxAudioSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioSample.cpp; sourceTree = "<group>"; };
+		E4DF6DED138278C100F96763 /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
 		E4E65099137FF7CA00DFCE6E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MusicreedViewController.xib; path = Resources/MusicreedViewController.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScaleCell.xib; path = Resources/ScaleCell.xib; sourceTree = SOURCE_ROOT; };
@@ -111,6 +128,16 @@
 		E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Maiandra GD Demi Bold.ttf"; path = "Resources/Maiandra GD Demi Bold.ttf"; sourceTree = "<group>"; };
 		E4E650A3137FF7F700DFCE6E /* systems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = systems.xml; path = Resources/systems.xml; sourceTree = "<group>"; };
 		E4E650AE137FF84700DFCE6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		E4FE2C0C13893A490034BE2F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E4FE2C0D13893A490034BE2F /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
+		E4FE2C0E13893A490034BE2F /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		E4FE2C1013893A490034BE2F /* ofxColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColor.h; sourceTree = "<group>"; };
+		E4FE2C1113893A490034BE2F /* ofxColorBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxColorBase.cpp; sourceTree = "<group>"; };
+		E4FE2C1213893A490034BE2F /* ofxColorBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorBase.h; sourceTree = "<group>"; };
+		E4FE2C1313893A490034BE2F /* ofxColorConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorConversion.h; sourceTree = "<group>"; };
+		E4FE2C1413893A490034BE2F /* ofxColorMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorMatching.h; sourceTree = "<group>"; };
+		E4FE2C1513893A490034BE2F /* ofxColorMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorMath.h; sourceTree = "<group>"; };
+		E4FE2C1613893A490034BE2F /* ofxColorShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorShared.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +329,9 @@
 		E49064CF137026F50034C2F5 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				E4946016138A582A00B395CB /* ofxXmlSettings */,
+				E4FE2C0613893A490034BE2F /* ofxColor */,
+				E4DF6DE8138278C000F96763 /* ofxAudio */,
 				E44D3F12137BED9900345249 /* ofxiTexture */,
 				E44D3EDF137BDA2700345249 /* milgron */,
 				E44D3EB0137BD7E400345249 /* ofxAudioFile */,
@@ -322,6 +352,36 @@
 			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/common";
 			sourceTree = SOURCE_ROOT;
 		};
+		E4946016138A582A00B395CB /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E4946018138A582A00B395CB /* libs */,
+				E494601D138A582A00B395CB /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../of_preRelease_v0061_osxSL_FAT/addons/ofxXmlSettings;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4946018138A582A00B395CB /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E4946019138A582A00B395CB /* tinyxml.cpp */,
+				E494601A138A582A00B395CB /* tinyxml.h */,
+				E494601B138A582A00B395CB /* tinyxmlerror.cpp */,
+				E494601C138A582A00B395CB /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		E494601D138A582A00B395CB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E494601E138A582A00B395CB /* ofxXmlSettings.cpp */,
+				E494601F138A582A00B395CB /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		E4DD0D8C136978F000DB1B03 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +391,76 @@
 				E40B02F6137FC861001008FE /* MusicalSystem.m */,
 			);
 			name = "Model Classes";
+			sourceTree = "<group>";
+		};
+		E4DF6DE8138278C000F96763 /* ofxAudio */ = {
+			isa = PBXGroup;
+			children = (
+				E4DF6DE9138278C100F96763 /* src */,
+			);
+			name = ofxAudio;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxAudio";
+			sourceTree = SOURCE_ROOT;
+		};
+		E4DF6DE9138278C100F96763 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4DF6DEB138278C100F96763 /* ofxAudioInstrument.h */,
+				E4DF6DEA138278C100F96763 /* ofxAudioInstrument.cpp */,
+				E4DF6DED138278C100F96763 /* ofxAudioSample.h */,
+				E4DF6DEC138278C100F96763 /* ofxAudioSample.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E4FE2C0613893A490034BE2F /* ofxColor */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE2C0713893A490034BE2F /* examples */,
+				E4FE2C0F13893A490034BE2F /* src */,
+			);
+			name = ofxColor;
+			path = ../of_preRelease_v0061_osxSL_FAT/moreAddons/ofxColor;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4FE2C0713893A490034BE2F /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE2C0813893A490034BE2F /* ofxColorDemo */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		E4FE2C0813893A490034BE2F /* ofxColorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE2C0B13893A490034BE2F /* src */,
+			);
+			path = ofxColorDemo;
+			sourceTree = "<group>";
+		};
+		E4FE2C0B13893A490034BE2F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE2C0C13893A490034BE2F /* main.cpp */,
+				E4FE2C0D13893A490034BE2F /* testApp.cpp */,
+				E4FE2C0E13893A490034BE2F /* testApp.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E4FE2C0F13893A490034BE2F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE2C1013893A490034BE2F /* ofxColor.h */,
+				E4FE2C1113893A490034BE2F /* ofxColorBase.cpp */,
+				E4FE2C1213893A490034BE2F /* ofxColorBase.h */,
+				E4FE2C1313893A490034BE2F /* ofxColorConversion.h */,
+				E4FE2C1413893A490034BE2F /* ofxColorMatching.h */,
+				E4FE2C1513893A490034BE2F /* ofxColorMath.h */,
+				E4FE2C1613893A490034BE2F /* ofxColorShared.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +553,13 @@
 				E40B0334137FD062001008FE /* Disc.cpp in Sources */,
 				E40B0335137FD062001008FE /* testApp.mm in Sources */,
 				E4E650AF137FF84700DFCE6E /* main.m in Sources */,
+				E4DF6DEE138278C100F96763 /* ofxAudioInstrument.cpp in Sources */,
+				E4DF6DEF138278C100F96763 /* ofxAudioSample.cpp in Sources */,
+				E4FE2C1B13893A490034BE2F /* ofxColorBase.cpp in Sources */,
+				E4946021138A582A00B395CB /* tinyxml.cpp in Sources */,
+				E4946022138A582A00B395CB /* tinyxmlerror.cpp in Sources */,
+				E4946023138A582A00B395CB /* tinyxmlparser.cpp in Sources */,
+				E4946024138A582A00B395CB /* ofxXmlSettings.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -440,9 +578,12 @@
 				GCC_PREFIX_HEADER = Musicreed_Prefix.pch;
 				HEADER_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include";
 				INFOPLIST_FILE = "Musicreed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "652B8C8A-B39F-4204-9460-125C661028E4";
 			};
 			name = Debug;
 		};
@@ -514,9 +655,10 @@
 				HEADER_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include";
 				INFOPLIST_FILE = "Musicreed-Info.plist";
 				LIBRARY_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DE924E23-92C0-46D8-BA49-0A7855076B18";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF987F3B-084D-4D59-AC7D-9A8CC6784416";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad Hoc";
