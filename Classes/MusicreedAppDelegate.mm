@@ -11,6 +11,7 @@
 #import <OpenGLES/EAGL.h>
 #import "EAGLView.h"
 #include "testApp.h"
+#include "MusicalSystem.h"
 
 
 
@@ -107,6 +108,7 @@
 
 	return NULL;
 }
+
 
 
 @end

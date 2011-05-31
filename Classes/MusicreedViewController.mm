@@ -12,10 +12,20 @@
 #import "TouchView.h"
 #import "MusicreedAppDelegate.h"
 
+
+@interface MusicreedViewController()
+- (void)parse;
+
+@end
+
+
+
 @implementation MusicreedViewController
 
 @synthesize scaleLabel;
 @synthesize scalesTable;
+@synthesize currentMusicalSystem;
+@synthesize parsedMusicalSystems;
 
 
 /*
@@ -41,9 +51,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	if (!self.parsedMusicalSystems) {
+		[self parse];
+	}
+	
 	if (self.scalesTable == nil) {
 		self.scalesTable = [[ScalesTable alloc] initWithNibName:@"ScalesTable" bundle:nil];
 		((TouchView *)self.view).OFSAptr = ((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr;
+		
+		scalesTable.musicalSystems = [NSArray arrayWithArray:parsedMusicalSystems];
+		MusicalSystem *system = [scalesTable.musicalSystems objectAtIndex:0];
+		scalesTable.currentScale = [system.scales objectAtIndex:0];
 	}
 }
 
@@ -87,5 +105,75 @@
 	
 	[self presentModalViewController:self.scalesTable animated:YES];
 }
+
+#pragma mark -
+#pragma mark Parser
+
+- (void)parse {
+	
+	
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"systems" ofType:@"xml"]]];
+	self.parsedMusicalSystems = [NSMutableArray array];
+	
+	[parser setDelegate:self];
+	[parser parse];
+	
+	
+	
+	
+}
+
+
+
+#pragma mark -
+#pragma mark Parser constants
+
+
+// Reduce potential parsing errors by using string constants declared in a single place.
+static NSString * const kSystemElementName = @"system";
+static NSString * const kScaleElementName = @"scale";
+
+
+#pragma mark -
+#pragma mark NSXMLParser delegate methods
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+	attributes:(NSDictionary *)attributeDict {
+	
+    if ([elementName isEqualToString:kSystemElementName]) {
+		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"]];
+		self.currentMusicalSystem = system;
+		[system release];
+		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
+    } else if ([elementName isEqualToString:kScaleElementName]) {
+		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]];
+		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
+	} 
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName {     
+    
+	if ([elementName isEqualToString:kSystemElementName]) {
+		[parsedMusicalSystems addObject:self.currentMusicalSystem];
+    }
+	
+}
+
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    //NSLog(@"foundCharacters: %@",string);
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"parseErrorOccurred: %@",[parseError description]);
+}
+
+
+
+
 
 @end

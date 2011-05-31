@@ -11,18 +11,17 @@
 
 @interface ScalesTable ()
 
-- (void)parse;
-
 @end
 
 @implementation ScalesTable
 
-@synthesize currentMusicalSystem;
-@synthesize parsedMusicalSystems;
+
+
 
 @synthesize scaleCell;
 @synthesize currentScale;
 @synthesize backgroundView;
+@synthesize musicalSystems;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -31,9 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	if (!parsedMusicalSystems) {
-		[self parse];
-	}
+	
 	
 	((UITableView *)self.view).backgroundView = self.backgroundView;
 	
@@ -71,86 +68,17 @@
 */
 
 #pragma mark -
-#pragma mark Parser
-
-- (void)parse {
-	
-	
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"systems" ofType:@"xml"]]];
-	self.parsedMusicalSystems = [NSMutableArray array];
-	
-	[parser setDelegate:self];
-	[parser parse];
-	
-	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:0];
-	self.currentScale = [system.scales objectAtIndex:0];
-	
-	 
-}
-
-
-
-#pragma mark -
-#pragma mark Parser constants
-
-
-// Reduce potential parsing errors by using string constants declared in a single place.
-static NSString * const kSystemElementName = @"system";
-static NSString * const kScaleElementName = @"scale";
-
-
-#pragma mark -
-#pragma mark NSXMLParser delegate methods
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-	attributes:(NSDictionary *)attributeDict {
-	
-    if ([elementName isEqualToString:kSystemElementName]) {
-		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"]];
-		self.currentMusicalSystem = system;
-		[system release];
-		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
-    } else if ([elementName isEqualToString:kScaleElementName]) {
-		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]];
-		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
-	} 
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName {     
-    
-	if ([elementName isEqualToString:kSystemElementName]) {
-		[parsedMusicalSystems addObject:self.currentMusicalSystem];
-    }
-	
-}
-
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    //NSLog(@"foundCharacters: %@",string);
-}
-
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSLog(@"parseErrorOccurred: %@",[parseError description]);
-}
-
-
-
-#pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return [parsedMusicalSystems count];
+    return [musicalSystems count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:section];
+	MusicalSystem *system = [musicalSystems objectAtIndex:section];
 	NSArray *scales = system.scales;
 	return [scales count];
 }
@@ -172,7 +100,7 @@ static NSString * const kScaleElementName = @"scale";
 	
 	// Configure the cell...
 	
-	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:indexPath.section];
+	MusicalSystem *system = [musicalSystems objectAtIndex:indexPath.section];
 	NSArray *scales = system.scales;
 	MusicalScale *scale = [scales objectAtIndex:indexPath.row];
 	//UILabel *label = (UILabel *)[cell viewWithTag:1];
@@ -185,7 +113,7 @@ static NSString * const kScaleElementName = @"scale";
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
 	// Section title is the region name
-	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:section];
+	MusicalSystem *system = [musicalSystems objectAtIndex:section];
 	return system.name;
 }
 
@@ -241,7 +169,7 @@ static NSString * const kScaleElementName = @"scale";
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-	MusicalSystem *system = [parsedMusicalSystems objectAtIndex:indexPath.section];
+	MusicalSystem *system = [musicalSystems objectAtIndex:indexPath.section];
 	self.currentScale = [system.scales objectAtIndex:indexPath.row];
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 	

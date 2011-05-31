@@ -19,6 +19,9 @@ class testApp;
 	MusicreedViewController *viewController;
 	EAGLView *eAGLView;
 	testApp *OFSAptr;
+	
+	
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,6 +29,8 @@ class testApp;
 @property (nonatomic, retain) IBOutlet MusicreedViewController *viewController;
 @property (nonatomic, retain) IBOutlet EAGLView *eAGLView;
 @property  testApp *OFSAptr;
+
+
 
 - (NSArray *)displayList;
 

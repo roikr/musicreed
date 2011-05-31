@@ -10,25 +10,24 @@
 #import "MusicalSystem.h"
 
 @class MusicalScale;
-@interface ScalesTable : UITableViewController<NSXMLParserDelegate> {
+@interface ScalesTable : UITableViewController {
 	
 	
-	MusicalSystem *currentMusicalSystem;
-	NSMutableArray *parsedMusicalSystems;
+	
+	
 	
 	UITableViewCell *scaleCell;
 	
 	MusicalScale *currentScale;
 	
 	UIView *backgroundView;
+	NSArray *musicalSystems;
 	
 }
 
-@property (nonatomic, retain) MusicalSystem *currentMusicalSystem;
-@property (nonatomic, retain) NSMutableArray *parsedMusicalSystems;
 
 @property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
 @property (nonatomic, retain) MusicalScale *currentScale;
 @property (nonatomic, retain) IBOutlet UIView *backgroundView;
-
+@property (nonatomic, retain) NSArray *musicalSystems;
 @end
