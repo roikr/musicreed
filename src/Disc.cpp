@@ -7,7 +7,12 @@
  *
  */
 
+#define MIN_DIST_TO_CLICK M_PI/360.0f
+#define SNAP_ANIMATION_TIME 500.0f
+#define MIN_ANGULAR_VELOCITY_TO_SNAP M_PI
+
 #include "Disc.h"
+#include "easing.h"
 #include <cmath>
 
 void Disc::setup(string textureFilename,string clickFilename,int bufferSize) {
@@ -17,17 +22,46 @@ void Disc::setup(string textureFilename,string clickFilename,int bufferSize) {
 
 }
 
+
 void Disc::updatePhi(float phi) {
 	
+	
+	float sum = floor(min(phi,this->phi)/2.0f/M_PI)*2.0f*M_PI;
+	
+	
 	for (vector<float>::iterator iter = stops.begin(); iter!=stops.end(); iter++) {
-		float mult = floor(min(this->phi,phi)/(2.0f*M_PI));
-		float stop = *iter+2.0*mult*M_PI;
-		if (min(phi,this->phi) < stop &&  max(phi,this->phi)>stop) {
+		
+		/*
+		if (bSnap || bRotate ) {
+			if (fabs(this->phi-stop) > MIN_DIST_TO_CLICK && fabs(phi-stop) < MIN_DIST_TO_CLICK ) {
+				click.play();
+				break;
+			}
+		} else {
+			if ((fabs(this->phi-stop) > MIN_DIST_TO_CLICK && fabs(phi-stop) < MIN_DIST_TO_CLICK) || (fabs(this->phi-stop) < MIN_DIST_TO_CLICK && fabs(phi-stop) > MIN_DIST_TO_CLICK) ) {
+				if (!click.getIsPlaying()) {
+					click.play();
+				}
+				
+				break;
+			}
+		}
+		*/
+		
+		
+		
+		if ((*iter+sum-this->phi) * (*iter+sum-phi)<=0 ) {
 			click.play();
 			break;
 		}
-	}
 		
+		
+		
+	}
+	printf("%.3f %.3f\n",this->phi,sum);
+	
+	
+	
 	this->phi = phi;
 	
 	//printf("degree: %.2f\n",phi);
@@ -35,16 +69,25 @@ void Disc::updatePhi(float phi) {
 
 void Disc::update() {
 	
-	
-	
-	if (bRotate) {
-		if (fabs(endPhi-phi) > M_PI/360.0f) {
-			float t = (ofGetElapsedTimeMillis() - startAnim)/1000.0f;
-			updatePhi(startPhi+omega*t+alpha*t*t/2.0f);
-		} else {
+	if (bRotate || bSnap) {
+		if (fabs(endPhi-phi) < MIN_DIST_TO_CLICK) {
 			updatePhi(endPhi);
 			bRotate = false;
-		}		
+			bSnap = false;
+		} else {
+			if (bRotate) {
+				float t = (ofGetElapsedTimeMillis() - startAnim)/1000.0f; // time [second]
+				updatePhi(startPhi+omega*t+alpha*t*t/2.0f);
+			}
+			if (bSnap) {
+				float t = (float)(ofGetElapsedTimeMillis() - startAnim)/SNAP_ANIMATION_TIME; // time to finish the animation
+				updatePhi(easeInOutQuad(t,phi,endPhi));
+				//updatePhi(easeOutBounce(t,phi,endPhi));
+			}
+		}
+
+			
+		
 	}
 	
 }
@@ -68,6 +111,7 @@ void Disc::touchDown(ofPoint &pos) {
 	
 	if (pos.x >innerRadius && pos.x<outerRadius) {
 		bRotate = false;
+		bSnap = false;
 		omega = 0;
 		bDown = true;
 		lastTime = ofGetElapsedTimeMillis();
@@ -79,9 +123,22 @@ void Disc::touchDown(ofPoint &pos) {
 void Disc::touchMoved(ofPoint &pos) {
 	if (bDown) {
 		if (pos.x >innerRadius && pos.x<outerRadius) {
-			float diff = pos.y-this->pos.y;
-			updatePhi(phi+diff);
-			omega = diff * 1000.0f / (ofGetElapsedTimeMillis()-lastTime) ;
+			updatePhi(phi+pos.y-this->pos.y);
+			
+			/*
+			if (ofGetElapsedTimeMillis()-lastTime>50 ) {
+				omega = 0;
+				// lastPhi = phi;
+			} else {
+				omega = diff * 1000.0f / (ofGetElapsedTimeMillis()-lastTime) ;
+			}
+			 */
+			omega = (pos.y-this->pos.y) * 1000.0f / (ofGetElapsedTimeMillis()-lastTime) ;
+			
+			if (fabs(omega)<MIN_ANGULAR_VELOCITY_TO_SNAP) { 
+				omega = 0;
+			}
+			
 			lastTime = ofGetElapsedTimeMillis();
 			this->pos = pos;
 			
@@ -96,24 +153,51 @@ void Disc::touchMoved(ofPoint &pos) {
 void Disc::touchUp(ofPoint &pos) {
 	if (bDown) {
 		bDown = false;
+		
 		updatePhi(phi+pos.y-this->pos.y);
-		if (ofGetElapsedTimeMillis()-lastTime>50) {
-			omega = 0;
-			// lastPhi = phi;
+		
+		
+		if (omega==0) {
+			bSnap = true;
+			float sum = floor(phi/2.0f/M_PI)*2.0f*M_PI;
+			startPhi = phi;
+						
+			vector<float>::iterator iter = stops.begin();
+			endPhi = *iter+sum;
+			iter++;
+			
+			for (; iter!=stops.end(); iter++) {
+				if (fabs(*iter+sum-startPhi) < fabs(endPhi-startPhi)) {
+					endPhi = *iter+sum;
+				}
+			}
+			startAnim = ofGetElapsedTimeMillis();
 		}
 		
-		if (omega!=0) {
+		else {
 			
 			bRotate = true;
 			startPhi = phi;
 			alpha =-omega/2;
 			endPhi = startPhi - omega*omega/2/alpha;
+			float sum = floor(endPhi/(2.0f*M_PI)) * 2.0*M_PI;
+			float nearest = omega>0 ? endPhi + M_PI/3 : endPhi - M_PI/3;
+			
+			for (vector<float>::iterator iter = stops.begin(); iter!=stops.end(); iter++) {
+				if (fabs(*iter+sum-endPhi) < fabs(nearest-endPhi)) {
+					nearest = *iter+sum;
+				}
+			}				
+			
+			endPhi = nearest;
+			alpha = - omega*omega/2/(endPhi-startPhi);
+			
 			startAnim = ofGetElapsedTimeMillis();
 			//printf("diff: %.2f\n",diff);
 			printf("omega: %.2f, alpha: %.2f, start: %.2f, end: %.2f\n",omega,alpha,startPhi,endPhi);
 			
 			
-		}
+		} 
 		
 			
 		

@@ -21,6 +21,8 @@ void testApp::setup(){
 	
 	//ofBackground(255,0,0);
 	//ofSetCircleResolution(9);
+	ofBackground(255,255,255);
+	
 	
 	ofxXmlSettings xml;
 	ofDisableDataPath();
@@ -77,10 +79,10 @@ void testApp::setup(){
 	outer.outerRadius = 500;
 	
 	for (vector<float>::iterator iter = leaves.begin(); iter!=leaves.end(); iter++) {
-		outer.stops.push_back(2.0f*M_PI-(*iter)*M_PI/3.0f);
+		outer.stops.push_back(fmod(2.0f*M_PI-(*iter)*M_PI/3.0f,2*M_PI));
 	}
 	
-	for (int i=0; i<=12; i++) {
+	for (int i=0; i<12; i++) {
 		inner.stops.push_back(i*M_PI/6);
 	}
 	
@@ -118,13 +120,14 @@ void testApp::suspend() {
 
 //--------------------------------------------------------------
 void testApp::update(){
+	ofBackground(20,100,20);
 	inner.update();
 	outer.update();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	ofBackground(100,100,100);
+	//ofEnableAlphaBlending();
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
 	ofTranslate(-(int)background._width/2, -(int)background._height/2);
@@ -135,6 +138,7 @@ void testApp::draw(){
 	inner.draw();
 	
 	needle.draw();
+	//ofDisableAlphaBlending();
 
 	
 }
@@ -175,7 +179,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	ofPoint pnt = ofPoint(touch.x,touch.y)-center;
 	ofPoint pos = ofPoint(distance(pnt)/scaleFactor,atan2(pnt.y, pnt.x));
 	
-	printf("touchDown (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);
+//	printf("touchDown (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);
 //	printf("touchDown (%.2f,%.2f)\n",pos.x,pos.y);
 	
 	
@@ -205,7 +209,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 	ofPoint pnt = ofPoint(touch.x,touch.y)-center;
 	ofPoint pos = ofPoint(distance(pnt)/scaleFactor,atan2(pnt.y, pnt.x));
 	
-	printf("touchMoved (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);
+//	printf("touchMoved (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);
 //	printf("touchMoved (%.2f,%.2f)\n",pos.x,pos.y);
 	
 	inner.touchMoved(pos);
@@ -237,7 +241,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	ofPoint pnt = ofPoint(touch.x,touch.y)-center;
 	ofPoint pos = ofPoint(distance(pnt)/scaleFactor,atan2(pnt.y, pnt.x));
 	
-	printf("touchUp (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);	
+//	printf("touchUp (%.0f,%.0f) (%.1f,%.2f)\n",pnt.x,pnt.y,pos.x,pos.y);	
 	inner.touchUp(pos);
 	outer.touchUp(pos);
 	bKeyDown = false;

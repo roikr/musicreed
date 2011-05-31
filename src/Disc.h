@@ -14,7 +14,7 @@
 class Disc {
 	
 public:
-	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false) {};
+	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false) {};
 	
 	void setup(string filename,string clickFilename,int bufferSize);
 	void update();
@@ -46,6 +46,7 @@ public:
 	float startPhi;
 	float endPhi;
 	bool bRotate;
+	bool bSnap;
 	
 	vector <float> stops;
 	bool bPlaying;
