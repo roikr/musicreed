@@ -11,9 +11,17 @@
 
 @interface MusicalScale : NSObject {
 	NSString *name;
+	NSUInteger type;
+	NSUInteger mode;
+	float	   firstNote;
+	NSString *filename;
 }
 
 @property (nonatomic,retain) NSString *name;
+@property NSUInteger type;
+@property NSUInteger mode;
+@property float firstNote;
+@property (nonatomic,retain) NSString *filename;
 
-- (id)initWithScaleName:(NSString *)scaleName;
+- (id)initWithScaleName:(NSString *)scaleName withType:(NSUInteger)theType withMode:(NSUInteger)theMode withFirstNote:(float)note withFilename:(NSString *)theFilename;
 @end

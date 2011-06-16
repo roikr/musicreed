@@ -7,11 +7,11 @@
 #include "ofxAudioInstrument.h"
 #include "ofxiTexture.h"
 #include "Disc.h"
-
+#include "ofTrueTypeFont.h"
 
 struct scale {
+	vector<int> leaves;
 	vector<float> notes;
-	float firstNote;
 };
 
 
@@ -38,7 +38,9 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
+	void setKeys();
 	
 	Disc inner;
 	Disc outer;
@@ -58,8 +60,17 @@ public:
 	int lastArp;
 	
 	vector <scale> scales;
+	vector <scale>::iterator  currentScale;
 	vector <float> leaves;
 	
+		
+	
+	ofTrueTypeFont ttf;
+	int mode;
+	float firstNote;
+	int numDivisions;
+	
+	vector<string> keys;
 	
 };
 

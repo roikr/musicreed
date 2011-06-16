@@ -14,9 +14,9 @@
 class Disc {
 	
 public:
-	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false) {};
+	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false),bNewStop(false) {};
 	
-	void setup(string filename,string clickFilename,int bufferSize);
+	void setup(string textureFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius);
 	void update();
 	void draw();
 	void exit();
@@ -25,16 +25,36 @@ public:
 	void touchMoved(ofPoint &pos);
 	void touchUp(ofPoint &pos);
 	
-	void updatePhi(float phi);
+	void loadTextures();
+	void unloadTextures();
+
+	bool getIsDown();
+	
+	void updateStops(vector <float> stops);
+	void setStop(int stop);
+	int	 getStop();
+	bool getIsNewStop();
+	void resetIsNewStop();
+	
+	
 		
 	ofxAudioFile click;
+		
 	
+private:
 	float phi;
+
+	void updatePhi(float phi,bool bStop);
+		
+	string textureFilename;
+	float innerRadius;
+	float outerRadius;
+	
+	
 	
 	float omega;
 	float alpha;
-	float innerRadius;
-	float outerRadius;
+	
 	ofxiTexture texture;
 	
 	ofPoint pos;
@@ -49,7 +69,10 @@ public:
 	bool bSnap;
 	
 	vector <float> stops;
+	vector <float>::iterator currentStop;
+	bool bNewStop;
 	bool bPlaying;
+	
 	
 	
 };

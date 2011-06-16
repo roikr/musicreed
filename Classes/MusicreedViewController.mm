@@ -8,6 +8,7 @@
 
 #import "MusicreedViewController.h"
 #import "ScalesTable.h"
+#import "MusicalSystem.h"
 #import "MusicalScale.h"
 #import "TouchView.h"
 #import "MusicreedAppDelegate.h"
@@ -60,8 +61,8 @@
 		((TouchView *)self.view).OFSAptr = ((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr;
 		
 		scalesTable.musicalSystems = [NSArray arrayWithArray:parsedMusicalSystems];
-		MusicalSystem *system = [scalesTable.musicalSystems objectAtIndex:0];
-		scalesTable.currentScale = [system.scales objectAtIndex:0];
+		scalesTable.currentSystem = [scalesTable.musicalSystems objectAtIndex:0];
+		scalesTable.currentScale = [scalesTable.currentSystem.scales objectAtIndex:0];
 	}
 }
 
@@ -80,7 +81,10 @@
 	NSLog(@"MusicreedViewController::viewWillAppear");
 	if (self.scalesTable) {
 		scaleLabel.text = self.scalesTable.currentScale.name;
+		[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] setCurrentScale:scalesTable.currentScale withSystem:scalesTable.currentSystem];
 	}
+	
+	
 }
 
 
@@ -143,12 +147,17 @@ static NSString * const kScaleElementName = @"scale";
 	attributes:(NSDictionary *)attributeDict {
 	
     if ([elementName isEqualToString:kSystemElementName]) {
-		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"]];
+		NSUInteger numDivisions = 12;
+		NSNumber *value = [attributeDict valueForKey:@"divisions"];
+		if (value ) {
+			numDivisions = [value integerValue];
+		}
+		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"] withNumDivisions:numDivisions];
 		self.currentMusicalSystem = system;
 		[system release];
 		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
     } else if ([elementName isEqualToString:kScaleElementName]) {
-		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]];
+		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]  withType:[[attributeDict valueForKey:@"scale"] integerValue]  withMode:[[attributeDict valueForKey:@"mode"] integerValue] withFirstNote:[[attributeDict valueForKey:@"note"] floatValue] withFilename:[attributeDict valueForKey:@"filename"]  ];
 		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
 	} 
 }

@@ -13,10 +13,12 @@
 
 @synthesize name;
 @synthesize scales;
+@synthesize numDivisions;
 
-+ (MusicalSystem *)musicalSystemWithName:(NSString *)systemName {
++ (MusicalSystem *)musicalSystemWithName:(NSString *)systemName withNumDivisions:(NSUInteger)divisions {
 	MusicalSystem *newSystem = [[MusicalSystem alloc] init];
 	newSystem.name = systemName;
+	newSystem.numDivisions = divisions;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	newSystem.scales = array;
 	[array release];
@@ -24,8 +26,8 @@
 }
 
 
-- (void)addScaleWithName:(NSString *)scaleName  {
-	MusicalScale *scale = [[MusicalScale alloc] initWithScaleName:scaleName];
+- (void) addScaleWithName:(NSString *)scaleName withType:(NSUInteger)theType withMode:(NSUInteger)theMode withFirstNote:(float)note withFilename:(NSString *)theFilename {
+	MusicalScale *scale = [[MusicalScale alloc] initWithScaleName:scaleName withType:theType withMode:theMode withFirstNote:note withFilename:theFilename];
 	[scales addObject:scale];
 	[scale release];
 }

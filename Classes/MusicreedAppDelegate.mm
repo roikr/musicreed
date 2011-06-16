@@ -12,6 +12,7 @@
 #import "EAGLView.h"
 #include "testApp.h"
 #include "MusicalSystem.h"
+#include "MusicalScale.h"
 
 
 
@@ -104,11 +105,9 @@
     [super dealloc];
 }
 
-- (NSArray *)displayList {
 
-	return NULL;
+- (void) setCurrentScale:(MusicalScale *)scale withSystem:(MusicalSystem *)system {
+	self.OFSAptr->setScale(scale.type,scale.mode,scale.firstNote,system.numDivisions,true); 
 }
-
-
 
 @end

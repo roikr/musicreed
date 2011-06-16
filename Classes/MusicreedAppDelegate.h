@@ -11,6 +11,8 @@
 
 @class MusicreedViewController;
 @class EAGLView;
+@class MusicalScale;
+@class MusicalSystem;
 class testApp;
 
 @interface MusicreedAppDelegate : NSObject <UIApplicationDelegate> {
@@ -30,9 +32,8 @@ class testApp;
 @property (nonatomic, retain) IBOutlet EAGLView *eAGLView;
 @property  testApp *OFSAptr;
 
+- (void) setCurrentScale:(MusicalScale *)scale withSystem:(MusicalSystem *)system;
 
-
-- (NSArray *)displayList;
 
 @end
 

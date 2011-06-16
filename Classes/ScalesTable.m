@@ -15,10 +15,8 @@
 
 @implementation ScalesTable
 
-
-
-
 @synthesize scaleCell;
+@synthesize currentSystem;
 @synthesize currentScale;
 @synthesize backgroundView;
 @synthesize musicalSystems;
@@ -169,8 +167,8 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-	MusicalSystem *system = [musicalSystems objectAtIndex:indexPath.section];
-	self.currentScale = [system.scales objectAtIndex:indexPath.row];
+	self.currentSystem = [musicalSystems objectAtIndex:indexPath.section];
+	self.currentScale = [currentSystem.scales objectAtIndex:indexPath.row];
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 	
 }

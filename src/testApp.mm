@@ -2,8 +2,9 @@
 #include "ofMainExt.h"
 #include "ofSoundStream.h"
 #include "ofxXmlSettings.h"
+#include "notationUtils.h"
 
-
+#define VERTICAL_KEYS_NUMBER 12
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -21,32 +22,17 @@ void testApp::setup(){
 	
 	//ofBackground(255,0,0);
 	//ofSetCircleResolution(9);
+	
 	ofBackground(255,255,255);
+	
 	
 	
 	ofxXmlSettings xml;
 	ofDisableDataPath();
 	assert(xml.loadFile(ofToResourcesPath("creed.xml")));
+	 ttf.loadFont(ofToResourcesPath("MAIAN.TTF"),12); 
 	ofEnableDataPath();
 	xml.pushTag("creed");
-	xml.pushTag("scales");
-	for (int i=0; i<xml.getNumTags("scale"); i++) {
-		scale s;
-		s.firstNote = xml.getAttribute("scale", "first", 0.0f, i);
-		xml.pushTag("scale", i);
-		float note = 0;
-		s.notes.push_back(note);
-		for (int j=0; j<xml.getNumTags("note")-1; j++) {
-			note+=xml.getAttribute("note", "interval", 0.0f, j);
-			s.notes.push_back(note);
-		}
-		xml.popTag();
-		printf("scale: %i, first:%.2f, notes: %i, last: %.2f\n",i,s.firstNote,(int)s.notes.size(),note);
-		scales.push_back(s);
-		
-	}
-	
-	xml.popTag();
 	
 	xml.pushTag("leaves");
 	
@@ -57,7 +43,40 @@ void testApp::setup(){
 		leaves.push_back(note);
 	}
 	xml.popTag();
-	printf("leafs: %i, last: %.2f\n",(int)leaves.size(),note);
+	
+	//printf("leafs: %i, last: %.2f\n",(int)leaves.size(),note);
+	
+	xml.pushTag("scales");
+	for (int i=0; i<xml.getNumTags("scale"); i++) {
+		
+		xml.pushTag("scale", i);
+		scale s;
+		
+		for (int j=0; j<xml.getNumTags("note"); j++) {
+			s.leaves.push_back(xml.getAttribute("note", "leaf", 0, j));
+		}
+		
+		printf("scale %i\t - ",i);
+		int octave = 0;
+		float first = leaves[s.leaves.front()];
+		for (vector<int>::iterator iter=s.leaves.begin(); iter!=s.leaves.end(); iter++) {
+			s.notes.push_back(leaves[*iter]+octave*6-first);
+			if ((iter+1)!=s.leaves.end() && *iter>*(iter+1)) {
+				octave++;
+			}
+			printf("%i-%2.3f\t\t",*iter,s.notes.back());
+		}
+		printf("\n");
+		
+		xml.popTag();
+		//printf("scale: %i, leaf: %i, first:%.2f, notes: %i, last: %.2f\n",i,s.leaf,s.firstNote,(int)s.notes.size(),note);
+		scales.push_back(s);
+		
+	}
+	
+	xml.popTag();
+	
+	
 	xml.popTag();
 	
 	
@@ -72,20 +91,8 @@ void testApp::setup(){
 		instrument.loadSample(filename,i);
 	}
 	
-	
-	inner.innerRadius = 100;
-	inner.outerRadius = 200;
-	outer.innerRadius = 200;
-	outer.outerRadius = 500;
-	
-	for (vector<float>::iterator iter = leaves.begin(); iter!=leaves.end(); iter++) {
-		outer.stops.push_back(fmod(2.0f*M_PI-(*iter)*M_PI/3.0f,2*M_PI));
-	}
-	
-	for (int i=0; i<12; i++) {
-		inner.stops.push_back(i*M_PI/6);
-	}
-	
+	inner.setup(ofToResourcesPath("inner.pvr"),ofToResourcesPath("click.caf"), bufferSize,100,200);
+	outer.setup(ofToResourcesPath("outer.pvr"),ofToResourcesPath("click.caf"), bufferSize,200,500);
 	
 	scaleFactor = 0.55;
 	bKeyDown = false;
@@ -96,13 +103,15 @@ void testApp::setup(){
 	ofSoundStreamSetup(2, 0, this, 44100, bufferSize, 2);
 	
 	resume();
+	
+	
 }
 
 
 
 void testApp::resume() {
-	inner.setup(ofToResourcesPath("inner.pvr"),ofToResourcesPath("click.caf"), bufferSize);
-	outer.setup(ofToResourcesPath("outer.pvr"),ofToResourcesPath("click.caf"), bufferSize);
+	inner.loadTextures();
+	outer.loadTextures();
 	background.load(ofToResourcesPath("background.pvr"));
 	needle.load(ofToResourcesPath("needle.pvr"));
 	
@@ -112,8 +121,8 @@ void testApp::resume() {
 }
 
 void testApp::suspend() {
-	inner.exit();
-	outer.exit();
+	inner.unloadTextures();
+	outer.unloadTextures();
 	background.release();
 	needle.release();
 }
@@ -122,12 +131,33 @@ void testApp::suspend() {
 void testApp::update(){
 	ofBackground(20,100,20);
 	inner.update();
+	
+	if (inner.getIsNewStop()) {
+		firstNote = (float)inner.getStop()* 6.0f / numDivisions ;
+		cout << "stop - first note: " << firstNote << endl;
+		setKeys();
+		inner.resetIsNewStop();
+		// = -note * 2.0f * M_PI / 6.0f;
+	}
+	
+	
+	
 	outer.update();
+	
+	if (outer.getIsNewStop()) {
+		mode = outer.getStop();
+		cout << "stop - mode: " << mode << endl;
+		setKeys();
+		outer.resetIsNewStop();
+		// = -note * 2.0f * M_PI / 6.0f;
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+	ofPushMatrix();
 	//ofEnableAlphaBlending();
+	
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
 	ofTranslate(-(int)background._width/2, -(int)background._height/2);
@@ -139,7 +169,39 @@ void testApp::draw(){
 	
 	needle.draw();
 	//ofDisableAlphaBlending();
+	ofPopMatrix();
+	
+	
+	char str[15];
+	
+	
+	int height = ofGetHeight()/VERTICAL_KEYS_NUMBER;
+	int width = ofGetWidth()/4;
+	
+	
+	for (int i=0; i<VERTICAL_KEYS_NUMBER; i++) {
+		if (bKeyDown && i==lastKey) {
+			ofFill();
+			ofSetColor(0xA0A0A0);
+		} else {
+			ofNoFill();
+			ofSetColor(0xFFFFFF);
+			
+		}
 
+		ofRect(ofGetWidth()-width, i* height,width, height);
+		
+		ofNoFill();
+		ofSetColor(0xFFFFFF);
+		
+		int octave = floor((i+mode) / currentScale->notes.size());
+		float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+		
+		//sprintf(str, "%s(%2.3f)",keys[i % keys.size()].c_str(),note);
+		ttf.drawString(keys[i % keys.size()], ofGetWidth()-width, i*height+ttf.getLineHeight());
+	
+		
+	}
 	
 }
 
@@ -155,12 +217,12 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	memset(output, 0, bufferSize*sizeof(float)*nChannels);
 	
 	
-	inner.click.audioRequested(output, 0, bufferSize, nChannels);	
-	inner.click.audioRequested(output, 1, bufferSize, nChannels);	
+	inner.click.mixChannel(output, 0, nChannels);
+	inner.click.mixChannel(output, 1, nChannels);
 	inner.click.postProcess();
 	
-	outer.click.audioRequested(output, 0, bufferSize, nChannels);	
-	outer.click.audioRequested(output, 1, bufferSize, nChannels);	
+	outer.click.mixChannel(output, 0, nChannels);	
+	outer.click.mixChannel(output, 1, nChannels);	
 	outer.click.postProcess();
 	
 	instrument.preProcess();
@@ -186,14 +248,28 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	inner.touchDown(pos);
 	outer.touchDown(pos);
 	
-	if (!inner.bDown && !outer.bDown) {
+	if (!inner.getIsDown() && !outer.getIsDown()) {
 		bKeyDown = true;
-		lastKey = 48+(int)(touch.y/20) ;
-		lastArp = (int)((ofGetWidth()-touch.x)/80) ;
+		int key = (int)(touch.y/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
+		int arp = (int)((ofGetWidth()-touch.x)/(ofGetWidth()/4)) ;
+		
+		int octave = floor((key+mode) / currentScale->notes.size());
+		float note = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+		int midi = floor(48+2.0f*note);
+		float intpart;
+		int cents = floor(modf(2.0f*note,&intpart)*100.0f);
+		
+		printf("note: %s(%2.3f), midi: %i, cents: %i\n",keys[key % keys.size()].c_str(),note,midi,cents);
 		
 		
-		instrument.noteOn(lastKey+lastArp*4, 127);
+		
+		instrument.noteOn(midi, 127,cents);
+		
+		//instrument.noteOn(lastKey+lastArp*4, 127);
 		//instrument.noteOff(iter->note);
+		
+		lastKey = key;
+		lastArp = arp;
 	}
 	
 	
@@ -221,15 +297,26 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 //	printf("%.3f\n",outer.phi);
 	
 	if (bKeyDown) {
-		int key = 48+(int)(touch.y/20) ;
-		int arp = (int)((ofGetWidth()-touch.x)/80) ;
+		int key = (int)(touch.y/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
+		int arp = (int)((ofGetWidth()-touch.x)/(ofGetWidth()/4)) ;
 		if (key!=lastKey || arp!=lastArp) {
+			
+			
+			int octave = floor((key+mode) / currentScale->notes.size());
+			float note = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+			int midi = floor(48+2.0f*note);
+			float intpart;
+			int cents = floor(modf(2.0f*note,&intpart)*100.0f);
+			
+			printf("note: %3.3f, midi: %i, cents: %i\n",note,midi,cents);
+			instrument.noteOn(midi, 127,cents);
+			
 			lastKey = key;
 			lastArp = arp;
-			instrument.noteOn(lastKey+lastArp*4, 127);
 			
 		}
 	}
+	 
 	
 }
 
@@ -271,4 +358,68 @@ void testApp::gotMemoryWarning(){
 void testApp::deviceOrientationChanged(int newOrientation){
 
 }
+
+void testApp::setScale(int scale,int mode,float note,int numDivisions,bool bAnimate) {
+	this->numDivisions = numDivisions;// = 12;
+	
+	printf("scale: %u, mode: %u, note: %3.3f, numDivisions: %u\n",scale,mode,note,numDivisions);
+	currentScale = scales.begin()+scale;
+	
+	vector<float> stops;
+	int firstLeaf = currentScale->leaves.front();
+	cout << "modes: ";
+	for (int i=0; i<currentScale->leaves.size(); i++) {
+		int cmode = currentScale->leaves[(i+firstLeaf) % currentScale->leaves.size()];
+		
+		stops.push_back(fmod(2.0f*M_PI-(leaves[cmode])*M_PI/3.0f,2*M_PI));
+		cout << cmode << "-" << stops.back() << ", ";
+	}
+	cout << endl;
+	
+	outer.updateStops(stops);
+	outer.setStop(mode);
+	
+	stops.clear();
+	float div = 2.0f*M_PI/numDivisions;
+	int first = note * numDivisions / 6.0f;
+	for (int i=0; i<numDivisions; i++) {
+		stops.push_back(2.0f*M_PI-(i+first) % numDivisions * div);
+	}
+	inner.updateStops(stops);
+	inner.setStop(0);
+	
+	this->mode = mode;
+	//outer.phi = -*(leaves.begin()+(currentScale->leaf+mode) % (int)leaves.size()) * 2.0f * M_PI / 6.0f;
+	
+	firstNote = note;
+	setKeys();
+	
+
+}
+
+
+void testApp::setKeys() {
+	keys.clear();
+	
+	if (currentScale->notes.size()==7) {
+		int firstScale = evalScaleNote(firstNote);
+		for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
+			int i = distance(currentScale->notes.begin(),iter);
+			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
+			keys.push_back(findNote(firstScale+i,knote));
+			printf("note: %i, %f, %s\n",firstScale+i,knote,keys.back().c_str());
+					 
+		}
+	} else {
+		for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
+			int i = distance(currentScale->notes.begin(),iter);
+			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
+			
+			keys.push_back(findNote(evalScaleNote(knote),knote));
+							
+		}
+	}
+	
+}
+
 

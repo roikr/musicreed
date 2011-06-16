@@ -15,15 +15,25 @@
 #include "easing.h"
 #include <cmath>
 
-void Disc::setup(string textureFilename,string clickFilename,int bufferSize) {
-	texture.load(textureFilename);
+void Disc::setup(string textureFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
+	
 	int bLoaded = click.load(clickFilename, bufferSize);
+	this->innerRadius = innerRadius;
+	this->outerRadius = outerRadius;
+	this->textureFilename = textureFilename;
 	assert(bLoaded);
 
 }
 
+void Disc::loadTextures() {
+	texture.load(textureFilename);
+}
 
-void Disc::updatePhi(float phi) {
+void Disc::unloadTextures() {
+	texture.release();
+}
+
+void Disc::updatePhi(float phi,bool bStop) {
 	
 	
 	float sum = floor(min(phi,this->phi)/2.0f/M_PI)*2.0f*M_PI;
@@ -48,17 +58,21 @@ void Disc::updatePhi(float phi) {
 		}
 		*/
 		
-		
-		
 		if ((*iter+sum-this->phi) * (*iter+sum-phi)<=0 ) {
 			click.play();
+			
+			if (bStop) {
+				currentStop = iter;
+				bNewStop = true;
+			}
+			
 			break;
 		}
 		
 		
 		
 	}
-	printf("%.3f %.3f\n",this->phi,sum);
+	//printf("%.3f %.3f\n",this->phi,sum);
 	
 	
 	
@@ -71,17 +85,19 @@ void Disc::update() {
 	
 	if (bRotate || bSnap) {
 		if (fabs(endPhi-phi) < MIN_DIST_TO_CLICK) {
-			updatePhi(endPhi);
+			updatePhi(endPhi,true);
 			bRotate = false;
 			bSnap = false;
+			
+			
 		} else {
 			if (bRotate) {
 				float t = (ofGetElapsedTimeMillis() - startAnim)/1000.0f; // time [second]
-				updatePhi(startPhi+omega*t+alpha*t*t/2.0f);
+				updatePhi(startPhi+omega*t+alpha*t*t/2.0f,false);
 			}
 			if (bSnap) {
 				float t = (float)(ofGetElapsedTimeMillis() - startAnim)/SNAP_ANIMATION_TIME; // time to finish the animation
-				updatePhi(easeInOutQuad(t,phi,endPhi));
+				updatePhi(easeInOutQuad(t,phi,endPhi),false);
 				//updatePhi(easeOutBounce(t,phi,endPhi));
 			}
 		}
@@ -104,7 +120,8 @@ void Disc::draw() {
 
 
 void Disc::exit() {
-	texture.release();
+	
+	click.exit();
 }
 
 void Disc::touchDown(ofPoint &pos) {
@@ -123,7 +140,7 @@ void Disc::touchDown(ofPoint &pos) {
 void Disc::touchMoved(ofPoint &pos) {
 	if (bDown) {
 		if (pos.x >innerRadius && pos.x<outerRadius) {
-			updatePhi(phi+pos.y-this->pos.y);
+			updatePhi(phi+pos.y-this->pos.y,false);
 			
 			/*
 			if (ofGetElapsedTimeMillis()-lastTime>50 ) {
@@ -154,7 +171,7 @@ void Disc::touchUp(ofPoint &pos) {
 	if (bDown) {
 		bDown = false;
 		
-		updatePhi(phi+pos.y-this->pos.y);
+		updatePhi(phi+pos.y-this->pos.y,false);
 		
 		
 		if (omega==0) {
@@ -203,6 +220,38 @@ void Disc::touchUp(ofPoint &pos) {
 		
 	}
 	
+}
+
+
+bool Disc::getIsDown() {
+	return bDown;
+}
+
+void Disc::updateStops(vector <float> stops) {
+	this->stops = stops;
+	
+//	bSnap = true;
+//	float sum = floor(phi/2.0f/M_PI)*2.0f*M_PI;
+//	endPhi = this->stops.front()+sum;
+//	startAnim = ofGetElapsedTimeMillis();
+}
+
+void Disc::setStop(int stop) {
+	phi = stops[stop];
+	currentStop = stops.begin()+stop;
+}
+
+int Disc::getStop() {
+	return distance(stops.begin(), currentStop);
+	
+}
+
+bool Disc::getIsNewStop() {
+	return bNewStop;
+}
+
+void Disc::resetIsNewStop() {
+	bNewStop = false;
 }
 
 
