@@ -41,6 +41,7 @@
 		E4946023138A582A00B395CB /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E494601C138A582A00B395CB /* tinyxmlparser.cpp */; };
 		E4946024138A582A00B395CB /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E494601E138A582A00B395CB /* ofxXmlSettings.cpp */; };
 		E49DC9C113A7A13300E3C79F /* notationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49DC9C013A7A13300E3C79F /* notationUtils.cpp */; };
+		E4C91ECE13ADF94200B8892F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C91ECD13ADF94200B8892F /* AVFoundation.framework */; };
 		E4DF6DEE138278C100F96763 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6DEA138278C100F96763 /* ofxAudioInstrument.cpp */; };
 		E4E6509D137FF7CA00DFCE6E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E65099137FF7CA00DFCE6E /* MainWindow.xib */; };
 		E4E6509E137FF7CA00DFCE6E /* MusicreedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */; };
@@ -121,6 +122,8 @@
 		E494601F138A582A00B395CB /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		E49DC9BF13A7A13300E3C79F /* notationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = notationUtils.h; path = src/notationUtils.h; sourceTree = "<group>"; };
 		E49DC9C013A7A13300E3C79F /* notationUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = notationUtils.cpp; path = src/notationUtils.cpp; sourceTree = "<group>"; };
+		E4C91EA913ADF4AD00B8892F /* RKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
+		E4C91ECD13ADF94200B8892F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E4DF6DEA138278C100F96763 /* ofxAudioInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioInstrument.cpp; sourceTree = "<group>"; };
 		E4DF6DEB138278C100F96763 /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
 		E4E65099137FF7CA00DFCE6E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = SOURCE_ROOT; };
@@ -244,6 +247,7 @@
 				E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */,
 				E44D3EE8137BDCA800345249 /* AudioToolbox.framework in Frameworks */,
 				E4EC7C8D13A4DD09001299F2 /* libFreetype2.a in Frameworks */,
+				E4C91ECE13ADF94200B8892F /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +277,7 @@
 				E49065C11370393E0034C2F5 /* CustomFontLabel.m */,
 				E49065CA13703A090034C2F5 /* CustomButton.h */,
 				E49065CB13703A090034C2F5 /* CustomButton.m */,
+				E4C91EA913ADF4AD00B8892F /* RKMacros.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				E44D3EE7137BDCA800345249 /* AudioToolbox.framework */,
+				E4C91ECD13ADF94200B8892F /* AVFoundation.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

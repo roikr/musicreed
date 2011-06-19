@@ -26,6 +26,9 @@ public:
 	void suspend();
 	void resume();
 	
+	void soundStreamStart();
+	void soundStreamStop();
+	
 	void audioRequested( float * output, int bufferSize, int nChannels );
 	
 	void touchDown(ofTouchEventArgs &touch);
@@ -41,6 +44,7 @@ public:
 	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
 	void setKeys();
+	
 	
 	Disc inner;
 	Disc outer;
@@ -71,6 +75,8 @@ public:
 	int numDivisions;
 	
 	vector<string> keys;
+	
+	bool bRefreshDisplay;
 	
 };
 

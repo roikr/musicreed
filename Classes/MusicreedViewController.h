@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSMutableArray *parsedMusicalSystems;
 
 - (void)chooseScale:(id)sender;
+- (void)updateLabelWithMode:(NSUInteger)mode;
 
 @end
 

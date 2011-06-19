@@ -12,6 +12,7 @@
 #import "MusicalScale.h"
 #import "TouchView.h"
 #import "MusicreedAppDelegate.h"
+#import "RKMacros.h"
 
 
 @interface MusicreedViewController()
@@ -108,6 +109,21 @@
 - (void)chooseScale:(id)sender {
 	
 	[self presentModalViewController:self.scalesTable animated:YES];
+}
+
+- (void)updateLabelWithMode:(NSUInteger)mode {
+	RKLog(@"updateLabel");
+	for (int i=0; i<[scalesTable.currentSystem.scales count]; i++) {
+		MusicalScale *scale = [scalesTable.currentSystem.scales objectAtIndex:i];
+		if (scale.type == scalesTable.currentScale.type && scale.mode == mode) {
+			scalesTable.currentScale = scale;
+			scaleLabel.text = scalesTable.currentScale.name;
+			break;
+		}
+	}
+	
+
+	
 }
 
 #pragma mark -

@@ -9,10 +9,12 @@
 #import "MusicreedAppDelegate.h"
 #import "MusicreedViewController.h"
 #import <OpenGLES/EAGL.h>
+#import <AVFoundation/AVFoundation.h>
 #import "EAGLView.h"
 #include "testApp.h"
 #include "MusicalSystem.h"
 #include "MusicalScale.h"
+#include "RKMacros.h"
 
 
 
@@ -43,6 +45,29 @@
     return YES;
 }
 
+- (void)beginInterruption {
+	RKLog(@"beginInterruption");
+	if (OFSAptr) {
+		OFSAptr->soundStreamStop();
+	}
+}
+
+- (void)endInterruptionWithFlags:(NSUInteger)flags {
+	RKLog(@"endInterruptionWithFlags: %u",flags);
+	
+	if (flags && AVAudioSessionInterruptionFlags_ShouldResume) {
+		NSError *activationError = nil;
+		[[AVAudioSession sharedInstance] setActive: YES error: &activationError];
+		RKLog(@"audio session activated");
+		if (OFSAptr) {
+			OFSAptr->soundStreamStart();
+		}
+		
+	}
+	
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -72,9 +97,32 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    /*
+    RKLog(@"applicationDidBecomeActive");
+	/*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+	
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		RKLog(@"update loop started");
+		while ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+			
+			if (OFSAptr->bRefreshDisplay) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self.viewController updateLabelWithMode:OFSAptr->mode];
+				});
+				OFSAptr->bRefreshDisplay = false; // this should stay out off the main view async call
+			}
+			
+		}
+			
+		
+		RKLog(@"update loop exited");		
+	});
+	
+	
+	
+	OFSAptr->soundStreamStart();
+	
 }
 
 

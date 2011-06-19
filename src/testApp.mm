@@ -4,7 +4,7 @@
 #include "ofxXmlSettings.h"
 #include "notationUtils.h"
 
-#define VERTICAL_KEYS_NUMBER 12
+#define VERTICAL_KEYS_NUMBER 16
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -103,6 +103,7 @@ void testApp::setup(){
 	ofSoundStreamSetup(2, 0, this, 44100, bufferSize, 2);
 	
 	resume();
+	bRefreshDisplay = false;
 	
 	
 }
@@ -127,6 +128,14 @@ void testApp::suspend() {
 	needle.release();
 }
 
+void testApp::soundStreamStart() {
+	ofSoundStreamStart();
+}
+
+void testApp::soundStreamStop() {
+	ofSoundStreamStop();
+}
+
 //--------------------------------------------------------------
 void testApp::update(){
 	ofBackground(20,100,20);
@@ -149,6 +158,7 @@ void testApp::update(){
 		cout << "stop - mode: " << mode << endl;
 		setKeys();
 		outer.resetIsNewStop();
+		bRefreshDisplay = true;
 		// = -note * 2.0f * M_PI / 6.0f;
 	}
 }
@@ -189,16 +199,16 @@ void testApp::draw(){
 			
 		}
 
-		ofRect(ofGetWidth()-width, i* height,width, height);
+		ofRect(ofGetWidth()-width, ofGetHeight()-(i+1)* height,width, height);
 		
 		ofNoFill();
 		ofSetColor(0xFFFFFF);
 		
 		int octave = floor((i+mode) / currentScale->notes.size());
-		float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+		//float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 		
 		//sprintf(str, "%s(%2.3f)",keys[i % keys.size()].c_str(),note);
-		ttf.drawString(keys[i % keys.size()], ofGetWidth()-width, i*height+ttf.getLineHeight());
+		ttf.drawString(keys[i % keys.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 	
 		
 	}
@@ -250,7 +260,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	
 	if (!inner.getIsDown() && !outer.getIsDown()) {
 		bKeyDown = true;
-		int key = (int)(touch.y/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
+		int key = (int)((ofGetHeight()-touch.y)/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
 		int arp = (int)((ofGetWidth()-touch.x)/(ofGetWidth()/4)) ;
 		
 		int octave = floor((key+mode) / currentScale->notes.size());
@@ -297,7 +307,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 //	printf("%.3f\n",outer.phi);
 	
 	if (bKeyDown) {
-		int key = (int)(touch.y/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
+		int key = (int)((ofGetHeight()-touch.y)/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
 		int arp = (int)((ofGetWidth()-touch.x)/(ofGetWidth()/4)) ;
 		if (key!=lastKey || arp!=lastArp) {
 			
@@ -381,12 +391,12 @@ void testApp::setScale(int scale,int mode,float note,int numDivisions,bool bAnim
 	
 	stops.clear();
 	float div = 2.0f*M_PI/numDivisions;
-	int first = note * numDivisions / 6.0f;
+	
 	for (int i=0; i<numDivisions; i++) {
-		stops.push_back(2.0f*M_PI-(i+first) % numDivisions * div);
+		stops.push_back(2.0f*M_PI-i * div);
 	}
 	inner.updateStops(stops);
-	inner.setStop(0);
+	inner.setStop(note * numDivisions / 6.0f);
 	
 	this->mode = mode;
 	//outer.phi = -*(leaves.begin()+(currentScale->leaf+mode) % (int)leaves.size()) * 2.0f * M_PI / 6.0f;
@@ -421,5 +431,7 @@ void testApp::setKeys() {
 	}
 	
 }
+
+
 
 
