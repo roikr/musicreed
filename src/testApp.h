@@ -9,6 +9,12 @@
 #include "Disc.h"
 #include "ofTrueTypeFont.h"
 
+enum {
+	MUSICREED_STATE_SCALES,
+	MUSICREED_STATE_CHORDS
+};
+	
+
 struct scale {
 	vector<int> leaves;
 	vector<float> notes;
@@ -41,6 +47,8 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	void setState(int state);
+	int getState();
 	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
 	void setKeys();
@@ -77,6 +85,8 @@ public:
 	vector<string> keys;
 	
 	bool bRefreshDisplay;
+	
+	int state;
 	
 };
 

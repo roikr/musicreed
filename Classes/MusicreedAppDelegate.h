@@ -10,6 +10,7 @@
 
 
 @class MusicreedViewController;
+@class ChordsViewController;
 @class EAGLView;
 @class MusicalScale;
 @class MusicalSystem;
@@ -19,6 +20,8 @@ class testApp;
     UIWindow *window;
 	UINavigationController *navigationController;	
 	MusicreedViewController *viewController;
+	ChordsViewController *chordsViewController;
+	
 	EAGLView *eAGLView;
 	testApp *OFSAptr;
 	
@@ -29,8 +32,11 @@ class testApp;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet MusicreedViewController *viewController;
+@property (nonatomic, retain) ChordsViewController *chordsViewController;
 @property (nonatomic, retain) IBOutlet EAGLView *eAGLView;
 @property  testApp *OFSAptr;
+
+- (void)toggle:(UIInterfaceOrientation)orientation animated:(BOOL)animated;
 
 - (void) setCurrentScale:(MusicalScale *)scale withSystem:(MusicalSystem *)system;
 

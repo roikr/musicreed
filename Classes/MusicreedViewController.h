@@ -28,6 +28,7 @@
 
 - (void)chooseScale:(id)sender;
 - (void)updateLabelWithMode:(NSUInteger)mode;
+- (void)toggle:(id)sender;
 
 @end
 

@@ -54,6 +54,8 @@
 		E4EC7B9113A4CC4B001299F2 /* ofTrueTypeFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EC7B8D13A4CC4B001299F2 /* ofTrueTypeFont.cpp */; };
 		E4EC7BE813A4D636001299F2 /* ofTTF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EC7BE713A4D636001299F2 /* ofTTF.cpp */; };
 		E4EC7C8D13A4DD09001299F2 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC7C8C13A4DD09001299F2 /* libFreetype2.a */; };
+		E4F89C8413B2437000A36E03 /* ChordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F89C8313B2437000A36E03 /* ChordsViewController.xib */; };
+		E4F89C8713B243FE00A36E03 /* ChordsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F89C8613B243FE00A36E03 /* ChordsViewController.mm */; };
 		E4FE2C1B13893A490034BE2F /* ofxColorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C1113893A490034BE2F /* ofxColorBase.cpp */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +225,9 @@
 		E4EC7C8913A4DD09001299F2 /* ttunpat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttunpat.h; sourceTree = "<group>"; };
 		E4EC7C8A13A4DD09001299F2 /* ft2build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ft2build.h; sourceTree = "<group>"; };
 		E4EC7C8C13A4DD09001299F2 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
+		E4F89C8313B2437000A36E03 /* ChordsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChordsViewController.xib; path = Resources/ChordsViewController.xib; sourceTree = SOURCE_ROOT; };
+		E4F89C8513B243FE00A36E03 /* ChordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordsViewController.h; sourceTree = "<group>"; };
+		E4F89C8613B243FE00A36E03 /* ChordsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChordsViewController.mm; sourceTree = "<group>"; };
 		E4FE2C0C13893A490034BE2F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E4FE2C0D13893A490034BE2F /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
 		E4FE2C0E13893A490034BE2F /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -263,6 +268,9 @@
 				28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */,
 				E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */,
+				E4F89C8513B243FE00A36E03 /* ChordsViewController.h */,
+				E4F89C8613B243FE00A36E03 /* ChordsViewController.mm */,
+				E4F89C8313B2437000A36E03 /* ChordsViewController.xib */,
 				E490648E13700BD90034C2F5 /* EAGLView.h */,
 				E490648F13700BD90034C2F5 /* EAGLView.mm */,
 				E44D3E17137BD05B00345249 /* TouchView.h */,
@@ -790,6 +798,7 @@
 				E4E650A4137FF7F700DFCE6E /* MAIAN.TTF in Resources */,
 				E4E650A5137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf in Resources */,
 				E4E650A6137FF7F700DFCE6E /* systems.xml in Resources */,
+				E4F89C8413B2437000A36E03 /* ChordsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +840,7 @@
 				E4EC7B9113A4CC4B001299F2 /* ofTrueTypeFont.cpp in Sources */,
 				E4EC7BE813A4D636001299F2 /* ofTTF.cpp in Sources */,
 				E49DC9C113A7A13300E3C79F /* notationUtils.cpp in Sources */,
+				E4F89C8713B243FE00A36E03 /* ChordsViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

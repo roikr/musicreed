@@ -341,18 +341,20 @@
 
 - (void)setInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
 	
-//	switch (toInterfaceOrientation) {
-//		case UIInterfaceOrientationPortrait: 
-//		case UIInterfaceOrientationPortraitUpsideDown: 
-//			OFSAptr->setState(SOLO_STATE);
-//			break;
-//		case UIInterfaceOrientationLandscapeRight: 
-//		case UIInterfaceOrientationLandscapeLeft: 
-//			OFSAptr->setState(BAND_STATE);
-//			break;
-//	}
+	if (OFSAptr) {
+		switch (toInterfaceOrientation) {
+			case UIInterfaceOrientationPortrait: 
+			case UIInterfaceOrientationPortraitUpsideDown: 
+				OFSAptr->setState(MUSICREED_STATE_SCALES);
+				break;
+			case UIInterfaceOrientationLandscapeRight: 
+			case UIInterfaceOrientationLandscapeLeft: 
+				OFSAptr->setState(MUSICREED_STATE_CHORDS);
+				break;
+		}
+	}
 	
-		
+	
 	[UIView animateWithDuration:duration delay:0 options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
 					 animations:^{
 						 switch (toInterfaceOrientation) {

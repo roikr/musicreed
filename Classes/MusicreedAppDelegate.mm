@@ -8,6 +8,7 @@
 
 #import "MusicreedAppDelegate.h"
 #import "MusicreedViewController.h"
+#import "ChordsViewController.h"
 #import <OpenGLES/EAGL.h>
 #import <AVFoundation/AVFoundation.h>
 #import "EAGLView.h"
@@ -15,7 +16,7 @@
 #include "MusicalSystem.h"
 #include "MusicalScale.h"
 #include "RKMacros.h"
-
+#include "ofMainExt.h"
 
 
 
@@ -24,6 +25,7 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize viewController;
+@synthesize chordsViewController;
 @synthesize eAGLView;
 @synthesize OFSAptr;
 
@@ -153,6 +155,48 @@
     [super dealloc];
 }
 
+- (void)toggle:(UIInterfaceOrientation)orientation animated:(BOOL)animated{
+	switch (orientation) {
+		case UIInterfaceOrientationPortrait:
+			
+			ofxiPhoneSetOrientation(UIDeviceOrientationPortrait);
+			[self.navigationController dismissModalViewControllerAnimated:animated];
+			
+			break;
+		case UIInterfaceOrientationLandscapeRight:
+			ofxiPhoneSetOrientation(UIDeviceOrientationLandscapeRight);
+			if (self.chordsViewController == nil) { // this check use in case of loading after warning message...
+				self.chordsViewController = [[ChordsViewController alloc] initWithNibName:@"ChordsViewController" bundle:nil];
+				chordsViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+			}
+			[self.navigationController presentModalViewController:chordsViewController animated:animated];	
+			
+			break;
+			
+		default:
+			break;
+	}
+	
+	
+//	switch (self.OFSAptr->getState()) {
+//		case MUSICREED_STATE_CHORDS:
+//			
+//			[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationPortrait duration: 0.3];
+//			
+//			break;
+//		case MUSICREED_STATE_SCALES:
+//			
+//			[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration: 0.3];
+//
+//			
+//			break;
+//		default:
+//			break;
+//	}
+	
+	[self.eAGLView setInterfaceOrientation:orientation duration: 0.3];
+	
+}
 
 - (void) setCurrentScale:(MusicalScale *)scale withSystem:(MusicalSystem *)system {
 	self.OFSAptr->setScale(scale.type,scale.mode,scale.firstNote,system.numDivisions,true); 

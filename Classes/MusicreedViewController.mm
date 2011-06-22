@@ -111,6 +111,11 @@
 	[self presentModalViewController:self.scalesTable animated:YES];
 }
 
+- (void)toggle:(id)sender {
+	
+	[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] toggle:UIInterfaceOrientationLandscapeRight animated:0.3];
+}
+
 - (void)updateLabelWithMode:(NSUInteger)mode {
 	RKLog(@"updateLabel");
 	for (int i=0; i<[scalesTable.currentSystem.scales count]; i++) {
