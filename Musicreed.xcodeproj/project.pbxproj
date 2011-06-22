@@ -841,7 +841,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -858,7 +858,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/../of_preRelease_v0061_osxSL_FAT/My Addons/ofTrueTypeFont/libs/freetype2-ios/lib\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "652B8C8A-B39F-4204-9460-125C661028E4";
@@ -869,7 +869,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Musicreed_Prefix.pch;
@@ -883,7 +883,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/../of_preRelease_v0061_osxSL_FAT/My Addons/ofTrueTypeFont/libs/freetype2-ios/lib\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
 				VALIDATE_PRODUCT = YES;
@@ -935,7 +935,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -950,7 +950,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/../of_preRelease_v0061_osxSL_FAT/My Addons/ofTrueTypeFont/libs/freetype2-ios/lib\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF987F3B-084D-4D59-AC7D-9A8CC6784416";
