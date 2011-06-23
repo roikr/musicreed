@@ -77,6 +77,20 @@ void testApp::setup(){
 	
 	xml.popTag();
 	
+	xml.pushTag("chords");
+	for (int i=0;i<xml.getNumTags("chord");i++) {
+		chord c;
+		c.name = xml.getAttribute("chord", "name", "", i);
+		xml.pushTag("chord", i);
+		for (int j=0;j<xml.getNumTags("interval");j++) {
+			c.intervals.push_back(xml.getAttribute("interval", "value", 0.0f, j));
+		}
+		printf("chord: %i, name: %s, firstInterval: %.2f\n",i,c.name.c_str(),c.intervals.front());
+		xml.popTag();
+		chords.push_back(c);
+	}
+	xml.popTag();							  
+	
 	
 	xml.popTag();
 	
@@ -212,7 +226,7 @@ void testApp::draw(){
 				//float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 				
 				//sprintf(str, "%s(%2.3f)",keys[i % keys.size()].c_str(),note);
-				ttf.drawString(keys[i % keys.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				ttf.drawString(keysNames[i % keysNames.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 				
 				
 			}
@@ -234,9 +248,9 @@ void testApp::draw(){
 				
 				ofRect(ofGetWidth()-width, ofGetHeight()-(i+1)* height,width, height);
 				
-//				ofNoFill();
-//				ofSetColor(0xFFFFFF);
-//				ttf.drawString(keys[i % keys.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				ofNoFill();
+				ofSetColor(0xFFFFFF);
+				ttf.drawString(chordsNames[i % chordsNames.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 				
 				
 			}
@@ -308,7 +322,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 				float intpart;
 				int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 				
-				printf("note: %s(%2.3f), midi: %i, cents: %i\n",keys[key % keys.size()].c_str(),note,midi,cents);
+				printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
 				instrument.noteOn(midi, 127,cents);
 				
 				//instrument.noteOn(lastKey+lastArp*4, 127);
@@ -331,7 +345,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					float intpart;
 					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 					
-					printf("note: %s(%2.3f), midi: %i, cents: %i\n",keys[key % keys.size()].c_str(),note,midi,cents);
+					printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
 					instrument.noteOn(midi, 64,cents);
 					
 					
@@ -492,17 +506,22 @@ void testApp::setScale(int scale,int mode,float note,int numDivisions,bool bAnim
 
 }
 
+int testApp::findChord(float interval1,float interval2) {
+	
+	
+}
 
 void testApp::setKeys() {
-	keys.clear();
+	keysNames.clear();
+	
 	
 	if (currentScale->notes.size()==7) {
 		int firstScale = evalScaleNote(firstNote);
 		for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
 			int i = distance(currentScale->notes.begin(),iter);
 			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
-			keys.push_back(findNote(firstScale+i,knote));
-			printf("note: %i, %f, %s\n",firstScale+i,knote,keys.back().c_str());
+			keysNames.push_back(findNote(firstScale+i,knote));
+			printf("note: %i, %f, %s\n",firstScale+i,knote,keysNames.back().c_str());
 					 
 		}
 	} else {
@@ -510,10 +529,48 @@ void testApp::setKeys() {
 			int i = distance(currentScale->notes.begin(),iter);
 			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
 			
-			keys.push_back(findNote(evalScaleNote(knote),knote));
+			keysNames.push_back(findNote(evalScaleNote(knote),knote));
 							
 		}
 	}
+	
+	
+	chordsNames.clear();
+	int firstScale = evalScaleNote(firstNote);
+	
+	for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
+		
+		vector<float> notes;
+		int base = distance(currentScale->notes.begin(),iter);
+		
+		for (int i=0; i<3; i++) {
+			
+			int octave = floor((base+mode+2*i) / currentScale->notes.size());
+			float note = firstNote+currentScale->notes[(base+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+			
+			//printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
+			notes.push_back(note);			
+			
+		}
+		
+		
+		vector<chord>::iterator citer;
+		for (citer=chords.begin(); citer!=chords.end(); citer++) {
+			if (citer->intervals[0]==notes[1]-notes[0] && citer->intervals[1]==notes[2]-notes[1]) {
+				break;
+			}
+		}
+		
+		assert(citer!=chords.end());
+				
+		chordsNames.push_back(findNote(firstScale+base,notes[0])+citer->name);
+		
+	}
+	
+	
+	
+	
+	
 	
 }
 

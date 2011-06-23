@@ -1,42 +1,4 @@
 <systems>
-    <system name="Arabic" divisions="48">
-		<scale name="Mohammedan" scale="16" mode="0" note="0.625" filename="mohammedan"/>
-		<scale name="Nahawand Hijaz" scale="16" mode="0" note="1" filename="nahawand_hijaz"/>
-		<scale name="Nikriz" scale="16" mode="3" note="3.25" filename="nikriz"/>
-		<scale name="Hijaz" scale="16" mode="4" note="1.75" filename="hijaz"/>
-		<scale name="Hijaz Nahawand" scale="16" mode="4" note="4.875" filename="hijaz_nahawand"/>
-		<scale name="Husseini" scale="13" mode="0" note="2.125" filename="husseini"/>
-		<scale name="Sikah Rast" scale="13" mode="1" note="0" filename="sikah_rast"/>
-		<scale name="Nairuz" scale="13" mode="3" note="0" filename="nairuz"/>
-		<scale name="Iraq" scale="13" mode="5" note="0" filename="iraq"/>
-		<scale name="Rast Rast" scale="13" mode="6" note="0" filename="rast_rast"/>
-		<scale name="Kurd" scale="8" mode="2" note="0" filename="kurd"/>
-		<scale name="Farahfaza" scale="8" mode="5" note="0" filename="farahfaza"/>
-		<scale name="Nahawand Kurd" scale="8" mode="5" note="0" filename="nahawand_kurd"/>
-		<scale name="Hijaz Kar" scale="5" mode="0" note="0" filename="hijaz_kar"/>
-		<scale name="Shadd Araban" scale="5" mode="0" note="0" filename="shadd_araban"/>
-		<scale name="Shahnaz" scale="5" mode="0" note="0" filename="shahnaz"/>
-		<scale name="Sikah Baladi" scale="5" mode="0" note="0" filename="sikah_baladi"/>
-		<scale name="Suzidil" scale="5" mode="0" note="0" filename="suzidil"/>
-		<scale name="Nawa Athar" scale="5" mode="3" note="0" filename="nawa_athar"/>
-		<scale name="Sikah Nahawand" scale="1" mode="1" note="0" filename="sikah_nahawand"/>
-		<scale name="Jiharkah" scale="1" mode="2" note="0" filename="jiharkah"/>
-		<scale name="Busalik" scale="1" mode="3" note="0" filename="busalik"/>
-		<scale name="Ushaq Masri" scale="1" mode="3" note="0" filename="ushaq_masri"/>
-		<scale name="Rast Nahawand" scale="1" mode="6" note="0" filename="rast_nahawand"/>
-		<scale name="Saba Zamzam" scale="3" mode="0" note="0" filename="saba_zamzam"/>
-		<scale name="Zanjaran" scale="3" mode="2" note="0" filename="zanjaran"/>
-		<scale name="Zankulah" scale="3" mode="2" note="0" filename="zankulah"/>
-		<scale name="Shawq Afza" scale="3" mode="5" note="0" filename="shawq_afza"/>
-		<scale name="Nahawand Murassah" scale="3" mode="6" note="0" filename="nahawand_murassah"/>
-		<scale name="Sunbulah" scale="3" mode="6" note="0" filename="sunbulah"/>
-		<scale name="Suznak (Suzinak)" scale="0" mode="0" note="0" filename="suznak_suzinak"/>
-		<scale name="Bayati Shuri (Karjighar)" scale="0" mode="1" note="0" filename="bayati_shuri_karjighar"/>
-		<scale name="Huzam" scale="0" mode="2" note="0" filename="huzam"/>
-		<scale name="Rahat El Arwah" scale="0" mode="2" note="0" filename="rahat_el_arwah"/>
-		<scale name="Hijaz Rast" scale="0" mode="4" note="0" filename="hijaz_rast"/>
-	</system>
-
     <system name="Western">
 		<scale name="Harmonic Minor" scale="16" mode="0" note="0" filename="harmonic_minor"/>
 		<scale name="Minor Harmonic" scale="16" mode="0" note="0" filename="minor_harmonic"/>
@@ -92,6 +54,45 @@
 		<scale name="Diminished Half" scale="2" mode="1" note="0" filename="diminished_half"/>
 		<scale name="Octatonic (H-W)" scale="2" mode="1" note="0" filename="octatonic_h-w"/>
 	</system>
+    <system name="Arabic" divisions="48">
+		<scale name="Mohammedan" scale="16" mode="0" note="0.625" filename="mohammedan"/>
+		<scale name="Nahawand Hijaz" scale="16" mode="0" note="1" filename="nahawand_hijaz"/>
+		<scale name="Nikriz" scale="16" mode="3" note="3.25" filename="nikriz"/>
+		<scale name="Hijaz" scale="16" mode="4" note="1.75" filename="hijaz"/>
+		<scale name="Hijaz Nahawand" scale="16" mode="4" note="4.875" filename="hijaz_nahawand"/>
+		<scale name="Husseini" scale="13" mode="0" note="2.125" filename="husseini"/>
+		<scale name="Sikah Rast" scale="13" mode="1" note="0" filename="sikah_rast"/>
+		<scale name="Nairuz" scale="13" mode="3" note="0" filename="nairuz"/>
+		<scale name="Iraq" scale="13" mode="5" note="0" filename="iraq"/>
+		<scale name="Rast Rast" scale="13" mode="6" note="0" filename="rast_rast"/>
+		<scale name="Kurd" scale="8" mode="2" note="0" filename="kurd"/>
+		<scale name="Farahfaza" scale="8" mode="5" note="0" filename="farahfaza"/>
+		<scale name="Nahawand Kurd" scale="8" mode="5" note="0" filename="nahawand_kurd"/>
+		<scale name="Hijaz Kar" scale="5" mode="0" note="0" filename="hijaz_kar"/>
+		<scale name="Shadd Araban" scale="5" mode="0" note="0" filename="shadd_araban"/>
+		<scale name="Shahnaz" scale="5" mode="0" note="0" filename="shahnaz"/>
+		<scale name="Sikah Baladi" scale="5" mode="0" note="0" filename="sikah_baladi"/>
+		<scale name="Suzidil" scale="5" mode="0" note="0" filename="suzidil"/>
+		<scale name="Nawa Athar" scale="5" mode="3" note="0" filename="nawa_athar"/>
+		<scale name="Sikah Nahawand" scale="1" mode="1" note="0" filename="sikah_nahawand"/>
+		<scale name="Jiharkah" scale="1" mode="2" note="0" filename="jiharkah"/>
+		<scale name="Busalik" scale="1" mode="3" note="0" filename="busalik"/>
+		<scale name="Ushaq Masri" scale="1" mode="3" note="0" filename="ushaq_masri"/>
+		<scale name="Rast Nahawand" scale="1" mode="6" note="0" filename="rast_nahawand"/>
+		<scale name="Saba Zamzam" scale="3" mode="0" note="0" filename="saba_zamzam"/>
+		<scale name="Zanjaran" scale="3" mode="2" note="0" filename="zanjaran"/>
+		<scale name="Zankulah" scale="3" mode="2" note="0" filename="zankulah"/>
+		<scale name="Shawq Afza" scale="3" mode="5" note="0" filename="shawq_afza"/>
+		<scale name="Nahawand Murassah" scale="3" mode="6" note="0" filename="nahawand_murassah"/>
+		<scale name="Sunbulah" scale="3" mode="6" note="0" filename="sunbulah"/>
+		<scale name="Suznak (Suzinak)" scale="0" mode="0" note="0" filename="suznak_suzinak"/>
+		<scale name="Bayati Shuri (Karjighar)" scale="0" mode="1" note="0" filename="bayati_shuri_karjighar"/>
+		<scale name="Huzam" scale="0" mode="2" note="0" filename="huzam"/>
+		<scale name="Rahat El Arwah" scale="0" mode="2" note="0" filename="rahat_el_arwah"/>
+		<scale name="Hijaz Rast" scale="0" mode="4" note="0" filename="hijaz_rast"/>
+	</system>
+
+    
 
 		<system name="Armenian">
 		<scale name="Nihavend" scale="16" mode="0" note="0" filename="nihavend"/>

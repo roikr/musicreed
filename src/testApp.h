@@ -20,6 +20,11 @@ struct scale {
 	vector<float> notes;
 };
 
+struct chord {
+	vector<float> intervals;
+	string name;
+};
+
 
 class testApp : public ofSimpleApp {
 	
@@ -51,6 +56,7 @@ public:
 	int getState();
 	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
+	int findChord(float interval1,float interval2);
 	void setKeys();
 	
 	
@@ -82,11 +88,17 @@ public:
 	float firstNote;
 	int numDivisions;
 	
-	vector<string> keys;
+	
+	
 	
 	bool bRefreshDisplay;
 	
 	int state;
+	
+	vector<chord> chords;
+	
+	vector<string> chordsNames;
+	vector<string> keysNames;
 	
 };
 
