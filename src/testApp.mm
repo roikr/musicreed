@@ -111,6 +111,7 @@ void testApp::setup(){
 	
 	
 	bKeyDown = false;
+	bAltKeyDown = false;
 	
 	
 	
@@ -233,7 +234,7 @@ void testApp::draw(){
 		}	break;
 		case MUSICREED_STATE_CHORDS: {
 			int height = ofGetHeight()/HORIZONTAL_KEYS_NUMBER;
-			int width = ofGetWidth()/4;
+			int width = ofGetWidth()/5;
 			
 			
 			for (int i=0; i<HORIZONTAL_KEYS_NUMBER; i++) {
@@ -250,9 +251,33 @@ void testApp::draw(){
 				
 				ofNoFill();
 				ofSetColor(0xFFFFFF);
-				ttf.drawString(chordsNames[i % chordsNames.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+							  
 				
 				
+			}
+			
+			if (!altChords.empty()) {
+				for (vector<int>::iterator aiter=altChords.begin(); aiter!=altChords.end(); aiter++) {
+					if (bAltKeyDown && distance(altChords.begin(), aiter)==lastAltKey) {
+						ofFill();
+						ofSetColor(0xA0A0A0);
+					} else {
+						ofNoFill();
+						ofSetColor(0xFFFFFF);
+						
+					}
+					
+					
+				
+					float y = distance(altChords.begin(), aiter)* height;
+					ofRect(0, y,width, height);
+				
+					ofNoFill();
+					ofSetColor(0xFFFFFF);
+					ttf.drawString(chordNoteName+chords[*aiter].name, 0, y+ttf.getLineHeight());
+				
+				}
 			}
 		}	break;
 
@@ -335,22 +360,56 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 		case MUSICREED_STATE_CHORDS: {
 			inner.touchDown(pos);
 			if (!inner.getIsDown()) {
-				bKeyDown = true;
-				int key = (int)((ofGetHeight()-touch.y)/(ofGetHeight()/HORIZONTAL_KEYS_NUMBER)) ;
+				int height = ofGetHeight()/HORIZONTAL_KEYS_NUMBER;
+				int width = ofGetWidth()/5;
 				
-				for (int i=0; i<3; i++) {
-					int octave = floor((key+mode+2*i) / currentScale->notes.size());
-					float note = firstNote+currentScale->notes[(key+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+				if (touch.x>ofGetWidth()-width) {
+					bKeyDown = true;
+					int key = (int)((ofGetHeight()-touch.y)/(ofGetHeight()/HORIZONTAL_KEYS_NUMBER)) ;
+					
+					for (int i=0; i<3; i++) {
+						int octave = floor((key+mode+2*i) / currentScale->notes.size());
+						float note = firstNote+currentScale->notes[(key+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+						int midi = floor(48+2.0f*note);
+						float intpart;
+						int cents = floor(modf(2.0f*note,&intpart)*100.0f);
+						
+						printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
+						instrument.noteOn(midi, 64,cents);
+						
+						
+					}
+					lastKey = key;
+					
+					setAltChords();
+				}
+				
+				if (touch.x<width && touch.y/(ofGetHeight()/HORIZONTAL_KEYS_NUMBER)<altChords.size()) {
+					bAltKeyDown = true;
+					
+					int octave = floor((lastKey+mode) / currentScale->notes.size());
+					float firstChordNote = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+					float note = firstChordNote;
 					int midi = floor(48+2.0f*note);
 					float intpart;
 					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
-					
-					printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
 					instrument.noteOn(midi, 64,cents);
-					
-					
+
+					int key = (int)(touch.y/(ofGetHeight()/HORIZONTAL_KEYS_NUMBER)) ;
+					for (vector<float>::iterator niter = chords[altChords[key]].intervals.begin(); niter!=chords[altChords[key]].intervals.end(); niter++) {
+						
+						note = firstChordNote+*niter;
+						midi = floor(48+2.0f*note);
+						cents = floor(modf(2.0f*note,&intpart)*100.0f);
+						instrument.noteOn(midi, 64,cents);
+						
+					}
+					lastAltKey = key;
 				}
-				lastKey = key;
+				
+				
+				
+				
 			}
 		} break;
 		default:
@@ -421,6 +480,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	inner.touchUp(pos);
 	outer.touchUp(pos);
 	bKeyDown = false;
+	bAltKeyDown = false;
 }
 
 //--------------------------------------------------------------
@@ -506,8 +566,43 @@ void testApp::setScale(int scale,int mode,float note,int numDivisions,bool bAnim
 
 }
 
-int testApp::findChord(float interval1,float interval2) {
+
+void testApp::setAltChords() {
+	altChords.clear();	
 	
+	int firstScaleNote = evalScaleNote(firstNote);
+	float chordNote = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+floor((lastKey+mode) / currentScale->notes.size())*6-currentScale->notes[mode];
+	
+	chordNoteName = findNote(firstScaleNote+lastKey,chordNote);
+	
+		
+	for (vector<chord>::iterator citer=chords.begin(); citer!=chords.end(); citer++) {
+		int i=1;
+		vector<float>::iterator iiter=citer->intervals.begin();
+		
+		while (iiter!=citer->intervals.end() ) {
+			
+			float note = firstNote+currentScale->notes[(lastKey+mode+i) % currentScale->notes.size()]+floor((lastKey+mode+i) / currentScale->notes.size())*6-currentScale->notes[mode];
+			
+			if (note-chordNote<(*iiter)) {
+				i++;
+			} else if (note-chordNote==(*iiter)) {
+				iiter++;
+				i++;
+				
+			} else {
+				break;
+			}
+		}
+		
+		if (iiter==citer->intervals.end()) {
+			altChords.push_back(distance(chords.begin(),citer));
+		}
+			
+			
+			
+	
+	}
 	
 }
 
@@ -516,12 +611,12 @@ void testApp::setKeys() {
 	
 	
 	if (currentScale->notes.size()==7) {
-		int firstScale = evalScaleNote(firstNote);
+		int firstScaleNote = evalScaleNote(firstNote);
 		for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
 			int i = distance(currentScale->notes.begin(),iter);
 			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
-			keysNames.push_back(findNote(firstScale+i,knote));
-			printf("note: %i, %f, %s\n",firstScale+i,knote,keysNames.back().c_str());
+			keysNames.push_back(findNote(firstScaleNote+i,knote));
+			printf("note: %i, %f, %s\n",firstScaleNote+i,knote,keysNames.back().c_str());
 					 
 		}
 	} else {
@@ -534,9 +629,9 @@ void testApp::setKeys() {
 		}
 	}
 	
-	
-	chordsNames.clear();
-	int firstScale = evalScaleNote(firstNote);
+	altChords.clear();
+	chordsKeys.clear();
+	//int firstScaleNote = evalScaleNote(firstNote);
 	
 	for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
 		
@@ -556,14 +651,15 @@ void testApp::setKeys() {
 		
 		vector<chord>::iterator citer;
 		for (citer=chords.begin(); citer!=chords.end(); citer++) {
-			if (citer->intervals[0]==notes[1]-notes[0] && citer->intervals[1]==notes[2]-notes[1]) {
+			if (citer->intervals.size()==2 && citer->intervals[0]==notes[1]-notes[0] && citer->intervals[1]==notes[2]-notes[0]) {
 				break;
 			}
 		}
 		
 		assert(citer!=chords.end());
 				
-		chordsNames.push_back(findNote(firstScale+base,notes[0])+citer->name);
+		//chordsNames.push_back(findNote(firstScaleNote+base,notes[0])+citer->name);
+		chordsKeys.push_back(distance(chords.begin(),citer));
 		
 	}
 	

@@ -56,8 +56,8 @@ public:
 	int getState();
 	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
-	int findChord(float interval1,float interval2);
 	void setKeys();
+	void setAltChords();
 	
 	
 	Disc inner;
@@ -66,30 +66,27 @@ public:
 	ofxiTexture background;
 	ofxiTexture needle;
 		
-	
 	ofPoint center;
 	float scaleFactor;
 
 	ofxAudioInstrument instrument;
 	int bufferSize;
 	
-	bool bKeyDown;
 	int lastKey;
+	bool bKeyDown;
+	int lastAltKey;
+	bool bAltKeyDown;
+	string chordNoteName;
 	int lastArp;
 	
 	vector <scale> scales;
 	vector <scale>::iterator  currentScale;
 	vector <float> leaves;
 	
-		
-	
 	ofTrueTypeFont ttf;
 	int mode;
 	float firstNote;
 	int numDivisions;
-	
-	
-	
 	
 	bool bRefreshDisplay;
 	
@@ -97,7 +94,8 @@ public:
 	
 	vector<chord> chords;
 	
-	vector<string> chordsNames;
+	vector<int> chordsKeys;
+	vector<int> altChords;
 	vector<string> keysNames;
 	
 };
