@@ -15,22 +15,25 @@
 #include "easing.h"
 #include <cmath>
 
-void Disc::setup(string textureFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
+void Disc::setup(string textureFilename,string backgroundFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
 	
 	int bLoaded = click.load(clickFilename, bufferSize);
 	this->innerRadius = innerRadius;
 	this->outerRadius = outerRadius;
 	this->textureFilename = textureFilename;
+	this->backgroundFilename = backgroundFilename;
 	assert(bLoaded);
 
 }
 
 void Disc::loadTextures() {
 	texture.load(textureFilename);
+	background.load(backgroundFilename);
 }
 
 void Disc::unloadTextures() {
 	texture.release();
+	background.release();
 }
 
 void Disc::updatePhi(float phi,bool bStop) {
@@ -109,6 +112,7 @@ void Disc::update() {
 }
 
 void Disc::draw() {
+	background.draw();
 	ofPushMatrix();
 	ofTranslate((int)texture._width/2, (int)texture._height/2);
 	ofRotate(180*phi/M_PI+105);

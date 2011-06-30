@@ -8,6 +8,7 @@
 #include "ofxiTexture.h"
 #include "Disc.h"
 #include "ofTrueTypeFont.h"
+#include "ofxButton.h"
 
 enum {
 	MUSICREED_STATE_SCALES,
@@ -59,11 +60,14 @@ public:
 	void setKeys();
 	void setAltChords();
 	
+	int getNumKeys();
+	int getKeyWidth();
+	
 	
 	Disc inner;
 	Disc outer;
 	
-	ofxiTexture background;
+	ofxiTexture chordTex;
 	ofxiTexture needle;
 		
 	ofPoint center;
@@ -72,8 +76,12 @@ public:
 	ofxAudioInstrument instrument;
 	int bufferSize;
 	
+	
+	bool bDown;
+	ofPoint downPos;
+	ofPoint lastPos;
 	int lastKey;
-	bool bKeyDown;
+	
 	int lastAltKey;
 	bool bAltKeyDown;
 	string chordNoteName;
@@ -97,6 +105,10 @@ public:
 	vector<int> chordsKeys;
 	vector<int> altChords;
 	vector<string> keysNames;
+	
+	vector<ofxButton> noteButtons;
+	vector<ofxButton> chordButtons;
+	
 	
 };
 
