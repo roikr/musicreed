@@ -1,0 +1,420 @@
+<creed>
+    <leaves>
+		<leaf interval="0.5"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.25"/>
+		<leaf interval="0.25"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.25"/>
+		<leaf interval="0.25"/>
+		<leaf interval="0.5"/>
+		<leaf interval="0.375"/>
+		<leaf interval="0.125"/>
+		<leaf interval="0.5"/>
+	</leaves>
+    <scales>
+        <scale>
+            <note leaf="6"/>
+            <note leaf="8"/>
+            <note leaf="10"/>
+            <note leaf="12"/>
+            <note leaf="0"/>
+            <note leaf="1"/>
+            <note leaf="5"/>
+        </scale>
+        <scale>
+            <note leaf="2"/>
+            <note leaf="4"/>
+            <note leaf="6"/>
+            <note leaf="8"/>
+            <note leaf="11"/>
+            <note leaf="12"/>
+            <note leaf="0"/>
+        </scale>
+        <scale>
+            <note leaf="0"/>
+            <note leaf="2"/>
+            <note leaf="4"/>
+            <note leaf="6"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+            <note leaf="14"/>
+        </scale>
+        <scale>
+            <note leaf="3"/>
+            <note leaf="5"/>
+            <note leaf="7"/>
+            <note leaf="8"/>
+            <note leaf="12"/>
+            <note leaf="14"/>
+            <note leaf="1"/>
+        </scale>
+        <scale>
+            <note leaf="2"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+            <note leaf="1"/>
+        </scale>
+        
+        
+        
+        <scale>
+            <note leaf="7"/>
+            <note leaf="8"/>
+            <note leaf="12"/>
+            <note leaf="14"/>
+            <note leaf="1"/>
+            <note leaf="2"/>
+            <note leaf="6"/>
+        </scale>
+         <scale>
+            <note leaf="11"/>
+            <note leaf="13"/>
+            <note leaf="0"/>
+            <note leaf="2"/>
+            <note leaf="5"/>
+            <note leaf="6"/>
+            <note leaf="8"/>
+        </scale>
+        <scale>
+            <note leaf="5"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+            <note leaf="14"/>
+            <note leaf="1"/>
+            <note leaf="2"/>
+            <note leaf="3"/>
+        </scale>
+        <scale>
+            <note leaf="1"/>
+            <note leaf="3"/>
+            <note leaf="6"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="12"/>
+            <note leaf="0"/>
+        </scale>
+        
+        
+        <scale>
+            <note leaf="14"/>
+            <note leaf="2"/>
+            <note leaf="5"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+        </scale>
+        <scale>
+            <note leaf="12"/>
+            <note leaf="2"/>
+            <note leaf="3"/>
+            <note leaf="5"/>
+            <note leaf="6"/>
+            <note leaf="9"/>
+        </scale>
+        <scale>
+            <note leaf="0"/>
+            <note leaf="2"/>
+            <note leaf="3"/>
+            <note leaf="6"/>
+            <note leaf="8"/>
+            <note leaf="10"/>
+            <note leaf="14"/>
+        </scale>
+        <scale>
+            <note leaf="14"/>
+            <note leaf="1"/>
+            <note leaf="2"/>
+            <note leaf="5"/>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="12"/>
+        </scale>
+         <scale>
+            <note leaf="8"/>
+            <note leaf="10"/>
+            <note leaf="12"/>
+            <note leaf="0"/>
+            <note leaf="2"/>
+            <note leaf="4"/>
+            <note leaf="6"/>
+        </scale>
+        
+        
+        
+        <scale>
+            <note leaf="8"/>
+            <note leaf="10"/>
+            <note leaf="14"/>
+            <note leaf="0"/>
+            <note leaf="2"/>
+            <note leaf="4"/>
+            <note leaf="7"/>
+        </scale>
+        <scale>
+            <note leaf="1"/>
+            <note leaf="2"/>
+            <note leaf="5"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+        </scale>
+        <scale>
+            <note leaf="7"/>
+            <note leaf="9"/>
+            <note leaf="11"/>
+            <note leaf="14"/>
+            <note leaf="1"/>
+            <note leaf="2"/>
+            <note leaf="6"/>
+        </scale>
+        <scale>
+            <note leaf="3"/>
+            <note leaf="6"/>
+            <note leaf="8"/>
+            <note leaf="12"/>
+            <note leaf="0"/>
+        </scale>
+
+    </scales>
+	
+	<chords>
+		<chord name="">
+			<interval value="2"/>
+			<interval value="3.5"/>
+		</chord>
+		<chord name="m">
+			<interval value="1.5"/>
+			<interval value="3.5"/>
+		</chord>
+		<chord name="aug">
+			<interval value="2"/>
+			<interval value="4"/>
+		</chord>
+		<chord name="dim">
+			<interval value="1.5"/>
+			<interval value="3"/>
+		</chord>
+        <chord name="sus2">
+			<interval value="1"/>
+			<interval value="3.5"/>
+		</chord>
+        <chord name="sus4">
+			<interval value="2.5"/>
+			<interval value="3.5"/>
+		</chord>
+        <chord name="-5">
+			<interval value="2"/>
+			<interval value="3"/>
+		</chord>
+        <chord name="##5">
+			<interval value="2"/>
+			<interval value="4.5"/>
+		</chord>
+         <chord name="m#5">
+			<interval value="1.5"/>
+			<interval value="4"/>
+		</chord>
+         <chord name="sus4#5">
+			<interval value="2.5"/>
+			<interval value="4"/>
+		</chord>
+         <chord name="sus4(7)">
+			<interval value="2.5"/>
+			<interval value="5"/>
+		</chord>
+         <chord name="7">
+			<interval value="2"/>
+			<interval value="3.5"/>
+            <interval value="5"/>
+		</chord>
+        <chord name="maj7">
+			<interval value="2"/>
+			<interval value="3.5"/>
+             <interval value="5.5"/>
+		</chord>
+		<chord name="m7">
+			<interval value="1.5"/>
+			<interval value="3.5"/>
+            <interval value="5"/>
+		</chord>
+        <chord name="m7+">
+			<interval value="1.5"/>
+			<interval value="3.5"/>
+            <interval value="5.5"/>
+		</chord>
+
+	</chords>
+        
+        
+	<!--scales>
+		<scale first="2.5">
+			<note interval="1"/>
+			<note interval="0.75"/>
+			<note interval="0.75"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="1">
+			<note interval="0.75"/>
+			<note interval="0.75"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+		</scale>
+		<scale first="0">
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="1.5">
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+		</scale>
+		<scale first="1">
+			<note interval="2"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="2"/>
+			<note interval="0.5"/>
+		</scale-->
+		<!-- 5 -->
+		<!--scale first="3"> 
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="4.5">
+			<note interval="0.875"/>
+			<note interval="0.625"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+		</scale>
+		<scale first="2">
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="0.5"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="0.5">
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="5.5">
+			<note interval="1"/>
+			<note interval="1.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+		</scale-->
+		<!-- 10 -->
+		<!--scale first="5">
+			<note interval="1.5"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="1"/>
+		</scale>
+		<scale first="0">
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.75"/>
+			<note interval="1.25"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="5.5">
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="4.5">
+			<note interval="0.75"/>
+			<note interval="0.75"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.75"/>
+			<note interval="0.75"/>
+			<note interval="1"/>
+		</scale>
+		<scale first="4.5">
+			<note interval="0.75"/>
+			<note interval="1.25"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="0.75"/>
+			<note interval="1.25"/>
+			<note interval="0.5"/>
+		</scale-->
+		<!-- 15 -->
+		<!--scale first="0.5">
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="2"/>
+			<note interval="0.5"/>
+			<note interval="2"/>
+		</scale>
+		<scale first="4">
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="0.5"/>
+			<note interval="1.5"/>
+			<note interval="0.5"/>
+		</scale>
+		<scale first="1.5">
+			<note interval="1"/>
+			<note interval="1"/>
+			<note interval="1.5"/>
+			<note interval="1"/>
+			<note interval="1.5"/>
+		</scale>
+	</scales-->
+	
+</creed>
+	
+		
