@@ -23,16 +23,13 @@ void testApp::setup(){
 	
 	//ofBackground(255,0,0);
 	//ofSetCircleResolution(9);
-	
+	 
 	ofBackground(255,255,255);
-	
-	
-	
 	
 	ofxXmlSettings xml;
 	ofDisableDataPath();
-	assert(xml.loadFile(ofToResourcesDataPath("creed.xml")));
-	 ttf.loadFont(ofToResourcesDataPath("MAIAN.TTF"),12); 
+	assert(xml.loadFile(ofToResourcesPath("data/creed.xml")));
+	ttf.loadFont(ofToResourcesPath("MAIAN.TTF"),12); 
 	ofEnableDataPath();
 	xml.pushTag("creed");
 	
@@ -103,12 +100,12 @@ void testApp::setup(){
 	instrument.setup(256,2);
 	
 	for (int i=48; i<=72; i++) {
-		string filename = ofToResourcesDataPath("samples/Littlevoice_"+ofToString(i)+".caf");
+		string filename = ofToResourcesPath("data/samples/Littlevoice_"+ofToString(i)+".caf");
 		instrument.loadSample(filename,i);
 	}
 	
-	inner.setup(ofToResourcesDataPath("inner.pvr"),ofToResourcesDataPath("innerBg.pvr"),ofToResourcesDataPath("click.caf"), bufferSize,100,200);
-	outer.setup(ofToResourcesDataPath("outer.pvr"),ofToResourcesDataPath("outerBg.pvr"),ofToResourcesDataPath("click.caf"), bufferSize,200,500);
+	inner.setup(ofToResourcesPath("data/inner.pvr"),ofToResourcesPath("data/innerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,100,200);
+	outer.setup(ofToResourcesPath("data/outer.pvr"),ofToResourcesPath("data/outerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,200,500);
 	
 	
 	bDown = false;
@@ -156,8 +153,8 @@ void testApp::setup(){
 void testApp::resume() {
 	inner.loadTextures();
 	outer.loadTextures();
-	chordTex.loadPng(ofToResourcesPath("chord.png"));
-	needle.loadPng(ofToResourcesPath("needle.png"));
+	chordTex.load("chord.png",OFX_TEXTURE_TYPE_PNG);
+	needle.load("needle.png",OFX_TEXTURE_TYPE_PNG);
 	
 	
 	
