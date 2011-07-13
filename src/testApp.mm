@@ -4,6 +4,7 @@
 #include "ofxXmlSettings.h"
 #include "notationUtils.h"
 
+
 #define VERTICAL_KEYS_NUMBER 16
 #define HORIZONTAL_KEYS_NUMBER 8
 
@@ -68,6 +69,8 @@ void testApp::setup(){
 		printf("\n");
 		
 		xml.popTag();
+		s.layerName = xml.getAttribute("scale", "layer", "", i);
+		s.texture = new ofxiTexture();
 		//printf("scale: %i, leaf: %i, first:%.2f, notes: %i, last: %.2f\n",i,s.leaf,s.firstNote,(int)s.notes.size(),note);
 		scales.push_back(s);
 		
@@ -79,6 +82,8 @@ void testApp::setup(){
 	for (int i=0;i<xml.getNumTags("chord");i++) {
 		chord c;
 		c.name = xml.getAttribute("chord", "name", "", i);
+		c.layerName = xml.getAttribute("chord", "layer", "", i);
+		c.texture = new ofxiTexture();
 		xml.pushTag("chord", i);
 		for (int j=0;j<xml.getNumTags("interval");j++) {
 			c.intervals.push_back(xml.getAttribute("interval", "value", 0.0f, j));
@@ -99,13 +104,18 @@ void testApp::setup(){
 	
 	instrument.setup(256,2);
 	
-	for (int i=48; i<=72; i++) {
-		string filename = ofToResourcesPath("data/samples/Littlevoice_"+ofToString(i)+".caf");
+//	for (int i=48; i<=72; i++) {
+//		string filename = ofToResourcesPath("data/samples/Littlevoice_"+ofToString(i)+".caf");
+//		instrument.loadSample(filename,i);
+//	}
+	
+	for (int i=38; i<=72; i++) {
+		string filename = ofToResourcesPath("data/samples/oud_"+ofToString(i)+".caf");
 		instrument.loadSample(filename,i);
 	}
 	
-	inner.setup(ofToResourcesPath("data/inner.pvr"),ofToResourcesPath("data/innerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,100,200);
-	outer.setup(ofToResourcesPath("data/outer.pvr"),ofToResourcesPath("data/outerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,200,500);
+	inner.setup(/*ofToResourcesPath("data/inner.pvr"),*/ofToResourcesPath("data/innerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,100,200);
+	outer.setup(/*ofToResourcesPath("data/outer.pvr"),*/ofToResourcesPath("data/outerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,200,500);
 	
 	
 	bDown = false;
@@ -153,10 +163,23 @@ void testApp::setup(){
 void testApp::resume() {
 	inner.loadTextures();
 	outer.loadTextures();
-	chordTex.load("chord.png",OFX_TEXTURE_TYPE_PNG);
-	needle.load("needle.png",OFX_TEXTURE_TYPE_PNG);
 	
 	
+	scaleNeedle.load(ofToResourcesPath("data/scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleInnerPattern.load(ofToResourcesPath("data/scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleOuterPattern.load(ofToResourcesPath("data/scale_outer_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	
+	chordNeedle.load(ofToResourcesPath("data/chord_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordPattern.load(ofToResourcesPath("data/chord_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordMask.load(ofToResourcesPath("data/chord_mask.pvr"),OFX_TEXTURE_TYPE_PVR);
+	
+	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+		iter->texture->load(ofToResourcesPath("data/"+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
+	}
+	
+	for(vector <chord>::iterator iter=chords.begin();iter!=chords.end();iter++) {
+		iter->texture->load(ofToResourcesPath("data/"+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
+	}
 	
 	ofSoundStreamStart();
 }
@@ -164,8 +187,22 @@ void testApp::resume() {
 void testApp::suspend() {
 	inner.unloadTextures();
 	outer.unloadTextures();
-	chordTex.release();
-	needle.release();
+	scaleNeedle.release();
+	scaleInnerPattern.release();
+	scaleOuterPattern.release();
+	chordNeedle.release();
+	chordPattern.release();
+	chordMask.release();
+	
+	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+		iter->texture->release();
+	}
+	
+	for(vector <chord>::iterator iter=chords.begin();iter!=chords.end();iter++) {
+		iter->texture->release();
+	}
+	
+	
 }
 
 void testApp::soundStreamStart() {
@@ -290,32 +327,90 @@ void testApp::draw(){
 	
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
-	ofRectangle background(0,0,1024,1024);
-	ofTranslate(-(int)background.width/2, -(int)background.height/2);
+//	ofRectangle background(0,0,1024,1024);
+//	ofTranslate(-(int)background.width/2, -(int)background.height/2);
 	
 	
 	
-	if (state==MUSICREED_STATE_SCALES) {
-		
-		outer.draw();
+	switch (state) {
+		case MUSICREED_STATE_SCALES:
+			
+			outer.draw();
+			inner.draw();
+			
+			
+			ofPushMatrix();
+			ofRotate(180*inner.getPhi()/M_PI+105);
+			ofTranslate(-(int)scaleInnerPattern._width/2, -(int)scaleInnerPattern._height/2);
+			scaleInnerPattern.draw();
+			ofPopMatrix();
+			
+			ofPushMatrix();
+			ofRotate(180*outer.getPhi()/M_PI+105);
+			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
+			scaleOuterPattern.draw();
+			
+			
+			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+				ofSetColor(255,255,255,iter==currentScale ? 255 : 100);
+				iter->texture->draw();
+			}
+			ofPopMatrix();
+			
+			ofPushMatrix();
+			ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
+			scaleNeedle.draw();
+			ofPopMatrix();
+			break;
+		case MUSICREED_STATE_CHORDS: 
+			inner.draw();
+			
+			ofPushMatrix();
+			ofRotate(180*inner.getPhi()/M_PI+105);
+			ofTranslate(-(int)chordPattern._width/2, -(int)chordPattern._height/2);
+			chordPattern.draw();
+			ofPopMatrix();
+			
+			ofPushMatrix();
+			ofTranslate(-(int)chordNeedle._width/2, -(int)chordNeedle._height/2);
+			chordNeedle.draw();
+			ofPopMatrix();
+			
+			if (bDown) {
+				vector<chord>::iterator iter = chords.begin()+chordsKeys[lastKey % keysNames.size()];
+				ofPushMatrix();
+				ofTranslate(-(int)iter->texture->_width/2, -(int)iter->texture->_height/2);
+				iter->texture->draw();
+				ofPopMatrix();
+																		 
+				//ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				
+				
+			}
+
+			break;
+		default:
+			break;
 	}
 	
-	inner.draw();
 	
 	
-	needle.draw();
+	
+	
+	
+	
 	
 	
 	ofPopMatrix();
 	
-	if (state==MUSICREED_STATE_CHORDS) {
-		ofPushMatrix();
-		ofTranslate(center.x,center.y);
-		ofScale(scaleFactor*1.5f, scaleFactor*1.5f, 1);
-		ofTranslate(-(int)chordTex._width/2, -(int)chordTex._height/2);
-		chordTex.draw();
-		ofPopMatrix();
-	}
+//	if (state==MUSICREED_STATE_CHORDS) {
+//		ofPushMatrix();
+//		ofTranslate(center.x,center.y);
+//		ofScale(scaleFactor*1.5f, scaleFactor*1.5f, 1);
+//		ofTranslate(-(int)chordTex._width/2, -(int)chordTex._height/2);
+//		chordTex.draw();
+//		ofPopMatrix();
+//	}
 	
 	ofDisableAlphaBlending();
 	
@@ -332,6 +427,14 @@ void testApp::exit(){
 	suspend();
 	ofSoundStreamClose();
 	instrument.exit();
+	
+	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+		delete iter->texture;
+	}
+	
+	for(vector <chord>::iterator iter=chords.begin();iter!=chords.end();iter++) {
+		delete iter->texture;
+	}
 }
 
 void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {

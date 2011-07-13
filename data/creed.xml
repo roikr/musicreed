@@ -17,7 +17,7 @@
 		<leaf interval="0.5"/>
 	</leaves>
     <scales>
-        <scale>
+        <scale layer="R4-GREEN">
             <note leaf="6"/>
             <note leaf="8"/>
             <note leaf="10"/>
@@ -26,7 +26,7 @@
             <note leaf="1"/>
             <note leaf="5"/>
         </scale>
-        <scale>
+        <scale layer="R4-BLUE">
             <note leaf="2"/>
             <note leaf="4"/>
             <note leaf="6"/>
@@ -35,7 +35,7 @@
             <note leaf="12"/>
             <note leaf="0"/>
         </scale>
-        <scale>
+        <scale layer="R4-ORANGE">
             <note leaf="0"/>
             <note leaf="2"/>
             <note leaf="4"/>
@@ -45,7 +45,7 @@
             <note leaf="11"/>
             <note leaf="14"/>
         </scale>
-        <scale>
+        <scale layer="R4-BROWN">
             <note leaf="3"/>
             <note leaf="5"/>
             <note leaf="7"/>
@@ -54,7 +54,7 @@
             <note leaf="14"/>
             <note leaf="1"/>
         </scale>
-        <scale>
+        <scale layer="R4-TURQUOISE">
             <note leaf="2"/>
             <note leaf="7"/>
             <note leaf="9"/>
@@ -64,7 +64,7 @@
         
         
         
-        <scale>
+        <scale layer="R3-GREEN">
             <note leaf="7"/>
             <note leaf="8"/>
             <note leaf="12"/>
@@ -73,7 +73,7 @@
             <note leaf="2"/>
             <note leaf="6"/>
         </scale>
-         <scale>
+         <scale layer="R3-BLUE">
             <note leaf="11"/>
             <note leaf="13"/>
             <note leaf="0"/>
@@ -82,7 +82,7 @@
             <note leaf="6"/>
             <note leaf="8"/>
         </scale>
-        <scale>
+        <scale layer="R3-ORANGE">
             <note leaf="5"/>
             <note leaf="7"/>
             <note leaf="9"/>
@@ -92,7 +92,7 @@
             <note leaf="2"/>
             <note leaf="3"/>
         </scale>
-        <scale>
+        <scale layer="R3-BROWN">
             <note leaf="1"/>
             <note leaf="3"/>
             <note leaf="6"/>
@@ -103,7 +103,7 @@
         </scale>
         
         
-        <scale>
+        <scale layer="R2-GREEN">
             <note leaf="14"/>
             <note leaf="2"/>
             <note leaf="5"/>
@@ -111,7 +111,7 @@
             <note leaf="9"/>
             <note leaf="11"/>
         </scale>
-        <scale>
+        <scale layer="R2-BLUE">
             <note leaf="12"/>
             <note leaf="2"/>
             <note leaf="3"/>
@@ -119,7 +119,7 @@
             <note leaf="6"/>
             <note leaf="9"/>
         </scale>
-        <scale>
+        <scale layer="R2-ORANGE">
             <note leaf="0"/>
             <note leaf="2"/>
             <note leaf="3"/>
@@ -128,7 +128,7 @@
             <note leaf="10"/>
             <note leaf="14"/>
         </scale>
-        <scale>
+        <scale layer="R2-BROWN">
             <note leaf="14"/>
             <note leaf="1"/>
             <note leaf="2"/>
@@ -137,7 +137,7 @@
             <note leaf="9"/>
             <note leaf="12"/>
         </scale>
-         <scale>
+         <scale layer="R2-TURQUOISE">
             <note leaf="8"/>
             <note leaf="10"/>
             <note leaf="12"/>
@@ -149,7 +149,7 @@
         
         
         
-        <scale>
+        <scale layer="R1-GREEN">
             <note leaf="8"/>
             <note leaf="10"/>
             <note leaf="14"/>
@@ -158,14 +158,14 @@
             <note leaf="4"/>
             <note leaf="7"/>
         </scale>
-        <scale>
+        <scale layer="R1-BLUE">
             <note leaf="1"/>
             <note leaf="2"/>
             <note leaf="5"/>
             <note leaf="9"/>
             <note leaf="11"/>
         </scale>
-        <scale>
+        <scale layer="R1-BROWN">
             <note leaf="7"/>
             <note leaf="9"/>
             <note leaf="11"/>
@@ -174,7 +174,7 @@
             <note leaf="2"/>
             <note leaf="6"/>
         </scale>
-        <scale>
+        <scale layer="R1-TURQUOISE">
             <note leaf="3"/>
             <note leaf="6"/>
             <note leaf="8"/>
@@ -185,66 +185,66 @@
     </scales>
 	
 	<chords>
-		<chord name="">
+		<chord name="" layer="triadic_major">
 			<interval value="2"/>
 			<interval value="3.5"/>
 		</chord>
-		<chord name="m">
+		<chord name="m" layer="triadic_minor">
 			<interval value="1.5"/>
 			<interval value="3.5"/>
 		</chord>
-		<chord name="aug">
+		<chord name="aug" layer="triadic_augmented">
 			<interval value="2"/>
 			<interval value="4"/>
 		</chord>
-		<chord name="dim">
+		<chord name="dim" layer="triadic_diminished">
 			<interval value="1.5"/>
 			<interval value="3"/>
 		</chord>
-        <chord name="sus2">
+        <chord name="sus2" layer="triadic_sus2">
 			<interval value="1"/>
 			<interval value="3.5"/>
 		</chord>
-        <chord name="sus4">
+        <chord name="sus4" layer="triadic_sus4">
 			<interval value="2.5"/>
 			<interval value="3.5"/>
 		</chord>
-        <chord name="-5">
+        <chord name="-5" layer="triadic_major-5">
 			<interval value="2"/>
 			<interval value="3"/>
 		</chord>
-        <chord name="##5">
+        <chord name="##5" layer="triadic_major##5">
 			<interval value="2"/>
 			<interval value="4.5"/>
 		</chord>
-         <chord name="m#5">
+         <chord name="m#5" layer="triadic_minor#5">
 			<interval value="1.5"/>
 			<interval value="4"/>
 		</chord>
-         <chord name="sus4#5">
+         <chord name="sus4#5" layer="triadic_sus4#5">
 			<interval value="2.5"/>
 			<interval value="4"/>
 		</chord>
-         <chord name="sus4(7)">
+         <chord name="sus4(7)" layer="triadic_sus4_7">
 			<interval value="2.5"/>
 			<interval value="5"/>
 		</chord>
-         <chord name="7">
+         <chord name="7" layer="minor">
 			<interval value="2"/>
 			<interval value="3.5"/>
             <interval value="5"/>
 		</chord>
-        <chord name="maj7">
+        <chord name="maj7" layer="major">
 			<interval value="2"/>
 			<interval value="3.5"/>
              <interval value="5.5"/>
 		</chord>
-		<chord name="m7">
+		<chord name="m7" layer="minor">
 			<interval value="1.5"/>
 			<interval value="3.5"/>
             <interval value="5"/>
 		</chord>
-        <chord name="m7+">
+        <chord name="m7+" layer="major">
 			<interval value="1.5"/>
 			<interval value="3.5"/>
             <interval value="5.5"/>

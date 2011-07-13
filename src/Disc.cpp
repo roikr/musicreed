@@ -15,24 +15,24 @@
 #include "easing.h"
 #include <cmath>
 
-void Disc::setup(string textureFilename,string backgroundFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
+void Disc::setup(/*string textureFilename,*/string backgroundFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
 	
 	int bLoaded = click.load(clickFilename, bufferSize);
 	this->innerRadius = innerRadius;
 	this->outerRadius = outerRadius;
-	this->textureFilename = textureFilename;
+//	this->textureFilename = textureFilename;
 	this->backgroundFilename = backgroundFilename;
 	assert(bLoaded);
 
 }
 
 void Disc::loadTextures() {
-	texture.load(textureFilename);
+//	texture.load(textureFilename);
 	background.load(backgroundFilename);
 }
 
 void Disc::unloadTextures() {
-	texture.release();
+//	texture.release();
 	background.release();
 }
 
@@ -112,13 +112,16 @@ void Disc::update() {
 }
 
 void Disc::draw() {
-	background.draw();
 	ofPushMatrix();
-	ofTranslate((int)texture._width/2, (int)texture._height/2);
-	ofRotate(180*phi/M_PI+105);
-	ofTranslate(-(int)texture._width/2, -(int)texture._height/2);
-	texture.draw();
+	ofTranslate(-(int)background._width/2, -(int)background._height/2);
+	background.draw();
 	ofPopMatrix();
+//	ofPushMatrix();
+//	ofTranslate((int)texture._width/2, (int)texture._height/2);
+//	ofRotate(180*phi/M_PI+105);
+//	ofTranslate(-(int)texture._width/2, -(int)texture._height/2);
+//	texture.draw();
+//	ofPopMatrix();
 	
 }
 
@@ -258,4 +261,7 @@ void Disc::resetIsNewStop() {
 	bNewStop = false;
 }
 
+float Disc::getPhi() {
+	return phi;
+}
 

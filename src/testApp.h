@@ -19,11 +19,15 @@ enum {
 struct scale {
 	vector<int> leaves;
 	vector<float> notes;
+	string layerName;
+	ofxiTexture *texture;
 };
 
 struct chord {
 	vector<float> intervals;
 	string name;
+	string layerName;
+	ofxiTexture *texture;
 };
 
 
@@ -67,8 +71,14 @@ public:
 	Disc inner;
 	Disc outer;
 	
-	ofxiTexture chordTex;
-	ofxiTexture needle;
+	//ofxiTexture chordTex;
+	ofxiTexture scaleNeedle;
+	ofxiTexture scaleInnerPattern;
+	ofxiTexture scaleOuterPattern;
+	
+	ofxiTexture chordNeedle;
+	ofxiTexture chordPattern;
+	ofxiTexture chordMask;
 		
 	ofPoint center;
 	float scaleFactor;
@@ -108,6 +118,8 @@ public:
 	
 	vector<ofxButton> noteButtons;
 	vector<ofxButton> chordButtons;
+	
+	
 	
 	
 };

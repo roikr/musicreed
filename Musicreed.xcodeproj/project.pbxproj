@@ -17,12 +17,6 @@
 		E40B02F8137FC861001008FE /* MusicalSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B02F6137FC861001008FE /* MusicalSystem.m */; };
 		E40B0334137FD062001008FE /* Disc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40B0330137FD062001008FE /* Disc.cpp */; };
 		E40B0335137FD062001008FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40B0333137FD062001008FE /* testApp.mm */; };
-		E44AEC4713BB7A14006B957D /* chord.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4113BB7A14006B957D /* chord.png */; };
-		E44AEC4813BB7A14006B957D /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4213BB7A14006B957D /* inner.png */; };
-		E44AEC4913BB7A14006B957D /* innerBg.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4313BB7A14006B957D /* innerBg.png */; };
-		E44AEC4A13BB7A14006B957D /* needle.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4413BB7A14006B957D /* needle.png */; };
-		E44AEC4B13BB7A14006B957D /* outer.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4513BB7A14006B957D /* outer.png */; };
-		E44AEC4C13BB7A14006B957D /* outerBg.png in Resources */ = {isa = PBXBuildFile; fileRef = E44AEC4613BB7A14006B957D /* outerBg.png */; };
 		E44C046613C1EB5A00C0B62A /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E44C045D13C1EB5A00C0B62A /* install.xml */; };
 		E44C046713C1EB5A00C0B62A /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */; };
 		E44C046813C1EB5A00C0B62A /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C046113C1EB5A00C0B62A /* tinyxmlerror.cpp */; };
@@ -86,12 +80,6 @@
 		E40B0331137FD062001008FE /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = src/Disc.h; sourceTree = "<group>"; };
 		E40B0332137FD062001008FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = "<group>"; };
 		E40B0333137FD062001008FE /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = "<group>"; };
-		E44AEC4113BB7A14006B957D /* chord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chord.png; path = Resources/chord.png; sourceTree = "<group>"; };
-		E44AEC4213BB7A14006B957D /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inner.png; path = Resources/inner.png; sourceTree = "<group>"; };
-		E44AEC4313BB7A14006B957D /* innerBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = innerBg.png; path = Resources/innerBg.png; sourceTree = "<group>"; };
-		E44AEC4413BB7A14006B957D /* needle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = needle.png; path = Resources/needle.png; sourceTree = "<group>"; };
-		E44AEC4513BB7A14006B957D /* outer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = outer.png; path = Resources/outer.png; sourceTree = "<group>"; };
-		E44AEC4613BB7A14006B957D /* outerBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = outerBg.png; path = Resources/outerBg.png; sourceTree = "<group>"; };
 		E44C045D13C1EB5A00C0B62A /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		E44C046013C1EB5A00C0B62A /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -329,12 +317,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E44AEC4113BB7A14006B957D /* chord.png */,
-				E44AEC4213BB7A14006B957D /* inner.png */,
-				E44AEC4313BB7A14006B957D /* innerBg.png */,
-				E44AEC4413BB7A14006B957D /* needle.png */,
-				E44AEC4513BB7A14006B957D /* outer.png */,
-				E44AEC4613BB7A14006B957D /* outerBg.png */,
 				E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */,
 				E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */,
 				E4E650A3137FF7F700DFCE6E /* systems.xml */,
@@ -749,12 +731,6 @@
 				E4E650A5137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf in Resources */,
 				E4E650A6137FF7F700DFCE6E /* systems.xml in Resources */,
 				E4F89C8413B2437000A36E03 /* ChordsViewController.xib in Resources */,
-				E44AEC4713BB7A14006B957D /* chord.png in Resources */,
-				E44AEC4813BB7A14006B957D /* inner.png in Resources */,
-				E44AEC4913BB7A14006B957D /* innerBg.png in Resources */,
-				E44AEC4A13BB7A14006B957D /* needle.png in Resources */,
-				E44AEC4B13BB7A14006B957D /* outer.png in Resources */,
-				E44AEC4C13BB7A14006B957D /* outerBg.png in Resources */,
 				E44C046613C1EB5A00C0B62A /* install.xml in Resources */,
 				E4AF3F1B13C221760060359D /* README in Resources */,
 			);

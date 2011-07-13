@@ -16,7 +16,7 @@ class Disc {
 public:
 	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false),bNewStop(false) {};
 	
-	void setup(string textureFilename,string backgroundFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius);
+	void setup(/*string textureFilename,*/string backgroundFilename,string clickFilename,int bufferSize,int innerRadius,int outerRadius);
 	void update();
 	void draw();
 	void exit();
@@ -36,7 +36,7 @@ public:
 	bool getIsNewStop();
 	void resetIsNewStop();
 	
-	
+	float getPhi();
 		
 	ofxAudioFile click;
 		
@@ -57,7 +57,7 @@ private:
 	float omega;
 	float alpha;
 	
-	ofxiTexture texture;
+//	ofxiTexture texture;
 	ofxiTexture background;
 	
 	ofPoint pos;
