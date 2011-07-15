@@ -67,6 +67,8 @@ public:
 	int getNumKeys();
 	int getKeyWidth();
 	
+	void playChord(int chordIndex,float base);
+	
 	
 	Disc inner;
 	Disc outer;
@@ -101,6 +103,8 @@ public:
 	bool bAltKeyDown;
 	string chordNoteName;
 	int lastArp;
+	int lastChordIndex;
+	
 	
 	vector <scale> scales;
 	vector <scale>::iterator  currentScale;

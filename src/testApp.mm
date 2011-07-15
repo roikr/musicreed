@@ -407,19 +407,33 @@ void testApp::draw(){
 			chordNeedle.draw();
 			ofPopMatrix();
 			
-			if (bDown) {
+			if (bDown || bAltKeyDown) {
 				
-				vector<chord>::iterator iter = chords.begin()+chordsKeys[lastKey % keysNames.size()];
-				if (iter!=chords.end()) {
-					ofPushMatrix();
-					ofTranslate(-(int)iter->texture->_width/2, -(int)iter->texture->_height/2);
-					iter->texture->draw();
-					ofPopMatrix();
+				float note = currentScale->notes[(lastKey+mode) % currentScale->notes.size()]-currentScale->notes[mode];
+				
+				
+				ofPushMatrix();
+				ofRotate(90+note*60);
+				vector<chord>::iterator citer = chords.begin()+lastChordIndex;
+				ofTranslate(-(int)citer->texture->_width/2, -(int)citer->texture->_height/2);
+				citer->texture->draw();
+				ofPopMatrix();
+				
+				
+				vector<float> notes;
+				notes.push_back(note);
+				for (vector<float>::iterator iter = chords[lastChordIndex].intervals.begin(); iter!=chords[lastChordIndex].intervals.end(); iter++) {
+					notes.push_back(note+*iter);
 				}
 				
-																		 
-				//ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 				
+				for (vector<float>::iterator iter = notes.begin(); iter!=notes.end();iter++) {
+					ofPushMatrix();
+					ofRotate(90+(*iter)*60);
+					ofTranslate(-(int)chordMask._width/2, -(int)chordMask._height/2);
+					chordMask.draw();
+					ofPopMatrix();
+				}
 				
 			}
 
@@ -460,12 +474,6 @@ void testApp::draw(){
 	
 	//ofDisableAlphaBlending();
 	
-	
-	
-	
-	
-	
-	
 }
 
 //--------------------------------------------------------------
@@ -503,6 +511,24 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	
 	
 }
+
+void testApp::playChord(int chordIndex,float base) {
+	vector<float> notes;
+	notes.push_back(base);
+	for (vector<float>::iterator iter = chords[chordIndex].intervals.begin(); iter!=chords[chordIndex].intervals.end(); iter++) {
+		notes.push_back(base+*iter);
+	}
+	
+	instrument.noteOffAll();
+	for (vector<float>::iterator iter = notes.begin(); iter!=notes.end();iter++) {
+		int midi = floor(48+2.0f*(*iter));
+		float intpart;
+		float cents = floor(modf(2.0f*(*iter),&intpart)*100.0f);
+		instrument.noteOn(midi, 64,cents);
+	}
+}
+
+
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
@@ -555,23 +581,17 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					downPos=lastPos=ofPoint(touch.x,touch.y);
 					
 					int key = (int)((ofGetHeight()-downPos.y)/(ofGetHeight()/getNumKeys())) ;
+					
 					chordButtons[key].setDown(true);
 					
-					instrument.noteOffAll();
-					for (int i=0; i<3; i++) {
-						int octave = floor((key+mode+2*i) / currentScale->notes.size());
-						float note = firstNote+currentScale->notes[(key+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
-						int midi = floor(48+2.0f*note);
-						float intpart;
-						int cents = floor(modf(2.0f*note,&intpart)*100.0f);
-						
-						printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
-						
-						instrument.noteOn(midi, 64,cents);
-						
-						
-					}
+					int octave = floor((key+mode) / currentScale->notes.size());
+					int index = chordsKeys[key % chordsKeys.size()];
+					float base = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+					playChord(index, base);
+
 					lastKey = key;
+					lastChordIndex = index;
+					
 					
 					setAltChords();
 				}
@@ -579,24 +599,16 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 				if (touch.x<getKeyWidth() && touch.y/(ofGetHeight()/getNumKeys())<altChords.size()) {
 					bAltKeyDown = true;
 					
+					
 					int octave = floor((lastKey+mode) / currentScale->notes.size());
-					float firstChordNote = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
-					float note = firstChordNote;
-					int midi = floor(48+2.0f*note);
-					float intpart;
-					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
-					instrument.noteOffAll();
-					instrument.noteOn(midi, 64,cents);
-
+					
+					float base = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 					int key = (int)(touch.y/(ofGetHeight()/getNumKeys())) ;
-					for (vector<float>::iterator niter = chords[altChords[key]].intervals.begin(); niter!=chords[altChords[key]].intervals.end(); niter++) {
-						
-						note = firstChordNote+*niter;
-						midi = floor(48+2.0f*note);
-						cents = floor(modf(2.0f*note,&intpart)*100.0f);
-						instrument.noteOn(midi, 64,cents);
-						
-					}
+					int index = altChords[key % altChords.size()];
+					playChord(index, base);
+										
+					lastChordIndex = index;
+					
 					lastAltKey = key;
 				}
 				
