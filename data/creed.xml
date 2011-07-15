@@ -35,7 +35,7 @@
             <note leaf="12"/>
             <note leaf="0"/>
         </scale>
-        <scale layer="R4-ORANGE">
+        <scale layer="R4-YELLOW">
             <note leaf="0"/>
             <note leaf="2"/>
             <note leaf="4"/>
@@ -82,7 +82,7 @@
             <note leaf="6"/>
             <note leaf="8"/>
         </scale>
-        <scale layer="R3-ORANGE">
+        <scale layer="R3-YELLOW">
             <note leaf="5"/>
             <note leaf="7"/>
             <note leaf="9"/>
@@ -119,7 +119,7 @@
             <note leaf="6"/>
             <note leaf="9"/>
         </scale>
-        <scale layer="R2-ORANGE">
+        <scale layer="R2-YELLOW">
             <note leaf="0"/>
             <note leaf="2"/>
             <note leaf="3"/>

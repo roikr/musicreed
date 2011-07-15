@@ -76,6 +76,11 @@ public:
 	ofxiTexture scaleInnerPattern;
 	ofxiTexture scaleOuterPattern;
 	
+	ofxiTexture innerBackground;
+	ofxiTexture outerBackground;
+	ofxiTexture innerHighlights;
+	ofxiTexture outerHighlights;
+	
 	ofxiTexture chordNeedle;
 	ofxiTexture chordPattern;
 	ofxiTexture chordMask;

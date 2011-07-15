@@ -114,8 +114,8 @@ void testApp::setup(){
 		instrument.loadSample(filename,i);
 	}
 	
-	inner.setup(/*ofToResourcesPath("data/inner.pvr"),*/ofToResourcesPath("data/innerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,100,200);
-	outer.setup(/*ofToResourcesPath("data/outer.pvr"),*/ofToResourcesPath("data/outerBg.pvr"),ofToResourcesPath("data/click.caf"), bufferSize,200,500);
+	inner.setup(/*ofToResourcesPath("data/inner.pvr"),ofToResourcesPath("data/innerBg.pvr"),*/ofToResourcesPath("data/click.caf"), bufferSize,100,200);
+	outer.setup(/*ofToResourcesPath("data/outer.pvr"),ofToResourcesPath("data/outerBg.pvr"),*/ofToResourcesPath("data/click.caf"), bufferSize,200,500);
 	
 	
 	bDown = false;
@@ -161,9 +161,14 @@ void testApp::setup(){
 
 
 void testApp::resume() {
-	inner.loadTextures();
-	outer.loadTextures();
+//	inner.loadTextures();
+//	outer.loadTextures();
 	
+	
+	innerBackground.load(ofToResourcesPath("data/inner_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	outerBackground.load(ofToResourcesPath("data/outer_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	innerHighlights.load(ofToResourcesPath("data/inner_highlights.pvr"),OFX_TEXTURE_TYPE_PVR);
+	outerHighlights.load(ofToResourcesPath("data/outer_highlights.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	scaleNeedle.load(ofToResourcesPath("data/scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleInnerPattern.load(ofToResourcesPath("data/scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -185,8 +190,14 @@ void testApp::resume() {
 }
 
 void testApp::suspend() {
-	inner.unloadTextures();
-	outer.unloadTextures();
+//	inner.unloadTextures();
+//	outer.unloadTextures();
+	
+	innerBackground.release();
+	outerBackground.release();
+	innerHighlights.release();
+	outerHighlights.release();
+	
 	scaleNeedle.release();
 	scaleInnerPattern.release();
 	scaleOuterPattern.release();
@@ -290,7 +301,9 @@ void testApp::draw(){
 				ttf.drawString(keysNames[i % keysNames.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 				break;
 			case MUSICREED_STATE_CHORDS:
-				ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				if (chordsKeys[i % keysNames.size()] < chordsKeys.size()) {
+					ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
+				}
 				
 				break;
 				
@@ -320,9 +333,10 @@ void testApp::draw(){
 		}
 	}
 				
-			
+	//glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	
 	ofPushMatrix();
-	ofEnableAlphaBlending(); // for png textures not for pvr
+	//ofEnableAlphaBlending(); // for png textures not for pvr
 	
 	
 	ofTranslate(center.x,center.y);
@@ -332,30 +346,47 @@ void testApp::draw(){
 	
 	
 	
+	ofPushMatrix();
+	ofTranslate(-(int)innerBackground._width/2, -(int)innerBackground._height/2);
+	innerBackground.draw();
+	ofPopMatrix();
+	
+	if (state==MUSICREED_STATE_SCALES) {
+		ofPushMatrix();
+		ofTranslate(-(int)outerBackground._width/2, -(int)outerBackground._height/2);
+		outerBackground.draw();
+		ofPopMatrix();
+	}
+	
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
 			
-			outer.draw();
-			inner.draw();
+//			outer.draw();
+//			inner.draw();
+			
+			
 			
 			
 			ofPushMatrix();
-			ofRotate(180*inner.getPhi()/M_PI+105);
+			ofRotate(180*inner.getPhi()/M_PI+90);
 			ofTranslate(-(int)scaleInnerPattern._width/2, -(int)scaleInnerPattern._height/2);
 			scaleInnerPattern.draw();
 			ofPopMatrix();
 			
 			ofPushMatrix();
-			ofRotate(180*outer.getPhi()/M_PI+105);
+			ofRotate(180*outer.getPhi()/M_PI+90);
 			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
 			scaleOuterPattern.draw();
 			
 			
 			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
-				ofSetColor(255,255,255,iter==currentScale ? 255 : 100);
+				//ofSetColor(255,255,255,iter==currentScale ? 255 : 100);
+				glColor4f(1.0f, 1.0f, 1.0f,iter==currentScale ? 1.0f : 0.25f);
 				iter->texture->draw();
 			}
 			ofPopMatrix();
+			
+			//glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			
 			ofPushMatrix();
 			ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
@@ -363,10 +394,10 @@ void testApp::draw(){
 			ofPopMatrix();
 			break;
 		case MUSICREED_STATE_CHORDS: 
-			inner.draw();
+			//inner.draw();
 			
 			ofPushMatrix();
-			ofRotate(180*inner.getPhi()/M_PI+105);
+			ofRotate(180*inner.getPhi()/M_PI+90);
 			ofTranslate(-(int)chordPattern._width/2, -(int)chordPattern._height/2);
 			chordPattern.draw();
 			ofPopMatrix();
@@ -377,11 +408,15 @@ void testApp::draw(){
 			ofPopMatrix();
 			
 			if (bDown) {
+				
 				vector<chord>::iterator iter = chords.begin()+chordsKeys[lastKey % keysNames.size()];
-				ofPushMatrix();
-				ofTranslate(-(int)iter->texture->_width/2, -(int)iter->texture->_height/2);
-				iter->texture->draw();
-				ofPopMatrix();
+				if (iter!=chords.end()) {
+					ofPushMatrix();
+					ofTranslate(-(int)iter->texture->_width/2, -(int)iter->texture->_height/2);
+					iter->texture->draw();
+					ofPopMatrix();
+				}
+				
 																		 
 				//ttf.drawString(keysNames[i % keysNames.size()]+chords[chordsKeys[i % keysNames.size()]].name,ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));
 				
@@ -395,10 +430,21 @@ void testApp::draw(){
 	
 	
 	
+//	ofEnableAlphaBlending();
 	
+	ofPushMatrix();
+	ofTranslate(-(int)innerHighlights._width/2, -(int)innerHighlights._height/2);
+	innerHighlights.draw();
+	ofPopMatrix();
 	
+	if (state==MUSICREED_STATE_SCALES) {
+		ofPushMatrix();
+		ofTranslate(-(int)outerHighlights._width/2, -(int)outerHighlights._height/2);
+		outerHighlights.draw();
+		ofPopMatrix();
+	}
 	
-	
+//	ofDisableAlphaBlending();
 	
 	
 	ofPopMatrix();
@@ -412,7 +458,7 @@ void testApp::draw(){
 //		ofPopMatrix();
 //	}
 	
-	ofDisableAlphaBlending();
+	//ofDisableAlphaBlending();
 	
 	
 	
@@ -490,7 +536,8 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 				int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 				
 				printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
-				instrument.noteOn(midi, 127,cents);
+				instrument.noteOffAll();
+				instrument.noteOn(midi, 100,cents);
 				
 				//instrument.noteOn(lastKey+lastArp*4, 127);
 				//instrument.noteOff(iter->note);
@@ -510,7 +557,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					int key = (int)((ofGetHeight()-downPos.y)/(ofGetHeight()/getNumKeys())) ;
 					chordButtons[key].setDown(true);
 					
-					
+					instrument.noteOffAll();
 					for (int i=0; i<3; i++) {
 						int octave = floor((key+mode+2*i) / currentScale->notes.size());
 						float note = firstNote+currentScale->notes[(key+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
@@ -519,6 +566,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 						int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 						
 						printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
+						
 						instrument.noteOn(midi, 64,cents);
 						
 						
@@ -537,6 +585,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					int midi = floor(48+2.0f*note);
 					float intpart;
 					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
+					instrument.noteOffAll();
 					instrument.noteOn(midi, 64,cents);
 
 					int key = (int)(touch.y/(ofGetHeight()/getNumKeys())) ;
@@ -600,7 +649,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 					
 					printf("note: %3.3f, midi: %i, cents: %i\n",note,midi,cents);
-					instrument.noteOn(midi, 127,cents);
+					instrument.noteOn(midi, 100,cents);
 					
 					lastKey = key;
 					lastArp = arp;
@@ -799,15 +848,19 @@ void testApp::setKeys() {
 		vector<float> notes;
 		int base = distance(currentScale->notes.begin(),iter);
 		
+		printf("chord base: %i\t",base+mode);
+		
 		for (int i=0; i<3; i++) {
 			
 			int octave = floor((base+mode+2*i) / currentScale->notes.size());
-			float note = firstNote+currentScale->notes[(base+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+			float note = currentScale->notes[(base+mode+2*i) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 			
 			//printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
-			notes.push_back(note);			
+			notes.push_back(note);	
+			printf("%.2f\t",note);
 			
 		}
+		printf("\n");
 		
 		
 		vector<chord>::iterator citer;
@@ -817,7 +870,7 @@ void testApp::setKeys() {
 			}
 		}
 		
-		assert(citer!=chords.end());
+		//assert(citer!=chords.end());
 				
 		//chordsNames.push_back(findNote(firstScaleNote+base,notes[0])+citer->name);
 		chordsKeys.push_back(distance(chords.begin(),citer));
