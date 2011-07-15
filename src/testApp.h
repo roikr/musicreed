@@ -68,6 +68,7 @@ public:
 	int getKeyWidth();
 	
 	void playChord(int chordIndex,float base);
+	void strumChord(int chordIndex,float base);
 	
 	
 	Disc inner;
@@ -130,7 +131,8 @@ public:
 	vector<ofxButton> noteButtons;
 	vector<ofxButton> chordButtons;
 	
-	
+	vector<float>strumNotes;
+	int lastStrum;
 	
 	
 };

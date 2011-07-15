@@ -7,6 +7,7 @@
 
 #define VERTICAL_KEYS_NUMBER 16
 #define HORIZONTAL_KEYS_NUMBER 8
+#define STRUM_DELAY 50
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -168,6 +169,7 @@ void testApp::setup(){
 	}
 	
 	
+	
 }
 
 
@@ -261,6 +263,18 @@ void testApp::update(){
 		outer.resetIsNewStop();
 		bRefreshDisplay = true;
 		// = -note * 2.0f * M_PI / 6.0f;
+	}
+	
+	if (!strumNotes.empty()) {
+		if (ofGetElapsedTimeMillis()-lastStrum>STRUM_DELAY) {
+			vector<float>::iterator iter = strumNotes.begin();
+			int midi = floor(48+2.0f*(*iter));
+			float intpart;
+			float cents = floor(modf(2.0f*(*iter),&intpart)*100.0f);
+			instrument.noteOn(midi, 64,cents);
+			strumNotes.erase(strumNotes.begin());
+			lastStrum = ofGetElapsedTimeMillis();
+		}
 	}
 }
 
@@ -553,6 +567,18 @@ void testApp::playChord(int chordIndex,float base) {
 	}
 }
 
+void testApp::strumChord(int chordIndex,float base) {
+	strumNotes.push_back(base);
+	for (vector<float>::iterator iter = chords[chordIndex].intervals.begin(); iter!=chords[chordIndex].intervals.end(); iter++) {
+		strumNotes.push_back(base+*iter);
+	}
+	
+	instrument.noteOffAll();
+	lastStrum = ofGetElapsedTimeMillis();
+	
+		
+}
+
 
 
 //--------------------------------------------------------------
@@ -612,7 +638,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					int octave = floor((key+mode) / currentScale->notes.size());
 					int index = chordsKeys[key % chordsKeys.size()];
 					float base = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
-					playChord(index, base);
+					strumChord(index, base);
 
 					lastKey = key;
 					lastChordIndex = index;
@@ -630,7 +656,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					float base = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 					int key = (int)(touch.y/(ofGetHeight()/getNumKeys())) ;
 					int index = altChords[key % altChords.size()];
-					playChord(index, base);
+					strumChord(index, base);
 										
 					lastChordIndex = index;
 					
