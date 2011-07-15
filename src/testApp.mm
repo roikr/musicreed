@@ -130,13 +130,25 @@ void testApp::setup(){
 	
 	setState( MUSICREED_STATE_SCALES);
 	
+	int colorsArray[] = {0x111e14,0x26362b,0x0f1f1d,0x030f19,0x253738,0x1e2b2f,0x414740,0x505956,0x7e7b6a};
+	vector<ofColor> colors;
+	for (int i=0; i< sizeof(colorsArray)/sizeof(int); i++) {
+		ofColor color;
+		color.r=colorsArray[i]>>16;
+		color.g=(colorsArray[i]>>8) & 0xFF;
+		color.b=colorsArray[i] & 0xFF;
+		color.a=255;
+		
+		colors.push_back(color);
+	}
 	
+	/*
 	ofColor color;
 	color.r=150;
 	color.g=40;
 	color.b=60;
 	color.a=255;
-	
+	*/
 	
 	int height = ofGetHeight()/VERTICAL_KEYS_NUMBER;
 	int width = ofGetWidth()/4;
@@ -144,7 +156,7 @@ void testApp::setup(){
 	
 	
 	for (int i=0; i<VERTICAL_KEYS_NUMBER; i++) {
-		noteButtons.push_back(ofxButton(ofRectangle(0, ofGetHeight()-(i+1)* height,ofGetWidth(), height),color));
+		noteButtons.push_back(ofxButton(ofRectangle(0, ofGetHeight()-(i+1)* height,ofGetWidth(), height),colors[i % colors.size()]));
 	}
 		
 	
@@ -152,7 +164,7 @@ void testApp::setup(){
 	width = ofGetHeight()/5;
 	
 	for (int i=0; i<HORIZONTAL_KEYS_NUMBER; i++) {
-		chordButtons.push_back(ofxButton(ofRectangle(0, ofGetWidth()-(i+1)* height,ofGetHeight(), height),color));
+		chordButtons.push_back(ofxButton(ofRectangle(0, ofGetWidth()-(i+1)* height,ofGetHeight(), height),colors[i % colors.size()]));
 	}
 	
 	
@@ -164,7 +176,7 @@ void testApp::resume() {
 //	inner.loadTextures();
 //	outer.loadTextures();
 	
-	
+	keysTexture.load(ofToResourcesPath("data/keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
 	innerBackground.load(ofToResourcesPath("data/inner_background.pvr"),OFX_TEXTURE_TYPE_PVR);
 	outerBackground.load(ofToResourcesPath("data/outer_background.pvr"),OFX_TEXTURE_TYPE_PVR);
 	innerHighlights.load(ofToResourcesPath("data/inner_highlights.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -193,6 +205,7 @@ void testApp::suspend() {
 //	inner.unloadTextures();
 //	outer.unloadTextures();
 	
+	keysTexture.release();
 	innerBackground.release();
 	outerBackground.release();
 	innerHighlights.release();
@@ -277,9 +290,21 @@ void testApp::draw(){
 				break;
 		}
 		
+	}
+	
+	ofSetColor(255, 255, 255,50);
+	ofEnableAlphaBlending();
+	keysTexture.draw();
+	ofDisableAlphaBlending();
+	
+	
+	for (int i=0; i<getNumKeys(); i++) {
 		
 		
-		 
+		
+		
+		
+		
 		if (bDown) {
 			if ( i==(int)((ofGetHeight()-lastPos.y)/(ofGetHeight()/getNumKeys()))) {
 				ofSetColor(200,200,200,0.2);
@@ -289,13 +314,13 @@ void testApp::draw(){
 		
 		ofNoFill();
 		ofSetColor(0xFFFFFF);
-				
-//		char str[15];
-//		int octave = floor((i+mode) / currentScale->notes.size());
-//		float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
-//
-//		sprintf(str, "%s(%2.3f)",keys[i % keys.size()].c_str(),note);
-
+		
+		//		char str[15];
+		//		int octave = floor((i+mode) / currentScale->notes.size());
+		//		float note = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+		//
+		//		sprintf(str, "%s(%2.3f)",keys[i % keys.size()].c_str(),note);
+		
 		switch (state) {
 			case MUSICREED_STATE_SCALES:
 				ttf.drawString(keysNames[i % keysNames.size()], ofGetWidth()-width, ofGetHeight()-(i*height+ttf.getLineHeight()));

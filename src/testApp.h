@@ -86,6 +86,8 @@ public:
 	ofxiTexture chordNeedle;
 	ofxiTexture chordPattern;
 	ofxiTexture chordMask;
+	
+	ofxiTexture keysTexture;
 		
 	ofPoint center;
 	float scaleFactor;
