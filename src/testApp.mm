@@ -380,9 +380,7 @@ void testApp::draw(){
 	
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
-//	ofRectangle background(0,0,1024,1024);
-//	ofTranslate(-(int)background.width/2, -(int)background.height/2);
-	
+
 	
 	
 	ofPushMatrix();
@@ -397,14 +395,9 @@ void testApp::draw(){
 		ofPopMatrix();
 	}
 	
+	
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
-			
-//			outer.draw();
-//			inner.draw();
-			
-			
-			
 			
 			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
@@ -416,24 +409,10 @@ void testApp::draw(){
 			ofRotate(180*outer.getPhi()/M_PI+90);
 			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
 			scaleOuterPattern.draw();
-			
-			
-			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
-				//ofSetColor(255,255,255,iter==currentScale ? 255 : 100);
-				glColor4f(1.0f, 1.0f, 1.0f,iter==currentScale ? 1.0f : 0.25f);
-				iter->texture->draw();
-			}
 			ofPopMatrix();
 			
-			//glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-			
-			ofPushMatrix();
-			ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
-			scaleNeedle.draw();
-			ofPopMatrix();
 			break;
 		case MUSICREED_STATE_CHORDS: 
-			//inner.draw();
 			
 			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
@@ -441,10 +420,44 @@ void testApp::draw(){
 			chordPattern.draw();
 			ofPopMatrix();
 			
+			break;
+		default:
+			break;
+	}
+	
+	
+	
+	ofPushMatrix();
+	ofTranslate(-(int)innerHighlights._width/2, -(int)innerHighlights._height/2);
+	innerHighlights.draw();
+	ofPopMatrix();
+	
+	if (state==MUSICREED_STATE_SCALES) {
+		ofPushMatrix();
+		ofTranslate(-(int)outerHighlights._width/2, -(int)outerHighlights._height/2);
+		outerHighlights.draw();
+		ofPopMatrix();
+	}
+	
+	
+	switch (state) {
+		case MUSICREED_STATE_SCALES:
+			
+			
 			ofPushMatrix();
-			ofTranslate(-(int)chordNeedle._width/2, -(int)chordNeedle._height/2);
-			chordNeedle.draw();
+			ofRotate(180*outer.getPhi()/M_PI+90);
+			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
+					
+			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+				glColor4f(1.0f, 1.0f, 1.0f,iter==currentScale ? 1.0f : 0.25f);
+				iter->texture->draw();
+			}
 			ofPopMatrix();
+			
+		
+			break;
+		case MUSICREED_STATE_CHORDS: 
+			
 			
 			if (bDown || bAltKeyDown) {
 				
@@ -482,36 +495,28 @@ void testApp::draw(){
 	}
 	
 	
+	glColor4f(1.0f, 1.0f, 1.0f,1.0f);
 	
-//	ofEnableAlphaBlending();
-	
-	ofPushMatrix();
-	ofTranslate(-(int)innerHighlights._width/2, -(int)innerHighlights._height/2);
-	innerHighlights.draw();
-	ofPopMatrix();
-	
-	if (state==MUSICREED_STATE_SCALES) {
-		ofPushMatrix();
-		ofTranslate(-(int)outerHighlights._width/2, -(int)outerHighlights._height/2);
-		outerHighlights.draw();
-		ofPopMatrix();
+	switch (state) {
+		case MUSICREED_STATE_SCALES:
+			ofPushMatrix();
+			ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
+			scaleNeedle.draw();
+			ofPopMatrix();
+			break;
+		case MUSICREED_STATE_CHORDS:
+			ofPushMatrix();
+			ofTranslate(-(int)chordNeedle._width/2, -(int)chordNeedle._height/2);
+			chordNeedle.draw();
+			ofPopMatrix();
+			break;
+		default:
+			break;
 	}
 	
-//	ofDisableAlphaBlending();
-	
-	
 	ofPopMatrix();
 	
-//	if (state==MUSICREED_STATE_CHORDS) {
-//		ofPushMatrix();
-//		ofTranslate(center.x,center.y);
-//		ofScale(scaleFactor*1.5f, scaleFactor*1.5f, 1);
-//		ofTranslate(-(int)chordTex._width/2, -(int)chordTex._height/2);
-//		chordTex.draw();
-//		ofPopMatrix();
-//	}
-	
-	//ofDisableAlphaBlending();
+
 	
 }
 
