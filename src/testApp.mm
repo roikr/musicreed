@@ -179,10 +179,11 @@ void testApp::resume() {
 //	outer.loadTextures();
 	
 	keysTexture.load(ofToResourcesPath("data/keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
-	innerBackground.load(ofToResourcesPath("data/inner_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	outerBackground.load(ofToResourcesPath("data/outer_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	innerHighlights.load(ofToResourcesPath("data/inner_highlights.pvr"),OFX_TEXTURE_TYPE_PVR);
-	outerHighlights.load(ofToResourcesPath("data/outer_highlights.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleBackground.load(ofToResourcesPath("data/scale_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordBackground.load(ofToResourcesPath("data/chord_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleHighlight.load(ofToResourcesPath("data/scale_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordHighlight.load(ofToResourcesPath("data/chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
+//	shadow.load(ofToResourcesPath("data/shadow.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	scaleNeedle.load(ofToResourcesPath("data/scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleInnerPattern.load(ofToResourcesPath("data/scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -208,10 +209,10 @@ void testApp::suspend() {
 //	outer.unloadTextures();
 	
 	keysTexture.release();
-	innerBackground.release();
-	outerBackground.release();
-	innerHighlights.release();
-	outerHighlights.release();
+	scaleBackground.release();
+	chordBackground.release();
+	scaleHighlight.release();
+	chordHighlight.release();
 	
 	scaleNeedle.release();
 	scaleInnerPattern.release();
@@ -381,23 +382,17 @@ void testApp::draw(){
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
 
-	
-	
-	ofPushMatrix();
-	ofTranslate(-(int)innerBackground._width/2, -(int)innerBackground._height/2);
-	innerBackground.draw();
-	ofPopMatrix();
-	
-	if (state==MUSICREED_STATE_SCALES) {
-		ofPushMatrix();
-		ofTranslate(-(int)outerBackground._width/2, -(int)outerBackground._height/2);
-		outerBackground.draw();
-		ofPopMatrix();
-	}
-	
+//	ofPushMatrix();
+//	ofTranslate(-(int)shadow._width/2, -(int)shadow._height/2);
+//	shadow.draw();
+//	ofPopMatrix();
 	
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
+			ofPushMatrix();
+			ofTranslate(-(int)scaleBackground._width/2, -(int)scaleBackground._height/2);
+			scaleBackground.draw();
+			ofPopMatrix();
 			
 			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
@@ -411,8 +406,17 @@ void testApp::draw(){
 			scaleOuterPattern.draw();
 			ofPopMatrix();
 			
+			ofPushMatrix();
+			ofTranslate(-(int)scaleHighlight._width/2, -(int)scaleHighlight._height/2);
+			scaleHighlight.draw();
+			ofPopMatrix();
+			
 			break;
 		case MUSICREED_STATE_CHORDS: 
+			ofPushMatrix();
+			ofTranslate(-(int)chordBackground._width/2, -(int)chordBackground._height/2);
+			chordBackground.draw();
+			ofPopMatrix();
 			
 			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
@@ -420,24 +424,16 @@ void testApp::draw(){
 			chordPattern.draw();
 			ofPopMatrix();
 			
+			ofPushMatrix();
+			ofTranslate(-(int)chordHighlight._width/2, -(int)chordHighlight._height/2);
+			chordHighlight.draw();
+			ofPopMatrix();
+			
 			break;
 		default:
 			break;
 	}
 	
-	
-	
-	ofPushMatrix();
-	ofTranslate(-(int)innerHighlights._width/2, -(int)innerHighlights._height/2);
-	innerHighlights.draw();
-	ofPopMatrix();
-	
-	if (state==MUSICREED_STATE_SCALES) {
-		ofPushMatrix();
-		ofTranslate(-(int)outerHighlights._width/2, -(int)outerHighlights._height/2);
-		outerHighlights.draw();
-		ofPopMatrix();
-	}
 	
 	
 	switch (state) {
