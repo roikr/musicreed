@@ -30,6 +30,11 @@ struct chord {
 	ofxiTexture *texture;
 };
 
+struct key {
+	int x;
+	int y;
+};
+
 
 class testApp : public ofSimpleApp {
 	
@@ -70,6 +75,7 @@ public:
 	void playChord(int chordIndex,float base);
 	void strumChord(int chordIndex,float base);
 	
+	key pointToKey(ofPoint pos);
 	
 	Disc inner;
 	Disc outer;
@@ -101,7 +107,8 @@ public:
 	bool bDown;
 	ofPoint downPos;
 	ofPoint lastPos;
-	int lastKey;
+	key downKey;
+	key lastKey;
 	
 	int lastAltKey;
 	bool bAltKeyDown;

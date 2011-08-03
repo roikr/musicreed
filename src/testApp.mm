@@ -457,7 +457,7 @@ void testApp::draw(){
 			
 			if (bDown || bAltKeyDown) {
 				
-				float note = currentScale->notes[(lastKey+mode) % currentScale->notes.size()]-currentScale->notes[mode];
+				float note = currentScale->notes[(lastKey.y+mode) % currentScale->notes.size()]-currentScale->notes[mode];
 				
 				
 				ofPushMatrix();
@@ -580,6 +580,13 @@ void testApp::strumChord(int chordIndex,float base) {
 		
 }
 
+key testApp::pointToKey(ofPoint pos) {
+	key res;
+	res.y = (int)((ofGetHeight()-pos.y)/(ofGetHeight()/getNumKeys())) ;
+	res.x = (int)((ofGetWidth()-pos.x)/(ofGetWidth()/4));
+	
+	return res;
+}
 
 
 //--------------------------------------------------------------
@@ -603,24 +610,25 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 				bDown = true;
 				downPos=lastPos=ofPoint(touch.x,touch.y);
 				
-				int key = (int)((ofGetHeight()-downPos.y)/(ofGetHeight()/getNumKeys())) ;
-				noteButtons[key].setDown(true);
+				key currentKey = downKey = pointToKey(downPos);
+				
+				noteButtons[currentKey.y].setDown(true);
 				
 				
-				int octave = floor((key+mode) / currentScale->notes.size());
-				float note = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+				int octave = floor((currentKey.y+mode) / currentScale->notes.size());
+				float note = firstNote+currentScale->notes[(currentKey.y+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 				int midi = floor(48+2.0f*note);
 				float intpart;
 				int cents = floor(modf(2.0f*note,&intpart)*100.0f);
 				
-				printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[key % keysNames.size()].c_str(),note,midi,cents);
+				printf("note: %s(%2.3f), midi: %i, cents: %i\n",keysNames[currentKey.y % keysNames.size()].c_str(),note,midi,cents);
 				instrument.noteOffAll();
 				instrument.noteOn(midi, 100,cents);
 				
 				//instrument.noteOn(lastKey+lastArp*4, 127);
 				//instrument.noteOff(iter->note);
 				
-				lastKey = key;
+				lastKey = currentKey;
 			}
 		} break;
 		case MUSICREED_STATE_CHORDS: {
@@ -632,16 +640,16 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 
 					downPos=lastPos=ofPoint(touch.x,touch.y);
 					
-					int key = (int)((ofGetHeight()-downPos.y)/(ofGetHeight()/getNumKeys())) ;
+					key currentKey = pointToKey(downPos);
 					
-					chordButtons[key].setDown(true);
+					chordButtons[currentKey.y].setDown(true);
 					
-					int octave = floor((key+mode) / currentScale->notes.size());
-					int index = chordsKeys[key % chordsKeys.size()];
-					float base = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+					int octave = floor((currentKey.y+mode) / currentScale->notes.size());
+					int index = chordsKeys[currentKey.y % chordsKeys.size()];
+					float base = firstNote+currentScale->notes[(currentKey.y+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 					strumChord(index, base);
 
-					lastKey = key;
+					lastKey = currentKey;
 					lastChordIndex = index;
 					
 					
@@ -652,9 +660,9 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 					bAltKeyDown = true;
 					
 					
-					int octave = floor((lastKey+mode) / currentScale->notes.size());
+					int octave = floor((lastKey.y+mode) / currentScale->notes.size());
 					
-					float base = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+					float base = firstNote+currentScale->notes[(lastKey.y+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 					int key = (int)(touch.y/(ofGetHeight()/getNumKeys())) ;
 					int index = altChords[key % altChords.size()];
 					strumChord(index, base);
@@ -697,17 +705,25 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 	if (bDown) {
 		switch (state) {
 			case MUSICREED_STATE_SCALES: {
-				int key = (int)((ofGetHeight()-touch.y)/(ofGetHeight()/VERTICAL_KEYS_NUMBER)) ;
-				noteButtons[lastKey].setDown(false);
+				key currentKey = pointToKey(ofPoint(touch.x,touch.y));
+				noteButtons[lastKey.y].setDown(false);
 
-				noteButtons[key].setDown(true);
+				noteButtons[currentKey.y].setDown(true);
 				
-				int arp = (int)((ofGetWidth()-touch.x)/(ofGetWidth()/4)) ;
-				if (key!=lastKey || arp!=lastArp) {
+				if (currentKey.y!=lastKey.y || currentKey.x!=lastKey.x) {
+					
+					int playKey;
+					if (currentKey.x>0) {
+						playKey = downKey.y + 2*(abs(currentKey.y-downKey.y)+currentKey.x);
+					} else {
+						playKey = currentKey.y;
+					}
+
 					
 					
-					int octave = floor((key+mode) / currentScale->notes.size());
-					float note = firstNote+currentScale->notes[(key+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
+					
+					int octave = floor((playKey+mode) / currentScale->notes.size());
+					float note = firstNote+currentScale->notes[(playKey+mode) % currentScale->notes.size()]+octave*6-currentScale->notes[mode];
 					int midi = floor(48+2.0f*note);
 					float intpart;
 					int cents = floor(modf(2.0f*note,&intpart)*100.0f);
@@ -715,9 +731,8 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 					printf("note: %3.3f, midi: %i, cents: %i\n",note,midi,cents);
 					instrument.noteOn(midi, 100,cents);
 					
-					lastKey = key;
-					lastArp = arp;
-					
+					lastKey = currentKey;
+	
 				}
 			}	break;
 				
@@ -743,8 +758,8 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	outer.touchUp(pos);
 	bDown = false;
 	bAltKeyDown = false;
-	noteButtons[lastKey].setDown(false);
-	chordButtons[lastKey].setDown(false);
+	noteButtons[lastKey.y].setDown(false);
+	chordButtons[lastKey.y].setDown(false);
 }
 
 //--------------------------------------------------------------
@@ -845,9 +860,9 @@ void testApp::setAltChords() {
 	altChords.clear();	
 	
 	int firstScaleNote = evalScaleNote(firstNote);
-	float chordNote = firstNote+currentScale->notes[(lastKey+mode) % currentScale->notes.size()]+floor((lastKey+mode) / currentScale->notes.size())*6-currentScale->notes[mode];
+	float chordNote = firstNote+currentScale->notes[(lastKey.y+mode) % currentScale->notes.size()]+floor((lastKey.y+mode) / currentScale->notes.size())*6-currentScale->notes[mode];
 	
-	chordNoteName = findNote(firstScaleNote+lastKey,chordNote);
+	chordNoteName = findNote(firstScaleNote+lastKey.y,chordNote);
 	
 		
 	for (vector<chord>::iterator citer=chords.begin(); citer!=chords.end(); citer++) {
@@ -856,7 +871,7 @@ void testApp::setAltChords() {
 		
 		while (iiter!=citer->intervals.end() ) {
 			
-			float note = firstNote+currentScale->notes[(lastKey+mode+i) % currentScale->notes.size()]+floor((lastKey+mode+i) / currentScale->notes.size())*6-currentScale->notes[mode];
+			float note = firstNote+currentScale->notes[(lastKey.y+mode+i) % currentScale->notes.size()]+floor((lastKey.y+mode+i) / currentScale->notes.size())*6-currentScale->notes[mode];
 			
 			if (note-chordNote<(*iiter)) {
 				i++;
