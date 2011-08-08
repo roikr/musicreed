@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* ScaleSelectionAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1000, 513}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 486}";
+		};
+	};
+	1D3623250D0F684500981E51 /* ScaleSelectionAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1092}}";
+			sepNavSelRange = "{576, 0}";
+			sepNavVisRange = "{299, 1664}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* ScaleSelection */ = {
+		activeExec = 0;
+		executables = (
+			E4AA66A913F009AC00C7CFDA /* ScaleSelection */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = E4AA66A913F009AC00C7CFDA /* ScaleSelection */;
+		activeSDKPreference = iphoneos4.3;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* ScaleSelection */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* ScaleSelection */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = E4AA66B913F009B200C7CFDA /* Code sense */;
+		executables = (
+			E4AA66A913F009AC00C7CFDA /* ScaleSelection */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					859,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					782,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 334526895;
+			PBXWorkspaceStateSaveDate = 334526895;
+		};
+		perUserProjectItems = {
+			E47DEC7D13F083DF00A4AD4E /* PBXTextBookmark */ = E47DEC7D13F083DF00A4AD4E /* PBXTextBookmark */;
+			E47DEC8B13F0865100A4AD4E /* PBXTextBookmark */ = E47DEC8B13F0865100A4AD4E /* PBXTextBookmark */;
+			E47DEC9F13F08D3300A4AD4E /* PBXTextBookmark */ = E47DEC9F13F08D3300A4AD4E /* PBXTextBookmark */;
+			E47DECA713F08E6F00A4AD4E /* PBXTextBookmark */ = E47DECA713F08E6F00A4AD4E /* PBXTextBookmark */;
+			E4FC320713F0405E0054303F /* PBXTextBookmark */ = E4FC320713F0405E0054303F /* PBXTextBookmark */;
+			E4FC320813F0405E0054303F /* PBXTextBookmark */ = E4FC320813F0405E0054303F /* PBXTextBookmark */;
+			E4FC320A13F0405E0054303F /* PBXTextBookmark */ = E4FC320A13F0405E0054303F /* PBXTextBookmark */;
+			E4FC320B13F0405E0054303F /* PBXTextBookmark */ = E4FC320B13F0405E0054303F /* PBXTextBookmark */;
+			E4FC323B13F042660054303F /* PBXTextBookmark */ = E4FC323B13F042660054303F /* PBXTextBookmark */;
+			E4FC327213F047A50054303F /* PlistBookmark */ = E4FC327213F047A50054303F /* PlistBookmark */;
+		};
+		sourceControlManager = E4AA66B813F009B200C7CFDA /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E47DEC7D13F083DF00A4AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC310913F00E1B0054303F /* ScalesParser.m */;
+		name = "ScalesParser.m: 36";
+		rLen = 0;
+		rLoc = 732;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 217;
+	};
+	E47DEC8B13F0865100A4AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC319E13F02BD20054303F /* ScalesTableViewController.h */;
+		name = "ScalesTableViewController.h: 37";
+		rLen = 23;
+		rLoc = 965;
+		rType = 0;
+		vrLen = 1055;
+		vrLoc = 0;
+	};
+	E47DEC9F13F08D3300A4AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC319F13F02BD20054303F /* ScalesTableViewController.m */;
+		name = "ScalesTableViewController.m: 136";
+		rLen = 0;
+		rLoc = 3131;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 7159;
+	};
+	E47DECA713F08E6F00A4AD4E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC319F13F02BD20054303F /* ScalesTableViewController.m */;
+		name = "ScalesTableViewController.m: 307";
+		rLen = 0;
+		rLoc = 7658;
+		rType = 0;
+		vrLen = 1172;
+		vrLoc = 7168;
+	};
+	E4AA66A913F009AC00C7CFDA /* ScaleSelection */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ScaleSelection;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	E4AA66B813F009B200C7CFDA /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	E4AA66B913F009B200C7CFDA /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E4FC310813F00E1B0054303F /* ScalesParser.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1000, 520}}";
+			sepNavSelRange = "{538, 12}";
+			sepNavVisRange = "{0, 826}";
+		};
+	};
+	E4FC310913F00E1B0054303F /* ScalesParser.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 1417}}";
+			sepNavSelRange = "{732, 0}";
+			sepNavVisRange = "{217, 1120}";
+		};
+	};
+	E4FC316A13F00E760054303F /* Scale.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {576, 611}}";
+			sepNavSelRange = "{235, 0}";
+			sepNavVisRange = "{138, 337}";
+		};
+	};
+	E4FC316B13F00E760054303F /* Scale.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1937, 598}}";
+			sepNavSelRange = "{632, 0}";
+			sepNavVisRange = "{75, 967}";
+		};
+	};
+	E4FC319E13F02BD20054303F /* ScalesTableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1037, 559}}";
+			sepNavSelRange = "{965, 23}";
+			sepNavVisRange = "{0, 1055}";
+		};
+	};
+	E4FC319F13F02BD20054303F /* ScalesTableViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5468, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5519, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5569, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 8340}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 4225}}";
+			sepNavSelRange = "{7601, 0}";
+			sepNavVisRange = "{7111, 1172}";
+		};
+	};
+	E4FC31B913F02F330054303F /* CustomFontLabel.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1000, 513}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 235}";
+		};
+	};
+	E4FC320713F0405E0054303F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC316A13F00E760054303F /* Scale.h */;
+		name = "Scale.h: 36";
+		rLen = 0;
+		rLoc = 986;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 0;
+	};
+	E4FC320813F0405E0054303F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC316B13F00E760054303F /* Scale.m */;
+		name = "Scale.m: 25";
+		rLen = 0;
+		rLoc = 632;
+		rType = 0;
+		vrLen = 967;
+		vrLoc = 75;
+	};
+	E4FC320A13F0405E0054303F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* ScaleSelectionAppDelegate.h */;
+		name = "ScaleSelectionAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 486;
+		vrLoc = 0;
+	};
+	E4FC320B13F0405E0054303F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* ScaleSelectionAppDelegate.m */;
+		name = "ScaleSelectionAppDelegate.m: 25";
+		rLen = 0;
+		rLoc = 576;
+		rType = 0;
+		vrLen = 1664;
+		vrLoc = 299;
+	};
+	E4FC323B13F042660054303F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4FC310813F00E1B0054303F /* ScalesParser.h */;
+		name = "ScalesParser.h: 25";
+		rLen = 12;
+		rLoc = 538;
+		rType = 0;
+		vrLen = 826;
+		vrLoc = 0;
+	};
+	E4FC327213F047A50054303F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* ScaleSelection-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIAppFonts,
+		);
+		name = "/Users/roikr/Developer/musicreed/ScaleSelection/ScaleSelection-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+}
