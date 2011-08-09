@@ -1,18 +1,18 @@
 //
-//  ScalesTableViewController.h
+//  SubsystemTableViewController.h
 //  ScaleSelection
 //
-//  Created by Roee Kremer on 8/8/11.
+//  Created by Roee Kremer on 8/9/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ScalesParser.h"
+
 
 @class Scale;
 
-@interface ScalesTableViewController : UITableViewController<ScalesParserDelegate,UISearchDisplayDelegate, UISearchBarDelegate> {
-
+@interface SubsystemTableViewController : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate> {
+	
 	UITableViewCell *scaleCell;
 	
 	Scale *currentScale;
@@ -20,8 +20,7 @@
 	UIView *backgroundView;
 	UIView *searchBackgroundView;
 	NSArray *scales;
-	NSMutableArray *sections;
-	NSMutableArray *searchSections;
+	NSMutableArray *searchScales;
 	
 }
 
@@ -31,11 +30,10 @@
 @property (nonatomic, retain) IBOutlet UIView *backgroundView;
 @property (nonatomic, retain) IBOutlet UIView *searchBackgroundView;
 @property (nonatomic, retain) NSArray *scales;
-@property (nonatomic, retain) NSMutableArray *sections;
-@property (nonatomic, retain) NSMutableArray *searchSections;
+@property (nonatomic, retain) NSMutableArray *searchScales;
 
+- (void)arrangeScales;
 - (void)filterContentForSearchText:(NSString*)searchText;
+
+
 @end
-
-
-

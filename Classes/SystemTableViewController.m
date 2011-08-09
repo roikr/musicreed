@@ -1,23 +1,22 @@
 //
-//  ScalesTableViewController.m
+//  SystemTableViewController.m
 //  ScaleSelection
 //
-//  Created by Roee Kremer on 8/8/11.
+//  Created by Roee Kremer on 8/9/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ScalesTableViewController.h"
-#import "Scale.h"
 #import "SystemTableViewController.h"
+#import "Scale.h"
+#import "SubsystemTableViewController.h"
 
+@implementation SystemTableViewController
 
-@implementation ScalesTableViewController
-
+@synthesize scales;
 @synthesize scaleCell;
 @synthesize currentScale;
 @synthesize backgroundView;
 @synthesize searchBackgroundView;
-@synthesize scales;
 @synthesize sections;
 @synthesize searchSections;
 
@@ -29,13 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	((UITableView *)self.view).backgroundView = self.backgroundView;
-	self.title = NSLocalizedString(@"Scales", @"Master view navigation title");
-
-	if (!self.scales) {
-		ScalesParser *parser = [[[ScalesParser alloc] init] autorelease]; 
-		parser.delegate = self;
-		[parser parse];
-	}
+	
+	Scale *scale = [scales objectAtIndex:0];
+	self.title = NSLocalizedString(scale.system, @"Secondary view navigation title");
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -43,40 +39,39 @@
 
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
 /*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
 /*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
 /*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations.
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 
 
-#pragma mark -
-#pragma mark ScalesParser
 
-- (void)parserDidEndParsingData:(ScalesParser *)parser {
-	self.scales = [NSArray arrayWithArray:parser.parsedScales];
+
+- (void)arrangeScales {
+	
 	
 	self.sections = [NSMutableArray array];
 	NSMutableArray *currentSection;
@@ -87,8 +82,8 @@
 	
 	for (Scale *scale in scales)
 	{
-		if (![scale.system isEqualToString:currentSystem]) {
-			currentSystem = scale.system;
+		if (![scale.subsystem isEqualToString:currentSystem]) {
+			currentSystem = scale.subsystem;
 			currentSection = [NSMutableArray array];
 		}
 		
@@ -163,7 +158,7 @@
         self.scaleCell = nil;
 		
 		if (!indexPath.section ) {
-			 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
 	} 
 	
@@ -203,75 +198,74 @@
 	NSString *title;
 	if (section) {
 		Scale *scale = [currentSection objectAtIndex:0];
-		title = scale.system;
+		title = scale.subsystem;
 	} else {
-		title = @"Systems";
+		title = @"Subsystems";
 	}
-
+	
 	
 	return title ;
 }
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source.
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }   
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+ }   
+ }
+ */
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark -
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    /*
+	/*
      When a row is selected, create the detail view controller and set its detail item to the item associated with the selected row.
      */
 	
 	if (!indexPath.section) {
-		SystemTableViewController *systemTableViewController = [[SystemTableViewController alloc] initWithNibName:@"SystemTableViewController" bundle:nil];
+		SubsystemTableViewController *subsystemTableViewController = [[SubsystemTableViewController alloc] initWithNibName:@"SubsystemTableViewController" bundle:nil];
 		
-		systemTableViewController.scales = [sections objectAtIndex:indexPath.row+1];
-		[systemTableViewController arrangeScales];
-											
+		subsystemTableViewController.scales = [sections objectAtIndex:indexPath.row+1];
+		[subsystemTableViewController arrangeScales];
+		
 		// Push the detail view controller.
-		[[self navigationController] pushViewController:systemTableViewController animated:YES];
-		[systemTableViewController release];
+		[[self navigationController] pushViewController:subsystemTableViewController animated:YES];
+		[subsystemTableViewController release];
 	}
-    
 }
 
 
@@ -317,21 +311,20 @@
 	
 	for (Scale *scale in scales)
 	{
-		if (![scale.system isEqualToString:currentSystem]) {
-			currentSystem = scale.system;
+		if (![scale.subsystem isEqualToString:currentSystem]) {
+			currentSystem = scale.subsystem;
 			currentSection = [NSMutableArray array];
 			
 			NSComparisonResult result = [currentSystem compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
 			if (result == NSOrderedSame)
 			{
 				[firstSection addObject:currentSystem];
-
+				
 //				if ([firstSection count] == 1) {
 //					[searchSections insertObject:firstSection atIndex:0];
 //				}
 			}
 		}
-		
 		
 		NSComparisonResult result = [scale.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
 		if (result == NSOrderedSame)
@@ -339,20 +332,10 @@
 			//[self.filteredListContent addObject:product];
 			[currentSection addObject:scale];
 			if ([currentSection count] == 1) {
-				
-				
 				[searchSections addObject:currentSection];
-				
 			}
 		}
-		 
-
-		
-		
-		
 	}
-	
-	
 }
 
 
@@ -372,6 +355,8 @@
 - (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView {
 	
 }
+
+
 
 @end
 
