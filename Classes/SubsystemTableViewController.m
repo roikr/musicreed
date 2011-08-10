@@ -17,7 +17,7 @@
 @synthesize backgroundView;
 @synthesize searchBackgroundView;
 @synthesize searchScales;
-
+@synthesize cancelButtonItem;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -31,7 +31,7 @@
 	self.title = NSLocalizedString(scale.subsystem, @"Tertiary view navigation title");
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.cancelButtonItem;
 }
 
 
@@ -76,6 +76,23 @@
 #pragma mark -
 #pragma mark Table view data source
 
+- (NSArray *)scalesByView:(UITableView *)tableView {
+	
+	/*
+	 If the requesting table view is the search display controller's table view, return the count of
+     the filtered list, otherwise return the count of the main list.
+	 */
+	
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return self.searchScales;
+    }
+	else
+	{
+        return self.scales;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
 	return 1;
@@ -85,27 +102,8 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-	
-	/*
-	 If the requesting table view is the search display controller's table view, return the count of
-     the filtered list, otherwise return the count of the main list.
-	 */
-	
-	NSArray *currentSection;
-	
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        currentSection = searchScales;
-    }
-	else
-	{
-        currentSection = scales;
-    }
-	
-	
-	
-    return [currentSection count];
+    	
+    return [[self scalesByView:tableView] count];
 }
 
 
@@ -126,19 +124,7 @@
 	
 	// Configure the cell...
 	
-	NSArray *currentSection;
-	
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        currentSection = searchScales;
-    }
-	else
-	{
-        currentSection = scales;
-    }
-	
-	
-	Scale *scale = [currentSection objectAtIndex:indexPath.row];
+	Scale *scale = [[self scalesByView:tableView] objectAtIndex:indexPath.row];
 	//UILabel *label = (UILabel *)[cell viewWithTag:1];
 	cell.textLabel.text =scale.name;
 		
@@ -190,16 +176,17 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-	 // ...
-	 // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    
+	
+	[[[UIApplication sharedApplication] delegate] performSelector:@selector(setScale:)  withObject:[[self scalesByView:tableView] objectAtIndex:indexPath.row]];
+	 												  
+	
+	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
+- (void)cancel:(id)sender {
+	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark Memory management

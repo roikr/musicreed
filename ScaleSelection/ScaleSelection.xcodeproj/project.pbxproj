@@ -17,6 +17,8 @@
 		E4E51DFB13F147EB00CD650A /* SystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E51DF913F147EB00CD650A /* SystemTableViewController.xib */; };
 		E4E51EAA13F15D3600CD650A /* SubsystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E51EA813F15D3600CD650A /* SubsystemTableViewController.m */; };
 		E4E51EAB13F15D3600CD650A /* SubsystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E51EA913F15D3600CD650A /* SubsystemTableViewController.xib */; };
+		E4E77EA413F27AEC00272AFD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E77EA213F27AEC00272AFD /* MainViewController.m */; };
+		E4E77EA513F27AEC00272AFD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E77EA313F27AEC00272AFD /* MainViewController.xib */; };
 		E4FC310A13F00E1B0054303F /* ScalesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC310913F00E1B0054303F /* ScalesParser.m */; };
 		E4FC316C13F00E760054303F /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC316B13F00E760054303F /* Scale.m */; };
 		E4FC31A113F02BD20054303F /* ScalesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC319F13F02BD20054303F /* ScalesTableViewController.m */; };
@@ -46,6 +48,9 @@
 		E4E51EA713F15D3600CD650A /* SubsystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubsystemTableViewController.h; path = ../Classes/SubsystemTableViewController.h; sourceTree = SOURCE_ROOT; };
 		E4E51EA813F15D3600CD650A /* SubsystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubsystemTableViewController.m; path = ../Classes/SubsystemTableViewController.m; sourceTree = SOURCE_ROOT; };
 		E4E51EA913F15D3600CD650A /* SubsystemTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SubsystemTableViewController.xib; path = ../Classes/SubsystemTableViewController.xib; sourceTree = SOURCE_ROOT; };
+		E4E77EA113F27AEC00272AFD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E4E77EA213F27AEC00272AFD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E4E77EA313F27AEC00272AFD /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		E4FC310813F00E1B0054303F /* ScalesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScalesParser.h; path = ../Classes/ScalesParser.h; sourceTree = SOURCE_ROOT; };
 		E4FC310913F00E1B0054303F /* ScalesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScalesParser.m; path = ../Classes/ScalesParser.m; sourceTree = SOURCE_ROOT; };
 		E4FC316A13F00E760054303F /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scale.h; path = ../Model/Scale.h; sourceTree = SOURCE_ROOT; };
@@ -82,6 +87,9 @@
 			children = (
 				1D3623240D0F684500981E51 /* ScaleSelectionAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ScaleSelectionAppDelegate.m */,
+				E4E77EA113F27AEC00272AFD /* MainViewController.h */,
+				E4E77EA213F27AEC00272AFD /* MainViewController.m */,
+				E4E77EA313F27AEC00272AFD /* MainViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				E4FC324913F043200054303F /* systems.xml in Resources */,
 				E4E51DFB13F147EB00CD650A /* SystemTableViewController.xib in Resources */,
 				E4E51EAB13F15D3600CD650A /* SubsystemTableViewController.xib in Resources */,
+				E4E77EA513F27AEC00272AFD /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +257,7 @@
 				E4FC31BE13F02F330054303F /* ScaleCell.m in Sources */,
 				E4E51DFA13F147EB00CD650A /* SystemTableViewController.m in Sources */,
 				E4E51EAA13F15D3600CD650A /* SubsystemTableViewController.m in Sources */,
+				E4E77EA413F27AEC00272AFD /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

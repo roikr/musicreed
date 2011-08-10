@@ -8,12 +8,16 @@
 
 #import "ScaleSelectionAppDelegate.h"
 #import "ScalesTableViewController.h"
+#import "Scale.h"
+#import "MainViewController.h"
+
 
 
 @implementation ScaleSelectionAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
+@synthesize mainViewController;
 
 
 #pragma mark -
@@ -24,7 +28,7 @@
     // Override point for customization after application launch.
     
     // Set the navigation controller as the window's root view controller and display.
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -85,6 +89,14 @@
 	[super dealloc];
 }
 
+- (void)setScale:(Scale *)scale {
+	mainViewController.label.text = scale.name;
+}
+	
+	
+- (void)presentScalesController {	
+	[self.mainViewController presentModalViewController:self.navigationController animated:YES];
+}
 
 @end
 

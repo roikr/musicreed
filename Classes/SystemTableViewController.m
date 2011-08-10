@@ -19,7 +19,7 @@
 @synthesize searchBackgroundView;
 @synthesize sections;
 @synthesize searchSections;
-
+@synthesize cancelButtonItem;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -33,7 +33,7 @@
 	self.title = NSLocalizedString(scale.system, @"Secondary view navigation title");
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.rightBarButtonItem = self.cancelButtonItem;
 }
 
 
@@ -105,43 +105,33 @@
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-	
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        return [self.searchSections count];
-    }
-	else
-	{
-        return [self.sections count];
-    }
-	
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+- (NSMutableArray *)sectionsByView:(UITableView *)tableView {
 	
 	/*
 	 If the requesting table view is the search display controller's table view, return the count of
      the filtered list, otherwise return the count of the main list.
 	 */
 	
-	NSArray *currentSection;
-	
 	if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
-        currentSection = [searchSections objectAtIndex:section];
+        return self.searchSections;
     }
 	else
 	{
-        currentSection = [sections objectAtIndex:section];
+        return self.sections;
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+	return [[self sectionsByView:tableView] count];
 	
-	
-	
-    return [currentSection count];
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [[[self sectionsByView:tableView] objectAtIndex:section] count];
 }
 
 
@@ -165,16 +155,7 @@
 	
 	// Configure the cell...
 	
-	NSArray *currentSection;
-	
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        currentSection = [searchSections objectAtIndex:indexPath.section];
-    }
-	else
-	{
-        currentSection = [sections objectAtIndex:indexPath.section];
-    }
+	NSArray *currentSection = [[self sectionsByView:tableView] objectAtIndex:indexPath.section];
 	
 	if (indexPath.section ) {
 		Scale *scale = [currentSection objectAtIndex:indexPath.row];
@@ -184,17 +165,12 @@
 		cell.textLabel.text =[currentSection objectAtIndex:indexPath.row];
 	}
 	
-	
-	
-    
-    
-    
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
 	// Section title is the region name
-	NSArray *currentSection = [sections objectAtIndex:section];
+	NSArray *currentSection = [[self sectionsByView:aTableView] objectAtIndex:section];
 	NSString *title;
 	if (section) {
 		Scale *scale = [currentSection objectAtIndex:0];
@@ -259,15 +235,24 @@
 	if (!indexPath.section) {
 		SubsystemTableViewController *subsystemTableViewController = [[SubsystemTableViewController alloc] initWithNibName:@"SubsystemTableViewController" bundle:nil];
 		
-		subsystemTableViewController.scales = [sections objectAtIndex:indexPath.row+1];
+		subsystemTableViewController.scales = [self.sections objectAtIndex:indexPath.row+1];
 		[subsystemTableViewController arrangeScales];
 		
 		// Push the detail view controller.
 		[[self navigationController] pushViewController:subsystemTableViewController animated:YES];
 		[subsystemTableViewController release];
+	} else {
+		[[[UIApplication sharedApplication] delegate] performSelector:@selector(setScale:) 
+														   withObject:[[[self sectionsByView:tableView] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+		
+		[self.navigationController dismissModalViewControllerAnimated:YES];
 	}
+
 }
 
+- (void)cancel:(id)sender {
+	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark Memory management

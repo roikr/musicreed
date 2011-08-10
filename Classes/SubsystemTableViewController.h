@@ -22,6 +22,7 @@
 	NSArray *scales;
 	NSMutableArray *searchScales;
 	
+	UIBarButtonItem *cancelButtonItem;
 }
 
 
@@ -31,9 +32,11 @@
 @property (nonatomic, retain) IBOutlet UIView *searchBackgroundView;
 @property (nonatomic, retain) NSArray *scales;
 @property (nonatomic, retain) NSMutableArray *searchScales;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButtonItem;
 
 - (void)arrangeScales;
+- (NSArray *)scalesByView:(UITableView *)tableView;
 - (void)filterContentForSearchText:(NSString*)searchText;
-
+- (void)cancel:(id)sender;
 
 @end
