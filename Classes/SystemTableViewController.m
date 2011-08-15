@@ -233,9 +233,32 @@
      */
 	
 	if (!indexPath.section) {
+		
 		SubsystemTableViewController *subsystemTableViewController = [[SubsystemTableViewController alloc] initWithNibName:@"SubsystemTableViewController" bundle:nil];
 		
-		subsystemTableViewController.scales = [self.sections objectAtIndex:indexPath.row+1];
+		NSArray *nextSection;
+		
+		if (tableView == self.searchDisplayController.searchResultsTableView)
+		{
+			NSString *system = [[self.searchSections objectAtIndex:0] objectAtIndex:indexPath.row];
+			
+			for (int i=1; i<[sections count];i++)
+			{
+				nextSection = [sections objectAtIndex:i];
+				Scale *scale = [nextSection objectAtIndex:0];
+				if ([scale.system isEqualToString:system]) {
+					break; 
+				}
+			}
+		}
+		else
+		{
+			nextSection =  [self.sections objectAtIndex:indexPath.row+1];
+		}
+		
+		
+		
+		subsystemTableViewController.scales = nextSection;
 		[subsystemTableViewController arrangeScales];
 		
 		// Push the detail view controller.
