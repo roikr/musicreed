@@ -47,6 +47,8 @@ public:
 	void suspend();
 	void resume();
 	
+	void drawKeys();
+	
 	void soundStreamStart();
 	void soundStreamStop();
 	
@@ -62,7 +64,7 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
-	void setState(int state);
+	void setState(int state,int rotDuration);
 	int getState();
 	void setScale(int scale,int mode,float note,int numDivisions,bool bAnimate);
 	
@@ -76,6 +78,8 @@ public:
 	void strumChord(int chordIndex,float base);
 	
 	key pointToKey(ofPoint pos);
+	
+	
 	
 	Disc inner;
 	Disc outer;
@@ -99,6 +103,9 @@ public:
 		
 	ofPoint center;
 	float scaleFactor;
+	
+	ofPoint targetCenter;
+	float targetScaleFactor;
 
 	ofxAudioInstrument instrument;
 	int bufferSize;
@@ -142,7 +149,9 @@ public:
 	vector<float>strumNotes;
 	int lastStrum;
 	
-	
+	bool bRot;
+	int rotTime;
+	int rotDuration;
 };
 
 

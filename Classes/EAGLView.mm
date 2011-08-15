@@ -341,18 +341,21 @@
 
 - (void)setInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
 	
+	
 	if (OFSAptr) {
 		switch (toInterfaceOrientation) {
 			case UIInterfaceOrientationPortrait: 
 			case UIInterfaceOrientationPortraitUpsideDown: 
-				OFSAptr->setState(MUSICREED_STATE_SCALES);
+				OFSAptr->setState(MUSICREED_STATE_SCALES,duration*1000);
 				break;
 			case UIInterfaceOrientationLandscapeRight: 
 			case UIInterfaceOrientationLandscapeLeft: 
-				OFSAptr->setState(MUSICREED_STATE_CHORDS);
+				OFSAptr->setState(MUSICREED_STATE_CHORDS,duration*1000);
 				break;
 		}
 	}
+	
+	
 	
 	
 	[UIView animateWithDuration:duration delay:0 options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |

@@ -3,6 +3,7 @@
 #include "ofSoundStream.h"
 #include "ofxXmlSettings.h"
 #include "notationUtils.h"
+#include "easing.h"
 
 
 #define VERTICAL_KEYS_NUMBER 16
@@ -26,7 +27,7 @@ void testApp::setup(){
 	//ofBackground(255,0,0);
 	//ofSetCircleResolution(9);
 	 
-	ofBackground(255,255,255);
+//	ofBackground(255,255,255);
 	
 	ofxXmlSettings xml;
 	ofDisableDataPath();
@@ -129,7 +130,7 @@ void testApp::setup(){
 	resume();
 	bRefreshDisplay = false;
 	
-	setState( MUSICREED_STATE_SCALES);
+	setState( MUSICREED_STATE_SCALES,0);
 	
 	int colorsArray[] = {0x111e14,0x26362b,0x0f1f1d,0x030f19,0x253738,0x1e2b2f,0x414740,0x505956,0x7e7b6a};
 	vector<ofColor> colors;
@@ -169,7 +170,7 @@ void testApp::setup(){
 	}
 	
 	
-	
+	bRot = false;
 }
 
 
@@ -277,14 +278,23 @@ void testApp::update(){
 			lastStrum = ofGetElapsedTimeMillis();
 		}
 	}
+	
+	if (bRot) {
+		if (ofGetElapsedTimeMillis()-rotTime>=rotDuration) {
+			bRot = false;
+			center = targetCenter;
+			scaleFactor = targetScaleFactor;
+		} else {
+			float t = (float)(ofGetElapsedTimeMillis() - rotTime)/rotDuration; // time to finish the animation
+			center.x = easeInOutQuad(t,center.x,targetCenter.x);
+			center.y = easeInOutQuad(t,center.y,targetCenter.y);
+			scaleFactor = easeInOutQuad(t,scaleFactor,targetScaleFactor);
+		}
+		
+	}
 }
 
-//--------------------------------------------------------------
-void testApp::draw(){
-	
-	
-	
-	
+void testApp::drawKeys() {
 	int height = ofGetHeight()/getNumKeys();
 	int width = getKeyWidth();
 	
@@ -300,7 +310,7 @@ void testApp::draw(){
 			case MUSICREED_STATE_CHORDS:
 				chordButtons[i].draw();
 				break;
-
+				
 			default:
 				break;
 		}
@@ -314,11 +324,6 @@ void testApp::draw(){
 	
 	
 	for (int i=0; i<getNumKeys(); i++) {
-		
-		
-		
-		
-		
 		
 		if (bDown) {
 			if ( i==(int)((ofGetHeight()-lastPos.y)/(ofGetHeight()/getNumKeys()))) {
@@ -351,8 +356,8 @@ void testApp::draw(){
 				break;
 		}
 	}
-				
-			
+	
+	
 	if (!altChords.empty()) {
 		for (vector<int>::iterator aiter=altChords.begin(); aiter!=altChords.end(); aiter++) {
 			
@@ -372,6 +377,21 @@ void testApp::draw(){
 			
 		}
 	}
+	
+}
+
+//--------------------------------------------------------------
+void testApp::draw(){
+	
+	ofBackground(0,0,0);
+	
+	
+	
+	
+	if (!bRot) {
+		drawKeys();
+	}
+	
 				
 	//glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	
@@ -490,25 +510,29 @@ void testApp::draw(){
 			break;
 	}
 	
-	
 	glColor4f(1.0f, 1.0f, 1.0f,1.0f);
 	
-	switch (state) {
-		case MUSICREED_STATE_SCALES:
-			ofPushMatrix();
-			ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
-			scaleNeedle.draw();
-			ofPopMatrix();
-			break;
-		case MUSICREED_STATE_CHORDS:
-			ofPushMatrix();
-			ofTranslate(-(int)chordNeedle._width/2, -(int)chordNeedle._height/2);
-			chordNeedle.draw();
-			ofPopMatrix();
-			break;
-		default:
-			break;
+	if (!bRot) {
+		
+		switch (state) {
+			case MUSICREED_STATE_SCALES:
+				ofPushMatrix();
+				ofTranslate(-(int)scaleNeedle._width/2, -(int)scaleNeedle._height/2);
+				scaleNeedle.draw();
+				ofPopMatrix();
+				break;
+			case MUSICREED_STATE_CHORDS:
+				ofPushMatrix();
+				ofTranslate(-(int)chordNeedle._width/2, -(int)chordNeedle._height/2);
+				chordNeedle.draw();
+				ofPopMatrix();
+				break;
+			default:
+				break;
+		}
 	}
+	
+	
 	
 	ofPopMatrix();
 	
@@ -787,20 +811,32 @@ void testApp::deviceOrientationChanged(int newOrientation){
 
 }
 
-void testApp::setState(int state) {
+void testApp::setState(int state,int rotDuration) {
 	this->state = state;
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
-			scaleFactor = 0.55;
-			center = ofPoint(-30,ofGetHeight()/2);
+			targetScaleFactor = 0.55;
+			targetCenter = ofPoint(-30,ofGetHeight()/2);
 			break;
 		case MUSICREED_STATE_CHORDS:
-			scaleFactor = 0.8;
-			center = ofPoint(ofGetWidth()/2,ofGetHeight()/2);
+			targetScaleFactor = 0.8;
+			targetCenter = ofPoint(ofGetWidth()/2,ofGetHeight()/2);
 			break;
 		default:
 			break;
 	}
+	
+	if (rotDuration) {
+		bRot = true;
+		this->rotDuration = rotDuration*2;
+		rotTime = ofGetElapsedTimeMillis();
+	} else {
+		center = targetCenter;
+		scaleFactor = targetScaleFactor;
+	}
+
+	
+	
 }
 
 int testApp::getState() {
