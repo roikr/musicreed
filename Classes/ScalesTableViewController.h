@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ScalesParser.h"
+
 
 @class Scale;
 
-@interface ScalesTableViewController : UITableViewController<ScalesParserDelegate,UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface ScalesTableViewController : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate> {
 
 	UITableViewCell *scaleCell;
 	
@@ -37,6 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *searchSections;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButtonItem;
 
+- (void)arrangeScales;
 - (NSMutableArray *)sectionsByView:(UITableView *)tableView;
 - (void)filterContentForSearchText:(NSString*)searchText;
 - (void)cancel:(id)sender;

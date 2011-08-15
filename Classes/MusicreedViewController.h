@@ -8,26 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@class ScalesTable;
+
 @class MusicalSystem;
 
 @interface MusicreedViewController : UIViewController<NSXMLParserDelegate> {
 	UILabel *scaleLabel;
-	ScalesTable *scalesTable;
+	NSString *scaleName;
 	
-	MusicalSystem *currentMusicalSystem;
-	NSMutableArray *parsedMusicalSystems;
+	
 	
 }
 
 @property (nonatomic,retain) IBOutlet UILabel *scaleLabel;
-@property (nonatomic,retain) ScalesTable *scalesTable;
+@property (nonatomic,retain) NSString *scaleName;
 
-@property (nonatomic, retain) MusicalSystem *currentMusicalSystem;
-@property (nonatomic, retain) NSMutableArray *parsedMusicalSystems;
+
 
 - (void)chooseScale:(id)sender;
-- (void)updateLabelWithMode:(NSUInteger)mode;
 - (void)toggle:(id)sender;
 
 @end

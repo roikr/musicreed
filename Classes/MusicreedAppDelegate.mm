@@ -13,10 +13,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import "EAGLView.h"
 #include "testApp.h"
-#include "MusicalSystem.h"
-#include "MusicalScale.h"
+#include "Scale.h"
 #include "RKMacros.h"
 #include "ofMainExt.h"
+#include "ScalesTableViewController.h"
 
 
 
@@ -26,8 +26,11 @@
 @synthesize navigationController;
 @synthesize viewController;
 @synthesize chordsViewController;
+@synthesize scalesNavigationController;
+@synthesize scalesTable;
 @synthesize eAGLView;
 @synthesize OFSAptr;
+@synthesize currentScale;
 
 
 #pragma mark -
@@ -35,15 +38,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
+	// Override point for customization after application launch.
 	self.OFSAptr = new testApp;
 	self.eAGLView.OFSAptr = self.OFSAptr;
 	self.OFSAptr->setup();
 	
+
     // Add the view controller's view to the window and display.
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
-	[self.eAGLView startAnimation];
+	
+	ScalesParser *parser = [[[ScalesParser alloc] init] autorelease]; 
+	parser.delegate = self;
+	[parser parse];
+	
     return YES;
 }
 
@@ -110,7 +118,18 @@
 			
 			if (OFSAptr->bRefreshDisplay) {
 				dispatch_async(dispatch_get_main_queue(), ^{
-					[self.viewController updateLabelWithMode:OFSAptr->mode];
+					RKLog(@"updateLabel");
+					if (OFSAptr->mode != currentScale.mode) {
+						for (Scale *scale in scalesTable.scales)
+						{
+							if (currentScale!=scale && scale.type == currentScale.type && scale.mode == OFSAptr->mode && [scale.system isEqualToString:currentScale.system] ) {
+								[self setScale:scale];
+								break;
+							}
+						}
+					}
+					
+					
 				});
 				OFSAptr->bRefreshDisplay = false; // this should stay out off the main view async call
 			}
@@ -198,8 +217,26 @@
 	
 }
 
-- (void) setCurrentScale:(MusicalScale *)scale withSystem:(MusicalSystem *)system {
-	self.OFSAptr->setScale(scale.type,scale.mode,scale.firstNote,system.numDivisions,true); 
+- (void)setScale:(Scale *)scale {
+	currentScale = scale;
+	self.OFSAptr->setScale(scale.type,scale.mode,scale.note,scale.divisions,true); 
+	viewController.scaleName = scale.name;
 }
+
+
+- (void)presentScalesController {	
+	[self.navigationController presentModalViewController:self.scalesNavigationController animated:YES];
+}
+
+#pragma mark -
+#pragma mark ScalesParser
+
+- (void)parserDidEndParsingData:(ScalesParser *)parser {
+	scalesTable.scales = [NSArray arrayWithArray:parser.parsedScales];
+	[scalesTable arrangeScales];
+	[self setScale:[scalesTable.scales objectAtIndex:0]];
+	[self.eAGLView startAnimation];
+}
+
 
 @end

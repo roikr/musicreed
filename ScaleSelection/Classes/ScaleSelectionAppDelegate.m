@@ -18,6 +18,8 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize mainViewController;
+@synthesize scales;
+@synthesize scalesViewController;
 
 
 #pragma mark -
@@ -25,6 +27,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
+	
+	
+	ScalesParser *parser = [[[ScalesParser alloc] init] autorelease]; 
+	parser.delegate = self;
+	[parser parse];
+	
     // Override point for customization after application launch.
     
     // Set the navigation controller as the window's root view controller and display.
@@ -96,6 +104,15 @@
 	
 - (void)presentScalesController {	
 	[self.mainViewController presentModalViewController:self.navigationController animated:YES];
+}
+
+#pragma mark -
+#pragma mark ScalesParser
+
+- (void)parserDidEndParsingData:(ScalesParser *)parser {
+	//self.scales =  
+	self.scalesViewController.scales = [NSArray arrayWithArray:parser.parsedScales];
+	[self.scalesViewController arrangeScales];
 }
 
 @end

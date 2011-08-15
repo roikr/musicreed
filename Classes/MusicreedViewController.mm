@@ -7,16 +7,13 @@
 //
 
 #import "MusicreedViewController.h"
-#import "ScalesTable.h"
-#import "MusicalSystem.h"
-#import "MusicalScale.h"
+#import "Scale.h"
 #import "TouchView.h"
 #import "MusicreedAppDelegate.h"
 #import "RKMacros.h"
 
 
 @interface MusicreedViewController()
-- (void)parse;
 
 @end
 
@@ -25,9 +22,7 @@
 @implementation MusicreedViewController
 
 @synthesize scaleLabel;
-@synthesize scalesTable;
-@synthesize currentMusicalSystem;
-@synthesize parsedMusicalSystems;
+
 
 
 /*
@@ -53,18 +48,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	if (!self.parsedMusicalSystems) {
-		[self parse];
-	}
+	// roikr: first time check...for memory warning
+	((TouchView *)self.view).OFSAptr = ((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr;
 	
-	if (self.scalesTable == nil) {
-		self.scalesTable = [[ScalesTable alloc] initWithNibName:@"ScalesTable" bundle:nil];
-		((TouchView *)self.view).OFSAptr = ((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr;
-		
-		scalesTable.musicalSystems = [NSArray arrayWithArray:parsedMusicalSystems];
-		scalesTable.currentSystem = [scalesTable.musicalSystems objectAtIndex:0];
-		scalesTable.currentScale = [scalesTable.currentSystem.scales objectAtIndex:0];
-	}
+	
+	//if (self.scalesTable == nil) {
+//		self.scalesTable = [[ScalesTable alloc] initWithNibName:@"ScalesTable" bundle:nil];
+//		((TouchView *)self.view).OFSAptr = ((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr;
+//		
+//		
+//	}
 }
 
 
@@ -80,10 +73,11 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	NSLog(@"MusicreedViewController::viewWillAppear");
-	if (self.scalesTable) {
-		scaleLabel.text = self.scalesTable.currentScale.name;
-		[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] setCurrentScale:scalesTable.currentScale withSystem:scalesTable.currentSystem];
-	}
+	self.scaleLabel.text = scaleName;
+//	if (self.scalesTable) {
+//		scaleLabel.text = self.scalesTable.currentScale.name;
+//		[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] setCurrentScale:scalesTable.currentScale withSystem:scalesTable.currentSystem];
+//	}
 	
 	
 }
@@ -107,8 +101,8 @@
 }
 
 - (void)chooseScale:(id)sender {
-	
-	[self presentModalViewController:self.scalesTable animated:YES];
+	[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] presentScalesController];
+//	[self presentModalViewController:self.scalesTable animated:YES];
 }
 
 - (void)toggle:(id)sender {
@@ -116,94 +110,14 @@
 	[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] toggle:UIInterfaceOrientationLandscapeRight animated:0.3];
 }
 
-- (void)updateLabelWithMode:(NSUInteger)mode {
-	RKLog(@"updateLabel");
-	for (int i=0; i<[scalesTable.currentSystem.scales count]; i++) {
-		MusicalScale *scale = [scalesTable.currentSystem.scales objectAtIndex:i];
-		if (scale.type == scalesTable.currentScale.type && scale.mode == mode) {
-			scalesTable.currentScale = scale;
-			scaleLabel.text = scalesTable.currentScale.name;
-			break;
-		}
-	}
-	
-
-	
+-(void) setScaleName:(NSString *)name {
+	scaleName = name;
+	self.scaleLabel.text = scaleName;
 }
 
-#pragma mark -
-#pragma mark Parser
-
-- (void)parse {
-	
-	
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"systems" ofType:@"xml"]]];
-	self.parsedMusicalSystems = [NSMutableArray array];
-	
-	[parser setDelegate:self];
-	[parser parse];
-	
-	
-	
-	
+-(NSString *) scaleName {
+	return scaleName;
 }
-
-
-
-#pragma mark -
-#pragma mark Parser constants
-
-
-// Reduce potential parsing errors by using string constants declared in a single place.
-static NSString * const kSystemElementName = @"system";
-static NSString * const kScaleElementName = @"scale";
-
-
-#pragma mark -
-#pragma mark NSXMLParser delegate methods
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-	attributes:(NSDictionary *)attributeDict {
-	
-    if ([elementName isEqualToString:kSystemElementName]) {
-		NSUInteger numDivisions = 12;
-		NSNumber *value = [attributeDict valueForKey:@"divisions"];
-		if (value ) {
-			numDivisions = [value integerValue];
-		}
-		MusicalSystem *system = [MusicalSystem musicalSystemWithName:[attributeDict valueForKey:@"name"] withNumDivisions:numDivisions];
-		self.currentMusicalSystem = system;
-		[system release];
-		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
-    } else if ([elementName isEqualToString:kScaleElementName]) {
-		[currentMusicalSystem addScaleWithName:[attributeDict valueForKey:@"name"]  withType:[[attributeDict valueForKey:@"scale"] integerValue]  withMode:[[attributeDict valueForKey:@"mode"] integerValue] withFirstNote:[[attributeDict valueForKey:@"note"] floatValue] withFilename:[attributeDict valueForKey:@"filename"]  ];
-		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
-	} 
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName {     
-    
-	if ([elementName isEqualToString:kSystemElementName]) {
-		[parsedMusicalSystems addObject:self.currentMusicalSystem];
-    }
-	
-}
-
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    //NSLog(@"foundCharacters: %@",string);
-}
-
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSLog(@"parseErrorOccurred: %@",[parseError description]);
-}
-
-
-
 
 
 @end

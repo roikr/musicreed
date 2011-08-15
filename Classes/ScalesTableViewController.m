@@ -32,11 +32,6 @@
 	((UITableView *)self.view).backgroundView = self.backgroundView;
 	self.title = NSLocalizedString(@"Scales", @"Master view navigation title");
 
-	if (!self.scales) {
-		ScalesParser *parser = [[[ScalesParser alloc] init] autorelease]; 
-		parser.delegate = self;
-		[parser parse];
-	}
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 	self.navigationItem.rightBarButtonItem = self.cancelButtonItem;
 }
@@ -73,12 +68,7 @@
 
 
 
-#pragma mark -
-#pragma mark ScalesParser
-
-- (void)parserDidEndParsingData:(ScalesParser *)parser {
-	self.scales = [NSArray arrayWithArray:parser.parsedScales];
-	
+- (void)arrangeScales {	
 	self.sections = [NSMutableArray array];
 	NSMutableArray *currentSection;
 	NSString *currentSystem = nil;
@@ -97,9 +87,9 @@
 		[currentSection addObject:scale];
 		if ([currentSection count] == 1) {
 			[firstSection addObject:currentSystem];
-//			if (![sections count]) {
-//				[sections addObject:firstSection];
-//			}
+			//			if (![sections count]) {
+			//				[sections addObject:firstSection];
+			//			}
 			[sections addObject:currentSection];
 			
 		}
@@ -107,6 +97,7 @@
 	
 	[self.tableView reloadData];
 }
+
 
 #pragma mark -
 #pragma mark Table view data source

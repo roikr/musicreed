@@ -13,8 +13,6 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* MusicreedViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */; };
 		E400FE05136D50A7006A18DD /* ScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E400FE04136D50A7006A18DD /* ScaleCell.m */; };
-		E40B02F7137FC861001008FE /* MusicalScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B02F4137FC861001008FE /* MusicalScale.m */; };
-		E40B02F8137FC861001008FE /* MusicalSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E40B02F6137FC861001008FE /* MusicalSystem.m */; };
 		E40B0334137FD062001008FE /* Disc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40B0330137FD062001008FE /* Disc.cpp */; };
 		E40B0335137FD062001008FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40B0333137FD062001008FE /* testApp.mm */; };
 		E44C046613C1EB5A00C0B62A /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E44C045D13C1EB5A00C0B62A /* install.xml */; };
@@ -34,7 +32,14 @@
 		E44D3E19137BD05B00345249 /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E44D3E18137BD05B00345249 /* TouchView.mm */; };
 		E44D3EE2137BDA4900345249 /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E44D3EE1137BDA4900345249 /* ofxiPhoneSoundStream.mm */; };
 		E44D3EE8137BDCA800345249 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44D3EE7137BDCA800345249 /* AudioToolbox.framework */; };
-		E48615E913694F81000851FA /* ScalesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E48615E713694F81000851FA /* ScalesTable.m */; };
+		E481CE2B13F3B72F0034F652 /* ScalesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2113F3B72F0034F652 /* ScalesParser.m */; };
+		E481CE2C13F3B72F0034F652 /* ScalesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */; };
+		E481CE2D13F3B72F0034F652 /* ScalesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */; };
+		E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */; };
+		E481CE2F13F3B72F0034F652 /* SubsystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */; };
+		E481CE3013F3B72F0034F652 /* SystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2913F3B72F0034F652 /* SystemTableViewController.m */; };
+		E481CE3113F3B72F0034F652 /* SystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */; };
+		E481CE4213F3B78E0034F652 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE4113F3B78E0034F652 /* Scale.m */; };
 		E490649013700BD90034C2F5 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E490648F13700BD90034C2F5 /* EAGLView.mm */; };
 		E49064DC137029970034C2F5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064DB137029970034C2F5 /* OpenGLES.framework */; };
 		E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064E1137029E20034C2F5 /* QuartzCore.framework */; };
@@ -50,7 +55,6 @@
 		E4E6509D137FF7CA00DFCE6E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E65099137FF7CA00DFCE6E /* MainWindow.xib */; };
 		E4E6509E137FF7CA00DFCE6E /* MusicreedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */; };
 		E4E6509F137FF7CA00DFCE6E /* ScaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */; };
-		E4E650A0137FF7CA00DFCE6E /* ScalesTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509C137FF7CA00DFCE6E /* ScalesTable.xib */; };
 		E4E650A4137FF7F700DFCE6E /* MAIAN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */; };
 		E4E650A5137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */; };
 		E4E650A6137FF7F700DFCE6E /* systems.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4E650A3137FF7F700DFCE6E /* systems.xml */; };
@@ -72,10 +76,6 @@
 		8D1107310486CEB800E47090 /* Musicreed-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Musicreed-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E400FE03136D50A7006A18DD /* ScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleCell.h; sourceTree = "<group>"; };
 		E400FE04136D50A7006A18DD /* ScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleCell.m; sourceTree = "<group>"; };
-		E40B02F3137FC861001008FE /* MusicalScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicalScale.h; path = Model/MusicalScale.h; sourceTree = "<group>"; };
-		E40B02F4137FC861001008FE /* MusicalScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicalScale.m; path = Model/MusicalScale.m; sourceTree = "<group>"; };
-		E40B02F5137FC861001008FE /* MusicalSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicalSystem.h; path = Model/MusicalSystem.h; sourceTree = "<group>"; };
-		E40B02F6137FC861001008FE /* MusicalSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicalSystem.m; path = Model/MusicalSystem.m; sourceTree = "<group>"; };
 		E40B0330137FD062001008FE /* Disc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Disc.cpp; path = src/Disc.cpp; sourceTree = "<group>"; };
 		E40B0331137FD062001008FE /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = src/Disc.h; sourceTree = "<group>"; };
 		E40B0332137FD062001008FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = "<group>"; };
@@ -193,8 +193,19 @@
 		E44D3EE0137BDA4900345249 /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofSoundStream.h; path = ../YesPlastic/src/ofSoundStream.h; sourceTree = SOURCE_ROOT; };
 		E44D3EE1137BDA4900345249 /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxiPhoneSoundStream.mm; path = ../YesPlastic/src/ofxiPhoneSoundStream.mm; sourceTree = SOURCE_ROOT; };
 		E44D3EE7137BDCA800345249 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		E48615E613694F81000851FA /* ScalesTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesTable.h; sourceTree = "<group>"; };
-		E48615E713694F81000851FA /* ScalesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesTable.m; sourceTree = "<group>"; };
+		E481CE2013F3B72F0034F652 /* ScalesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesParser.h; sourceTree = "<group>"; };
+		E481CE2113F3B72F0034F652 /* ScalesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesParser.m; sourceTree = "<group>"; };
+		E481CE2213F3B72F0034F652 /* ScalesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesTableViewController.h; sourceTree = "<group>"; };
+		E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesTableViewController.m; sourceTree = "<group>"; };
+		E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScalesTableViewController.xib; sourceTree = "<group>"; };
+		E481CE2513F3B72F0034F652 /* SubsystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemTableViewController.h; sourceTree = "<group>"; };
+		E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemTableViewController.m; sourceTree = "<group>"; };
+		E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubsystemTableViewController.xib; sourceTree = "<group>"; };
+		E481CE2813F3B72F0034F652 /* SystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemTableViewController.h; sourceTree = "<group>"; };
+		E481CE2913F3B72F0034F652 /* SystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemTableViewController.m; sourceTree = "<group>"; };
+		E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemTableViewController.xib; sourceTree = "<group>"; };
+		E481CE4013F3B78E0034F652 /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scale.h; path = Model/Scale.h; sourceTree = "<group>"; };
+		E481CE4113F3B78E0034F652 /* Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scale.m; path = Model/Scale.m; sourceTree = "<group>"; };
 		E490648E13700BD90034C2F5 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		E490648F13700BD90034C2F5 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		E49064DB137029970034C2F5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -221,7 +232,6 @@
 		E4E65099137FF7CA00DFCE6E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MusicreedViewController.xib; path = Resources/MusicreedViewController.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScaleCell.xib; path = Resources/ScaleCell.xib; sourceTree = SOURCE_ROOT; };
-		E4E6509C137FF7CA00DFCE6E /* ScalesTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScalesTable.xib; path = Resources/ScalesTable.xib; sourceTree = SOURCE_ROOT; };
 		E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = MAIAN.TTF; path = Resources/MAIAN.TTF; sourceTree = "<group>"; };
 		E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Maiandra GD Demi Bold.ttf"; path = "Resources/Maiandra GD Demi Bold.ttf"; sourceTree = "<group>"; };
 		E4E650A3137FF7F700DFCE6E /* systems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = systems.xml; path = Resources/systems.xml; sourceTree = "<group>"; };
@@ -256,6 +266,17 @@
 				1D3623240D0F684500981E51 /* MusicreedAppDelegate.h */,
 				1D3623250D0F684500981E51 /* MusicreedAppDelegate.mm */,
 				E4E65099137FF7CA00DFCE6E /* MainWindow.xib */,
+				E481CE2013F3B72F0034F652 /* ScalesParser.h */,
+				E481CE2113F3B72F0034F652 /* ScalesParser.m */,
+				E481CE2213F3B72F0034F652 /* ScalesTableViewController.h */,
+				E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */,
+				E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */,
+				E481CE2513F3B72F0034F652 /* SubsystemTableViewController.h */,
+				E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */,
+				E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */,
+				E481CE2813F3B72F0034F652 /* SystemTableViewController.h */,
+				E481CE2913F3B72F0034F652 /* SystemTableViewController.m */,
+				E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */,
 				28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */,
 				E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */,
@@ -266,9 +287,6 @@
 				E490648F13700BD90034C2F5 /* EAGLView.mm */,
 				E44D3E17137BD05B00345249 /* TouchView.h */,
 				E44D3E18137BD05B00345249 /* TouchView.mm */,
-				E48615E613694F81000851FA /* ScalesTable.h */,
-				E48615E713694F81000851FA /* ScalesTable.m */,
-				E4E6509C137FF7CA00DFCE6E /* ScalesTable.xib */,
 				E400FE03136D50A7006A18DD /* ScaleCell.h */,
 				E400FE04136D50A7006A18DD /* ScaleCell.m */,
 				E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */,
@@ -665,10 +683,8 @@
 		E4DD0D8C136978F000DB1B03 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E40B02F3137FC861001008FE /* MusicalScale.h */,
-				E40B02F4137FC861001008FE /* MusicalScale.m */,
-				E40B02F5137FC861001008FE /* MusicalSystem.h */,
-				E40B02F6137FC861001008FE /* MusicalSystem.m */,
+				E481CE4013F3B78E0034F652 /* Scale.h */,
+				E481CE4113F3B78E0034F652 /* Scale.m */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -726,13 +742,15 @@
 				E4E6509D137FF7CA00DFCE6E /* MainWindow.xib in Resources */,
 				E4E6509E137FF7CA00DFCE6E /* MusicreedViewController.xib in Resources */,
 				E4E6509F137FF7CA00DFCE6E /* ScaleCell.xib in Resources */,
-				E4E650A0137FF7CA00DFCE6E /* ScalesTable.xib in Resources */,
 				E4E650A4137FF7F700DFCE6E /* MAIAN.TTF in Resources */,
 				E4E650A5137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf in Resources */,
 				E4E650A6137FF7F700DFCE6E /* systems.xml in Resources */,
 				E4F89C8413B2437000A36E03 /* ChordsViewController.xib in Resources */,
 				E44C046613C1EB5A00C0B62A /* install.xml in Resources */,
 				E4AF3F1B13C221760060359D /* README in Resources */,
+				E481CE2D13F3B72F0034F652 /* ScalesTableViewController.xib in Resources */,
+				E481CE2F13F3B72F0034F652 /* SubsystemTableViewController.xib in Resources */,
+				E481CE3113F3B72F0034F652 /* SystemTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,15 +763,12 @@
 			files = (
 				1D3623260D0F684500981E51 /* MusicreedAppDelegate.mm in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MusicreedViewController.mm in Sources */,
-				E48615E913694F81000851FA /* ScalesTable.m in Sources */,
 				E400FE05136D50A7006A18DD /* ScaleCell.m in Sources */,
 				E490649013700BD90034C2F5 /* EAGLView.mm in Sources */,
 				E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */,
 				E49065CC13703A090034C2F5 /* CustomButton.m in Sources */,
 				E44D3E19137BD05B00345249 /* TouchView.mm in Sources */,
 				E44D3EE2137BDA4900345249 /* ofxiPhoneSoundStream.mm in Sources */,
-				E40B02F7137FC861001008FE /* MusicalScale.m in Sources */,
-				E40B02F8137FC861001008FE /* MusicalSystem.m in Sources */,
 				E40B0334137FD062001008FE /* Disc.cpp in Sources */,
 				E40B0335137FD062001008FE /* testApp.mm in Sources */,
 				E4E650AF137FF84700DFCE6E /* main.m in Sources */,
@@ -774,6 +789,11 @@
 				E4AF3F1A13C221760060359D /* CAXException.cpp in Sources */,
 				E4AF3F1C13C221760060359D /* ofxAudioFile.mm in Sources */,
 				E4AF3F1D13C221760060359D /* ofxAudioInstrument.cpp in Sources */,
+				E481CE2B13F3B72F0034F652 /* ScalesParser.m in Sources */,
+				E481CE2C13F3B72F0034F652 /* ScalesTableViewController.m in Sources */,
+				E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.m in Sources */,
+				E481CE3013F3B72F0034F652 /* SystemTableViewController.m in Sources */,
+				E481CE4213F3B78E0034F652 /* Scale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,7 +916,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "47E3758E-3D89-4481-A517-E24113410A16";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A6C7CC37-4328-487B-A3FA-1D336213816D";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad Hoc";
