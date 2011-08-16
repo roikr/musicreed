@@ -14,8 +14,7 @@
 @synthesize delegate;
 @synthesize parsedScales;
 @synthesize currentScale;
-@synthesize currentSystem;
-@synthesize currentDivisions;
+
 
 #pragma mark -
 #pragma mark Parser
@@ -23,7 +22,7 @@
 - (void)parse {
 	
 	
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"systems" ofType:@"xml"]]];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"scales" ofType:@"xml"]]];
 	self.parsedScales = [NSMutableArray array];
 	
 	[parser setDelegate:self];
@@ -33,7 +32,6 @@
 
 - (void)dealloc {
     [parsedScales release];
-    [currentSystem release];
     [currentScale release];
     [super dealloc];
 }
@@ -44,8 +42,7 @@
 
 
 // Reduce potential parsing errors by using string constants declared in a single place.
-static NSString * const kSystemsList = @"systems";
-static NSString * const kSystemElementName = @"system";
+static NSString * const kScalesList = @"scales";
 static NSString * const kScaleElementName = @"scale";
 
 
@@ -57,20 +54,20 @@ static NSString * const kScaleElementName = @"scale";
  qualifiedName:(NSString *)qName
 	attributes:(NSDictionary *)attributeDict {
 	
-    if ([elementName isEqualToString:kSystemElementName]) {
-		
-		self.currentSystem = [attributeDict valueForKey:@"name"];
+	if ([elementName isEqualToString:kScaleElementName]) {
 		NSNumber *value = [attributeDict valueForKey:@"divisions"];
-		self.currentDivisions = value ? [value integerValue] : 12;
-		
-		
-			//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
-    } else if ([elementName isEqualToString:kScaleElementName]) {
-		self.currentScale = [Scale scaleWithSystem:currentSystem divisions:currentDivisions subsystem:@"test" name:[attributeDict valueForKey:@"name"] 
+		NSUInteger divisions = value ? [value integerValue] : 12;
+		NSString *subsystem = [attributeDict valueForKey:@"subsystem"];
+		if ([subsystem isEqualToString:@""]) {
+			subsystem = @"test";
+		}
+		self.currentScale = [Scale scaleWithSystem:[attributeDict valueForKey:@"system"] divisions:divisions
+									subsystem:subsystem name:[attributeDict valueForKey:@"name"] 
 							type:[[attributeDict valueForKey:@"scale"] integerValue] mode:[[attributeDict valueForKey:@"mode"] integerValue] 
 							note:[[attributeDict valueForKey:@"note"] floatValue] filename:[attributeDict valueForKey:@"filename"] 
-							ascending:YES descending:YES];
+							ascending:[[attributeDict valueForKey:@"ascending"] boolValue] descending:[[attributeDict valueForKey:@"descending"] boolValue]];
 		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
+		NSLog(@"scale: %@, subsystem: %@, ascending: %i, descending: %i",currentScale.name,currentScale.subsystem,currentScale.bAscending,currentScale.bDescending);
 	} 
 }
 
@@ -78,14 +75,12 @@ static NSString * const kScaleElementName = @"scale";
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName {     
     
-	if ([elementName isEqualToString:kSystemsList]) {
+	if ([elementName isEqualToString:kScalesList]) {
 		
 		[delegate parserDidEndParsingData:self];
 		
 		
 		//NSLog(@"system: %@",[attributeDict valueForKey:@"name"]);
-    } else if ([elementName isEqualToString:kSystemElementName]) {
-		self.currentSystem = nil;
     } else if ([elementName isEqualToString:kScaleElementName]) {
 		[self.parsedScales addObject:currentScale];
 	}

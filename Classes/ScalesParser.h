@@ -14,18 +14,12 @@
 @interface ScalesParser : NSObject<NSXMLParserDelegate>{
 	id <ScalesParserDelegate> delegate;
 	NSMutableArray *parsedScales;
-	Scale *currentScale;
-	NSString *currentSystem;
-	NSUInteger currentDivisions;
-	
-
+	Scale *currentScale;		
 }
 
 @property (nonatomic, assign) id <ScalesParserDelegate> delegate;
 @property (nonatomic, retain) NSMutableArray *parsedScales;
 @property (nonatomic, retain) Scale *currentScale;
-@property (nonatomic, retain) NSString *currentSystem;
-@property NSUInteger currentDivisions;
 
 - (void)parse;
 
