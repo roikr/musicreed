@@ -30,9 +30,9 @@ void testApp::setup(){
 //	ofBackground(255,255,255);
 	
 	ofxXmlSettings xml;
-	ofDisableDataPath();
-	assert(xml.loadFile(ofToResourcesPath("data/creed.xml")));
-	ttf.loadFont(ofToResourcesPath("MAIAN.TTF"),12); 
+	bool bLoaded = xml.loadFile("creed.xml");
+	assert(bLoaded);
+	ttf.loadFont(ofToDataPath("MAIAN.TTF"),12); 
 	ofEnableDataPath();
 	xml.pushTag("creed");
 	
@@ -105,19 +105,20 @@ void testApp::setup(){
 	
 	
 	instrument.setup(256,2);
+	limiter.setup(10, 500, 44100, 0.3);
 	
 //	for (int i=48; i<=72; i++) {
-//		string filename = ofToResourcesPath("data/samples/Littlevoice_"+ofToString(i)+".caf");
+//		string filename = ofToDataPath("samples/Littlevoice_"+ofToString(i)+".caf");
 //		instrument.loadSample(filename,i);
 //	}
 	
 	for (int i=38; i<=72; i++) {
-		string filename = ofToResourcesPath("data/samples/oud_"+ofToString(i)+".caf");
+		string filename = ofToDataPath("oud_"+ofToString(i)+".caf");
 		instrument.loadSample(filename,i);
 	}
 	
-	inner.setup(/*ofToResourcesPath("data/inner.pvr"),ofToResourcesPath("data/innerBg.pvr"),*/ofToResourcesPath("data/click.caf"), bufferSize,100,200);
-	outer.setup(/*ofToResourcesPath("data/outer.pvr"),ofToResourcesPath("data/outerBg.pvr"),*/ofToResourcesPath("data/click.caf"), bufferSize,200,500);
+	inner.setup(/*ofToDataPath("inner.pvr"),ofToDataPath("innerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize,100,200);
+	outer.setup(/*ofToDataPath("outer.pvr"),ofToDataPath("outerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize,200,500);
 	
 	
 	bDown = false;
@@ -179,27 +180,27 @@ void testApp::resume() {
 //	inner.loadTextures();
 //	outer.loadTextures();
 	
-	keysTexture.load(ofToResourcesPath("data/keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleBackground.load(ofToResourcesPath("data/scale_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordBackground.load(ofToResourcesPath("data/chord_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleHighlight.load(ofToResourcesPath("data/scale_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordHighlight.load(ofToResourcesPath("data/chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
-//	shadow.load(ofToResourcesPath("data/shadow.pvr"),OFX_TEXTURE_TYPE_PVR);
+	keysTexture.load(ofToDataPath("keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleBackground.load(ofToDataPath("scale_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordBackground.load(ofToDataPath("chord_background.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleHighlight.load(ofToDataPath("scale_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordHighlight.load(ofToDataPath("chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
+//	shadow.load(ofToDataPath("shadow.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
-	scaleNeedle.load(ofToResourcesPath("data/scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleInnerPattern.load(ofToResourcesPath("data/scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleOuterPattern.load(ofToResourcesPath("data/scale_outer_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleNeedle.load(ofToDataPath("scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleInnerPattern.load(ofToDataPath("scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleOuterPattern.load(ofToDataPath("scale_outer_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
-	chordNeedle.load(ofToResourcesPath("data/chord_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordPattern.load(ofToResourcesPath("data/chord_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordMask.load(ofToResourcesPath("data/chord_mask.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordNeedle.load(ofToDataPath("chord_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordPattern.load(ofToDataPath("chord_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordMask.load(ofToDataPath("chord_mask.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
-		iter->texture->load(ofToResourcesPath("data/"+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
+		iter->texture->load(ofToDataPath(""+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
 	}
 	
 	for(vector <chord>::iterator iter=chords.begin();iter!=chords.end();iter++) {
-		iter->texture->load(ofToResourcesPath("data/"+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
+		iter->texture->load(ofToDataPath(""+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
 	}
 	
 	ofSoundStreamStart();
@@ -572,6 +573,8 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	instrument.mixChannel(output,0,2);
 	instrument.mixChannel(output,1,2);
 	instrument.postProcess();
+	
+	limiter.audioProcess(output,bufferSize,nChannels);
 	
 	
 }

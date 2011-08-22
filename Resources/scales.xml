@@ -1,0 +1,273 @@
+<scales>
+	<scale system="Arabic" subsystem="Hijaz" name="Nahawand Hijaz" ascending="0" descending="0" scale="16" mode="0" note="0" filename="nahawand_hijaz"/>
+	<scale system="Arabic" subsystem="Hijaz" name="Zanjaran" ascending="0" descending="0" scale="3" mode="2" note="0" filename="zanjaran"/>
+	<scale system="Arabic" subsystem="" name="Bayati" ascending="0" descending="0" scale="1" mode="0" note="0" filename="bayati"/>
+	<scale system="Arabic" subsystem="" name="Bayati Shuri (Karjighar)" ascending="0" descending="0" scale="0" mode="1" note="0" filename="bayati_shuri_karjighar"/>
+	<scale system="Arabic" subsystem="" name="Busalik" ascending="0" descending="0" scale="1" mode="3" note="0" filename="busalik"/>
+	<scale system="Arabic" subsystem="" name="Farahfaza" ascending="0" descending="0" scale="8" mode="5" note="0" filename="farahfaza"/>
+	<scale system="Arabic" subsystem="" name="Hijaz" ascending="0" descending="0" scale="16" mode="4" note="0" filename="hijaz"/>
+	<scale system="Arabic" subsystem="" name="Hijaz Kar" ascending="0" descending="0" scale="5" mode="0" note="0" filename="hijaz_kar"/>
+	<scale system="Arabic" subsystem="" name="Hijaz Nahawand" ascending="0" descending="0" scale="16" mode="4" note="0" filename="hijaz_nahawand"/>
+	<scale system="Arabic" subsystem="" name="Hijaz Rast" ascending="0" descending="0" scale="0" mode="4" note="0" filename="hijaz_rast"/>
+	<scale system="Arabic" subsystem="" name="Husseini" ascending="0" descending="0" scale="13" mode="0" note="0" filename="husseini"/>
+	<scale system="Arabic" subsystem="" name="Huzam" ascending="0" descending="0" scale="0" mode="2" note="0" filename="huzam"/>
+	<scale system="Arabic" subsystem="" name="Iraq" ascending="0" descending="0" scale="13" mode="5" note="0" filename="iraq"/>
+	<scale system="Arabic" subsystem="" name="Jiharkah" ascending="0" descending="0" scale="1" mode="2" note="0" filename="jiharkah"/>
+	<scale system="Arabic" subsystem="" name="Kurd" ascending="0" descending="0" scale="8" mode="2" note="0" filename="kurd"/>
+	<scale system="Arabic" subsystem="" name="Mohammedan" ascending="0" descending="0" scale="16" mode="0" note="0" filename="mohammedan"/>
+	<scale system="Arabic" subsystem="" name="Nahawand Kurd" ascending="0" descending="0" scale="8" mode="5" note="0" filename="nahawand_kurd"/>
+	<scale system="Arabic" subsystem="" name="Nahawand Murassah" ascending="0" descending="0" scale="3" mode="6" note="0" filename="nahawand_murassah"/>
+	<scale system="Arabic" subsystem="" name="Nairuz" ascending="0" descending="0" scale="13" mode="3" note="0" filename="nairuz"/>
+	<scale system="Arabic" subsystem="" name="Nawa Athar" ascending="0" descending="0" scale="5" mode="3" note="0" filename="nawa_athar"/>
+	<scale system="Arabic" subsystem="" name="Nikriz" ascending="0" descending="0" scale="16" mode="3" note="0" filename="nikriz"/>
+	<scale system="Arabic" subsystem="" name="Rahat El Arwah" ascending="0" descending="0" scale="0" mode="2" note="0" filename="rahat_el_arwah"/>
+	<scale system="Arabic" subsystem="" name="Rast Nahawand" ascending="0" descending="0" scale="1" mode="6" note="0" filename="rast_nahawand"/>
+	<scale system="Arabic" subsystem="" name="Rast Rast" ascending="0" descending="0" scale="13" mode="6" note="0" filename="rast_rast"/>
+	<scale system="Arabic" subsystem="" name="Saba Zamzam" ascending="0" descending="0" scale="3" mode="0" note="0" filename="saba_zamzam"/>
+	<scale system="Arabic" subsystem="" name="Shadd Araban" ascending="0" descending="0" scale="5" mode="0" note="0" filename="shadd_araban"/>
+	<scale system="Arabic" subsystem="" name="Shahnaz" ascending="0" descending="0" scale="5" mode="0" note="0" filename="shahnaz"/>
+	<scale system="Arabic" subsystem="" name="Shawq Afza" ascending="0" descending="0" scale="3" mode="5" note="0" filename="shawq_afza"/>
+	<scale system="Arabic" subsystem="" name="Sikah Baladi" ascending="0" descending="0" scale="5" mode="0" note="0" filename="sikah_baladi"/>
+	<scale system="Arabic" subsystem="" name="Sikah Nahawand" ascending="0" descending="0" scale="1" mode="1" note="0" filename="sikah_nahawand"/>
+	<scale system="Arabic" subsystem="" name="Sikah Rast" ascending="0" descending="0" scale="13" mode="1" note="0" filename="sikah_rast"/>
+	<scale system="Arabic" subsystem="" name="Sunbulah" ascending="0" descending="0" scale="3" mode="6" note="0" filename="sunbulah"/>
+	<scale system="Arabic" subsystem="" name="Suzidil" ascending="0" descending="0" scale="5" mode="0" note="0" filename="suzidil"/>
+	<scale system="Arabic" subsystem="" name="Suznak (Suzinak)" ascending="0" descending="0" scale="0" mode="0" note="0" filename="suznak_suzinak"/>
+	<scale system="Arabic" subsystem="" name="Ushaq Masri" ascending="0" descending="0" scale="1" mode="3" note="0" filename="ushaq_masri"/>
+	<scale system="Arabic" subsystem="" name="Zankulah" ascending="0" descending="0" scale="3" mode="2" note="0" filename="zankulah"/>
+	<scale system="Armenian" subsystem="" name="Cushak" ascending="0" descending="0" scale="8" mode="5" note="0" filename="cushak"/>
+	<scale system="Armenian" subsystem="" name="Nihavend" ascending="0" descending="0" scale="16" mode="0" note="0" filename="nihavend"/>
+	<scale system="Armenian" subsystem="" name="Rast" ascending="0" descending="0" scale="8" mode="0" note="0" filename="rast"/>
+	<scale system="Balinese" subsystem="Minors" name="Balinese" ascending="1" descending="1" scale="15" mode="0" note="1" filename="balinese"/>
+	<scale system="Balinese" subsystem="Minors" name="Pelog" ascending="0" descending="0" scale="15" mode="0" note="1" filename="pelog"/>
+	<scale system="Byzantine" subsystem="" name="Byzantine" ascending="0" descending="0" scale="5" mode="0" note="0" filename="byzantine"/>
+	<scale system="Carnatic" subsystem="Minors" name="Bhupalam" ascending="1" descending="0" scale="15" mode="0" note="0" filename="bhupalam"/>
+	<scale system="Carnatic" subsystem="" name="Abheri" ascending="0" descending="0" scale="17" mode="4" note="0" filename="abheri"/>
+	<scale system="Carnatic" subsystem="" name="Amritavarshini" ascending="0" descending="0" scale="4" mode="0" note="0" filename="amritavarshini"/>
+	<scale system="Carnatic" subsystem="" name="Anandabhairavi" ascending="0" descending="0" scale="7" mode="1" note="0" filename="anandabhairavi"/>
+	<scale system="Carnatic" subsystem="" name="Andolika" ascending="0" descending="0" scale="9" mode="0" note="0" filename="andolika"/>
+	<scale system="Carnatic" subsystem="" name="Arabhi" ascending="0" descending="0" scale="17" mode="3" note="0" filename="arabhi"/>
+	<scale system="Carnatic" subsystem="" name="Bilahari" ascending="0" descending="0" scale="17" mode="0" note="0" filename="bilahari"/>
+	<scale system="Carnatic" subsystem="" name="Bindumalini" ascending="0" descending="0" scale="3" mode="2" note="0" filename="bindumalini"/>
+	<scale system="Carnatic" subsystem="" name="Charukeshi" ascending="0" descending="0" scale="12" mode="4" note="0" filename="charukeshi"/>
+	<scale system="Carnatic" subsystem="" name="Darbar" ascending="0" descending="0" scale="9" mode="0" note="0" filename="darbar"/>
+	<scale system="Carnatic" subsystem="" name="Desya Todi" ascending="0" descending="0" scale="9" mode="1" note="0" filename="desya_todi"/>
+	<scale system="Carnatic" subsystem="" name="Dhani (Suddha Dhanyasi)" ascending="0" descending="0" scale="17" mode="4" note="0" filename="dhani_suddha_dhanyasi"/>
+	<scale system="Carnatic" subsystem="" name="Dheera Shankarabharanam" ascending="0" descending="0" scale="8" mode="0" note="0" filename="dheera_shankarabharanam"/>
+	<scale system="Carnatic" subsystem="" name="Gamanasrama" ascending="0" descending="0" scale="10" mode="3" note="0" filename="gamanasrama"/>
+	<scale system="Carnatic" subsystem="" name="Hamir Kalyani" ascending="0" descending="0" scale="7" mode="3" note="0" filename="hamir_kalyani"/>
+	<scale system="Carnatic" subsystem="" name="Hanumathodi" ascending="0" descending="0" scale="8" mode="2" note="0" filename="hanumathodi"/>
+	<scale system="Carnatic" subsystem="" name="Hari Kambhoji" ascending="0" descending="0" scale="8" mode="4" note="0" filename="hari_kambhoji"/>
+	<scale system="Carnatic" subsystem="" name="Hindustani Kapi" ascending="0" descending="0" scale="8" mode="1" note="0" filename="hindustani_kapi"/>
+	<scale system="Carnatic" subsystem="" name="Kanada" ascending="0" descending="0" scale="8" mode="1" note="0" filename="kanada"/>
+	<scale system="Carnatic" subsystem="" name="Kedara Gaula" ascending="0" descending="0" scale="8" mode="4" note="0" filename="kedara_gaula"/>
+	<scale system="Carnatic" subsystem="" name="Mecha Kalyani" ascending="0" descending="0" scale="8" mode="3" note="0" filename="mecha_kalyani"/>
+	<scale system="Carnatic" subsystem="" name="Mohanam" ascending="0" descending="0" scale="17" mode="0" note="0" filename="mohanam"/>
+	<scale system="Carnatic" subsystem="" name="Nalinakanti" ascending="0" descending="0" scale="8" mode="0" note="0" filename="nalinakanti"/>
+	<scale system="Carnatic" subsystem="" name="Nata Bhairavi" ascending="0" descending="0" scale="8" mode="2" note="0" filename="nata_bhairavi"/>
+	<scale system="Carnatic" subsystem="" name="Nata Bhairavi" ascending="0" descending="0" scale="8" mode="5" note="0" filename="nata_bhairavi"/>
+	<scale system="Carnatic" subsystem="" name="Suddha Bhairavi" ascending="0" descending="0" scale="8" mode="1" note="0" filename="suddha_bhairavi"/>
+	<scale system="Carnatic" subsystem="" name="Suddha Saveri" ascending="0" descending="0" scale="17" mode="3" note="0" filename="suddha_saveri"/>
+	<scale system="Carnatic" subsystem="" name="Surya Lalith" ascending="0" descending="0" scale="10" mode="3" note="0" filename="surya_lalith"/>
+	<scale system="Carnatic" subsystem="" name="Udhayaravi Chandrika" ascending="0" descending="0" scale="17" mode="4" note="0" filename="udhayaravi_chandrika"/>
+	<scale system="Carnatic" subsystem="" name="Vasantha" ascending="0" descending="0" scale="16" mode="0" note="0" filename="vasantha"/>
+	<scale system="Chinese" subsystem="" name="Chaio" ascending="0" descending="0" scale="8" mode="5" note="0" filename="chaio"/>
+	<scale system="Chinese" subsystem="" name="Ching" ascending="0" descending="0" scale="4" mode="0" note="0" filename="ching"/>
+	<scale system="Chinese" subsystem="" name="Gong" ascending="0" descending="0" scale="17" mode="0" note="0" filename="gong"/>
+	<scale system="Chinese" subsystem="" name="Gu" ascending="0" descending="0" scale="8" mode="3" note="0" filename="gu"/>
+	<scale system="Chinese" subsystem="" name="Gu Xian" ascending="0" descending="0" scale="17" mode="4" note="0" filename="gu_xian"/>
+	<scale system="Chinese" subsystem="" name="Jia Zhong" ascending="0" descending="0" scale="17" mode="4" note="0" filename="jia_zhong"/>
+	<scale system="Chinese" subsystem="" name="Jiao" ascending="0" descending="0" scale="17" mode="2" note="0" filename="jiao"/>
+	<scale system="Chinese" subsystem="" name="Jin Yu" ascending="0" descending="0" scale="17" mode="1" note="0" filename="jin_yu"/>
+	<scale system="Chinese" subsystem="" name="Kung" ascending="0" descending="0" scale="8" mode="3" note="0" filename="kung"/>
+	<scale system="Chinese" subsystem="" name="Man Gong" ascending="0" descending="0" scale="17" mode="2" note="0" filename="man_gong"/>
+	<scale system="Chinese" subsystem="" name="Man Jue" ascending="0" descending="0" scale="17" mode="0" note="0" filename="man_jue"/>
+	<scale system="Chinese" subsystem="" name="Pien chih" ascending="0" descending="0" scale="8" mode="6" note="0" filename="pien_chih"/>
+	<scale system="Chinese" subsystem="" name="Ping" ascending="0" descending="0" scale="8" mode="3" note="0" filename="ping"/>
+	<scale system="Chinese" subsystem="" name="Qing Shang" ascending="0" descending="0" scale="17" mode="4" note="0" filename="qing_shang"/>
+	<scale system="Chinese" subsystem="" name="Qing Yu" ascending="0" descending="0" scale="17" mode="1" note="0" filename="qing_yu"/>
+	<scale system="Chinese" subsystem="" name="Quan Ming" ascending="0" descending="0" scale="17" mode="2" note="0" filename="quan_ming"/>
+	<scale system="Chinese" subsystem="" name="Rui Bin" ascending="0" descending="0" scale="17" mode="1" note="0" filename="rui_bin"/>
+	<scale system="Chinese" subsystem="" name="Se" ascending="0" descending="0" scale="8" mode="5" note="0" filename="se"/>
+	<scale system="Chinese" subsystem="" name="Shang" ascending="0" descending="0" scale="8" mode="4" note="0" filename="shang"/>
+	<scale system="Chinese" subsystem="" name="Xin" ascending="0" descending="0" scale="8" mode="0" note="0" filename="xin"/>
+	<scale system="Chinese" subsystem="" name="Yi Ze" ascending="0" descending="0" scale="17" mode="2" note="0" filename="yi_ze"/>
+	<scale system="Chinese" subsystem="" name="Zheng" ascending="0" descending="0" scale="17" mode="3" note="0" filename="zheng"/>
+	<scale system="Chinese" subsystem="" name="Zhi" ascending="0" descending="0" scale="17" mode="3" note="0" filename="zhi"/>
+	<scale system="Ethiopian" subsystem="Minors" name="Tizita Minor" ascending="0" descending="0" scale="15" mode="0" note="2" filename="tizita_minor"/>
+	<scale system="Ethiopian" subsystem="" name="Ambassel" ascending="0" descending="0" scale="4" mode="4" note="0" filename="ambassel"/>
+	<scale system="Ethiopian" subsystem="" name="Ararai" ascending="0" descending="0" scale="8" mode="0" note="0" filename="ararai"/>
+	<scale system="Ethiopian" subsystem="" name="Bati" ascending="0" descending="0" scale="12" mode="3" note="0" filename="bati"/>
+	<scale system="Ethiopian" subsystem="" name="Ethiopian Geez &amp; ezel" ascending="0" descending="0" scale="8" mode="5" note="0" filename="ethiopian_geez_q_ezel"/>
+	<scale system="Ethiopian" subsystem="" name="Kaffa" ascending="0" descending="0" scale="16" mode="3" note="0" filename="kaffa"/>
+	<scale system="Ethiopian" subsystem="" name="Tizita Major" ascending="0" descending="0" scale="17" mode="0" note="0" filename="tizita_major"/>
+	<scale system="Greek" subsystem="" name="Hijazskiar (major)" ascending="0" descending="0" scale="5" mode="0" note="0" filename="hijazskiar_major"/>
+	<scale system="Greek" subsystem="" name="Kartzihiar" ascending="0" descending="0" scale="3" mode="6" note="0" filename="kartzihiar"/>
+	<scale system="Greek" subsystem="" name="Kiourdi" ascending="0" descending="0" scale="8" mode="5" note="0" filename="kiourdi"/>
+	<scale system="Greek" subsystem="" name="Kiourdi" ascending="0" descending="0" scale="3" mode="6" note="0" filename="kiourdi"/>
+	<scale system="Greek" subsystem="" name="Niaventi (minor)" ascending="0" descending="0" scale="5" mode="3" note="0" filename="niaventi_minor"/>
+	<scale system="Greek" subsystem="" name="Nigriz" ascending="0" descending="0" scale="16" mode="3" note="0" filename="nigriz"/>
+	<scale system="Greek" subsystem="" name="Ousak (minor)" ascending="0" descending="0" scale="8" mode="2" note="0" filename="ousak_minor"/>
+	<scale system="Greek" subsystem="" name="Peiraiotikos Minor" ascending="0" descending="0" scale="16" mode="3" note="0" filename="peiraiotikos_minor"/>
+	<scale system="Greek" subsystem="" name="Souzinak (minor)" ascending="0" descending="0" scale="16" mode="3" note="0" filename="souzinak_minor"/>
+	<scale system="Greek" subsystem="" name="Tabahaniotiko" ascending="0" descending="0" scale="3" mode="5" note="0" filename="tabahaniotiko"/>
+	<scale system="Greek" subsystem="" name="Tsinganikos" ascending="0" descending="0" scale="5" mode="4" note="0" filename="tsinganikos"/>
+	<scale system="Hawaiian" subsystem="" name="Hawaiian" ascending="0" descending="0" scale="12" mode="0" note="0" filename="hawaiian"/>
+	<scale system="Hindustani" subsystem="Minors" name="Bhupala Todi" ascending="0" descending="1" scale="15" mode="0" note="1" filename="bhupala_todi"/>
+	<scale system="Hindustani" subsystem="" name=" Ambika" ascending="0" descending="0" scale="3" mode="1" note="0" filename="_ambika"/>
+	<scale system="Hindustani" subsystem="" name="Ahir Bhairav" ascending="0" descending="0" scale="3" mode="2" note="0" filename="ahir_bhairav"/>
+	<scale system="Hindustani" subsystem="" name="Ahiri Todi" ascending="0" descending="0" scale="12" mode="1" note="0" filename="ahiri_todi"/>
+	<scale system="Hindustani" subsystem="" name="Alhaiya Bilaval" ascending="0" descending="0" scale="9" mode="5" note="0" filename="alhaiya_bilaval"/>
+	<scale system="Hindustani" subsystem="" name="Alhaiya Bilaval" ascending="0" descending="0" scale="8" mode="0" note="0" filename="alhaiya_bilaval"/>
+	<scale system="Hindustani" subsystem="" name="Asavari" ascending="0" descending="0" scale="8" mode="5" note="0" filename="asavari"/>
+	<scale system="Hindustani" subsystem="" name="Bageshri" ascending="0" descending="0" scale="8" mode="1" note="0" filename="bageshri"/>
+	<scale system="Hindustani" subsystem="" name="Bhairav" ascending="0" descending="0" scale="5" mode="0" note="0" filename="bhairav"/>
+	<scale system="Hindustani" subsystem="" name="Bhairavi" ascending="0" descending="0" scale="8" mode="2" note="0" filename="bhairavi"/>
+	<scale system="Hindustani" subsystem="" name="Bhimpalasi" ascending="0" descending="0" scale="17" mode="4" note="0" filename="bhimpalasi"/>
+	<scale system="Hindustani" subsystem="" name="Bhimpalasi" ascending="0" descending="0" scale="8" mode="1" note="0" filename="bhimpalasi"/>
+	<scale system="Hindustani" subsystem="" name="Bhinna Shadja" ascending="0" descending="0" scale="4" mode="3" note="0" filename="bhinna_shadja"/>
+	<scale system="Hindustani" subsystem="" name="Bhup (Bhopali)" ascending="0" descending="0" scale="17" mode="0" note="0" filename="bhup_bhopali"/>
+	<scale system="Hindustani" subsystem="" name="Bihag" ascending="0" descending="0" scale="15" mode="4" note="0" filename="bihag"/>
+	<scale system="Hindustani" subsystem="" name="Bihag" ascending="0" descending="0" scale="7" mode="3" note="0" filename="bihag"/>
+	<scale system="Hindustani" subsystem="" name="Bilawal" ascending="0" descending="0" scale="8" mode="0" note="0" filename="bilawal"/>
+	<scale system="Hindustani" subsystem="" name="Chayanat" ascending="0" descending="0" scale="8" mode="0" note="0" filename="chayanat"/>
+	<scale system="Hindustani" subsystem="" name="Chayanat" ascending="0" descending="0" scale="7" mode="3" note="0" filename="chayanat"/>
+	<scale system="Hindustani" subsystem="" name="Cora" ascending="0" descending="0" scale="15" mode="2" note="2" filename="cora"/>
+	<scale system="Hindustani" subsystem="" name="Darbari Kanada" ascending="0" descending="0" scale="8" mode="5" note="0" filename="darbari_kanada"/>
+	<scale system="Hindustani" subsystem="" name="Desh" ascending="0" descending="0" scale="8" mode="4" note="0" filename="desh"/>
+	<scale system="Hindustani" subsystem="" name="Deshi" ascending="0" descending="0" scale="9" mode="3" note="0" filename="deshi"/>
+	<scale system="Hindustani" subsystem="" name="Deshkar" ascending="0" descending="0" scale="17" mode="0" note="0" filename="deshkar"/>
+	<scale system="Hindustani" subsystem="" name="Durga" ascending="0" descending="0" scale="17" mode="3" note="0" filename="durga"/>
+	<scale system="Hindustani" subsystem="" name="Gaud Sarang" ascending="0" descending="0" scale="9" mode="2" note="0" filename="gaud_sarang"/>
+	<scale system="Hindustani" subsystem="" name="Gaud Sarang" ascending="0" descending="0" scale="8" mode="4" note="0" filename="gaud_sarang"/>
+	<scale system="Hindustani" subsystem="" name="Hindustan" ascending="0" descending="0" scale="12" mode="4" note="0" filename="hindustan"/>
+	<scale system="Hindustani" subsystem="" name="Jaijaivanti" ascending="0" descending="0" scale="8" mode="0" note="0" filename="jaijaivanti"/>
+	<scale system="Hindustani" subsystem="" name="Jaijaivanti" ascending="0" descending="0" scale="7" mode="4" note="0" filename="jaijaivanti"/>
+	<scale system="Hindustani" subsystem="" name="Jaunpuri" ascending="0" descending="0" scale="8" mode="5" note="0" filename="jaunpuri"/>
+	<scale system="Hindustani" subsystem="" name="Jinjoti" ascending="0" descending="0" scale="17" mode="3" note="0" filename="jinjoti"/>
+	<scale system="Hindustani" subsystem="" name="Jinjoti" ascending="0" descending="0" scale="8" mode="4" note="0" filename="jinjoti"/>
+	<scale system="Hindustani" subsystem="" name="Kafi" ascending="0" descending="0" scale="9" mode="3" note="0" filename="kafi"/>
+	<scale system="Hindustani" subsystem="" name="Kafi" ascending="0" descending="0" scale="8" mode="1" note="0" filename="kafi"/>
+	<scale system="Hindustani" subsystem="" name="Khammaj" ascending="0" descending="0" scale="8" mode="4" note="0" filename="khammaj"/>
+	<scale system="Hindustani" subsystem="" name="Madhuvanti" ascending="0" descending="0" scale="3" mode="1" note="0" filename="madhuvanti"/>
+	<scale system="Hindustani" subsystem="" name="Malkauns" ascending="0" descending="0" scale="17" mode="2" note="0" filename="malkauns"/>
+	<scale system="Hindustani" subsystem="" name="Marva" ascending="0" descending="0" scale="10" mode="3" note="0" filename="marva"/>
+	<scale system="Hindustani" subsystem="" name="Narayani" ascending="0" descending="0" scale="17" mode="3" note="0" filename="narayani"/>
+	<scale system="Hindustani" subsystem="" name="Narayani" ascending="0" descending="0" scale="9" mode="0" note="0" filename="narayani"/>
+	<scale system="Hindustani" subsystem="" name="Palasi" ascending="0" descending="0" scale="9" mode="3" note="0" filename="palasi"/>
+	<scale system="Hindustani" subsystem="" name="Pilu" ascending="0" descending="0" scale="8" mode="1" note="0" filename="pilu"/>
+	<scale system="Hindustani" subsystem="" name="Purya" ascending="0" descending="0" scale="10" mode="3" note="0" filename="purya"/>
+	<scale system="Hindustani" subsystem="" name="Rageshree" ascending="0" descending="0" scale="15" mode="2" note="0" filename="rageshree"/>
+	<scale system="Hindustani" subsystem="" name="Tilak Kamod" ascending="0" descending="0" scale="9" mode="2" note="0" filename="tilak_kamod"/>
+	<scale system="Hindustani" subsystem="" name="Yaman Kalyan" ascending="0" descending="0" scale="8" mode="3" note="0" filename="yaman_kalyan"/>
+	<scale system="Hungarian" subsystem="" name="Bartok" ascending="0" descending="0" scale="12" mode="3" note="0" filename="bartok"/>
+	<scale system="Hungarian" subsystem="" name="Hungarian Gypsy" ascending="0" descending="0" scale="5" mode="3" note="0" filename="hungarian_gypsy"/>
+	<scale system="Italian" subsystem="" name="Neopolitan minor" ascending="0" descending="0" scale="8" mode="2" note="0" filename="neopolitan_minor"/>
+	<scale system="Japanese" subsystem="" name="Akebono" ascending="0" descending="0" scale="4" mode="1" note="0" filename="akebono"/>
+	<scale system="Japanese" subsystem="" name="Hirajoshi" ascending="0" descending="0" scale="4" mode="1" note="0" filename="hirajoshi"/>
+	<scale system="Japanese" subsystem="" name="Hon kumoi joshi" ascending="0" descending="0" scale="4" mode="4" note="0" filename="hon_kumoi_joshi"/>
+	<scale system="Japanese" subsystem="" name="Ichikotsucho" ascending="0" descending="0" scale="7" mode="3" note="0" filename="ichikotsucho"/>
+	<scale system="Japanese" subsystem="" name="Iwato" ascending="0" descending="0" scale="4" mode="2" note="0" filename="iwato"/>
+	<scale system="Japanese" subsystem="" name="Kata Kumoi" ascending="0" descending="0" scale="4" mode="1" note="0" filename="kata_kumoi"/>
+	<scale system="Japanese" subsystem="" name="Minyo" ascending="0" descending="0" scale="17" mode="2" note="0" filename="minyo"/>
+	<scale system="Japanese" subsystem="" name="Oshikicho" ascending="0" descending="0" scale="8" mode="1" note="0" filename="oshikicho"/>
+	<scale system="Japanese" subsystem="" name="Ritsu" ascending="0" descending="0" scale="9" mode="4" note="0" filename="ritsu"/>
+	<scale system="Japanese" subsystem="" name="Ritsu (Gagaku)" ascending="0" descending="0" scale="17" mode="3" note="0" filename="ritsu_gagaku"/>
+	<scale system="Japanese" subsystem="" name="Ritsusen" ascending="0" descending="0" scale="17" mode="3" note="0" filename="ritsusen"/>
+	<scale system="Japanese" subsystem="" name="Ryosen" ascending="0" descending="0" scale="17" mode="0" note="0" filename="ryosen"/>
+	<scale system="Japanese" subsystem="" name="Ryukyu" ascending="0" descending="0" scale="15" mode="4" note="0" filename="ryukyu"/>
+	<scale system="Japanese" subsystem="" name="Sakura" ascending="0" descending="0" scale="4" mode="4" note="0" filename="sakura"/>
+	<scale system="Japanese" subsystem="" name="Todi" ascending="0" descending="0" scale="8" mode="2" note="0" filename="todi"/>
+	<scale system="Japanese" subsystem="" name="Yo" ascending="0" descending="0" scale="17" mode="3" note="0" filename="yo"/>
+	<scale system="Japanese" subsystem="" name="Yona Nuki Major" ascending="0" descending="0" scale="17" mode="0" note="0" filename="yona_nuki_major"/>
+	<scale system="Japanese" subsystem="" name="Yona Nuki Minor" ascending="0" descending="0" scale="4" mode="1" note="0" filename="yona_nuki_minor"/>
+	<scale system="Japanese" subsystem="" name="Yosen" ascending="0" descending="0" scale="9" mode="0" note="0" filename="yosen"/>
+	<scale system="Japanese" subsystem="" name="Zokuso" ascending="0" descending="0" scale="8" mode="2" note="0" filename="zokuso"/>
+	<scale system="Javaneese" subsystem="" name="Javaneese" ascending="0" descending="0" scale="12" mode="1" note="0" filename="javaneese"/>
+	<scale system="Jewish" subsystem="" name="Ahaba Rabba" ascending="0" descending="0" scale="16" mode="4" note="0" filename="ahaba_rabba"/>
+	<scale system="Jewish" subsystem="" name="Misheberekh" ascending="0" descending="0" scale="16" mode="3" note="0" filename="misheberekh"/>
+	<scale system="Jewish" subsystem="" name="Yishtabach" ascending="0" descending="0" scale="8" mode="6" note="0" filename="yishtabach"/>
+	<scale system="Korean" subsystem="" name="P'yongjo" ascending="0" descending="0" scale="9" mode="0" note="0" filename="pqyongjo"/>
+	<scale system="Korean" subsystem="" name="P'yongjo-kyemyonjo" ascending="0" descending="0" scale="17" mode="4" note="0" filename="pqyongjo-kyemyonjo"/>
+	<scale system="Korean" subsystem="" name="Ujo" ascending="0" descending="0" scale="17" mode="3" note="0" filename="ujo"/>
+	<scale system="Mongolian" subsystem="" name="Chinese Mongolian" ascending="0" descending="0" scale="17" mode="0" note="0" filename="chinese_mongolian"/>
+	<scale system="Mongolian" subsystem="" name="Kubilai's Mongol scale" ascending="0" descending="0" scale="7" mode="3" note="0" filename="kubilaiqs_mongol_scale"/>
+	<scale system="Persian" subsystem="" name="Abû Atâ" ascending="0" descending="0" scale="1" mode="0" note="0" filename="abqq_atqq"/>
+	<scale system="Persian" subsystem="" name="Afšârî" ascending="0" descending="0" scale="13" mode="3" note="0" filename="afqqqqrqq"/>
+	<scale system="Persian" subsystem="" name="Bayât-e Isfahân" ascending="0" descending="0" scale="11" mode="0" note="0" filename="bayqqt-e_isfahqqn"/>
+	<scale system="Persian" subsystem="" name="Bayât-e Tork" ascending="0" descending="0" scale="1" mode="2" note="0" filename="bayqqt-e_tork"/>
+	<scale system="Persian" subsystem="" name="Bayât-i Kurd" ascending="0" descending="0" scale="1" mode="0" note="0" filename="bayqqt-i_kurd"/>
+	<scale system="Persian" subsystem="" name="Chahârgâh" ascending="0" descending="0" scale="14" mode="0" note="0" filename="chahqqrgqqh"/>
+	<scale system="Persian" subsystem="" name="Daštî" ascending="0" descending="0" scale="1" mode="0" note="0" filename="daqqtqq"/>
+	<scale system="Persian" subsystem="" name="Homâyûn" ascending="0" descending="0" scale="11" mode="4" note="0" filename="homqqyqqn"/>
+	<scale system="Persian" subsystem="" name="Mâhur" ascending="0" descending="0" scale="8" mode="0" note="0" filename="mqqhur"/>
+	<scale system="Persian" subsystem="" name="Navâ" ascending="0" descending="0" scale="8" mode="5" note="0" filename="navqq"/>
+	<scale system="Persian" subsystem="" name="Râst" ascending="0" descending="0" scale="13" mode="6" note="0" filename="rqqst"/>
+	<scale system="Persian" subsystem="" name="Šur" ascending="0" descending="0" scale="13" mode="4" note="0" filename="qqur"/>
+	<scale system="Romanian" subsystem="" name="Major Gypsy" ascending="0" descending="0" scale="5" mode="0" note="0" filename="major_gypsy"/>
+	<scale system="Romanian" subsystem="" name="Romanian Minor" ascending="0" descending="0" scale="16" mode="3" note="0" filename="romanian_minor"/>
+	<scale system="Spanish" subsystem="" name="Dorico Flamenco" ascending="0" descending="0" scale="16" mode="4" note="0" filename="dorico_flamenco"/>
+	<scale system="Spanish" subsystem="" name="Spanish Gypsy" ascending="0" descending="0" scale="16" mode="4" note="0" filename="spanish_gypsy"/>
+	<scale system="Turkish" subsystem="" name="Acem Aşîrân" ascending="0" descending="0" scale="8" mode="0" note="0" filename="acem_aqqqqrqqn"/>
+	<scale system="Turkish" subsystem="" name="Bayâti" ascending="0" descending="0" scale="6" mode="0" note="0" filename="bayqqti"/>
+	<scale system="Turkish" subsystem="" name="Buselik" ascending="0" descending="" scale="16" mode="0" note="0" filename="buselik"/>
+	<scale system="Turkish" subsystem="" name="Dugah Maye" ascending="0" descending="0" scale="6" mode="0" note="0" filename="dugah_maye"/>
+	<scale system="Turkish" subsystem="" name="Isfahan" ascending="0" descending="0" scale="6" mode="0" note="0" filename="isfahan"/>
+	<scale system="Turkish" subsystem="" name="Kürdî" ascending="0" descending="0" scale="8" mode="2" note="0" filename="kqrdqq"/>
+	<scale system="Turkish" subsystem="" name="Nihavent" ascending="0" descending="0" scale="8" mode="5" note="0" filename="nihavent"/>
+	<scale system="Turkish" subsystem="" name="Nishaburek" ascending="0" descending="0" scale="6" mode="6" note="0" filename="nishaburek"/>
+	<scale system="Turkish" subsystem="" name="Uşşak" ascending="0" descending="0" scale="6" mode="0" note="0" filename="uqqqqak"/>
+	<scale system="Western" subsystem="" name="5th harmonic minor" ascending="0" descending="0" scale="16" mode="4" note="0" filename="5th_harmonic_minor"/>
+	<scale system="Western" subsystem="" name="Aeolian" ascending="0" descending="0" scale="8" mode="5" note="0" filename="aeolian"/>
+	<scale system="Western" subsystem="" name="Aeolian Harmonic" ascending="0" descending="0" scale="16" mode="5" note="0" filename="aeolian_harmonic"/>
+	<scale system="Western" subsystem="" name="Aeolian Major" ascending="0" descending="0" scale="12" mode="4" note="0" filename="aeolian_major"/>
+	<scale system="Western" subsystem="" name="Aeolian Pentatonic" ascending="0" descending="0" scale="17" mode="4" note="0" filename="aeolian_pentatonic"/>
+	<scale system="Western" subsystem="" name="Altered Dominant" ascending="0" descending="0" scale="12" mode="6" note="0" filename="altered_dominant"/>
+	<scale system="Western" subsystem="" name="Arezzo Major Diatonic Hexachord" ascending="0" descending="0" scale="9" mode="2" note="0" filename="arezzo_major_diatonic_hexachord"/>
+	<scale system="Western" subsystem="" name="Auxiliary Diminished Blues" ascending="0" descending="0" scale="2" mode="1" note="0" filename="auxiliary_diminished_blues"/>
+	<scale system="Western" subsystem="" name="Bebop Dominant" ascending="0" descending="0" scale="7" mode="0" note="0" filename="bebop_dominant"/>
+	<scale system="Western" subsystem="" name="Bebop Minor" ascending="0" descending="0" scale="7" mode="4" note="0" filename="bebop_minor"/>
+	<scale system="Western" subsystem="" name="Blues Pentatonic" ascending="0" descending="0" scale="10" mode="0" note="0" filename="blues_pentatonic"/>
+	<scale system="Western" subsystem="" name="Diatonic" ascending="0" descending="0" scale="17" mode="0" note="0" filename="diatonic"/>
+	<scale system="Western" subsystem="" name="Diminished" ascending="0" descending="0" scale="2" mode="0" note="0" filename="diminished"/>
+	<scale system="Western" subsystem="" name="Diminished Half" ascending="0" descending="0" scale="2" mode="1" note="0" filename="diminished_half"/>
+	<scale system="Western" subsystem="" name="Diminished whole tone" ascending="0" descending="0" scale="12" mode="6" note="0" filename="diminished_whole_tone"/>
+	<scale system="Western" subsystem="" name="Dominant 7th" ascending="0" descending="0" scale="8" mode="4" note="0" filename="dominant_7th"/>
+	<scale system="Western" subsystem="" name="Dorian" ascending="0" descending="0" scale="8" mode="1" note="0" filename="dorian"/>
+	<scale system="Western" subsystem="" name="Dorian #4" ascending="0" descending="0" scale="16" mode="3" note="0" filename="dorian_4"/>
+	<scale system="Western" subsystem="" name="Dorian b2" ascending="0" descending="0" scale="12" mode="1" note="0" filename="dorian_b2"/>
+	<scale system="Western" subsystem="" name="Dorian b2 b5" ascending="0" descending="0" scale="16" mode="1" note="0" filename="dorian_b2_b5"/>
+	<scale system="Western" subsystem="" name="Double Harmonic Major" ascending="0" descending="0" scale="5" mode="0" note="0" filename="double_harmonic_major"/>
+	<scale system="Western" subsystem="" name="Double Harmonic Minor" ascending="0" descending="0" scale="5" mode="3" note="0" filename="double_harmonic_minor"/>
+	<scale system="Western" subsystem="" name="Half Diminished #2" ascending="0" descending="0" scale="12" mode="5" note="0" filename="half_diminished_2"/>
+	<scale system="Western" subsystem="" name="Harmonic Minor" ascending="1" descending="0" scale="16" mode="0" note="0" filename="harmonic_minor"/>
+	<scale system="Western" subsystem="" name="Ionian" ascending="0" descending="0" scale="8" mode="0" note="0" filename="ionian"/>
+	<scale system="Western" subsystem="" name="Ionian #5" ascending="0" descending="0" scale="16" mode="2" note="0" filename="ionian_5"/>
+	<scale system="Western" subsystem="" name="Locrian" ascending="0" descending="0" scale="8" mode="6" note="0" filename="locrian"/>
+	<scale system="Western" subsystem="" name="Locrian #2 #6" ascending="0" descending="0" scale="3" mode="6" note="0" filename="locrian_2_6"/>
+	<scale system="Western" subsystem="" name="Locrian 9" ascending="0" descending="0" scale="12" mode="5" note="0" filename="locrian_9"/>
+	<scale system="Western" subsystem="" name="Lydian" ascending="0" descending="0" scale="8" mode="3" note="0" filename="lydian"/>
+	<scale system="Western" subsystem="" name="Lydian #2" ascending="0" descending="0" scale="16" mode="5" note="0" filename="lydian_2"/>
+	<scale system="Western" subsystem="" name="Lydian 7" ascending="0" descending="0" scale="12" mode="3" note="0" filename="lydian_7"/>
+	<scale system="Western" subsystem="" name="Lydian Augmented" ascending="0" descending="0" scale="12" mode="2" note="0" filename="lydian_augmented"/>
+	<scale system="Western" subsystem="" name="Lydian Diminished" ascending="0" descending="0" scale="3" mode="1" note="0" filename="lydian_diminished"/>
+	<scale system="Western" subsystem="" name="Major" ascending="0" descending="0" scale="8" mode="0" note="0" filename="major"/>
+	<scale system="Western" subsystem="" name="Major Blues Scale" ascending="0" descending="0" scale="10" mode="1" note="0" filename="major_blues_scale"/>
+	<scale system="Western" subsystem="" name="Major Pentatonic" ascending="0" descending="0" scale="17" mode="0" note="0" filename="major_pentatonic"/>
+	<scale system="Western" subsystem="" name="Melodic Minor" ascending="0" descending="0" scale="12" mode="0" note="0" filename="melodic_minor"/>
+	<scale system="Western" subsystem="" name="Minor" ascending="0" descending="0" scale="8" mode="5" note="0" filename="minor"/>
+	<scale system="Western" subsystem="" name="Minor Harmonic" ascending="0" descending="0" scale="16" mode="0" note="0" filename="minor_harmonic"/>
+	<scale system="Western" subsystem="" name="Minor Melodic" ascending="0" descending="0" scale="12" mode="0" note="0" filename="minor_melodic"/>
+	<scale system="Western" subsystem="" name="Minor Pentatonic" ascending="0" descending="0" scale="17" mode="4" note="0" filename="minor_pentatonic"/>
+	<scale system="Western" subsystem="" name="mixo b9 b13" ascending="0" descending="0" scale="16" mode="4" note="0" filename="mixo_b9_b13"/>
+	<scale system="Western" subsystem="" name="Mixolydian" ascending="0" descending="0" scale="8" mode="4" note="0" filename="mixolydian"/>
+	<scale system="Western" subsystem="" name="Mixolydian b13" ascending="0" descending="0" scale="12" mode="4" note="0" filename="mixolydian_b13"/>
+	<scale system="Western" subsystem="" name="Mixolydian b6 b9" ascending="0" descending="0" scale="16" mode="4" note="0" filename="mixolydian_b6_b9"/>
+	<scale system="Western" subsystem="" name="Octatonic (H-W)" ascending="0" descending="0" scale="2" mode="1" note="0" filename="octatonic_h-w"/>
+	<scale system="Western" subsystem="" name="Octatonic (W-H)" ascending="0" descending="0" scale="2" mode="0" note="0" filename="octatonic_w-h"/>
+	<scale system="Western" subsystem="" name="Overtone" ascending="0" descending="0" scale="12" mode="3" note="0" filename="overtone"/>
+	<scale system="Western" subsystem="" name="Pentatonic Neutral" ascending="0" descending="0" scale="17" mode="1" note="0" filename="pentatonic_neutral"/>
+	<scale system="Western" subsystem="" name="Phrygian" ascending="0" descending="0" scale="8" mode="2" note="0" filename="phrygian"/>
+	<scale system="Western" subsystem="" name="Phrygian Major" ascending="0" descending="0" scale="16" mode="4" note="0" filename="phrygian_major"/>
+	<scale system="Western" subsystem="" name="Ultralocrian" ascending="0" descending="0" scale="16" mode="6" note="0" filename="ultralocrian"/>
+</scales>

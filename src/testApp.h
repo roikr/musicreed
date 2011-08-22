@@ -5,6 +5,7 @@
 #include "ofxiPhoneExtras.h"
 #include "ofxAudioFile.h"
 #include "ofxAudioInstrument.h"
+#include "ofxAudioLimiter.h"
 #include "ofxiTexture.h"
 #include "Disc.h"
 #include "ofTrueTypeFont.h"
@@ -152,6 +153,8 @@ public:
 	bool bRot;
 	int rotTime;
 	int rotDuration;
+	
+	ofxAudioLimiter limiter;
 };
 
 
