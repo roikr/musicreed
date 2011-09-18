@@ -9,7 +9,6 @@
 #import "ScaleCell.h"
 #import "Scale.h"
 
-
 @implementation ScaleCell
 
 @synthesize scale;
@@ -43,11 +42,10 @@
 
 -(void) configureCellWithScale:(Scale *)theScale {
 	self.scale = theScale;
-	playButton.hidden = NO;
-	infoButton.hidden = NO;
 	scaleDirection.hidden = !scale.bAscending && !scale.bDescending;
+	infoButton.hidden = NO;
+	playButton.hidden = NO;
 }
-
 
 
 - (void)dealloc {

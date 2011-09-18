@@ -31,6 +31,7 @@
 @synthesize eAGLView;
 @synthesize OFSAptr;
 @synthesize currentScale;
+@synthesize scaleCell;
 
 
 #pragma mark -
@@ -38,20 +39,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-	//----- DAMIAN
-	// set data path root for ofToDataPath()
-	// path on iPhone will be ~/Applications/{application GUID}/openFrameworks.app/data
-	// get the resource path for the bundle (ie '~/Applications/{application GUID}/openFrameworks.app')
-	NSString *bundle_path_ns = [[NSBundle mainBundle] resourcePath];
-	// convert to UTF8 STL string
-	string path = [bundle_path_ns UTF8String];
-	// append data
-	//path.append( "/data/" ); // ZACH
-	path.append( "/" ); // ZACH
-	ofLog(OF_LOG_VERBOSE, "setting data path root to " + path);
-	ofSetDataPathRoot( path );
-	//-----
-	
+	setiPhoneDataPath();		
 	// Override point for customization after application launch.
 	self.OFSAptr = new testApp;
 	self.eAGLView.OFSAptr = self.OFSAptr;
@@ -240,6 +228,13 @@
 
 - (void)presentScalesController {	
 	[self.navigationController presentModalViewController:self.scalesNavigationController animated:YES];
+}
+
+- (UITableViewCell *)getScaleCell {
+	[[NSBundle mainBundle] loadNibNamed:@"ScaleCell" owner:self options:nil];
+	UITableViewCell *cell = scaleCell;
+	self.scaleCell = nil;
+	return cell;
 }
 
 #pragma mark -

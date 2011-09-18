@@ -13,8 +13,6 @@
 
 @interface ScalesTableViewController : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate> {
 
-	UITableViewCell *scaleCell;
-	
 	Scale *currentScale;
 	
 	UIView *backgroundView;
@@ -27,8 +25,6 @@
 		
 }
 
-
-@property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
 @property (nonatomic, retain) Scale *currentScale;
 @property (nonatomic, retain) IBOutlet UIView *backgroundView;
 @property (nonatomic, retain) IBOutlet UIView *searchBackgroundView;

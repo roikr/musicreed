@@ -12,9 +12,9 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* MusicreedViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */; };
-		E400FE05136D50A7006A18DD /* ScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E400FE04136D50A7006A18DD /* ScaleCell.m */; };
 		E40B0334137FD062001008FE /* Disc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40B0330137FD062001008FE /* Disc.cpp */; };
 		E40B0335137FD062001008FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40B0333137FD062001008FE /* testApp.mm */; };
+		E44BBAEB14260AF200821453 /* ScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BBAEA14260AF200821453 /* ScaleCell.m */; };
 		E44C046613C1EB5A00C0B62A /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E44C045D13C1EB5A00C0B62A /* install.xml */; };
 		E44C046713C1EB5A00C0B62A /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */; };
 		E44C046813C1EB5A00C0B62A /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C046113C1EB5A00C0B62A /* tinyxmlerror.cpp */; };
@@ -46,7 +46,6 @@
 		E45FDB5A140258630081A207 /* triadic_sus2.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB06140258630081A207 /* triadic_sus2.pvr */; };
 		E45FDB5B140258630081A207 /* triadic_sus4.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB07140258630081A207 /* triadic_sus4.pvr */; };
 		E45FDB5C140258630081A207 /* triadic_sus4_7.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB08140258630081A207 /* triadic_sus4_7.pvr */; };
-		E45FDB5D140258630081A207 /* triasic_sus4#5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB09140258630081A207 /* triasic_sus4#5.pvr */; };
 		E45FDB5E140258630081A207 /* click.caf in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB0A140258630081A207 /* click.caf */; };
 		E45FDB5F140258630081A207 /* creed.xml in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB0B140258630081A207 /* creed.xml */; };
 		E45FDB60140258630081A207 /* chord_background.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB0D140258630081A207 /* chord_background.pvr */; };
@@ -115,11 +114,11 @@
 		E45FDB9F140258630081A207 /* oud_72.caf in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB4D140258630081A207 /* oud_72.caf */; };
 		E45FDBA0140258630081A207 /* shadow.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E45FDB4E140258630081A207 /* shadow.pvr */; };
 		E481CE2B13F3B72F0034F652 /* ScalesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2113F3B72F0034F652 /* ScalesParser.m */; };
-		E481CE2C13F3B72F0034F652 /* ScalesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */; };
+		E481CE2C13F3B72F0034F652 /* ScalesTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2313F3B72F0034F652 /* ScalesTableViewController.mm */; };
 		E481CE2D13F3B72F0034F652 /* ScalesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */; };
-		E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */; };
+		E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2613F3B72F0034F652 /* SubsystemTableViewController.mm */; };
 		E481CE2F13F3B72F0034F652 /* SubsystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */; };
-		E481CE3013F3B72F0034F652 /* SystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2913F3B72F0034F652 /* SystemTableViewController.m */; };
+		E481CE3013F3B72F0034F652 /* SystemTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2913F3B72F0034F652 /* SystemTableViewController.mm */; };
 		E481CE3113F3B72F0034F652 /* SystemTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */; };
 		E481CE4213F3B78E0034F652 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE4113F3B78E0034F652 /* Scale.m */; };
 		E490649013700BD90034C2F5 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E490648F13700BD90034C2F5 /* EAGLView.mm */; };
@@ -127,6 +126,10 @@
 		E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064E1137029E20034C2F5 /* QuartzCore.framework */; };
 		E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065C11370393E0034C2F5 /* CustomFontLabel.m */; };
 		E49065CC13703A090034C2F5 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065CB13703A090034C2F5 /* CustomButton.m */; };
+		E49979711425F66C00D0C459 /* SCALE_DOWN.png in Resources */ = {isa = PBXBuildFile; fileRef = E499796E1425F66C00D0C459 /* SCALE_DOWN.png */; };
+		E49979721425F66C00D0C459 /* SCALE_PLAY.png in Resources */ = {isa = PBXBuildFile; fileRef = E499796F1425F66C00D0C459 /* SCALE_PLAY.png */; };
+		E49979731425F66C00D0C459 /* SCALE_UP.png in Resources */ = {isa = PBXBuildFile; fileRef = E49979701425F66C00D0C459 /* SCALE_UP.png */; };
+		E49979BA1426061900D0C459 /* triadic_sus4#5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E49979B91426061900D0C459 /* triadic_sus4#5.pvr */; };
 		E49DC9C113A7A13300E3C79F /* notationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49DC9C013A7A13300E3C79F /* notationUtils.cpp */; };
 		E4A8AD9F13FA4EA8006058D4 /* scales.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4A8AD9E13FA4EA8006058D4 /* scales.xml */; };
 		E4AF3F1913C221760060359D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F0D13C221760060359D /* CAStreamBasicDescription.cpp */; };
@@ -157,11 +160,11 @@
 		32CA4F630368D1EE00C91783 /* Musicreed_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musicreed_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Musicreed-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Musicreed-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E400FE03136D50A7006A18DD /* ScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleCell.h; sourceTree = "<group>"; };
-		E400FE04136D50A7006A18DD /* ScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleCell.m; sourceTree = "<group>"; };
 		E40B0330137FD062001008FE /* Disc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Disc.cpp; path = src/Disc.cpp; sourceTree = "<group>"; };
 		E40B0331137FD062001008FE /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = src/Disc.h; sourceTree = "<group>"; };
 		E40B0332137FD062001008FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = "<group>"; };
 		E40B0333137FD062001008FE /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = "<group>"; };
+		E44BBAEA14260AF200821453 /* ScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleCell.m; sourceTree = "<group>"; };
 		E44C045D13C1EB5A00C0B62A /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		E44C046013C1EB5A00C0B62A /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -290,7 +293,6 @@
 		E45FDB06140258630081A207 /* triadic_sus2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus2.pvr; sourceTree = "<group>"; };
 		E45FDB07140258630081A207 /* triadic_sus4.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus4.pvr; sourceTree = "<group>"; };
 		E45FDB08140258630081A207 /* triadic_sus4_7.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus4_7.pvr; sourceTree = "<group>"; };
-		E45FDB09140258630081A207 /* triasic_sus4#5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triasic_sus4#5.pvr"; sourceTree = "<group>"; };
 		E45FDB0A140258630081A207 /* click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.caf; sourceTree = "<group>"; };
 		E45FDB0B140258630081A207 /* creed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = creed.xml; sourceTree = "<group>"; };
 		E45FDB0D140258630081A207 /* chord_background.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_background.pvr; sourceTree = "<group>"; };
@@ -361,13 +363,13 @@
 		E481CE2013F3B72F0034F652 /* ScalesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesParser.h; sourceTree = "<group>"; };
 		E481CE2113F3B72F0034F652 /* ScalesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesParser.m; sourceTree = "<group>"; };
 		E481CE2213F3B72F0034F652 /* ScalesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesTableViewController.h; sourceTree = "<group>"; };
-		E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesTableViewController.m; sourceTree = "<group>"; };
+		E481CE2313F3B72F0034F652 /* ScalesTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScalesTableViewController.mm; sourceTree = "<group>"; };
 		E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScalesTableViewController.xib; sourceTree = "<group>"; };
 		E481CE2513F3B72F0034F652 /* SubsystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemTableViewController.h; sourceTree = "<group>"; };
-		E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemTableViewController.m; sourceTree = "<group>"; };
+		E481CE2613F3B72F0034F652 /* SubsystemTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubsystemTableViewController.mm; sourceTree = "<group>"; };
 		E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubsystemTableViewController.xib; sourceTree = "<group>"; };
 		E481CE2813F3B72F0034F652 /* SystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemTableViewController.h; sourceTree = "<group>"; };
-		E481CE2913F3B72F0034F652 /* SystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemTableViewController.m; sourceTree = "<group>"; };
+		E481CE2913F3B72F0034F652 /* SystemTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SystemTableViewController.mm; sourceTree = "<group>"; };
 		E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemTableViewController.xib; sourceTree = "<group>"; };
 		E481CE4013F3B78E0034F652 /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scale.h; path = Model/Scale.h; sourceTree = "<group>"; };
 		E481CE4113F3B78E0034F652 /* Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scale.m; path = Model/Scale.m; sourceTree = "<group>"; };
@@ -379,6 +381,10 @@
 		E49065C11370393E0034C2F5 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
 		E49065CA13703A090034C2F5 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		E49065CB13703A090034C2F5 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		E499796E1425F66C00D0C459 /* SCALE_DOWN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_DOWN.png; path = Resources/SCALE_DOWN.png; sourceTree = "<group>"; };
+		E499796F1425F66C00D0C459 /* SCALE_PLAY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_PLAY.png; path = Resources/SCALE_PLAY.png; sourceTree = "<group>"; };
+		E49979701425F66C00D0C459 /* SCALE_UP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_UP.png; path = Resources/SCALE_UP.png; sourceTree = "<group>"; };
+		E49979B91426061900D0C459 /* triadic_sus4#5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triadic_sus4#5.pvr"; sourceTree = "<group>"; };
 		E49DC9BF13A7A13300E3C79F /* notationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = notationUtils.h; path = src/notationUtils.h; sourceTree = "<group>"; };
 		E49DC9C013A7A13300E3C79F /* notationUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = notationUtils.cpp; path = src/notationUtils.cpp; sourceTree = "<group>"; };
 		E4A8AD9E13FA4EA8006058D4 /* scales.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = scales.xml; path = Resources/scales.xml; sourceTree = "<group>"; };
@@ -434,13 +440,13 @@
 				E481CE2013F3B72F0034F652 /* ScalesParser.h */,
 				E481CE2113F3B72F0034F652 /* ScalesParser.m */,
 				E481CE2213F3B72F0034F652 /* ScalesTableViewController.h */,
-				E481CE2313F3B72F0034F652 /* ScalesTableViewController.m */,
+				E481CE2313F3B72F0034F652 /* ScalesTableViewController.mm */,
 				E481CE2413F3B72F0034F652 /* ScalesTableViewController.xib */,
 				E481CE2813F3B72F0034F652 /* SystemTableViewController.h */,
-				E481CE2913F3B72F0034F652 /* SystemTableViewController.m */,
+				E481CE2913F3B72F0034F652 /* SystemTableViewController.mm */,
 				E481CE2A13F3B72F0034F652 /* SystemTableViewController.xib */,
 				E481CE2513F3B72F0034F652 /* SubsystemTableViewController.h */,
-				E481CE2613F3B72F0034F652 /* SubsystemTableViewController.m */,
+				E481CE2613F3B72F0034F652 /* SubsystemTableViewController.mm */,
 				E481CE2713F3B72F0034F652 /* SubsystemTableViewController.xib */,
 				28D7ACF60DDB3853001CB0EB /* MusicreedViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */,
@@ -453,7 +459,7 @@
 				E44D3E17137BD05B00345249 /* TouchView.h */,
 				E44D3E18137BD05B00345249 /* TouchView.mm */,
 				E400FE03136D50A7006A18DD /* ScaleCell.h */,
-				E400FE04136D50A7006A18DD /* ScaleCell.m */,
+				E44BBAEA14260AF200821453 /* ScaleCell.m */,
 				E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */,
 				E49065C01370393E0034C2F5 /* CustomFontLabel.h */,
 				E49065C11370393E0034C2F5 /* CustomFontLabel.m */,
@@ -500,6 +506,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E499796E1425F66C00D0C459 /* SCALE_DOWN.png */,
+				E499796F1425F66C00D0C459 /* SCALE_PLAY.png */,
+				E49979701425F66C00D0C459 /* SCALE_UP.png */,
 				E4A8AD9E13FA4EA8006058D4 /* scales.xml */,
 				E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */,
 				E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */,
@@ -817,6 +826,7 @@
 		E45FDAFA140258630081A207 /* chords_textures */ = {
 			isa = PBXGroup;
 			children = (
+				E49979B91426061900D0C459 /* triadic_sus4#5.pvr */,
 				E45FDAFB140258630081A207 /* augmented.pvr */,
 				E45FDAFC140258630081A207 /* diminished.pvr */,
 				E45FDAFD140258630081A207 /* major.pvr */,
@@ -831,7 +841,6 @@
 				E45FDB06140258630081A207 /* triadic_sus2.pvr */,
 				E45FDB07140258630081A207 /* triadic_sus4.pvr */,
 				E45FDB08140258630081A207 /* triadic_sus4_7.pvr */,
-				E45FDB09140258630081A207 /* triasic_sus4#5.pvr */,
 			);
 			path = chords_textures;
 			sourceTree = "<group>";
@@ -1061,7 +1070,6 @@
 				E45FDB5A140258630081A207 /* triadic_sus2.pvr in Resources */,
 				E45FDB5B140258630081A207 /* triadic_sus4.pvr in Resources */,
 				E45FDB5C140258630081A207 /* triadic_sus4_7.pvr in Resources */,
-				E45FDB5D140258630081A207 /* triasic_sus4#5.pvr in Resources */,
 				E45FDB5E140258630081A207 /* click.caf in Resources */,
 				E45FDB5F140258630081A207 /* creed.xml in Resources */,
 				E45FDB60140258630081A207 /* chord_background.pvr in Resources */,
@@ -1129,6 +1137,10 @@
 				E45FDB9E140258630081A207 /* oud_71.caf in Resources */,
 				E45FDB9F140258630081A207 /* oud_72.caf in Resources */,
 				E45FDBA0140258630081A207 /* shadow.pvr in Resources */,
+				E49979711425F66C00D0C459 /* SCALE_DOWN.png in Resources */,
+				E49979721425F66C00D0C459 /* SCALE_PLAY.png in Resources */,
+				E49979731425F66C00D0C459 /* SCALE_UP.png in Resources */,
+				E49979BA1426061900D0C459 /* triadic_sus4#5.pvr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,7 +1153,6 @@
 			files = (
 				1D3623260D0F684500981E51 /* MusicreedAppDelegate.mm in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MusicreedViewController.mm in Sources */,
-				E400FE05136D50A7006A18DD /* ScaleCell.m in Sources */,
 				E490649013700BD90034C2F5 /* EAGLView.mm in Sources */,
 				E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */,
 				E49065CC13703A090034C2F5 /* CustomButton.m in Sources */,
@@ -1168,11 +1179,12 @@
 				E4AF3F1C13C221760060359D /* ofxAudioFile.mm in Sources */,
 				E4AF3F1D13C221760060359D /* ofxAudioInstrument.cpp in Sources */,
 				E481CE2B13F3B72F0034F652 /* ScalesParser.m in Sources */,
-				E481CE2C13F3B72F0034F652 /* ScalesTableViewController.m in Sources */,
-				E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.m in Sources */,
-				E481CE3013F3B72F0034F652 /* SystemTableViewController.m in Sources */,
+				E481CE2C13F3B72F0034F652 /* ScalesTableViewController.mm in Sources */,
+				E481CE2E13F3B72F0034F652 /* SubsystemTableViewController.mm in Sources */,
+				E481CE3013F3B72F0034F652 /* SystemTableViewController.mm in Sources */,
 				E481CE4213F3B78E0034F652 /* Scale.m in Sources */,
 				E45FDA10140254600081A207 /* ofxAudioLimiter.cpp in Sources */,
+				E44BBAEB14260AF200821453 /* ScaleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,7 +1215,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lGLU";
 				PRODUCT_NAME = Musicreed;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "325CF5E2-1D8D-40CF-A295-982D0BD65130";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA6F447-8C39-4E2D-8746-C4E36E5E865D";
 			};
 			name = Debug;
 		};

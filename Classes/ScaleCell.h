@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class Scale;
 
 @interface ScaleCell : UITableViewCell {
-
+	IBOutlet UIImageView *scaleDirection; 
+	IBOutlet UIButton *playButton;
+	IBOutlet UIButton *infoButton;
+	
+	Scale *scale;
+	
 }
+
+@property (nonatomic,retain) Scale *scale;
+
+-(void) configureCellWithScale:(Scale *)theScale;
 
 @end

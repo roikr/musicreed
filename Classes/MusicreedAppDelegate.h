@@ -14,6 +14,7 @@
 @class EAGLView;
 @class Scale;
 @class ScalesTableViewController;
+@class ScaleCell;
 
 class testApp;
 
@@ -30,6 +31,7 @@ class testApp;
 	testApp *OFSAptr;
 	
 	Scale* currentScale;
+	UITableViewCell *scaleCell;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -41,11 +43,13 @@ class testApp;
 @property (nonatomic, retain) IBOutlet EAGLView *eAGLView;
 @property  testApp *OFSAptr;
 @property (nonatomic, retain) Scale *currentScale;
+@property (nonatomic, assign) IBOutlet UITableViewCell *scaleCell;
 
 - (void)toggle:(UIInterfaceOrientation)orientation animated:(BOOL)animated;
 
 - (void)setScale:(Scale *)scale;
 - (void)presentScalesController;
+- (UITableViewCell *)getScaleCell;
 
 @end
 

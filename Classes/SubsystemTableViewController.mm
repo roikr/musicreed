@@ -8,11 +8,13 @@
 
 #import "SubsystemTableViewController.h"
 #import "Scale.h"
+#import "MusicreedAppDelegate.h"
+#import "ScaleCell.h"
+
 
 @implementation SubsystemTableViewController
 
 @synthesize scales;
-@synthesize scaleCell;
 @synthesize currentScale;
 @synthesize backgroundView;
 @synthesize searchBackgroundView;
@@ -115,9 +117,7 @@
 	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"ScaleCell" owner:self options:nil];
-        cell = scaleCell;
-        self.scaleCell = nil;
+		cell = [(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] getScaleCell];
 		
 	} 
 	
@@ -126,6 +126,7 @@
 	
 	Scale *scale = [[self scalesByView:tableView] objectAtIndex:indexPath.row];
 	//UILabel *label = (UILabel *)[cell viewWithTag:1];
+	[(ScaleCell *)cell configureCellWithScale:scale];
 	cell.textLabel.text =scale.name;
 		
     return cell;
