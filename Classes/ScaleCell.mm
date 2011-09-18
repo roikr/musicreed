@@ -8,6 +8,8 @@
 
 #import "ScaleCell.h"
 #import "Scale.h"
+#import "MusicreedAppDelegate.h"
+#import "testApp.h"
 
 
 @implementation ScaleCell
@@ -46,7 +48,25 @@
 	playButton.hidden = NO;
 	infoButton.hidden = NO;
 	scaleDirection.hidden = !scale.bAscending && !scale.bDescending;
+	if (scale.bAscending) {
+		[scaleDirection setImage:[UIImage imageNamed:@"SCALE_UP.png"]];
+	}
+	if (scale.bDescending) {
+		[scaleDirection setImage:[UIImage imageNamed:@"SCALE_DOWN.png"]];
+	}
+	
 }
+
+-(void) play:(id)sender {
+	NSLog(@"play: %@",scale.filename);
+	((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->playTaqsim([scale.filename UTF8String]);
+}
+
+-(void) info:(id)sender {
+	NSLog(@"info: %@",scale.name);
+
+}
+
 
 
 

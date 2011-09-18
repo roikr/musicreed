@@ -22,5 +22,7 @@
 @property (nonatomic,retain) Scale *scale;
 
 -(void) configureCellWithScale:(Scale *)theScale;
+-(void) play:(id)sender;
+-(void) info:(id)sender;
 
 @end

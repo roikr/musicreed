@@ -172,6 +172,8 @@ void testApp::setup(){
 	
 	
 	bRot = false;
+	taqsim = nil;
+	bPlayTaqsim = false;
 }
 
 
@@ -290,6 +292,24 @@ void testApp::update(){
 			center.x = easeInOutQuad(t,center.x,targetCenter.x);
 			center.y = easeInOutQuad(t,center.y,targetCenter.y);
 			scaleFactor = easeInOutQuad(t,scaleFactor,targetScaleFactor);
+		}
+		
+	}
+	
+	if (bPlayTaqsim) {
+		if (taqsim &&!taqsim->getNumPlaying()) {
+			taqsim->exit();
+			taqsim = nil;
+		}
+		if (!taqsim) {
+			bPlayTaqsim = false;
+			taqsim = new ofxAudioFile;
+			int bLoaded = taqsim->load(ofToDataPath(taqsimName), bufferSize);
+			if (bLoaded) {
+				taqsim->play();
+			} else {
+				printf("playTaqsim missing: %s",taqsimName.c_str());
+			}
 		}
 		
 	}
@@ -573,6 +593,13 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	instrument.mixChannel(output,0,2);
 	instrument.mixChannel(output,1,2);
 	instrument.postProcess();
+	
+	if (taqsim && taqsim->getNumPlaying()) {
+		taqsim->mixChannel(output, 0, nChannels);	
+		taqsim->mixChannel(output, 1, nChannels);	
+		taqsim->postProcess();
+		
+	}
 	
 	limiter.audioProcess(output,bufferSize,nChannels);
 	
@@ -994,14 +1021,14 @@ void testApp::setKeys() {
 		chordsKeys.push_back(distance(chords.begin(),citer));
 		
 	}
-	
-	
-	
-	
-	
-	
 }
 
 
-
+void testApp::playTaqsim(string filename) {
+	taqsimName = filename+".caf";
+	bPlayTaqsim = true;
+	if (taqsim && taqsim->getNumPlaying()) {
+		taqsim->stop();
+	}
+}
 
