@@ -14,10 +14,13 @@
 class Disc {
 	
 public:
-	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false),bNewStop(false) {};
+	Disc():phi(0),omega(0),alpha(0),bDown(false),bRotate(false),bSnap(false),bNewStop(false),bLock(false) {};
 	
-	void setup(/*string textureFilename,string backgroundFilename,*/string clickFilename,int bufferSize,int innerRadius,int outerRadius);
+	void setup(/*string textureFilename,string backgroundFilename,*/string clickFilename,int bufferSize);
+	void setRadii(int innerRadius,int outerRadius);
+	void setLock(bool bLock);
 	void update();
+
 //	void draw();
 	void exit();
 	
@@ -37,6 +40,7 @@ public:
 	void resetIsNewStop();
 	
 	float getPhi();
+	void setPhi(float phi); // to animate without sounds or stops
 		
 	ofxAudioFile click;
 		
@@ -76,6 +80,6 @@ private:
 	bool bNewStop;
 	bool bPlaying;
 	
-	
+	bool bLock;
 	
 };

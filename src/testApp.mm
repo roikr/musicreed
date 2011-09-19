@@ -117,9 +117,10 @@ void testApp::setup(){
 		instrument.loadSample(filename,i);
 	}
 	
-	inner.setup(/*ofToDataPath("inner.pvr"),ofToDataPath("innerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize,100,200);
-	outer.setup(/*ofToDataPath("outer.pvr"),ofToDataPath("outerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize,200,500);
-	
+	inner.setup(/*ofToDataPath("inner.pvr"),ofToDataPath("innerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize);
+	inner.setRadii(100, 200);
+	outer.setup(/*ofToDataPath("outer.pvr"),ofToDataPath("outerBg.pvr"),*/ofToDataPath("click.caf"), bufferSize);
+	outer.setRadii(200,500);
 	
 	bDown = false;
 	bAltKeyDown = false;
@@ -247,17 +248,6 @@ void testApp::soundStreamStop() {
 //--------------------------------------------------------------
 void testApp::update(){
 	//ofBackground(20,100,20);
-	inner.update();
-	
-	if (inner.getIsNewStop()) {
-		firstNote = (float)inner.getStop()* 6.0f / numDivisions ;
-		cout << "stop - first note: " << firstNote << endl;
-		setKeys();
-		inner.resetIsNewStop();
-		// = -note * 2.0f * M_PI / 6.0f;
-	}
-	
-	
 	
 	outer.update();
 	
@@ -268,6 +258,20 @@ void testApp::update(){
 		outer.resetIsNewStop();
 		bRefreshDisplay = true;
 		// = -note * 2.0f * M_PI / 6.0f;
+	}
+	
+	if (bLock) {
+		inner.setPhi(outer.getPhi());
+	} else {
+		inner.update();
+		
+		if (inner.getIsNewStop()) {
+			firstNote = (float)inner.getStop()* 6.0f / numDivisions ;
+			cout << "stop - first note: " << firstNote << endl;
+			setKeys();
+			inner.resetIsNewStop();
+			// = -note * 2.0f * M_PI / 6.0f;
+		}
 	}
 	
 	if (!strumNotes.empty()) {
@@ -811,15 +815,18 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	noteButtons[lastKey.y].setDown(false);
 	chordButtons[lastKey.y].setDown(false);
 	
-	if (!bLock) {
-		if (distance(pnt) < 100 ) {
-			lock(true);
-		}
-	} else {
-		if (distance(pnt) < 50 ) {
-			lock(false);
+	if (state == MUSICREED_STATE_SCALES) {
+		if (!bLock) {
+			if (distance(pnt) < 100*0.55f ) {
+				lock(true);
+			}
+		} else {
+			if (distance(pnt) < 100*0.35f ) {
+				lock(false);
+			}
 		}
 	}
+	
 
 }
 
@@ -856,6 +863,9 @@ void testApp::setState(int state,int rotDuration) {
 			targetCenter = ofPoint(-30,ofGetHeight()/2);
 			break;
 		case MUSICREED_STATE_CHORDS:
+			bLock = false;
+			outer.setRadii(200, 500);
+			outer.setLock(false);
 			targetScaleFactor = 0.8;
 			targetCenter = ofPoint(ofGetWidth()/2,ofGetHeight()/2);
 			break;
@@ -873,17 +883,22 @@ void testApp::setState(int state,int rotDuration) {
 	}
 }
 
+// other place where I change bLock is when moving to chords view (in set state)
 void testApp::lock(bool bLock) {
-	if (bAnim || bLock == this->bLock) {
+	if ( bLock == this->bLock || bAnim ) {
 		return;
 	}
 	
 	if (bLock) {
 		targetScaleFactor = 0.35;
 		targetCenter = ofPoint(ofGetWidth()/2,ofGetHeight()/2);
+		outer.setRadii(100, 500);
+		outer.setLock(true);
 	} else {
 		targetScaleFactor = 0.55;
 		targetCenter = ofPoint(-30,ofGetHeight()/2);
+		outer.setRadii(200, 500);
+		outer.setLock(false);
 	}  
 		
 	animDuration = 500;

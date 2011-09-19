@@ -15,15 +15,23 @@
 #include "easing.h"
 #include <cmath>
 
-void Disc::setup(/*string textureFilename,string backgroundFilename,*/string clickFilename,int bufferSize,int innerRadius,int outerRadius) {
+void Disc::setup(/*string textureFilename,string backgroundFilename,*/string clickFilename,int bufferSize) {
 	
 	int bLoaded = click.load(clickFilename, bufferSize);
-	this->innerRadius = innerRadius;
-	this->outerRadius = outerRadius;
+	
 //	this->textureFilename = textureFilename;
 //	this->backgroundFilename = backgroundFilename;
 	assert(bLoaded);
 
+}
+
+void Disc::setRadii(int innerRadius,int outerRadius) {
+	this->innerRadius = innerRadius;
+	this->outerRadius = outerRadius;
+}
+
+void Disc::setLock(bool bLock) {
+	this->bLock = bLock;
 }
 
 /*
@@ -66,7 +74,7 @@ void Disc::updatePhi(float phi,bool bStop) {
 		if ((*iter+sum-this->phi) * (*iter+sum-phi)<=0 ) {
 			click.play();
 			
-			if (bStop) {
+			if (bStop && !bLock) {
 				currentStop = iter;
 				bNewStop = true;
 			}
@@ -267,4 +275,9 @@ void Disc::resetIsNewStop() {
 float Disc::getPhi() {
 	return phi;
 }
+
+void Disc::setPhi(float phi) {
+	this->phi = phi;
+}
+
 
