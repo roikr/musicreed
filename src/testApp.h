@@ -83,6 +83,7 @@ public:
 	void playTaqsim(string filename);
 	void stopTaqsim();
 	
+	void lock(bool bLock);
 	
 	Disc inner;
 	Disc outer;
@@ -152,14 +153,16 @@ public:
 	vector<float>strumNotes;
 	int lastStrum;
 	
-	bool bRot;
-	int rotTime;
-	int rotDuration;
+	bool bAnim;
+	int animTime;
+	int animDuration;
 	
 	ofxAudioLimiter limiter;
 	ofxAudioFile taqsim;
 	string taqsimName;
 	bool bPlayTaqsim;
+	
+	bool bLock;
 };
 
 

@@ -171,7 +171,8 @@ void testApp::setup(){
 	}
 	
 	
-	bRot = false;
+	bAnim = false;
+	bLock = false;
 	bPlayTaqsim = false;
 }
 
@@ -281,13 +282,13 @@ void testApp::update(){
 		}
 	}
 	
-	if (bRot) {
-		if (ofGetElapsedTimeMillis()-rotTime>=rotDuration) {
-			bRot = false;
+	if (bAnim) {
+		if (ofGetElapsedTimeMillis()-animTime>=animDuration) {
+			bAnim = false;
 			center = targetCenter;
 			scaleFactor = targetScaleFactor;
 		} else {
-			float t = (float)(ofGetElapsedTimeMillis() - rotTime)/rotDuration; // time to finish the animation
+			float t = (float)(ofGetElapsedTimeMillis() - animTime)/animDuration; // time to finish the animation
 			center.x = easeInOutQuad(t,center.x,targetCenter.x);
 			center.y = easeInOutQuad(t,center.y,targetCenter.y);
 			scaleFactor = easeInOutQuad(t,scaleFactor,targetScaleFactor);
@@ -404,7 +405,7 @@ void testApp::draw(){
 	
 	
 	
-	if (!bRot) {
+	if (!bAnim && !bLock) {
 		drawKeys();
 	}
 	
@@ -528,7 +529,7 @@ void testApp::draw(){
 	
 	glColor4f(1.0f, 1.0f, 1.0f,1.0f);
 	
-	if (!bRot) {
+	if (!bAnim && !bLock) {
 		
 		switch (state) {
 			case MUSICREED_STATE_SCALES:
@@ -809,6 +810,17 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	bAltKeyDown = false;
 	noteButtons[lastKey.y].setDown(false);
 	chordButtons[lastKey.y].setDown(false);
+	
+	if (!bLock) {
+		if (distance(pnt) < 100 ) {
+			lock(true);
+		}
+	} else {
+		if (distance(pnt) < 50 ) {
+			lock(false);
+		}
+	}
+
 }
 
 //--------------------------------------------------------------
@@ -852,16 +864,33 @@ void testApp::setState(int state,int rotDuration) {
 	}
 	
 	if (rotDuration) {
-		bRot = true;
-		this->rotDuration = rotDuration*2;
-		rotTime = ofGetElapsedTimeMillis();
+		bAnim = true;
+		animDuration = rotDuration*2;
+		animTime = ofGetElapsedTimeMillis();
 	} else {
 		center = targetCenter;
 		scaleFactor = targetScaleFactor;
 	}
+}
 
+void testApp::lock(bool bLock) {
+	if (bAnim || bLock == this->bLock) {
+		return;
+	}
 	
+	if (bLock) {
+		targetScaleFactor = 0.35;
+		targetCenter = ofPoint(ofGetWidth()/2,ofGetHeight()/2);
+	} else {
+		targetScaleFactor = 0.55;
+		targetCenter = ofPoint(-30,ofGetHeight()/2);
+	}  
+		
+	animDuration = 500;
+	bAnim = true;
+	animTime = ofGetElapsedTimeMillis();
 	
+	this->bLock = bLock;
 }
 
 int testApp::getState() {
