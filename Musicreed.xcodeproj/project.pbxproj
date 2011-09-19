@@ -56,6 +56,180 @@
 		E4AF3F1C13C221760060359D /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F1413C221760060359D /* ofxAudioFile.mm */; };
 		E4AF3F1D13C221760060359D /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F1513C221760060359D /* ofxAudioInstrument.cpp */; };
 		E4C91ECE13ADF94200B8892F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C91ECD13ADF94200B8892F /* AVFoundation.framework */; };
+		E4CDEAA41427440A00B4D43B /* CHORD_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */; };
+		E4CDEAA51427440A00B4D43B /* CHORD.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9E1427440A00B4D43B /* CHORD.png */; };
+		E4CDEAA61427440A00B4D43B /* LOGO_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */; };
+		E4CDEAA71427440A00B4D43B /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA01427440A00B4D43B /* LOGO.png */; };
+		E4CDEAA81427440A00B4D43B /* SCALE_INFO.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */; };
+		E4CDEAA91427440A00B4D43B /* SCALES_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */; };
+		E4CDEAAA1427440A00B4D43B /* SCALES.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA31427440A00B4D43B /* SCALES.png */; };
+		E4CDEB6B14274FB000B4D43B /* augmented.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC114274FAE00B4D43B /* augmented.pvr */; };
+		E4CDEB6C14274FB000B4D43B /* diminished.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC214274FAE00B4D43B /* diminished.pvr */; };
+		E4CDEB6D14274FB000B4D43B /* major.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC314274FAE00B4D43B /* major.pvr */; };
+		E4CDEB6E14274FB000B4D43B /* minor.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC414274FAE00B4D43B /* minor.pvr */; };
+		E4CDEB6F14274FB000B4D43B /* triadic_augmented.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC514274FAE00B4D43B /* triadic_augmented.pvr */; };
+		E4CDEB7014274FB000B4D43B /* triadic_diminished.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC614274FAE00B4D43B /* triadic_diminished.pvr */; };
+		E4CDEB7114274FB000B4D43B /* triadic_major##5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC714274FAE00B4D43B /* triadic_major##5.pvr */; };
+		E4CDEB7214274FB000B4D43B /* triadic_major-5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC814274FAE00B4D43B /* triadic_major-5.pvr */; };
+		E4CDEB7314274FB000B4D43B /* triadic_major.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC914274FAE00B4D43B /* triadic_major.pvr */; };
+		E4CDEB7414274FB000B4D43B /* triadic_minor#5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACA14274FAE00B4D43B /* triadic_minor#5.pvr */; };
+		E4CDEB7514274FB000B4D43B /* triadic_minor.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACB14274FAE00B4D43B /* triadic_minor.pvr */; };
+		E4CDEB7614274FB000B4D43B /* triadic_sus2.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACC14274FAE00B4D43B /* triadic_sus2.pvr */; };
+		E4CDEB7714274FB000B4D43B /* triadic_sus4#5.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACD14274FAE00B4D43B /* triadic_sus4#5.pvr */; };
+		E4CDEB7814274FB000B4D43B /* triadic_sus4.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACE14274FAE00B4D43B /* triadic_sus4.pvr */; };
+		E4CDEB7914274FB000B4D43B /* triadic_sus4_7.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEACF14274FAE00B4D43B /* triadic_sus4_7.pvr */; };
+		E4CDEB7A14274FB000B4D43B /* click.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD014274FAE00B4D43B /* click.caf */; };
+		E4CDEB7B14274FB000B4D43B /* creed.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD114274FAE00B4D43B /* creed.xml */; };
+		E4CDEB7C14274FB000B4D43B /* chord_background.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD314274FAE00B4D43B /* chord_background.pvr */; };
+		E4CDEB7D14274FB000B4D43B /* chord_highlight.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD414274FAE00B4D43B /* chord_highlight.pvr */; };
+		E4CDEB7E14274FB000B4D43B /* chord_mask.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD514274FAE00B4D43B /* chord_mask.pvr */; };
+		E4CDEB7F14274FB000B4D43B /* chord_needle.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD614274FAE00B4D43B /* chord_needle.pvr */; };
+		E4CDEB8014274FB000B4D43B /* chord_pattern.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD714274FAE00B4D43B /* chord_pattern.pvr */; };
+		E4CDEB8114274FB000B4D43B /* R1-BLUE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD814274FAE00B4D43B /* R1-BLUE.pvr */; };
+		E4CDEB8214274FB000B4D43B /* R1-BROWN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAD914274FAE00B4D43B /* R1-BROWN.pvr */; };
+		E4CDEB8314274FB000B4D43B /* R1-GREEN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADA14274FAE00B4D43B /* R1-GREEN.pvr */; };
+		E4CDEB8414274FB000B4D43B /* R1-TURQUOISE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADB14274FAE00B4D43B /* R1-TURQUOISE.pvr */; };
+		E4CDEB8514274FB000B4D43B /* R2-BLUE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADC14274FAE00B4D43B /* R2-BLUE.pvr */; };
+		E4CDEB8614274FB000B4D43B /* R2-BROWN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADD14274FAE00B4D43B /* R2-BROWN.pvr */; };
+		E4CDEB8714274FB000B4D43B /* R2-GREEN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADE14274FAE00B4D43B /* R2-GREEN.pvr */; };
+		E4CDEB8814274FB000B4D43B /* R2-TURQUOISE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEADF14274FAE00B4D43B /* R2-TURQUOISE.pvr */; };
+		E4CDEB8914274FB000B4D43B /* R2-YELLOW.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE014274FAE00B4D43B /* R2-YELLOW.pvr */; };
+		E4CDEB8A14274FB000B4D43B /* R3-BLUE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE114274FAE00B4D43B /* R3-BLUE.pvr */; };
+		E4CDEB8B14274FB000B4D43B /* R3-BROWN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE214274FAE00B4D43B /* R3-BROWN.pvr */; };
+		E4CDEB8C14274FB000B4D43B /* R3-GREEN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE314274FAE00B4D43B /* R3-GREEN.pvr */; };
+		E4CDEB8D14274FB000B4D43B /* R3-YELLOW.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE414274FAE00B4D43B /* R3-YELLOW.pvr */; };
+		E4CDEB8E14274FB000B4D43B /* R4-BLUE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE514274FAE00B4D43B /* R4-BLUE.pvr */; };
+		E4CDEB8F14274FB000B4D43B /* R4-BROWN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE614274FAE00B4D43B /* R4-BROWN.pvr */; };
+		E4CDEB9014274FB000B4D43B /* R4-GREEN.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE714274FAE00B4D43B /* R4-GREEN.pvr */; };
+		E4CDEB9114274FB000B4D43B /* R4-TURQUOISE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE814274FAE00B4D43B /* R4-TURQUOISE.pvr */; };
+		E4CDEB9214274FB000B4D43B /* R4-YELLOW.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAE914274FAE00B4D43B /* R4-YELLOW.pvr */; };
+		E4CDEB9314274FB000B4D43B /* scale_background.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAEA14274FAE00B4D43B /* scale_background.pvr */; };
+		E4CDEB9414274FB000B4D43B /* scale_highlight.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAEB14274FAE00B4D43B /* scale_highlight.pvr */; };
+		E4CDEB9514274FB000B4D43B /* scale_inner_pattern.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAEC14274FAE00B4D43B /* scale_inner_pattern.pvr */; };
+		E4CDEB9614274FB000B4D43B /* scale_needle.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAED14274FAE00B4D43B /* scale_needle.pvr */; };
+		E4CDEB9714274FB000B4D43B /* scale_outer_pattern.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAEE14274FAE00B4D43B /* scale_outer_pattern.pvr */; };
+		E4CDEB9814274FB000B4D43B /* keys_texture.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAEF14274FAE00B4D43B /* keys_texture.pvr */; };
+		E4CDEB9914274FB000B4D43B /* oud_38.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF114274FAE00B4D43B /* oud_38.caf */; };
+		E4CDEB9A14274FB000B4D43B /* oud_39.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF214274FAE00B4D43B /* oud_39.caf */; };
+		E4CDEB9B14274FB000B4D43B /* oud_40.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF314274FAE00B4D43B /* oud_40.caf */; };
+		E4CDEB9C14274FB000B4D43B /* oud_41.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF414274FAE00B4D43B /* oud_41.caf */; };
+		E4CDEB9D14274FB000B4D43B /* oud_42.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF514274FAE00B4D43B /* oud_42.caf */; };
+		E4CDEB9E14274FB000B4D43B /* oud_43.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF614274FAE00B4D43B /* oud_43.caf */; };
+		E4CDEB9F14274FB000B4D43B /* oud_44.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF714274FAE00B4D43B /* oud_44.caf */; };
+		E4CDEBA014274FB000B4D43B /* oud_45.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF814274FAE00B4D43B /* oud_45.caf */; };
+		E4CDEBA114274FB000B4D43B /* oud_46.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAF914274FAE00B4D43B /* oud_46.caf */; };
+		E4CDEBA214274FB000B4D43B /* oud_47.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFA14274FAE00B4D43B /* oud_47.caf */; };
+		E4CDEBA314274FB000B4D43B /* oud_48.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFB14274FAE00B4D43B /* oud_48.caf */; };
+		E4CDEBA414274FB000B4D43B /* oud_49.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFC14274FAE00B4D43B /* oud_49.caf */; };
+		E4CDEBA514274FB000B4D43B /* oud_50.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFD14274FAE00B4D43B /* oud_50.caf */; };
+		E4CDEBA614274FB000B4D43B /* oud_51.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFE14274FAE00B4D43B /* oud_51.caf */; };
+		E4CDEBA714274FB000B4D43B /* oud_52.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAFF14274FAE00B4D43B /* oud_52.caf */; };
+		E4CDEBA814274FB000B4D43B /* oud_53.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0014274FAE00B4D43B /* oud_53.caf */; };
+		E4CDEBA914274FB000B4D43B /* oud_54.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0114274FAE00B4D43B /* oud_54.caf */; };
+		E4CDEBAA14274FB000B4D43B /* oud_55.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0214274FAE00B4D43B /* oud_55.caf */; };
+		E4CDEBAB14274FB000B4D43B /* oud_56.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0314274FAE00B4D43B /* oud_56.caf */; };
+		E4CDEBAC14274FB000B4D43B /* oud_57.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0414274FAE00B4D43B /* oud_57.caf */; };
+		E4CDEBAD14274FB000B4D43B /* oud_58.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0514274FAE00B4D43B /* oud_58.caf */; };
+		E4CDEBAE14274FB000B4D43B /* oud_59.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0614274FAE00B4D43B /* oud_59.caf */; };
+		E4CDEBAF14274FB000B4D43B /* oud_60.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0714274FAE00B4D43B /* oud_60.caf */; };
+		E4CDEBB014274FB000B4D43B /* oud_61.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0814274FAE00B4D43B /* oud_61.caf */; };
+		E4CDEBB114274FB000B4D43B /* oud_62.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0914274FAE00B4D43B /* oud_62.caf */; };
+		E4CDEBB214274FB000B4D43B /* oud_63.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0A14274FAE00B4D43B /* oud_63.caf */; };
+		E4CDEBB314274FB000B4D43B /* oud_64.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0B14274FAE00B4D43B /* oud_64.caf */; };
+		E4CDEBB414274FB000B4D43B /* oud_65.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0C14274FAE00B4D43B /* oud_65.caf */; };
+		E4CDEBB514274FB000B4D43B /* oud_66.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0D14274FAE00B4D43B /* oud_66.caf */; };
+		E4CDEBB614274FB000B4D43B /* oud_67.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0E14274FAE00B4D43B /* oud_67.caf */; };
+		E4CDEBB714274FB000B4D43B /* oud_68.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB0F14274FAE00B4D43B /* oud_68.caf */; };
+		E4CDEBB814274FB000B4D43B /* oud_69.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1014274FAE00B4D43B /* oud_69.caf */; };
+		E4CDEBB914274FB000B4D43B /* oud_70.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1114274FAE00B4D43B /* oud_70.caf */; };
+		E4CDEBBA14274FB000B4D43B /* oud_71.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1214274FAE00B4D43B /* oud_71.caf */; };
+		E4CDEBBB14274FB000B4D43B /* oud_72.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1314274FAE00B4D43B /* oud_72.caf */; };
+		E4CDEBBC14274FB000B4D43B /* shadow.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1414274FAE00B4D43B /* shadow.pvr */; };
+		E4CDEBBD14274FB000B4D43B /* abu_ata_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1614274FAE00B4D43B /* abu_ata_per.caf */; };
+		E4CDEBBE14274FB000B4D43B /* acem_asiran_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1714274FAE00B4D43B /* acem_asiran_tur.caf */; };
+		E4CDEBBF14274FB000B4D43B /* afsari_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1814274FAF00B4D43B /* afsari_per.caf */; };
+		E4CDEBC014274FB000B4D43B /* ahir_bhairav.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1914274FAF00B4D43B /* ahir_bhairav.caf */; };
+		E4CDEBC114274FB000B4D43B /* alhaiya_bilaval.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1A14274FAF00B4D43B /* alhaiya_bilaval.caf */; };
+		E4CDEBC214274FB000B4D43B /* asavari.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1B14274FAF00B4D43B /* asavari.caf */; };
+		E4CDEBC314274FB000B4D43B /* bageshri.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1C14274FAF00B4D43B /* bageshri.caf */; };
+		E4CDEBC414274FB000B4D43B /* bayat_i_isfahan_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1D14274FAF00B4D43B /* bayat_i_isfahan_per.caf */; };
+		E4CDEBC514274FB000B4D43B /* bayat_i_kurd_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1E14274FAF00B4D43B /* bayat_i_kurd_per.caf */; };
+		E4CDEBC614274FB000B4D43B /* bayat_i_tork_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB1F14274FAF00B4D43B /* bayat_i_tork_per.caf */; };
+		E4CDEBC714274FB000B4D43B /* bayati_shuri_b_karjighar_b.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2014274FAF00B4D43B /* bayati_shuri_b_karjighar_b.caf */; };
+		E4CDEBC814274FB000B4D43B /* bayati_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2114274FAF00B4D43B /* bayati_tur.caf */; };
+		E4CDEBC914274FB000B4D43B /* bhairav.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2214274FAF00B4D43B /* bhairav.caf */; };
+		E4CDEBCA14274FB000B4D43B /* bhairavi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2314274FAF00B4D43B /* bhairavi.caf */; };
+		E4CDEBCB14274FB000B4D43B /* bhimpalasi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2414274FAF00B4D43B /* bhimpalasi.caf */; };
+		E4CDEBCC14274FB000B4D43B /* bhupala_todi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2514274FAF00B4D43B /* bhupala_todi.caf */; };
+		E4CDEBCD14274FB000B4D43B /* bihag.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2614274FAF00B4D43B /* bihag.caf */; };
+		E4CDEBCE14274FB000B4D43B /* busalik.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2714274FAF00B4D43B /* busalik.caf */; };
+		E4CDEBCF14274FB000B4D43B /* buselik_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2814274FAF00B4D43B /* buselik_tur.caf */; };
+		E4CDEBD014274FB000B4D43B /* chahargah_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2914274FAF00B4D43B /* chahargah_per.caf */; };
+		E4CDEBD114274FB000B4D43B /* darbari_kanada.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2A14274FAF00B4D43B /* darbari_kanada.caf */; };
+		E4CDEBD214274FB000B4D43B /* dasti_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2B14274FAF00B4D43B /* dasti_per.caf */; };
+		E4CDEBD314274FB000B4D43B /* desh.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2C14274FAF00B4D43B /* desh.caf */; };
+		E4CDEBD414274FB000B4D43B /* deshi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2D14274FAF00B4D43B /* deshi.caf */; };
+		E4CDEBD514274FB000B4D43B /* deshkar.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2E14274FAF00B4D43B /* deshkar.caf */; };
+		E4CDEBD614274FB000B4D43B /* durga.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB2F14274FAF00B4D43B /* durga.caf */; };
+		E4CDEBD714274FB000B4D43B /* farahfaza.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3014274FAF00B4D43B /* farahfaza.caf */; };
+		E4CDEBD814274FB000B4D43B /* gaud_sarang.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3114274FAF00B4D43B /* gaud_sarang.caf */; };
+		E4CDEBD914274FB000B4D43B /* hicaz_turk.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3214274FAF00B4D43B /* hicaz_turk.caf */; };
+		E4CDEBDA14274FB000B4D43B /* hijaz.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3314274FAF00B4D43B /* hijaz.caf */; };
+		E4CDEBDB14274FB000B4D43B /* hijaz_kar.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3414274FAF00B4D43B /* hijaz_kar.caf */; };
+		E4CDEBDC14274FB000B4D43B /* hijaz_nahawand.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3514274FAF00B4D43B /* hijaz_nahawand.caf */; };
+		E4CDEBDD14274FB000B4D43B /* hijaz_rast.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3614274FAF00B4D43B /* hijaz_rast.caf */; };
+		E4CDEBDE14274FB000B4D43B /* homayun_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3714274FAF00B4D43B /* homayun_per.caf */; };
+		E4CDEBDF14274FB000B4D43B /* husseini.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3814274FAF00B4D43B /* husseini.caf */; };
+		E4CDEBE014274FB000B4D43B /* husseini_turk.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3914274FAF00B4D43B /* husseini_turk.caf */; };
+		E4CDEBE114274FB000B4D43B /* huzam.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3A14274FAF00B4D43B /* huzam.caf */; };
+		E4CDEBE214274FB000B4D43B /* iraq.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3B14274FAF00B4D43B /* iraq.caf */; };
+		E4CDEBE314274FB000B4D43B /* isfahan_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3C14274FAF00B4D43B /* isfahan_tur.caf */; };
+		E4CDEBE414274FB000B4D43B /* jaijaivanti.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3D14274FAF00B4D43B /* jaijaivanti.caf */; };
+		E4CDEBE514274FB000B4D43B /* jaunpuri.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3E14274FAF00B4D43B /* jaunpuri.caf */; };
+		E4CDEBE614274FB000B4D43B /* jiharkah.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB3F14274FAF00B4D43B /* jiharkah.caf */; };
+		E4CDEBE714274FB000B4D43B /* jinjoti.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4014274FAF00B4D43B /* jinjoti.caf */; };
+		E4CDEBE814274FB000B4D43B /* kafi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4114274FAF00B4D43B /* kafi.caf */; };
+		E4CDEBE914274FB000B4D43B /* khammaj.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4214274FAF00B4D43B /* khammaj.caf */; };
+		E4CDEBEA14274FB000B4D43B /* kurd.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4314274FAF00B4D43B /* kurd.caf */; };
+		E4CDEBEB14274FB000B4D43B /* kurdi_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4414274FAF00B4D43B /* kurdi_tur.caf */; };
+		E4CDEBEC14274FB000B4D43B /* madhuvanti.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4514274FAF00B4D43B /* madhuvanti.caf */; };
+		E4CDEBED14274FB000B4D43B /* mahur_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4614274FAF00B4D43B /* mahur_per.caf */; };
+		E4CDEBEE14274FB000B4D43B /* malkauns.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4714274FAF00B4D43B /* malkauns.caf */; };
+		E4CDEBEF14274FB000B4D43B /* marva.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4814274FAF00B4D43B /* marva.caf */; };
+		E4CDEBF014274FB000B4D43B /* nahawand_kabir.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4914274FAF00B4D43B /* nahawand_kabir.caf */; };
+		E4CDEBF114274FB000B4D43B /* nahawand_kurd.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4A14274FAF00B4D43B /* nahawand_kurd.caf */; };
+		E4CDEBF214274FB000B4D43B /* nahawand_murassah.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4B14274FAF00B4D43B /* nahawand_murassah.caf */; };
+		E4CDEBF314274FB000B4D43B /* nairuz.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4C14274FAF00B4D43B /* nairuz.caf */; };
+		E4CDEBF414274FB000B4D43B /* narayani.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4D14274FAF00B4D43B /* narayani.caf */; };
+		E4CDEBF514274FB000B4D43B /* nava_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4E14274FAF00B4D43B /* nava_per.caf */; };
+		E4CDEBF614274FB000B4D43B /* nawa_athar.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB4F14274FAF00B4D43B /* nawa_athar.caf */; };
+		E4CDEBF714274FB000B4D43B /* nihavent_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5014274FAF00B4D43B /* nihavent_tur.caf */; };
+		E4CDEBF814274FB000B4D43B /* nikriz.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5114274FAF00B4D43B /* nikriz.caf */; };
+		E4CDEBF914274FB000B4D43B /* nishaburek_tur.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5214274FAF00B4D43B /* nishaburek_tur.caf */; };
+		E4CDEBFA14274FB000B4D43B /* palasi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5314274FAF00B4D43B /* palasi.caf */; };
+		E4CDEBFB14274FB000B4D43B /* pilu.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5414274FAF00B4D43B /* pilu.caf */; };
+		E4CDEBFC14274FB000B4D43B /* purya.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5514274FAF00B4D43B /* purya.caf */; };
+		E4CDEBFD14274FB000B4D43B /* rageshree.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5614274FAF00B4D43B /* rageshree.caf */; };
+		E4CDEBFE14274FB000B4D43B /* rahat_el_arwah.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5714274FAF00B4D43B /* rahat_el_arwah.caf */; };
+		E4CDEBFF14274FB000B4D43B /* rast_nahawand.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5814274FAF00B4D43B /* rast_nahawand.caf */; };
+		E4CDEC0014274FB000B4D43B /* rast_rast.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5914274FAF00B4D43B /* rast_rast.caf */; };
+		E4CDEC0114274FB000B4D43B /* rast_turk.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5A14274FAF00B4D43B /* rast_turk.caf */; };
+		E4CDEC0214274FB000B4D43B /* saba.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5B14274FAF00B4D43B /* saba.caf */; };
+		E4CDEC0314274FB000B4D43B /* saba_zamzam.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5C14274FAF00B4D43B /* saba_zamzam.caf */; };
+		E4CDEC0414274FB000B4D43B /* shadd_araban.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5D14274FAF00B4D43B /* shadd_araban.caf */; };
+		E4CDEC0514274FB000B4D43B /* shahnaz.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5E14274FAF00B4D43B /* shahnaz.caf */; };
+		E4CDEC0614274FB000B4D43B /* shawq_afza.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB5F14274FB000B4D43B /* shawq_afza.caf */; };
+		E4CDEC0714274FB000B4D43B /* sikah_baladi.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6014274FB000B4D43B /* sikah_baladi.caf */; };
+		E4CDEC0814274FB000B4D43B /* sikah_nahawand.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6114274FB000B4D43B /* sikah_nahawand.caf */; };
+		E4CDEC0914274FB000B4D43B /* sikah_rast.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6214274FB000B4D43B /* sikah_rast.caf */; };
+		E4CDEC0A14274FB000B4D43B /* sur_per.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6314274FB000B4D43B /* sur_per.caf */; };
+		E4CDEC0B14274FB000B4D43B /* suzidil.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6414274FB000B4D43B /* suzidil.caf */; };
+		E4CDEC0C14274FB000B4D43B /* suznak.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6514274FB000B4D43B /* suznak.caf */; };
+		E4CDEC0D14274FB000B4D43B /* tilak_kamod.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6614274FB000B4D43B /* tilak_kamod.caf */; };
+		E4CDEC0E14274FB000B4D43B /* ushaq_masri.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6714274FB000B4D43B /* ushaq_masri.caf */; };
+		E4CDEC0F14274FB000B4D43B /* ussak_turk.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6814274FB000B4D43B /* ussak_turk.caf */; };
+		E4CDEC1014274FB000B4D43B /* yaman_kalyan.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6914274FB000B4D43B /* yaman_kalyan.caf */; };
+		E4CDEC1114274FB000B4D43B /* zanjaran.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEB6A14274FB000B4D43B /* zanjaran.caf */; };
 		E4E6509D137FF7CA00DFCE6E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E65099137FF7CA00DFCE6E /* MainWindow.xib */; };
 		E4E6509E137FF7CA00DFCE6E /* MusicreedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */; };
 		E4E6509F137FF7CA00DFCE6E /* ScaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */; };
@@ -237,6 +411,180 @@
 		E4AF3F1613C221760060359D /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
 		E4C91EA913ADF4AD00B8892F /* RKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
 		E4C91ECD13ADF94200B8892F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CHORD_PRESSED.png; path = Resources/CHORD_PRESSED.png; sourceTree = "<group>"; };
+		E4CDEA9E1427440A00B4D43B /* CHORD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CHORD.png; path = Resources/CHORD.png; sourceTree = "<group>"; };
+		E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LOGO_PRESSED.png; path = Resources/LOGO_PRESSED.png; sourceTree = "<group>"; };
+		E4CDEAA01427440A00B4D43B /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LOGO.png; path = Resources/LOGO.png; sourceTree = "<group>"; };
+		E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_INFO.png; path = Resources/SCALE_INFO.png; sourceTree = "<group>"; };
+		E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALES_PRESSED.png; path = Resources/SCALES_PRESSED.png; sourceTree = "<group>"; };
+		E4CDEAA31427440A00B4D43B /* SCALES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALES.png; path = Resources/SCALES.png; sourceTree = "<group>"; };
+		E4CDEAC114274FAE00B4D43B /* augmented.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = augmented.pvr; sourceTree = "<group>"; };
+		E4CDEAC214274FAE00B4D43B /* diminished.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = diminished.pvr; sourceTree = "<group>"; };
+		E4CDEAC314274FAE00B4D43B /* major.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = major.pvr; sourceTree = "<group>"; };
+		E4CDEAC414274FAE00B4D43B /* minor.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = minor.pvr; sourceTree = "<group>"; };
+		E4CDEAC514274FAE00B4D43B /* triadic_augmented.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_augmented.pvr; sourceTree = "<group>"; };
+		E4CDEAC614274FAE00B4D43B /* triadic_diminished.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_diminished.pvr; sourceTree = "<group>"; };
+		E4CDEAC714274FAE00B4D43B /* triadic_major##5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triadic_major##5.pvr"; sourceTree = "<group>"; };
+		E4CDEAC814274FAE00B4D43B /* triadic_major-5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triadic_major-5.pvr"; sourceTree = "<group>"; };
+		E4CDEAC914274FAE00B4D43B /* triadic_major.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_major.pvr; sourceTree = "<group>"; };
+		E4CDEACA14274FAE00B4D43B /* triadic_minor#5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triadic_minor#5.pvr"; sourceTree = "<group>"; };
+		E4CDEACB14274FAE00B4D43B /* triadic_minor.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_minor.pvr; sourceTree = "<group>"; };
+		E4CDEACC14274FAE00B4D43B /* triadic_sus2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus2.pvr; sourceTree = "<group>"; };
+		E4CDEACD14274FAE00B4D43B /* triadic_sus4#5.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triadic_sus4#5.pvr"; sourceTree = "<group>"; };
+		E4CDEACE14274FAE00B4D43B /* triadic_sus4.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus4.pvr; sourceTree = "<group>"; };
+		E4CDEACF14274FAE00B4D43B /* triadic_sus4_7.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = triadic_sus4_7.pvr; sourceTree = "<group>"; };
+		E4CDEAD014274FAE00B4D43B /* click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.caf; sourceTree = "<group>"; };
+		E4CDEAD114274FAE00B4D43B /* creed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = creed.xml; sourceTree = "<group>"; };
+		E4CDEAD314274FAE00B4D43B /* chord_background.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_background.pvr; sourceTree = "<group>"; };
+		E4CDEAD414274FAE00B4D43B /* chord_highlight.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_highlight.pvr; sourceTree = "<group>"; };
+		E4CDEAD514274FAE00B4D43B /* chord_mask.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_mask.pvr; sourceTree = "<group>"; };
+		E4CDEAD614274FAE00B4D43B /* chord_needle.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_needle.pvr; sourceTree = "<group>"; };
+		E4CDEAD714274FAE00B4D43B /* chord_pattern.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chord_pattern.pvr; sourceTree = "<group>"; };
+		E4CDEAD814274FAE00B4D43B /* R1-BLUE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R1-BLUE.pvr"; sourceTree = "<group>"; };
+		E4CDEAD914274FAE00B4D43B /* R1-BROWN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R1-BROWN.pvr"; sourceTree = "<group>"; };
+		E4CDEADA14274FAE00B4D43B /* R1-GREEN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R1-GREEN.pvr"; sourceTree = "<group>"; };
+		E4CDEADB14274FAE00B4D43B /* R1-TURQUOISE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R1-TURQUOISE.pvr"; sourceTree = "<group>"; };
+		E4CDEADC14274FAE00B4D43B /* R2-BLUE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R2-BLUE.pvr"; sourceTree = "<group>"; };
+		E4CDEADD14274FAE00B4D43B /* R2-BROWN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R2-BROWN.pvr"; sourceTree = "<group>"; };
+		E4CDEADE14274FAE00B4D43B /* R2-GREEN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R2-GREEN.pvr"; sourceTree = "<group>"; };
+		E4CDEADF14274FAE00B4D43B /* R2-TURQUOISE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R2-TURQUOISE.pvr"; sourceTree = "<group>"; };
+		E4CDEAE014274FAE00B4D43B /* R2-YELLOW.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R2-YELLOW.pvr"; sourceTree = "<group>"; };
+		E4CDEAE114274FAE00B4D43B /* R3-BLUE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R3-BLUE.pvr"; sourceTree = "<group>"; };
+		E4CDEAE214274FAE00B4D43B /* R3-BROWN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R3-BROWN.pvr"; sourceTree = "<group>"; };
+		E4CDEAE314274FAE00B4D43B /* R3-GREEN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R3-GREEN.pvr"; sourceTree = "<group>"; };
+		E4CDEAE414274FAE00B4D43B /* R3-YELLOW.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R3-YELLOW.pvr"; sourceTree = "<group>"; };
+		E4CDEAE514274FAE00B4D43B /* R4-BLUE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R4-BLUE.pvr"; sourceTree = "<group>"; };
+		E4CDEAE614274FAE00B4D43B /* R4-BROWN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R4-BROWN.pvr"; sourceTree = "<group>"; };
+		E4CDEAE714274FAE00B4D43B /* R4-GREEN.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R4-GREEN.pvr"; sourceTree = "<group>"; };
+		E4CDEAE814274FAE00B4D43B /* R4-TURQUOISE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R4-TURQUOISE.pvr"; sourceTree = "<group>"; };
+		E4CDEAE914274FAE00B4D43B /* R4-YELLOW.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R4-YELLOW.pvr"; sourceTree = "<group>"; };
+		E4CDEAEA14274FAE00B4D43B /* scale_background.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = scale_background.pvr; sourceTree = "<group>"; };
+		E4CDEAEB14274FAE00B4D43B /* scale_highlight.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = scale_highlight.pvr; sourceTree = "<group>"; };
+		E4CDEAEC14274FAE00B4D43B /* scale_inner_pattern.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = scale_inner_pattern.pvr; sourceTree = "<group>"; };
+		E4CDEAED14274FAE00B4D43B /* scale_needle.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = scale_needle.pvr; sourceTree = "<group>"; };
+		E4CDEAEE14274FAE00B4D43B /* scale_outer_pattern.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = scale_outer_pattern.pvr; sourceTree = "<group>"; };
+		E4CDEAEF14274FAE00B4D43B /* keys_texture.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = keys_texture.pvr; sourceTree = "<group>"; };
+		E4CDEAF114274FAE00B4D43B /* oud_38.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_38.caf; sourceTree = "<group>"; };
+		E4CDEAF214274FAE00B4D43B /* oud_39.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_39.caf; sourceTree = "<group>"; };
+		E4CDEAF314274FAE00B4D43B /* oud_40.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_40.caf; sourceTree = "<group>"; };
+		E4CDEAF414274FAE00B4D43B /* oud_41.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_41.caf; sourceTree = "<group>"; };
+		E4CDEAF514274FAE00B4D43B /* oud_42.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_42.caf; sourceTree = "<group>"; };
+		E4CDEAF614274FAE00B4D43B /* oud_43.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_43.caf; sourceTree = "<group>"; };
+		E4CDEAF714274FAE00B4D43B /* oud_44.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_44.caf; sourceTree = "<group>"; };
+		E4CDEAF814274FAE00B4D43B /* oud_45.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_45.caf; sourceTree = "<group>"; };
+		E4CDEAF914274FAE00B4D43B /* oud_46.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_46.caf; sourceTree = "<group>"; };
+		E4CDEAFA14274FAE00B4D43B /* oud_47.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_47.caf; sourceTree = "<group>"; };
+		E4CDEAFB14274FAE00B4D43B /* oud_48.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_48.caf; sourceTree = "<group>"; };
+		E4CDEAFC14274FAE00B4D43B /* oud_49.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_49.caf; sourceTree = "<group>"; };
+		E4CDEAFD14274FAE00B4D43B /* oud_50.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_50.caf; sourceTree = "<group>"; };
+		E4CDEAFE14274FAE00B4D43B /* oud_51.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_51.caf; sourceTree = "<group>"; };
+		E4CDEAFF14274FAE00B4D43B /* oud_52.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_52.caf; sourceTree = "<group>"; };
+		E4CDEB0014274FAE00B4D43B /* oud_53.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_53.caf; sourceTree = "<group>"; };
+		E4CDEB0114274FAE00B4D43B /* oud_54.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_54.caf; sourceTree = "<group>"; };
+		E4CDEB0214274FAE00B4D43B /* oud_55.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_55.caf; sourceTree = "<group>"; };
+		E4CDEB0314274FAE00B4D43B /* oud_56.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_56.caf; sourceTree = "<group>"; };
+		E4CDEB0414274FAE00B4D43B /* oud_57.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_57.caf; sourceTree = "<group>"; };
+		E4CDEB0514274FAE00B4D43B /* oud_58.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_58.caf; sourceTree = "<group>"; };
+		E4CDEB0614274FAE00B4D43B /* oud_59.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_59.caf; sourceTree = "<group>"; };
+		E4CDEB0714274FAE00B4D43B /* oud_60.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_60.caf; sourceTree = "<group>"; };
+		E4CDEB0814274FAE00B4D43B /* oud_61.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_61.caf; sourceTree = "<group>"; };
+		E4CDEB0914274FAE00B4D43B /* oud_62.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_62.caf; sourceTree = "<group>"; };
+		E4CDEB0A14274FAE00B4D43B /* oud_63.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_63.caf; sourceTree = "<group>"; };
+		E4CDEB0B14274FAE00B4D43B /* oud_64.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_64.caf; sourceTree = "<group>"; };
+		E4CDEB0C14274FAE00B4D43B /* oud_65.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_65.caf; sourceTree = "<group>"; };
+		E4CDEB0D14274FAE00B4D43B /* oud_66.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_66.caf; sourceTree = "<group>"; };
+		E4CDEB0E14274FAE00B4D43B /* oud_67.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_67.caf; sourceTree = "<group>"; };
+		E4CDEB0F14274FAE00B4D43B /* oud_68.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_68.caf; sourceTree = "<group>"; };
+		E4CDEB1014274FAE00B4D43B /* oud_69.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_69.caf; sourceTree = "<group>"; };
+		E4CDEB1114274FAE00B4D43B /* oud_70.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_70.caf; sourceTree = "<group>"; };
+		E4CDEB1214274FAE00B4D43B /* oud_71.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_71.caf; sourceTree = "<group>"; };
+		E4CDEB1314274FAE00B4D43B /* oud_72.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oud_72.caf; sourceTree = "<group>"; };
+		E4CDEB1414274FAE00B4D43B /* shadow.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = shadow.pvr; sourceTree = "<group>"; };
+		E4CDEB1614274FAE00B4D43B /* abu_ata_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = abu_ata_per.caf; sourceTree = "<group>"; };
+		E4CDEB1714274FAE00B4D43B /* acem_asiran_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = acem_asiran_tur.caf; sourceTree = "<group>"; };
+		E4CDEB1814274FAF00B4D43B /* afsari_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = afsari_per.caf; sourceTree = "<group>"; };
+		E4CDEB1914274FAF00B4D43B /* ahir_bhairav.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ahir_bhairav.caf; sourceTree = "<group>"; };
+		E4CDEB1A14274FAF00B4D43B /* alhaiya_bilaval.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alhaiya_bilaval.caf; sourceTree = "<group>"; };
+		E4CDEB1B14274FAF00B4D43B /* asavari.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = asavari.caf; sourceTree = "<group>"; };
+		E4CDEB1C14274FAF00B4D43B /* bageshri.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bageshri.caf; sourceTree = "<group>"; };
+		E4CDEB1D14274FAF00B4D43B /* bayat_i_isfahan_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayat_i_isfahan_per.caf; sourceTree = "<group>"; };
+		E4CDEB1E14274FAF00B4D43B /* bayat_i_kurd_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayat_i_kurd_per.caf; sourceTree = "<group>"; };
+		E4CDEB1F14274FAF00B4D43B /* bayat_i_tork_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayat_i_tork_per.caf; sourceTree = "<group>"; };
+		E4CDEB2014274FAF00B4D43B /* bayati_shuri_b_karjighar_b.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayati_shuri_b_karjighar_b.caf; sourceTree = "<group>"; };
+		E4CDEB2114274FAF00B4D43B /* bayati_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayati_tur.caf; sourceTree = "<group>"; };
+		E4CDEB2214274FAF00B4D43B /* bhairav.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bhairav.caf; sourceTree = "<group>"; };
+		E4CDEB2314274FAF00B4D43B /* bhairavi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bhairavi.caf; sourceTree = "<group>"; };
+		E4CDEB2414274FAF00B4D43B /* bhimpalasi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bhimpalasi.caf; sourceTree = "<group>"; };
+		E4CDEB2514274FAF00B4D43B /* bhupala_todi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bhupala_todi.caf; sourceTree = "<group>"; };
+		E4CDEB2614274FAF00B4D43B /* bihag.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bihag.caf; sourceTree = "<group>"; };
+		E4CDEB2714274FAF00B4D43B /* busalik.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = busalik.caf; sourceTree = "<group>"; };
+		E4CDEB2814274FAF00B4D43B /* buselik_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buselik_tur.caf; sourceTree = "<group>"; };
+		E4CDEB2914274FAF00B4D43B /* chahargah_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chahargah_per.caf; sourceTree = "<group>"; };
+		E4CDEB2A14274FAF00B4D43B /* darbari_kanada.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = darbari_kanada.caf; sourceTree = "<group>"; };
+		E4CDEB2B14274FAF00B4D43B /* dasti_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dasti_per.caf; sourceTree = "<group>"; };
+		E4CDEB2C14274FAF00B4D43B /* desh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = desh.caf; sourceTree = "<group>"; };
+		E4CDEB2D14274FAF00B4D43B /* deshi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = deshi.caf; sourceTree = "<group>"; };
+		E4CDEB2E14274FAF00B4D43B /* deshkar.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = deshkar.caf; sourceTree = "<group>"; };
+		E4CDEB2F14274FAF00B4D43B /* durga.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = durga.caf; sourceTree = "<group>"; };
+		E4CDEB3014274FAF00B4D43B /* farahfaza.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = farahfaza.caf; sourceTree = "<group>"; };
+		E4CDEB3114274FAF00B4D43B /* gaud_sarang.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gaud_sarang.caf; sourceTree = "<group>"; };
+		E4CDEB3214274FAF00B4D43B /* hicaz_turk.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hicaz_turk.caf; sourceTree = "<group>"; };
+		E4CDEB3314274FAF00B4D43B /* hijaz.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hijaz.caf; sourceTree = "<group>"; };
+		E4CDEB3414274FAF00B4D43B /* hijaz_kar.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hijaz_kar.caf; sourceTree = "<group>"; };
+		E4CDEB3514274FAF00B4D43B /* hijaz_nahawand.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hijaz_nahawand.caf; sourceTree = "<group>"; };
+		E4CDEB3614274FAF00B4D43B /* hijaz_rast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hijaz_rast.caf; sourceTree = "<group>"; };
+		E4CDEB3714274FAF00B4D43B /* homayun_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = homayun_per.caf; sourceTree = "<group>"; };
+		E4CDEB3814274FAF00B4D43B /* husseini.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = husseini.caf; sourceTree = "<group>"; };
+		E4CDEB3914274FAF00B4D43B /* husseini_turk.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = husseini_turk.caf; sourceTree = "<group>"; };
+		E4CDEB3A14274FAF00B4D43B /* huzam.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = huzam.caf; sourceTree = "<group>"; };
+		E4CDEB3B14274FAF00B4D43B /* iraq.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iraq.caf; sourceTree = "<group>"; };
+		E4CDEB3C14274FAF00B4D43B /* isfahan_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = isfahan_tur.caf; sourceTree = "<group>"; };
+		E4CDEB3D14274FAF00B4D43B /* jaijaivanti.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jaijaivanti.caf; sourceTree = "<group>"; };
+		E4CDEB3E14274FAF00B4D43B /* jaunpuri.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jaunpuri.caf; sourceTree = "<group>"; };
+		E4CDEB3F14274FAF00B4D43B /* jiharkah.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jiharkah.caf; sourceTree = "<group>"; };
+		E4CDEB4014274FAF00B4D43B /* jinjoti.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jinjoti.caf; sourceTree = "<group>"; };
+		E4CDEB4114274FAF00B4D43B /* kafi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kafi.caf; sourceTree = "<group>"; };
+		E4CDEB4214274FAF00B4D43B /* khammaj.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = khammaj.caf; sourceTree = "<group>"; };
+		E4CDEB4314274FAF00B4D43B /* kurd.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kurd.caf; sourceTree = "<group>"; };
+		E4CDEB4414274FAF00B4D43B /* kurdi_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kurdi_tur.caf; sourceTree = "<group>"; };
+		E4CDEB4514274FAF00B4D43B /* madhuvanti.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = madhuvanti.caf; sourceTree = "<group>"; };
+		E4CDEB4614274FAF00B4D43B /* mahur_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mahur_per.caf; sourceTree = "<group>"; };
+		E4CDEB4714274FAF00B4D43B /* malkauns.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = malkauns.caf; sourceTree = "<group>"; };
+		E4CDEB4814274FAF00B4D43B /* marva.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = marva.caf; sourceTree = "<group>"; };
+		E4CDEB4914274FAF00B4D43B /* nahawand_kabir.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nahawand_kabir.caf; sourceTree = "<group>"; };
+		E4CDEB4A14274FAF00B4D43B /* nahawand_kurd.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nahawand_kurd.caf; sourceTree = "<group>"; };
+		E4CDEB4B14274FAF00B4D43B /* nahawand_murassah.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nahawand_murassah.caf; sourceTree = "<group>"; };
+		E4CDEB4C14274FAF00B4D43B /* nairuz.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nairuz.caf; sourceTree = "<group>"; };
+		E4CDEB4D14274FAF00B4D43B /* narayani.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = narayani.caf; sourceTree = "<group>"; };
+		E4CDEB4E14274FAF00B4D43B /* nava_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nava_per.caf; sourceTree = "<group>"; };
+		E4CDEB4F14274FAF00B4D43B /* nawa_athar.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nawa_athar.caf; sourceTree = "<group>"; };
+		E4CDEB5014274FAF00B4D43B /* nihavent_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nihavent_tur.caf; sourceTree = "<group>"; };
+		E4CDEB5114274FAF00B4D43B /* nikriz.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nikriz.caf; sourceTree = "<group>"; };
+		E4CDEB5214274FAF00B4D43B /* nishaburek_tur.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nishaburek_tur.caf; sourceTree = "<group>"; };
+		E4CDEB5314274FAF00B4D43B /* palasi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = palasi.caf; sourceTree = "<group>"; };
+		E4CDEB5414274FAF00B4D43B /* pilu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pilu.caf; sourceTree = "<group>"; };
+		E4CDEB5514274FAF00B4D43B /* purya.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = purya.caf; sourceTree = "<group>"; };
+		E4CDEB5614274FAF00B4D43B /* rageshree.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rageshree.caf; sourceTree = "<group>"; };
+		E4CDEB5714274FAF00B4D43B /* rahat_el_arwah.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rahat_el_arwah.caf; sourceTree = "<group>"; };
+		E4CDEB5814274FAF00B4D43B /* rast_nahawand.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rast_nahawand.caf; sourceTree = "<group>"; };
+		E4CDEB5914274FAF00B4D43B /* rast_rast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rast_rast.caf; sourceTree = "<group>"; };
+		E4CDEB5A14274FAF00B4D43B /* rast_turk.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rast_turk.caf; sourceTree = "<group>"; };
+		E4CDEB5B14274FAF00B4D43B /* saba.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = saba.caf; sourceTree = "<group>"; };
+		E4CDEB5C14274FAF00B4D43B /* saba_zamzam.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = saba_zamzam.caf; sourceTree = "<group>"; };
+		E4CDEB5D14274FAF00B4D43B /* shadd_araban.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shadd_araban.caf; sourceTree = "<group>"; };
+		E4CDEB5E14274FAF00B4D43B /* shahnaz.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shahnaz.caf; sourceTree = "<group>"; };
+		E4CDEB5F14274FB000B4D43B /* shawq_afza.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shawq_afza.caf; sourceTree = "<group>"; };
+		E4CDEB6014274FB000B4D43B /* sikah_baladi.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sikah_baladi.caf; sourceTree = "<group>"; };
+		E4CDEB6114274FB000B4D43B /* sikah_nahawand.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sikah_nahawand.caf; sourceTree = "<group>"; };
+		E4CDEB6214274FB000B4D43B /* sikah_rast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sikah_rast.caf; sourceTree = "<group>"; };
+		E4CDEB6314274FB000B4D43B /* sur_per.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sur_per.caf; sourceTree = "<group>"; };
+		E4CDEB6414274FB000B4D43B /* suzidil.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suzidil.caf; sourceTree = "<group>"; };
+		E4CDEB6514274FB000B4D43B /* suznak.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suznak.caf; sourceTree = "<group>"; };
+		E4CDEB6614274FB000B4D43B /* tilak_kamod.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tilak_kamod.caf; sourceTree = "<group>"; };
+		E4CDEB6714274FB000B4D43B /* ushaq_masri.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ushaq_masri.caf; sourceTree = "<group>"; };
+		E4CDEB6814274FB000B4D43B /* ussak_turk.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ussak_turk.caf; sourceTree = "<group>"; };
+		E4CDEB6914274FB000B4D43B /* yaman_kalyan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yaman_kalyan.caf; sourceTree = "<group>"; };
+		E4CDEB6A14274FB000B4D43B /* zanjaran.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zanjaran.caf; sourceTree = "<group>"; };
 		E4E65099137FF7CA00DFCE6E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509A137FF7CA00DFCE6E /* MusicreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MusicreedViewController.xib; path = Resources/MusicreedViewController.xib; sourceTree = SOURCE_ROOT; };
 		E4E6509B137FF7CA00DFCE6E /* ScaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScaleCell.xib; path = Resources/ScaleCell.xib; sourceTree = SOURCE_ROOT; };
@@ -317,6 +665,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E4CDEABF14274FAE00B4D43B /* data */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E49064CF137026F50034C2F5 /* addons */,
 				E49064A6137024DA0034C2F5 /* src */,
@@ -341,13 +690,20 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8D1107310486CEB800E47090 /* Musicreed-Info.plist */,
+				E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */,
+				E4CDEA9E1427440A00B4D43B /* CHORD.png */,
+				E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */,
+				E4CDEAA01427440A00B4D43B /* LOGO.png */,
+				E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */,
+				E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */,
+				E4CDEAA31427440A00B4D43B /* SCALES.png */,
 				E499796E1425F66C00D0C459 /* SCALE_DOWN.png */,
 				E499796F1425F66C00D0C459 /* SCALE_PLAY.png */,
 				E49979701425F66C00D0C459 /* SCALE_UP.png */,
 				E4A8AD9E13FA4EA8006058D4 /* scales.xml */,
 				E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */,
 				E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */,
-				8D1107310486CEB800E47090 /* Musicreed-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -708,6 +1064,212 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		E4CDEABF14274FAE00B4D43B /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E4CDEAC014274FAE00B4D43B /* chords_textures */,
+				E4CDEAD014274FAE00B4D43B /* click.caf */,
+				E4CDEAD114274FAE00B4D43B /* creed.xml */,
+				E4CDEAD214274FAE00B4D43B /* creed_textures */,
+				E4CDEAEF14274FAE00B4D43B /* keys_texture.pvr */,
+				E4CDEAF014274FAE00B4D43B /* samples */,
+				E4CDEB1414274FAE00B4D43B /* shadow.pvr */,
+				E4CDEB1514274FAE00B4D43B /* taqsims */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E4CDEAC014274FAE00B4D43B /* chords_textures */ = {
+			isa = PBXGroup;
+			children = (
+				E4CDEAC114274FAE00B4D43B /* augmented.pvr */,
+				E4CDEAC214274FAE00B4D43B /* diminished.pvr */,
+				E4CDEAC314274FAE00B4D43B /* major.pvr */,
+				E4CDEAC414274FAE00B4D43B /* minor.pvr */,
+				E4CDEAC514274FAE00B4D43B /* triadic_augmented.pvr */,
+				E4CDEAC614274FAE00B4D43B /* triadic_diminished.pvr */,
+				E4CDEAC714274FAE00B4D43B /* triadic_major##5.pvr */,
+				E4CDEAC814274FAE00B4D43B /* triadic_major-5.pvr */,
+				E4CDEAC914274FAE00B4D43B /* triadic_major.pvr */,
+				E4CDEACA14274FAE00B4D43B /* triadic_minor#5.pvr */,
+				E4CDEACB14274FAE00B4D43B /* triadic_minor.pvr */,
+				E4CDEACC14274FAE00B4D43B /* triadic_sus2.pvr */,
+				E4CDEACD14274FAE00B4D43B /* triadic_sus4#5.pvr */,
+				E4CDEACE14274FAE00B4D43B /* triadic_sus4.pvr */,
+				E4CDEACF14274FAE00B4D43B /* triadic_sus4_7.pvr */,
+			);
+			path = chords_textures;
+			sourceTree = "<group>";
+		};
+		E4CDEAD214274FAE00B4D43B /* creed_textures */ = {
+			isa = PBXGroup;
+			children = (
+				E4CDEAD314274FAE00B4D43B /* chord_background.pvr */,
+				E4CDEAD414274FAE00B4D43B /* chord_highlight.pvr */,
+				E4CDEAD514274FAE00B4D43B /* chord_mask.pvr */,
+				E4CDEAD614274FAE00B4D43B /* chord_needle.pvr */,
+				E4CDEAD714274FAE00B4D43B /* chord_pattern.pvr */,
+				E4CDEAD814274FAE00B4D43B /* R1-BLUE.pvr */,
+				E4CDEAD914274FAE00B4D43B /* R1-BROWN.pvr */,
+				E4CDEADA14274FAE00B4D43B /* R1-GREEN.pvr */,
+				E4CDEADB14274FAE00B4D43B /* R1-TURQUOISE.pvr */,
+				E4CDEADC14274FAE00B4D43B /* R2-BLUE.pvr */,
+				E4CDEADD14274FAE00B4D43B /* R2-BROWN.pvr */,
+				E4CDEADE14274FAE00B4D43B /* R2-GREEN.pvr */,
+				E4CDEADF14274FAE00B4D43B /* R2-TURQUOISE.pvr */,
+				E4CDEAE014274FAE00B4D43B /* R2-YELLOW.pvr */,
+				E4CDEAE114274FAE00B4D43B /* R3-BLUE.pvr */,
+				E4CDEAE214274FAE00B4D43B /* R3-BROWN.pvr */,
+				E4CDEAE314274FAE00B4D43B /* R3-GREEN.pvr */,
+				E4CDEAE414274FAE00B4D43B /* R3-YELLOW.pvr */,
+				E4CDEAE514274FAE00B4D43B /* R4-BLUE.pvr */,
+				E4CDEAE614274FAE00B4D43B /* R4-BROWN.pvr */,
+				E4CDEAE714274FAE00B4D43B /* R4-GREEN.pvr */,
+				E4CDEAE814274FAE00B4D43B /* R4-TURQUOISE.pvr */,
+				E4CDEAE914274FAE00B4D43B /* R4-YELLOW.pvr */,
+				E4CDEAEA14274FAE00B4D43B /* scale_background.pvr */,
+				E4CDEAEB14274FAE00B4D43B /* scale_highlight.pvr */,
+				E4CDEAEC14274FAE00B4D43B /* scale_inner_pattern.pvr */,
+				E4CDEAED14274FAE00B4D43B /* scale_needle.pvr */,
+				E4CDEAEE14274FAE00B4D43B /* scale_outer_pattern.pvr */,
+			);
+			path = creed_textures;
+			sourceTree = "<group>";
+		};
+		E4CDEAF014274FAE00B4D43B /* samples */ = {
+			isa = PBXGroup;
+			children = (
+				E4CDEAF114274FAE00B4D43B /* oud_38.caf */,
+				E4CDEAF214274FAE00B4D43B /* oud_39.caf */,
+				E4CDEAF314274FAE00B4D43B /* oud_40.caf */,
+				E4CDEAF414274FAE00B4D43B /* oud_41.caf */,
+				E4CDEAF514274FAE00B4D43B /* oud_42.caf */,
+				E4CDEAF614274FAE00B4D43B /* oud_43.caf */,
+				E4CDEAF714274FAE00B4D43B /* oud_44.caf */,
+				E4CDEAF814274FAE00B4D43B /* oud_45.caf */,
+				E4CDEAF914274FAE00B4D43B /* oud_46.caf */,
+				E4CDEAFA14274FAE00B4D43B /* oud_47.caf */,
+				E4CDEAFB14274FAE00B4D43B /* oud_48.caf */,
+				E4CDEAFC14274FAE00B4D43B /* oud_49.caf */,
+				E4CDEAFD14274FAE00B4D43B /* oud_50.caf */,
+				E4CDEAFE14274FAE00B4D43B /* oud_51.caf */,
+				E4CDEAFF14274FAE00B4D43B /* oud_52.caf */,
+				E4CDEB0014274FAE00B4D43B /* oud_53.caf */,
+				E4CDEB0114274FAE00B4D43B /* oud_54.caf */,
+				E4CDEB0214274FAE00B4D43B /* oud_55.caf */,
+				E4CDEB0314274FAE00B4D43B /* oud_56.caf */,
+				E4CDEB0414274FAE00B4D43B /* oud_57.caf */,
+				E4CDEB0514274FAE00B4D43B /* oud_58.caf */,
+				E4CDEB0614274FAE00B4D43B /* oud_59.caf */,
+				E4CDEB0714274FAE00B4D43B /* oud_60.caf */,
+				E4CDEB0814274FAE00B4D43B /* oud_61.caf */,
+				E4CDEB0914274FAE00B4D43B /* oud_62.caf */,
+				E4CDEB0A14274FAE00B4D43B /* oud_63.caf */,
+				E4CDEB0B14274FAE00B4D43B /* oud_64.caf */,
+				E4CDEB0C14274FAE00B4D43B /* oud_65.caf */,
+				E4CDEB0D14274FAE00B4D43B /* oud_66.caf */,
+				E4CDEB0E14274FAE00B4D43B /* oud_67.caf */,
+				E4CDEB0F14274FAE00B4D43B /* oud_68.caf */,
+				E4CDEB1014274FAE00B4D43B /* oud_69.caf */,
+				E4CDEB1114274FAE00B4D43B /* oud_70.caf */,
+				E4CDEB1214274FAE00B4D43B /* oud_71.caf */,
+				E4CDEB1314274FAE00B4D43B /* oud_72.caf */,
+			);
+			path = samples;
+			sourceTree = "<group>";
+		};
+		E4CDEB1514274FAE00B4D43B /* taqsims */ = {
+			isa = PBXGroup;
+			children = (
+				E4CDEB1614274FAE00B4D43B /* abu_ata_per.caf */,
+				E4CDEB1714274FAE00B4D43B /* acem_asiran_tur.caf */,
+				E4CDEB1814274FAF00B4D43B /* afsari_per.caf */,
+				E4CDEB1914274FAF00B4D43B /* ahir_bhairav.caf */,
+				E4CDEB1A14274FAF00B4D43B /* alhaiya_bilaval.caf */,
+				E4CDEB1B14274FAF00B4D43B /* asavari.caf */,
+				E4CDEB1C14274FAF00B4D43B /* bageshri.caf */,
+				E4CDEB1D14274FAF00B4D43B /* bayat_i_isfahan_per.caf */,
+				E4CDEB1E14274FAF00B4D43B /* bayat_i_kurd_per.caf */,
+				E4CDEB1F14274FAF00B4D43B /* bayat_i_tork_per.caf */,
+				E4CDEB2014274FAF00B4D43B /* bayati_shuri_b_karjighar_b.caf */,
+				E4CDEB2114274FAF00B4D43B /* bayati_tur.caf */,
+				E4CDEB2214274FAF00B4D43B /* bhairav.caf */,
+				E4CDEB2314274FAF00B4D43B /* bhairavi.caf */,
+				E4CDEB2414274FAF00B4D43B /* bhimpalasi.caf */,
+				E4CDEB2514274FAF00B4D43B /* bhupala_todi.caf */,
+				E4CDEB2614274FAF00B4D43B /* bihag.caf */,
+				E4CDEB2714274FAF00B4D43B /* busalik.caf */,
+				E4CDEB2814274FAF00B4D43B /* buselik_tur.caf */,
+				E4CDEB2914274FAF00B4D43B /* chahargah_per.caf */,
+				E4CDEB2A14274FAF00B4D43B /* darbari_kanada.caf */,
+				E4CDEB2B14274FAF00B4D43B /* dasti_per.caf */,
+				E4CDEB2C14274FAF00B4D43B /* desh.caf */,
+				E4CDEB2D14274FAF00B4D43B /* deshi.caf */,
+				E4CDEB2E14274FAF00B4D43B /* deshkar.caf */,
+				E4CDEB2F14274FAF00B4D43B /* durga.caf */,
+				E4CDEB3014274FAF00B4D43B /* farahfaza.caf */,
+				E4CDEB3114274FAF00B4D43B /* gaud_sarang.caf */,
+				E4CDEB3214274FAF00B4D43B /* hicaz_turk.caf */,
+				E4CDEB3314274FAF00B4D43B /* hijaz.caf */,
+				E4CDEB3414274FAF00B4D43B /* hijaz_kar.caf */,
+				E4CDEB3514274FAF00B4D43B /* hijaz_nahawand.caf */,
+				E4CDEB3614274FAF00B4D43B /* hijaz_rast.caf */,
+				E4CDEB3714274FAF00B4D43B /* homayun_per.caf */,
+				E4CDEB3814274FAF00B4D43B /* husseini.caf */,
+				E4CDEB3914274FAF00B4D43B /* husseini_turk.caf */,
+				E4CDEB3A14274FAF00B4D43B /* huzam.caf */,
+				E4CDEB3B14274FAF00B4D43B /* iraq.caf */,
+				E4CDEB3C14274FAF00B4D43B /* isfahan_tur.caf */,
+				E4CDEB3D14274FAF00B4D43B /* jaijaivanti.caf */,
+				E4CDEB3E14274FAF00B4D43B /* jaunpuri.caf */,
+				E4CDEB3F14274FAF00B4D43B /* jiharkah.caf */,
+				E4CDEB4014274FAF00B4D43B /* jinjoti.caf */,
+				E4CDEB4114274FAF00B4D43B /* kafi.caf */,
+				E4CDEB4214274FAF00B4D43B /* khammaj.caf */,
+				E4CDEB4314274FAF00B4D43B /* kurd.caf */,
+				E4CDEB4414274FAF00B4D43B /* kurdi_tur.caf */,
+				E4CDEB4514274FAF00B4D43B /* madhuvanti.caf */,
+				E4CDEB4614274FAF00B4D43B /* mahur_per.caf */,
+				E4CDEB4714274FAF00B4D43B /* malkauns.caf */,
+				E4CDEB4814274FAF00B4D43B /* marva.caf */,
+				E4CDEB4914274FAF00B4D43B /* nahawand_kabir.caf */,
+				E4CDEB4A14274FAF00B4D43B /* nahawand_kurd.caf */,
+				E4CDEB4B14274FAF00B4D43B /* nahawand_murassah.caf */,
+				E4CDEB4C14274FAF00B4D43B /* nairuz.caf */,
+				E4CDEB4D14274FAF00B4D43B /* narayani.caf */,
+				E4CDEB4E14274FAF00B4D43B /* nava_per.caf */,
+				E4CDEB4F14274FAF00B4D43B /* nawa_athar.caf */,
+				E4CDEB5014274FAF00B4D43B /* nihavent_tur.caf */,
+				E4CDEB5114274FAF00B4D43B /* nikriz.caf */,
+				E4CDEB5214274FAF00B4D43B /* nishaburek_tur.caf */,
+				E4CDEB5314274FAF00B4D43B /* palasi.caf */,
+				E4CDEB5414274FAF00B4D43B /* pilu.caf */,
+				E4CDEB5514274FAF00B4D43B /* purya.caf */,
+				E4CDEB5614274FAF00B4D43B /* rageshree.caf */,
+				E4CDEB5714274FAF00B4D43B /* rahat_el_arwah.caf */,
+				E4CDEB5814274FAF00B4D43B /* rast_nahawand.caf */,
+				E4CDEB5914274FAF00B4D43B /* rast_rast.caf */,
+				E4CDEB5A14274FAF00B4D43B /* rast_turk.caf */,
+				E4CDEB5B14274FAF00B4D43B /* saba.caf */,
+				E4CDEB5C14274FAF00B4D43B /* saba_zamzam.caf */,
+				E4CDEB5D14274FAF00B4D43B /* shadd_araban.caf */,
+				E4CDEB5E14274FAF00B4D43B /* shahnaz.caf */,
+				E4CDEB5F14274FB000B4D43B /* shawq_afza.caf */,
+				E4CDEB6014274FB000B4D43B /* sikah_baladi.caf */,
+				E4CDEB6114274FB000B4D43B /* sikah_nahawand.caf */,
+				E4CDEB6214274FB000B4D43B /* sikah_rast.caf */,
+				E4CDEB6314274FB000B4D43B /* sur_per.caf */,
+				E4CDEB6414274FB000B4D43B /* suzidil.caf */,
+				E4CDEB6514274FB000B4D43B /* suznak.caf */,
+				E4CDEB6614274FB000B4D43B /* tilak_kamod.caf */,
+				E4CDEB6714274FB000B4D43B /* ushaq_masri.caf */,
+				E4CDEB6814274FB000B4D43B /* ussak_turk.caf */,
+				E4CDEB6914274FB000B4D43B /* yaman_kalyan.caf */,
+				E4CDEB6A14274FB000B4D43B /* zanjaran.caf */,
+			);
+			path = taqsims;
+			sourceTree = "<group>";
+		};
 		E4DD0D8C136978F000DB1B03 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +1343,180 @@
 				E49979711425F66C00D0C459 /* SCALE_DOWN.png in Resources */,
 				E49979721425F66C00D0C459 /* SCALE_PLAY.png in Resources */,
 				E49979731425F66C00D0C459 /* SCALE_UP.png in Resources */,
+				E4CDEAA41427440A00B4D43B /* CHORD_PRESSED.png in Resources */,
+				E4CDEAA51427440A00B4D43B /* CHORD.png in Resources */,
+				E4CDEAA61427440A00B4D43B /* LOGO_PRESSED.png in Resources */,
+				E4CDEAA71427440A00B4D43B /* LOGO.png in Resources */,
+				E4CDEAA81427440A00B4D43B /* SCALE_INFO.png in Resources */,
+				E4CDEAA91427440A00B4D43B /* SCALES_PRESSED.png in Resources */,
+				E4CDEAAA1427440A00B4D43B /* SCALES.png in Resources */,
+				E4CDEB6B14274FB000B4D43B /* augmented.pvr in Resources */,
+				E4CDEB6C14274FB000B4D43B /* diminished.pvr in Resources */,
+				E4CDEB6D14274FB000B4D43B /* major.pvr in Resources */,
+				E4CDEB6E14274FB000B4D43B /* minor.pvr in Resources */,
+				E4CDEB6F14274FB000B4D43B /* triadic_augmented.pvr in Resources */,
+				E4CDEB7014274FB000B4D43B /* triadic_diminished.pvr in Resources */,
+				E4CDEB7114274FB000B4D43B /* triadic_major##5.pvr in Resources */,
+				E4CDEB7214274FB000B4D43B /* triadic_major-5.pvr in Resources */,
+				E4CDEB7314274FB000B4D43B /* triadic_major.pvr in Resources */,
+				E4CDEB7414274FB000B4D43B /* triadic_minor#5.pvr in Resources */,
+				E4CDEB7514274FB000B4D43B /* triadic_minor.pvr in Resources */,
+				E4CDEB7614274FB000B4D43B /* triadic_sus2.pvr in Resources */,
+				E4CDEB7714274FB000B4D43B /* triadic_sus4#5.pvr in Resources */,
+				E4CDEB7814274FB000B4D43B /* triadic_sus4.pvr in Resources */,
+				E4CDEB7914274FB000B4D43B /* triadic_sus4_7.pvr in Resources */,
+				E4CDEB7A14274FB000B4D43B /* click.caf in Resources */,
+				E4CDEB7B14274FB000B4D43B /* creed.xml in Resources */,
+				E4CDEB7C14274FB000B4D43B /* chord_background.pvr in Resources */,
+				E4CDEB7D14274FB000B4D43B /* chord_highlight.pvr in Resources */,
+				E4CDEB7E14274FB000B4D43B /* chord_mask.pvr in Resources */,
+				E4CDEB7F14274FB000B4D43B /* chord_needle.pvr in Resources */,
+				E4CDEB8014274FB000B4D43B /* chord_pattern.pvr in Resources */,
+				E4CDEB8114274FB000B4D43B /* R1-BLUE.pvr in Resources */,
+				E4CDEB8214274FB000B4D43B /* R1-BROWN.pvr in Resources */,
+				E4CDEB8314274FB000B4D43B /* R1-GREEN.pvr in Resources */,
+				E4CDEB8414274FB000B4D43B /* R1-TURQUOISE.pvr in Resources */,
+				E4CDEB8514274FB000B4D43B /* R2-BLUE.pvr in Resources */,
+				E4CDEB8614274FB000B4D43B /* R2-BROWN.pvr in Resources */,
+				E4CDEB8714274FB000B4D43B /* R2-GREEN.pvr in Resources */,
+				E4CDEB8814274FB000B4D43B /* R2-TURQUOISE.pvr in Resources */,
+				E4CDEB8914274FB000B4D43B /* R2-YELLOW.pvr in Resources */,
+				E4CDEB8A14274FB000B4D43B /* R3-BLUE.pvr in Resources */,
+				E4CDEB8B14274FB000B4D43B /* R3-BROWN.pvr in Resources */,
+				E4CDEB8C14274FB000B4D43B /* R3-GREEN.pvr in Resources */,
+				E4CDEB8D14274FB000B4D43B /* R3-YELLOW.pvr in Resources */,
+				E4CDEB8E14274FB000B4D43B /* R4-BLUE.pvr in Resources */,
+				E4CDEB8F14274FB000B4D43B /* R4-BROWN.pvr in Resources */,
+				E4CDEB9014274FB000B4D43B /* R4-GREEN.pvr in Resources */,
+				E4CDEB9114274FB000B4D43B /* R4-TURQUOISE.pvr in Resources */,
+				E4CDEB9214274FB000B4D43B /* R4-YELLOW.pvr in Resources */,
+				E4CDEB9314274FB000B4D43B /* scale_background.pvr in Resources */,
+				E4CDEB9414274FB000B4D43B /* scale_highlight.pvr in Resources */,
+				E4CDEB9514274FB000B4D43B /* scale_inner_pattern.pvr in Resources */,
+				E4CDEB9614274FB000B4D43B /* scale_needle.pvr in Resources */,
+				E4CDEB9714274FB000B4D43B /* scale_outer_pattern.pvr in Resources */,
+				E4CDEB9814274FB000B4D43B /* keys_texture.pvr in Resources */,
+				E4CDEB9914274FB000B4D43B /* oud_38.caf in Resources */,
+				E4CDEB9A14274FB000B4D43B /* oud_39.caf in Resources */,
+				E4CDEB9B14274FB000B4D43B /* oud_40.caf in Resources */,
+				E4CDEB9C14274FB000B4D43B /* oud_41.caf in Resources */,
+				E4CDEB9D14274FB000B4D43B /* oud_42.caf in Resources */,
+				E4CDEB9E14274FB000B4D43B /* oud_43.caf in Resources */,
+				E4CDEB9F14274FB000B4D43B /* oud_44.caf in Resources */,
+				E4CDEBA014274FB000B4D43B /* oud_45.caf in Resources */,
+				E4CDEBA114274FB000B4D43B /* oud_46.caf in Resources */,
+				E4CDEBA214274FB000B4D43B /* oud_47.caf in Resources */,
+				E4CDEBA314274FB000B4D43B /* oud_48.caf in Resources */,
+				E4CDEBA414274FB000B4D43B /* oud_49.caf in Resources */,
+				E4CDEBA514274FB000B4D43B /* oud_50.caf in Resources */,
+				E4CDEBA614274FB000B4D43B /* oud_51.caf in Resources */,
+				E4CDEBA714274FB000B4D43B /* oud_52.caf in Resources */,
+				E4CDEBA814274FB000B4D43B /* oud_53.caf in Resources */,
+				E4CDEBA914274FB000B4D43B /* oud_54.caf in Resources */,
+				E4CDEBAA14274FB000B4D43B /* oud_55.caf in Resources */,
+				E4CDEBAB14274FB000B4D43B /* oud_56.caf in Resources */,
+				E4CDEBAC14274FB000B4D43B /* oud_57.caf in Resources */,
+				E4CDEBAD14274FB000B4D43B /* oud_58.caf in Resources */,
+				E4CDEBAE14274FB000B4D43B /* oud_59.caf in Resources */,
+				E4CDEBAF14274FB000B4D43B /* oud_60.caf in Resources */,
+				E4CDEBB014274FB000B4D43B /* oud_61.caf in Resources */,
+				E4CDEBB114274FB000B4D43B /* oud_62.caf in Resources */,
+				E4CDEBB214274FB000B4D43B /* oud_63.caf in Resources */,
+				E4CDEBB314274FB000B4D43B /* oud_64.caf in Resources */,
+				E4CDEBB414274FB000B4D43B /* oud_65.caf in Resources */,
+				E4CDEBB514274FB000B4D43B /* oud_66.caf in Resources */,
+				E4CDEBB614274FB000B4D43B /* oud_67.caf in Resources */,
+				E4CDEBB714274FB000B4D43B /* oud_68.caf in Resources */,
+				E4CDEBB814274FB000B4D43B /* oud_69.caf in Resources */,
+				E4CDEBB914274FB000B4D43B /* oud_70.caf in Resources */,
+				E4CDEBBA14274FB000B4D43B /* oud_71.caf in Resources */,
+				E4CDEBBB14274FB000B4D43B /* oud_72.caf in Resources */,
+				E4CDEBBC14274FB000B4D43B /* shadow.pvr in Resources */,
+				E4CDEBBD14274FB000B4D43B /* abu_ata_per.caf in Resources */,
+				E4CDEBBE14274FB000B4D43B /* acem_asiran_tur.caf in Resources */,
+				E4CDEBBF14274FB000B4D43B /* afsari_per.caf in Resources */,
+				E4CDEBC014274FB000B4D43B /* ahir_bhairav.caf in Resources */,
+				E4CDEBC114274FB000B4D43B /* alhaiya_bilaval.caf in Resources */,
+				E4CDEBC214274FB000B4D43B /* asavari.caf in Resources */,
+				E4CDEBC314274FB000B4D43B /* bageshri.caf in Resources */,
+				E4CDEBC414274FB000B4D43B /* bayat_i_isfahan_per.caf in Resources */,
+				E4CDEBC514274FB000B4D43B /* bayat_i_kurd_per.caf in Resources */,
+				E4CDEBC614274FB000B4D43B /* bayat_i_tork_per.caf in Resources */,
+				E4CDEBC714274FB000B4D43B /* bayati_shuri_b_karjighar_b.caf in Resources */,
+				E4CDEBC814274FB000B4D43B /* bayati_tur.caf in Resources */,
+				E4CDEBC914274FB000B4D43B /* bhairav.caf in Resources */,
+				E4CDEBCA14274FB000B4D43B /* bhairavi.caf in Resources */,
+				E4CDEBCB14274FB000B4D43B /* bhimpalasi.caf in Resources */,
+				E4CDEBCC14274FB000B4D43B /* bhupala_todi.caf in Resources */,
+				E4CDEBCD14274FB000B4D43B /* bihag.caf in Resources */,
+				E4CDEBCE14274FB000B4D43B /* busalik.caf in Resources */,
+				E4CDEBCF14274FB000B4D43B /* buselik_tur.caf in Resources */,
+				E4CDEBD014274FB000B4D43B /* chahargah_per.caf in Resources */,
+				E4CDEBD114274FB000B4D43B /* darbari_kanada.caf in Resources */,
+				E4CDEBD214274FB000B4D43B /* dasti_per.caf in Resources */,
+				E4CDEBD314274FB000B4D43B /* desh.caf in Resources */,
+				E4CDEBD414274FB000B4D43B /* deshi.caf in Resources */,
+				E4CDEBD514274FB000B4D43B /* deshkar.caf in Resources */,
+				E4CDEBD614274FB000B4D43B /* durga.caf in Resources */,
+				E4CDEBD714274FB000B4D43B /* farahfaza.caf in Resources */,
+				E4CDEBD814274FB000B4D43B /* gaud_sarang.caf in Resources */,
+				E4CDEBD914274FB000B4D43B /* hicaz_turk.caf in Resources */,
+				E4CDEBDA14274FB000B4D43B /* hijaz.caf in Resources */,
+				E4CDEBDB14274FB000B4D43B /* hijaz_kar.caf in Resources */,
+				E4CDEBDC14274FB000B4D43B /* hijaz_nahawand.caf in Resources */,
+				E4CDEBDD14274FB000B4D43B /* hijaz_rast.caf in Resources */,
+				E4CDEBDE14274FB000B4D43B /* homayun_per.caf in Resources */,
+				E4CDEBDF14274FB000B4D43B /* husseini.caf in Resources */,
+				E4CDEBE014274FB000B4D43B /* husseini_turk.caf in Resources */,
+				E4CDEBE114274FB000B4D43B /* huzam.caf in Resources */,
+				E4CDEBE214274FB000B4D43B /* iraq.caf in Resources */,
+				E4CDEBE314274FB000B4D43B /* isfahan_tur.caf in Resources */,
+				E4CDEBE414274FB000B4D43B /* jaijaivanti.caf in Resources */,
+				E4CDEBE514274FB000B4D43B /* jaunpuri.caf in Resources */,
+				E4CDEBE614274FB000B4D43B /* jiharkah.caf in Resources */,
+				E4CDEBE714274FB000B4D43B /* jinjoti.caf in Resources */,
+				E4CDEBE814274FB000B4D43B /* kafi.caf in Resources */,
+				E4CDEBE914274FB000B4D43B /* khammaj.caf in Resources */,
+				E4CDEBEA14274FB000B4D43B /* kurd.caf in Resources */,
+				E4CDEBEB14274FB000B4D43B /* kurdi_tur.caf in Resources */,
+				E4CDEBEC14274FB000B4D43B /* madhuvanti.caf in Resources */,
+				E4CDEBED14274FB000B4D43B /* mahur_per.caf in Resources */,
+				E4CDEBEE14274FB000B4D43B /* malkauns.caf in Resources */,
+				E4CDEBEF14274FB000B4D43B /* marva.caf in Resources */,
+				E4CDEBF014274FB000B4D43B /* nahawand_kabir.caf in Resources */,
+				E4CDEBF114274FB000B4D43B /* nahawand_kurd.caf in Resources */,
+				E4CDEBF214274FB000B4D43B /* nahawand_murassah.caf in Resources */,
+				E4CDEBF314274FB000B4D43B /* nairuz.caf in Resources */,
+				E4CDEBF414274FB000B4D43B /* narayani.caf in Resources */,
+				E4CDEBF514274FB000B4D43B /* nava_per.caf in Resources */,
+				E4CDEBF614274FB000B4D43B /* nawa_athar.caf in Resources */,
+				E4CDEBF714274FB000B4D43B /* nihavent_tur.caf in Resources */,
+				E4CDEBF814274FB000B4D43B /* nikriz.caf in Resources */,
+				E4CDEBF914274FB000B4D43B /* nishaburek_tur.caf in Resources */,
+				E4CDEBFA14274FB000B4D43B /* palasi.caf in Resources */,
+				E4CDEBFB14274FB000B4D43B /* pilu.caf in Resources */,
+				E4CDEBFC14274FB000B4D43B /* purya.caf in Resources */,
+				E4CDEBFD14274FB000B4D43B /* rageshree.caf in Resources */,
+				E4CDEBFE14274FB000B4D43B /* rahat_el_arwah.caf in Resources */,
+				E4CDEBFF14274FB000B4D43B /* rast_nahawand.caf in Resources */,
+				E4CDEC0014274FB000B4D43B /* rast_rast.caf in Resources */,
+				E4CDEC0114274FB000B4D43B /* rast_turk.caf in Resources */,
+				E4CDEC0214274FB000B4D43B /* saba.caf in Resources */,
+				E4CDEC0314274FB000B4D43B /* saba_zamzam.caf in Resources */,
+				E4CDEC0414274FB000B4D43B /* shadd_araban.caf in Resources */,
+				E4CDEC0514274FB000B4D43B /* shahnaz.caf in Resources */,
+				E4CDEC0614274FB000B4D43B /* shawq_afza.caf in Resources */,
+				E4CDEC0714274FB000B4D43B /* sikah_baladi.caf in Resources */,
+				E4CDEC0814274FB000B4D43B /* sikah_nahawand.caf in Resources */,
+				E4CDEC0914274FB000B4D43B /* sikah_rast.caf in Resources */,
+				E4CDEC0A14274FB000B4D43B /* sur_per.caf in Resources */,
+				E4CDEC0B14274FB000B4D43B /* suzidil.caf in Resources */,
+				E4CDEC0C14274FB000B4D43B /* suznak.caf in Resources */,
+				E4CDEC0D14274FB000B4D43B /* tilak_kamod.caf in Resources */,
+				E4CDEC0E14274FB000B4D43B /* ushaq_masri.caf in Resources */,
+				E4CDEC0F14274FB000B4D43B /* ussak_turk.caf in Resources */,
+				E4CDEC1014274FB000B4D43B /* yaman_kalyan.caf in Resources */,
+				E4CDEC1114274FB000B4D43B /* zanjaran.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

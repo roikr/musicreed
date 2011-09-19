@@ -264,25 +264,18 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>080E96DDFE201D6D7F000001</string>
-								<string>E49064CF137026F50034C2F5</string>
-								<string>E44C046B13C1EB6E00C0B62A</string>
-								<string>E49064A6137024DA0034C2F5</string>
-								<string>E4DD0D8C136978F000DB1B03</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>50</integer>
-									<integer>48</integer>
+									<integer>7</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 150}, {254, 883}}</string>
+							<string>{{0, 0}, {254, 883}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -301,7 +294,7 @@
 							<real>254</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>251 85 1337 942 0 0 1680 1028 </string>
+						<string>276 -176 1337 942 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -312,14 +305,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>testApp.mm</string>
+								<string>Musicreed-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +318,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>testApp.mm</string>
+										<string>Musicreed-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4CDEA9214272DB900B4D43B</string>
+										<string>E4CDEC3B1427549800B4D43B</string>
 										<key>history</key>
 										<array>
 											<string>E49065C5137039550034C2F5</string>
@@ -360,11 +351,9 @@
 											<string>E4462E6413F943FD002A8729</string>
 											<string>E4A8AE2213FA55CA006058D4</string>
 											<string>E45FDAED140256BC0081A207</string>
-											<string>E4DD2DA314039E510066E79D</string>
 											<string>E476ED3A1408008D0091FFA3</string>
 											<string>E40FE573141F605400E9CEDF</string>
 											<string>E499798E142600B800D0C459</string>
-											<string>E49979CF1426090900D0C459</string>
 											<string>E49979D01426090900D0C459</string>
 											<string>E49979D11426090900D0C459</string>
 											<string>E49979D21426090900D0C459</string>
@@ -380,18 +369,22 @@
 											<string>E4CDE9F01427113000B4D43B</string>
 											<string>E4CDE9F21427113000B4D43B</string>
 											<string>E4CDE9F41427113000B4D43B</string>
-											<string>E4CDEA11142713AB00B4D43B</string>
 											<string>E4CDEA12142713AB00B4D43B</string>
 											<string>E4CDEA13142713AB00B4D43B</string>
-											<string>E4CDEA1A14271A3900B4D43B</string>
 											<string>E4CDEA8A14272DB900B4D43B</string>
 											<string>E4CDEA8B14272DB900B4D43B</string>
 											<string>E4CDEA8C14272DB900B4D43B</string>
 											<string>E4CDEA8D14272DB900B4D43B</string>
 											<string>E4CDEA8E14272DB900B4D43B</string>
 											<string>E4CDEA8F14272DB900B4D43B</string>
-											<string>E4CDEA9014272DB900B4D43B</string>
-											<string>E4CDEA9114272DB900B4D43B</string>
+											<string>E4CDEC31142753AB00B4D43B</string>
+											<string>E4CDEC32142753AB00B4D43B</string>
+											<string>E4CDEC33142753AB00B4D43B</string>
+											<string>E4CDEC34142753AB00B4D43B</string>
+											<string>E4CDEC35142753AB00B4D43B</string>
+											<string>E4CDEC36142753AB00B4D43B</string>
+											<string>E4CDEC37142753AB00B4D43B</string>
+											<string>E4DD2DA314039E510066E79D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -405,7 +398,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1061, 896}}</string>
 								<key>RubberWindowFrame</key>
-								<string>251 85 1337 942 0 0 1680 1028 </string>
+								<string>276 -176 1337 942 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -425,7 +418,7 @@
 								<key>Frame</key>
 								<string>{{0, 901}, {1061, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>251 85 1337 942 0 0 1680 1028 </string>
+								<string>276 -176 1337 942 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -449,9 +442,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E4CDEA9314272DB900B4D43B</string>
+				<string>E4CDEAB0142744C900B4D43B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E4CDEA9414272DB900B4D43B</string>
+				<string>E4CDEAB1142744C900B4D43B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -589,16 +582,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4CDEA9514272DB900B4D43B</string>
-		<string>E4CDEA9614272DB900B4D43B</string>
+		<string>E4CDEC27142752D600B4D43B</string>
+		<string>E4CDEC39142753AB00B4D43B</string>
+		<string>E4CDEC3A142753AB00B4D43B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>E4DD0D761369786100DB1B03</string>
 		<string>/Users/roikr/Developer/musicreed/Musicreed.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>251 85 1337 942 0 0 1680 1028 </string>
+	<string>276 -176 1337 942 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -677,7 +670,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E4DD0D761369786100DB1B03</string>
-				<string>E4CDEA7C14272DB800B4D43B</string>
+				<string>E4CDEAB2142744C900B4D43B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -799,13 +792,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>E4CDEA7D14272DB800B4D43B</string>
+				<string>E4CDEC20142752D600B4D43B</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>E4CDEA7E14272DB800B4D43B</string>
-				<string>E4CDEA7F14272DB800B4D43B</string>
-				<string>E4CDEA8014272DB800B4D43B</string>
-				<string>E4CDEA8114272DB800B4D43B</string>
-				<string>E4CDEA8214272DB800B4D43B</string>
+				<string>E4CDEC21142752D600B4D43B</string>
+				<string>E4CDEC22142752D600B4D43B</string>
+				<string>E4CDEC23142752D600B4D43B</string>
+				<string>E4CDEC24142752D600B4D43B</string>
+				<string>E4CDEC25142752D600B4D43B</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -961,7 +954,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>E4CDEA8914272DB800B4D43B</string>
+				<string>E4CDEC26142752D600B4D43B</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -971,7 +964,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1222,8 +1215,8 @@
 			<true/>
 			<key>TableOfContents</key>
 			<array>
-				<string>E4CDEA021427113000B4D43B</string>
-				<string>E4CDEA031427113000B4D43B</string>
+				<string>E4CDEC27142752D600B4D43B</string>
+				<string>E4CDEC28142752D600B4D43B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
 				<string>1CA1AED706398EBD00589147</string>
 			</array>
@@ -1232,9 +1225,9 @@
 			<key>WindowString</key>
 			<string>400 525 744 409 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
-			<string>E4CDEA021427113000B4D43B</string>
+			<string>E4CDEC27142752D600B4D43B</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
