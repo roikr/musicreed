@@ -172,7 +172,6 @@ void testApp::setup(){
 	
 	
 	bRot = false;
-	taqsim = nil;
 	bPlayTaqsim = false;
 }
 
@@ -297,21 +296,17 @@ void testApp::update(){
 	}
 	
 	if (bPlayTaqsim) {
-		if (taqsim &&!taqsim->getNumPlaying()) {
-			taqsim->exit();
-			taqsim = nil;
-		}
-		if (!taqsim) {
+		if (!taqsim.getNumPlaying()) {
+			taqsim.exit();
 			bPlayTaqsim = false;
-			taqsim = new ofxAudioFile;
-			int bLoaded = taqsim->load(ofToDataPath(taqsimName), bufferSize);
+			int bLoaded = taqsim.load(ofToDataPath(taqsimName), bufferSize);
 			if (bLoaded) {
-				taqsim->play();
+				taqsim.play();
 			} else {
 				printf("playTaqsim missing: %s",taqsimName.c_str());
 			}
 		}
-		
+				
 	}
 }
 
@@ -566,6 +561,9 @@ void testApp::exit(){
 	suspend();
 	ofSoundStreamClose();
 	instrument.exit();
+	taqsim.exit();
+	inner.exit();
+	outer.exit();
 	
 	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
 		delete iter->texture;
@@ -594,13 +592,10 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	instrument.mixChannel(output,1,2);
 	instrument.postProcess();
 	
-	if (taqsim && taqsim->getNumPlaying()) {
-		taqsim->mixChannel(output, 0, nChannels);	
-		taqsim->mixChannel(output, 1, nChannels);	
-		taqsim->postProcess();
+	taqsim.mixChannel(output, 0, nChannels);	
+	taqsim.mixChannel(output, 1, nChannels);	
+	taqsim.postProcess();
 		
-	}
-	
 	limiter.audioProcess(output,bufferSize,nChannels);
 	
 	
@@ -1027,8 +1022,12 @@ void testApp::setKeys() {
 void testApp::playTaqsim(string filename) {
 	taqsimName = filename+".caf";
 	bPlayTaqsim = true;
-	if (taqsim && taqsim->getNumPlaying()) {
-		taqsim->stop();
+	stopTaqsim();
+}
+
+void testApp::stopTaqsim() {
+	if (taqsim.getNumPlaying()) {
+		taqsim.stop();
 	}
 }
 

@@ -11,6 +11,7 @@
 #import "TouchView.h"
 #import "MusicreedAppDelegate.h"
 #import "RKMacros.h"
+#import "testApp.h"
 
 
 @interface MusicreedViewController()
@@ -79,8 +80,9 @@
 //		[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] setCurrentScale:scalesTable.currentScale withSystem:scalesTable.currentSystem];
 //	}
 	
-	
+	((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->stopTaqsim();
 }
+
 
 
 - (void)didReceiveMemoryWarning {

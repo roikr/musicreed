@@ -81,6 +81,7 @@ public:
 	key pointToKey(ofPoint pos);
 	
 	void playTaqsim(string filename);
+	void stopTaqsim();
 	
 	
 	Disc inner;
@@ -156,7 +157,7 @@ public:
 	int rotDuration;
 	
 	ofxAudioLimiter limiter;
-	ofxAudioFile *taqsim;
+	ofxAudioFile taqsim;
 	string taqsimName;
 	bool bPlayTaqsim;
 };
