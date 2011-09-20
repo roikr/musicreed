@@ -17,9 +17,10 @@
 	NSUInteger type;
 	NSUInteger mode;
 	float	   note;
-	NSString *filename;
+	NSString *url;
 	BOOL bAscending;
 	BOOL bDescending;
+	BOOL bTaqsim;
 }
 
 @property (nonatomic,copy) NSString *system;
@@ -29,10 +30,12 @@
 @property NSUInteger type;
 @property NSUInteger mode;
 @property float note;
-@property (nonatomic,copy) NSString *filename;
+@property (nonatomic,copy) NSString *url;
 @property BOOL bAscending;
 @property BOOL bDescending;
+@property BOOL bTaqsim;
 
-+ (id)scaleWithSystem:(NSString *)system divisions:(NSUInteger)divisions subsystem:(NSString *)subsystem name:(NSString *)name type:(NSUInteger)type mode:(NSUInteger)mode note:(float)note filename:(NSString *)filename ascending:(BOOL)bAscending descending:(BOOL)bDescending;
++ (id)scaleWithSystem:(NSString *)system divisions:(NSUInteger)divisions subsystem:(NSString *)subsystem name:(NSString *)name type:(NSUInteger)type 
+				 mode:(NSUInteger)mode note:(float)note url:(NSString *)url ascending:(BOOL)bAscending descending:(BOOL)bDescending taqsim:(BOOL)bTaqsim;
 
 @end

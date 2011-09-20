@@ -10,6 +10,7 @@
 #import "Scale.h"
 #import "MusicreedAppDelegate.h"
 #import "testApp.h"
+#import "ScaleInfoViewController.h"
 
 
 @implementation ScaleCell
@@ -45,26 +46,32 @@
 
 -(void) configureCellWithScale:(Scale *)theScale {
 	self.scale = theScale;
-	playButton.hidden = NO;
+	playButton.hidden = !scale.bTaqsim;
 	infoButton.hidden = NO;
 	scaleDirection.hidden = !scale.bAscending && !scale.bDescending;
 	if (scale.bAscending) {
-		[scaleDirection setImage:[UIImage imageNamed:@"SCALE_UP.png"]];
+		[scaleDirection setImage:[UIImage imageNamed:@"APP_SCREEN_4_ARROW_UP.png"]];
 	}
 	if (scale.bDescending) {
-		[scaleDirection setImage:[UIImage imageNamed:@"SCALE_DOWN.png"]];
+		[scaleDirection setImage:[UIImage imageNamed:@"APP_SCREEN_4_ARROW_DOWN.png"]];
 	}
 	
 }
 
 -(void) play:(id)sender {
-	NSLog(@"play: %@",scale.filename);
-	((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->playTaqsim([scale.filename UTF8String]);
+	NSLog(@"play: %@",scale.url);
+	((MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->playTaqsim([scale.url UTF8String]);
 }
 
 -(void) info:(id)sender {
 	NSLog(@"info: %@",scale.name);
-
+	
+	
+	ScaleInfoViewController *scaleInfoViewController = [[ScaleInfoViewController alloc] initWithNibName:@"ScaleInfoViewController" bundle:nil];
+	[scaleInfoViewController loadScale:scale];
+	
+	[[(MusicreedAppDelegate *)[[UIApplication sharedApplication] delegate] scalesNavigationController] pushViewController:scaleInfoViewController animated:YES];
+	[scaleInfoViewController release];
 }
 
 

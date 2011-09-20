@@ -14,6 +14,8 @@
 		28D7ACF80DDB3853001CB0EB /* MusicreedViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MusicreedViewController.mm */; };
 		E40B0334137FD062001008FE /* Disc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40B0330137FD062001008FE /* Disc.cpp */; };
 		E40B0335137FD062001008FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40B0333137FD062001008FE /* testApp.mm */; };
+		E424C65C14287185003E99B4 /* ScaleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E424C65A14287185003E99B4 /* ScaleInfoViewController.m */; };
+		E424C65D14287185003E99B4 /* ScaleInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E424C65B14287185003E99B4 /* ScaleInfoViewController.xib */; };
 		E44C046613C1EB5A00C0B62A /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E44C045D13C1EB5A00C0B62A /* install.xml */; };
 		E44C046713C1EB5A00C0B62A /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */; };
 		E44C046813C1EB5A00C0B62A /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44C046113C1EB5A00C0B62A /* tinyxmlerror.cpp */; };
@@ -31,6 +33,16 @@
 		E44D3EE2137BDA4900345249 /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E44D3EE1137BDA4900345249 /* ofxiPhoneSoundStream.mm */; };
 		E44D3EE8137BDCA800345249 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44D3EE7137BDCA800345249 /* AudioToolbox.framework */; };
 		E45FDA10140254600081A207 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E45FDA0E140254600081A207 /* ofxAudioLimiter.cpp */; };
+		E473329014276B5D0075B605 /* APP_SCREEN_3 CHORD_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328614276B5D0075B605 /* APP_SCREEN_3 CHORD_PRESSED.png */; };
+		E473329114276B5D0075B605 /* APP_SCREEN_3 SCALES_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328714276B5D0075B605 /* APP_SCREEN_3 SCALES_PRESSED.png */; };
+		E473329214276B5D0075B605 /* APP_SCREEN_3 SCALES.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328814276B5D0075B605 /* APP_SCREEN_3 SCALES.png */; };
+		E473329314276B5D0075B605 /* APP_SCREEN_3_CHORD.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328914276B5D0075B605 /* APP_SCREEN_3_CHORD.png */; };
+		E473329414276B5D0075B605 /* APP_SCREEN_3_LOGO_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328A14276B5D0075B605 /* APP_SCREEN_3_LOGO_PRESSED.png */; };
+		E473329514276B5D0075B605 /* APP_SCREEN_3_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328B14276B5D0075B605 /* APP_SCREEN_3_LOGO.png */; };
+		E473329614276B5D0075B605 /* APP_SCREEN_4_ARROW_DOWN.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328C14276B5D0075B605 /* APP_SCREEN_4_ARROW_DOWN.png */; };
+		E473329714276B5D0075B605 /* APP_SCREEN_4_ARROW_UP.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328D14276B5D0075B605 /* APP_SCREEN_4_ARROW_UP.png */; };
+		E473329814276B5D0075B605 /* APP_SCREEN_4_INFO.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328E14276B5D0075B605 /* APP_SCREEN_4_INFO.png */; };
+		E473329914276B5D0075B605 /* APP_SCREEN_4_PLAY.png in Resources */ = {isa = PBXBuildFile; fileRef = E473328F14276B5D0075B605 /* APP_SCREEN_4_PLAY.png */; };
 		E4816CD914262A7600C5C5D6 /* ScaleCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4816CD814262A7600C5C5D6 /* ScaleCell.mm */; };
 		E481CE2B13F3B72F0034F652 /* ScalesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2113F3B72F0034F652 /* ScalesParser.m */; };
 		E481CE2C13F3B72F0034F652 /* ScalesTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E481CE2313F3B72F0034F652 /* ScalesTableViewController.mm */; };
@@ -45,9 +57,6 @@
 		E49064E2137029E20034C2F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49064E1137029E20034C2F5 /* QuartzCore.framework */; };
 		E49065C21370393E0034C2F5 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065C11370393E0034C2F5 /* CustomFontLabel.m */; };
 		E49065CC13703A090034C2F5 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E49065CB13703A090034C2F5 /* CustomButton.m */; };
-		E49979711425F66C00D0C459 /* SCALE_DOWN.png in Resources */ = {isa = PBXBuildFile; fileRef = E499796E1425F66C00D0C459 /* SCALE_DOWN.png */; };
-		E49979721425F66C00D0C459 /* SCALE_PLAY.png in Resources */ = {isa = PBXBuildFile; fileRef = E499796F1425F66C00D0C459 /* SCALE_PLAY.png */; };
-		E49979731425F66C00D0C459 /* SCALE_UP.png in Resources */ = {isa = PBXBuildFile; fileRef = E49979701425F66C00D0C459 /* SCALE_UP.png */; };
 		E49DC9C113A7A13300E3C79F /* notationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49DC9C013A7A13300E3C79F /* notationUtils.cpp */; };
 		E4A8AD9F13FA4EA8006058D4 /* scales.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4A8AD9E13FA4EA8006058D4 /* scales.xml */; };
 		E4AF3F1913C221760060359D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F0D13C221760060359D /* CAStreamBasicDescription.cpp */; };
@@ -56,13 +65,6 @@
 		E4AF3F1C13C221760060359D /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F1413C221760060359D /* ofxAudioFile.mm */; };
 		E4AF3F1D13C221760060359D /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4AF3F1513C221760060359D /* ofxAudioInstrument.cpp */; };
 		E4C91ECE13ADF94200B8892F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C91ECD13ADF94200B8892F /* AVFoundation.framework */; };
-		E4CDEAA41427440A00B4D43B /* CHORD_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */; };
-		E4CDEAA51427440A00B4D43B /* CHORD.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9E1427440A00B4D43B /* CHORD.png */; };
-		E4CDEAA61427440A00B4D43B /* LOGO_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */; };
-		E4CDEAA71427440A00B4D43B /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA01427440A00B4D43B /* LOGO.png */; };
-		E4CDEAA81427440A00B4D43B /* SCALE_INFO.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */; };
-		E4CDEAA91427440A00B4D43B /* SCALES_PRESSED.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */; };
-		E4CDEAAA1427440A00B4D43B /* SCALES.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAA31427440A00B4D43B /* SCALES.png */; };
 		E4CDEB6B14274FB000B4D43B /* augmented.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC114274FAE00B4D43B /* augmented.pvr */; };
 		E4CDEB6C14274FB000B4D43B /* diminished.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC214274FAE00B4D43B /* diminished.pvr */; };
 		E4CDEB6D14274FB000B4D43B /* major.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4CDEAC314274FAE00B4D43B /* major.pvr */; };
@@ -256,6 +258,9 @@
 		E40B0331137FD062001008FE /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = src/Disc.h; sourceTree = "<group>"; };
 		E40B0332137FD062001008FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = "<group>"; };
 		E40B0333137FD062001008FE /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = "<group>"; };
+		E424C65914287185003E99B4 /* ScaleInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleInfoViewController.h; sourceTree = "<group>"; };
+		E424C65A14287185003E99B4 /* ScaleInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleInfoViewController.m; sourceTree = "<group>"; };
+		E424C65B14287185003E99B4 /* ScaleInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleInfoViewController.xib; sourceTree = "<group>"; };
 		E44C045D13C1EB5A00C0B62A /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		E44C045F13C1EB5A00C0B62A /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		E44C046013C1EB5A00C0B62A /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -370,6 +375,16 @@
 		E44D3EE7137BDCA800345249 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E45FDA0E140254600081A207 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E45FDA0F140254600081A207 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
+		E473328614276B5D0075B605 /* APP_SCREEN_3 CHORD_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "APP_SCREEN_3 CHORD_PRESSED.png"; path = "Resources/APP_SCREEN_3 CHORD_PRESSED.png"; sourceTree = "<group>"; };
+		E473328714276B5D0075B605 /* APP_SCREEN_3 SCALES_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "APP_SCREEN_3 SCALES_PRESSED.png"; path = "Resources/APP_SCREEN_3 SCALES_PRESSED.png"; sourceTree = "<group>"; };
+		E473328814276B5D0075B605 /* APP_SCREEN_3 SCALES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "APP_SCREEN_3 SCALES.png"; path = "Resources/APP_SCREEN_3 SCALES.png"; sourceTree = "<group>"; };
+		E473328914276B5D0075B605 /* APP_SCREEN_3_CHORD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_3_CHORD.png; path = Resources/APP_SCREEN_3_CHORD.png; sourceTree = "<group>"; };
+		E473328A14276B5D0075B605 /* APP_SCREEN_3_LOGO_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_3_LOGO_PRESSED.png; path = Resources/APP_SCREEN_3_LOGO_PRESSED.png; sourceTree = "<group>"; };
+		E473328B14276B5D0075B605 /* APP_SCREEN_3_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_3_LOGO.png; path = Resources/APP_SCREEN_3_LOGO.png; sourceTree = "<group>"; };
+		E473328C14276B5D0075B605 /* APP_SCREEN_4_ARROW_DOWN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_4_ARROW_DOWN.png; path = Resources/APP_SCREEN_4_ARROW_DOWN.png; sourceTree = "<group>"; };
+		E473328D14276B5D0075B605 /* APP_SCREEN_4_ARROW_UP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_4_ARROW_UP.png; path = Resources/APP_SCREEN_4_ARROW_UP.png; sourceTree = "<group>"; };
+		E473328E14276B5D0075B605 /* APP_SCREEN_4_INFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_4_INFO.png; path = Resources/APP_SCREEN_4_INFO.png; sourceTree = "<group>"; };
+		E473328F14276B5D0075B605 /* APP_SCREEN_4_PLAY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = APP_SCREEN_4_PLAY.png; path = Resources/APP_SCREEN_4_PLAY.png; sourceTree = "<group>"; };
 		E4816CD814262A7600C5C5D6 /* ScaleCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScaleCell.mm; sourceTree = "<group>"; };
 		E481CE2013F3B72F0034F652 /* ScalesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalesParser.h; sourceTree = "<group>"; };
 		E481CE2113F3B72F0034F652 /* ScalesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalesParser.m; sourceTree = "<group>"; };
@@ -392,9 +407,6 @@
 		E49065C11370393E0034C2F5 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
 		E49065CA13703A090034C2F5 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		E49065CB13703A090034C2F5 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
-		E499796E1425F66C00D0C459 /* SCALE_DOWN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_DOWN.png; path = Resources/SCALE_DOWN.png; sourceTree = "<group>"; };
-		E499796F1425F66C00D0C459 /* SCALE_PLAY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_PLAY.png; path = Resources/SCALE_PLAY.png; sourceTree = "<group>"; };
-		E49979701425F66C00D0C459 /* SCALE_UP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_UP.png; path = Resources/SCALE_UP.png; sourceTree = "<group>"; };
 		E49DC9BF13A7A13300E3C79F /* notationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = notationUtils.h; path = src/notationUtils.h; sourceTree = "<group>"; };
 		E49DC9C013A7A13300E3C79F /* notationUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = notationUtils.cpp; path = src/notationUtils.cpp; sourceTree = "<group>"; };
 		E4A8AD9E13FA4EA8006058D4 /* scales.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = scales.xml; path = Resources/scales.xml; sourceTree = "<group>"; };
@@ -411,13 +423,6 @@
 		E4AF3F1613C221760060359D /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
 		E4C91EA913ADF4AD00B8892F /* RKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
 		E4C91ECD13ADF94200B8892F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CHORD_PRESSED.png; path = Resources/CHORD_PRESSED.png; sourceTree = "<group>"; };
-		E4CDEA9E1427440A00B4D43B /* CHORD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CHORD.png; path = Resources/CHORD.png; sourceTree = "<group>"; };
-		E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LOGO_PRESSED.png; path = Resources/LOGO_PRESSED.png; sourceTree = "<group>"; };
-		E4CDEAA01427440A00B4D43B /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LOGO.png; path = Resources/LOGO.png; sourceTree = "<group>"; };
-		E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALE_INFO.png; path = Resources/SCALE_INFO.png; sourceTree = "<group>"; };
-		E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALES_PRESSED.png; path = Resources/SCALES_PRESSED.png; sourceTree = "<group>"; };
-		E4CDEAA31427440A00B4D43B /* SCALES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCALES.png; path = Resources/SCALES.png; sourceTree = "<group>"; };
 		E4CDEAC114274FAE00B4D43B /* augmented.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = augmented.pvr; sourceTree = "<group>"; };
 		E4CDEAC214274FAE00B4D43B /* diminished.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = diminished.pvr; sourceTree = "<group>"; };
 		E4CDEAC314274FAE00B4D43B /* major.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = major.pvr; sourceTree = "<group>"; };
@@ -638,6 +643,9 @@
 				E4F89C8513B243FE00A36E03 /* ChordsViewController.h */,
 				E4F89C8613B243FE00A36E03 /* ChordsViewController.mm */,
 				E4F89C8313B2437000A36E03 /* ChordsViewController.xib */,
+				E424C65914287185003E99B4 /* ScaleInfoViewController.h */,
+				E424C65A14287185003E99B4 /* ScaleInfoViewController.m */,
+				E424C65B14287185003E99B4 /* ScaleInfoViewController.xib */,
 				E490648E13700BD90034C2F5 /* EAGLView.h */,
 				E490648F13700BD90034C2F5 /* EAGLView.mm */,
 				E44D3E17137BD05B00345249 /* TouchView.h */,
@@ -690,17 +698,17 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E473328614276B5D0075B605 /* APP_SCREEN_3 CHORD_PRESSED.png */,
+				E473328714276B5D0075B605 /* APP_SCREEN_3 SCALES_PRESSED.png */,
+				E473328814276B5D0075B605 /* APP_SCREEN_3 SCALES.png */,
+				E473328914276B5D0075B605 /* APP_SCREEN_3_CHORD.png */,
+				E473328A14276B5D0075B605 /* APP_SCREEN_3_LOGO_PRESSED.png */,
+				E473328B14276B5D0075B605 /* APP_SCREEN_3_LOGO.png */,
+				E473328C14276B5D0075B605 /* APP_SCREEN_4_ARROW_DOWN.png */,
+				E473328D14276B5D0075B605 /* APP_SCREEN_4_ARROW_UP.png */,
+				E473328E14276B5D0075B605 /* APP_SCREEN_4_INFO.png */,
+				E473328F14276B5D0075B605 /* APP_SCREEN_4_PLAY.png */,
 				8D1107310486CEB800E47090 /* Musicreed-Info.plist */,
-				E4CDEA9D1427440A00B4D43B /* CHORD_PRESSED.png */,
-				E4CDEA9E1427440A00B4D43B /* CHORD.png */,
-				E4CDEA9F1427440A00B4D43B /* LOGO_PRESSED.png */,
-				E4CDEAA01427440A00B4D43B /* LOGO.png */,
-				E4CDEAA11427440A00B4D43B /* SCALE_INFO.png */,
-				E4CDEAA21427440A00B4D43B /* SCALES_PRESSED.png */,
-				E4CDEAA31427440A00B4D43B /* SCALES.png */,
-				E499796E1425F66C00D0C459 /* SCALE_DOWN.png */,
-				E499796F1425F66C00D0C459 /* SCALE_PLAY.png */,
-				E49979701425F66C00D0C459 /* SCALE_UP.png */,
 				E4A8AD9E13FA4EA8006058D4 /* scales.xml */,
 				E4E650A1137FF7F700DFCE6E /* MAIAN.TTF */,
 				E4E650A2137FF7F700DFCE6E /* Maiandra GD Demi Bold.ttf */,
@@ -1340,16 +1348,6 @@
 				E481CE2F13F3B72F0034F652 /* SubsystemTableViewController.xib in Resources */,
 				E481CE3113F3B72F0034F652 /* SystemTableViewController.xib in Resources */,
 				E4A8AD9F13FA4EA8006058D4 /* scales.xml in Resources */,
-				E49979711425F66C00D0C459 /* SCALE_DOWN.png in Resources */,
-				E49979721425F66C00D0C459 /* SCALE_PLAY.png in Resources */,
-				E49979731425F66C00D0C459 /* SCALE_UP.png in Resources */,
-				E4CDEAA41427440A00B4D43B /* CHORD_PRESSED.png in Resources */,
-				E4CDEAA51427440A00B4D43B /* CHORD.png in Resources */,
-				E4CDEAA61427440A00B4D43B /* LOGO_PRESSED.png in Resources */,
-				E4CDEAA71427440A00B4D43B /* LOGO.png in Resources */,
-				E4CDEAA81427440A00B4D43B /* SCALE_INFO.png in Resources */,
-				E4CDEAA91427440A00B4D43B /* SCALES_PRESSED.png in Resources */,
-				E4CDEAAA1427440A00B4D43B /* SCALES.png in Resources */,
 				E4CDEB6B14274FB000B4D43B /* augmented.pvr in Resources */,
 				E4CDEB6C14274FB000B4D43B /* diminished.pvr in Resources */,
 				E4CDEB6D14274FB000B4D43B /* major.pvr in Resources */,
@@ -1517,6 +1515,17 @@
 				E4CDEC0F14274FB000B4D43B /* ussak_turk.caf in Resources */,
 				E4CDEC1014274FB000B4D43B /* yaman_kalyan.caf in Resources */,
 				E4CDEC1114274FB000B4D43B /* zanjaran.caf in Resources */,
+				E473329014276B5D0075B605 /* APP_SCREEN_3 CHORD_PRESSED.png in Resources */,
+				E473329114276B5D0075B605 /* APP_SCREEN_3 SCALES_PRESSED.png in Resources */,
+				E473329214276B5D0075B605 /* APP_SCREEN_3 SCALES.png in Resources */,
+				E473329314276B5D0075B605 /* APP_SCREEN_3_CHORD.png in Resources */,
+				E473329414276B5D0075B605 /* APP_SCREEN_3_LOGO_PRESSED.png in Resources */,
+				E473329514276B5D0075B605 /* APP_SCREEN_3_LOGO.png in Resources */,
+				E473329614276B5D0075B605 /* APP_SCREEN_4_ARROW_DOWN.png in Resources */,
+				E473329714276B5D0075B605 /* APP_SCREEN_4_ARROW_UP.png in Resources */,
+				E473329814276B5D0075B605 /* APP_SCREEN_4_INFO.png in Resources */,
+				E473329914276B5D0075B605 /* APP_SCREEN_4_PLAY.png in Resources */,
+				E424C65D14287185003E99B4 /* ScaleInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1561,6 +1570,7 @@
 				E481CE4213F3B78E0034F652 /* Scale.m in Sources */,
 				E45FDA10140254600081A207 /* ofxAudioLimiter.cpp in Sources */,
 				E4816CD914262A7600C5C5D6 /* ScaleCell.mm in Sources */,
+				E424C65C14287185003E99B4 /* ScaleInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

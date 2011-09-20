@@ -64,10 +64,10 @@ static NSString * const kScaleElementName = @"scale";
 		self.currentScale = [Scale scaleWithSystem:[attributeDict valueForKey:@"system"] divisions:divisions
 									subsystem:subsystem name:[attributeDict valueForKey:@"name"] 
 							type:[[attributeDict valueForKey:@"scale"] integerValue] mode:[[attributeDict valueForKey:@"mode"] integerValue] 
-							note:[[attributeDict valueForKey:@"note"] floatValue] filename:[attributeDict valueForKey:@"filename"] 
-							ascending:[[attributeDict valueForKey:@"ascending"] boolValue] descending:[[attributeDict valueForKey:@"descending"] boolValue]];
+							note:[[attributeDict valueForKey:@"note"] floatValue] url:[attributeDict valueForKey:@"url"] 
+							ascending:[[attributeDict valueForKey:@"ascending"] boolValue] descending:[[attributeDict valueForKey:@"descending"] boolValue] taqsim:[[attributeDict valueForKey:@"taqsim"] boolValue]];
 		//NSLog(@"scale: %@",[attributeDict valueForKey:@"name"]);
-		NSLog(@"scale: %@, subsystem: %@, ascending: %i, descending: %i",currentScale.name,currentScale.subsystem,currentScale.bAscending,currentScale.bDescending);
+		NSLog(@"scale: %@, subsystem: %@, ascending: %i, descending: %i, taqsim: %i",currentScale.name,currentScale.subsystem,currentScale.bAscending,currentScale.bDescending,currentScale.bTaqsim);
 	} 
 }
 

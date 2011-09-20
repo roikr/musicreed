@@ -18,11 +18,12 @@
 @synthesize type;
 @synthesize mode;
 @synthesize note;
-@synthesize filename;
+@synthesize url;
 @synthesize bAscending;
 @synthesize bDescending;
+@synthesize bTaqsim;
 
-+ (id)scaleWithSystem:(NSString *)system divisions:(NSUInteger)divisions subsystem:(NSString *)subsystem name:(NSString *)name type:(NSUInteger)type mode:(NSUInteger)mode note:(float)note filename:(NSString *)filename ascending:(BOOL)bAscending descending:(BOOL)bDescending {
++ (id)scaleWithSystem:(NSString *)system divisions:(NSUInteger)divisions subsystem:(NSString *)subsystem name:(NSString *)name type:(NSUInteger)type mode:(NSUInteger)mode note:(float)note url:(NSString *)url ascending:(BOOL)bAscending descending:(BOOL)bDescending taqsim:(BOOL)bTaqsim {
 	Scale *newScale = [[[self alloc] init] autorelease];
 	
 	newScale.system = system;
@@ -32,10 +33,10 @@
 	newScale.type = type;
 	newScale.mode = mode;
 	newScale.note = note;
-	newScale.filename = filename;
+	newScale.url = url;
 	newScale.bAscending = bAscending;
 	newScale.bDescending = bDescending;
-	
+	newScale.bTaqsim = bTaqsim;
 	return newScale;
 }
 
