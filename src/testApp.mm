@@ -80,6 +80,10 @@ void testApp::setup(){
 	
 	xml.popTag();
 	
+	for (int i=0; i<12; i++) {
+		notesTextures.push_back(new ofxiTexture());
+	}
+	
 	xml.pushTag("chords");
 	for (int i=0;i<xml.getNumTags("chord");i++) {
 		chord c;
@@ -184,19 +188,22 @@ void testApp::resume() {
 //	outer.loadTextures();
 	
 	keysTexture.load(ofToDataPath("keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleBackground.load(ofToDataPath("scale_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordBackground.load(ofToDataPath("chord_background.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleHighlight.load(ofToDataPath("scale_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordHighlight.load(ofToDataPath("chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleBackground.load(ofToDataPath("PRODUCT.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordBackground.load(ofToDataPath("INNER.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleHighlight.load(ofToDataPath("LIGHTNING.pvr"),OFX_TEXTURE_TYPE_PVR);
+//	chordHighlight.load(ofToDataPath("chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
 //	shadow.load(ofToDataPath("shadow.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
-	scaleNeedle.load(ofToDataPath("scale_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleInnerPattern.load(ofToDataPath("scale_inner_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleOuterPattern.load(ofToDataPath("scale_outer_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleNeedle.load(ofToDataPath("NEEDLE.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleInnerPattern.load(ofToDataPath("INNER_BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleOuterPattern.load(ofToDataPath("BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
-	chordNeedle.load(ofToDataPath("chord_needle.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordPattern.load(ofToDataPath("chord_pattern.pvr"),OFX_TEXTURE_TYPE_PVR);
-	chordMask.load(ofToDataPath("chord_mask.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordNeedle.load(ofToDataPath("INNER_NEEDLE.pvr"),OFX_TEXTURE_TYPE_PVR);
+	chordPattern.load(ofToDataPath("INNER_BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
+//	chordMask.load(ofToDataPath("chord_mask.pvr"),OFX_TEXTURE_TYPE_PVR);
+	
+	lockTexture.load(ofToDataPath("LOCK.pvr"),OFX_TEXTURE_TYPE_PVR);
+	unlockTexture.load(ofToDataPath("UNLOCK.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
 		iter->texture->load(ofToDataPath(""+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -205,6 +212,14 @@ void testApp::resume() {
 	for(vector <chord>::iterator iter=chords.begin();iter!=chords.end();iter++) {
 		iter->texture->load(ofToDataPath(""+iter->layerName+".pvr"),OFX_TEXTURE_TYPE_PVR);
 	}
+	
+	for(vector <ofxiTexture*>::iterator iter=notesTextures.begin();iter!=notesTextures.end();iter++) {
+		string filename = "NOTE_"+ofToString(distance(notesTextures.begin(),iter))+".pvr";
+		printf("noteTexture: %s\n",filename.c_str());
+		(*iter)->load(ofToDataPath(filename),OFX_TEXTURE_TYPE_PVR);
+	}
+	
+	
 	
 	ofSoundStreamStart();
 }
@@ -217,14 +232,17 @@ void testApp::suspend() {
 	scaleBackground.release();
 	chordBackground.release();
 	scaleHighlight.release();
-	chordHighlight.release();
+//	chordHighlight.release();
 	
 	scaleNeedle.release();
 	scaleInnerPattern.release();
 	scaleOuterPattern.release();
 	chordNeedle.release();
 	chordPattern.release();
-	chordMask.release();
+//	chordMask.release();
+	
+	lockTexture.release();
+	unlockTexture.release();
 	
 	for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
 		iter->texture->release();
@@ -234,6 +252,9 @@ void testApp::suspend() {
 		iter->texture->release();
 	}
 	
+	for(vector <ofxiTexture*>::iterator iter=notesTextures.begin();iter!=notesTextures.end();iter++) {
+		(*iter)->release();
+	}
 	
 }
 
@@ -436,21 +457,51 @@ void testApp::draw(){
 			ofPopMatrix();
 			
 			ofPushMatrix();
+			ofTranslate(-(int)chordBackground._width/2, -(int)chordBackground._height/2);
+			chordBackground.draw();
+			ofPopMatrix();
+			
+			ofPushMatrix();
+			ofRotate(180*inner.getPhi()/M_PI+90);
+			if (bLock) {
+				ofTranslate(-(int)unlockTexture._width/2, -(int)unlockTexture._height/2);
+				unlockTexture.draw();
+			} else {
+				ofTranslate(-(int)lockTexture._width/2, -(int)lockTexture._height/2);
+				lockTexture.draw();
+			}
+			ofPopMatrix();
+
+			
+			ofPushMatrix();
+			if (bLock) {
+				ofRotate(180*outer.getPhi()/M_PI+90);
+				ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
+				scaleOuterPattern.draw();
+				
+			} else {
+				ofRotate(180*outer.getPhi()/M_PI+90);
+				ofTranslate(-(int)currentScale->texture->_width/2, -(int)currentScale->texture->_height/2);
+				currentScale->texture->draw();
+				
+				//			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
+				//				glColor4f(1.0f, 1.0f, 1.0f,iter==currentScale ? 1.0f : 0.25f);
+				//				iter->texture->draw();
+				//			}
+				
+			}
+			
+			ofPopMatrix();
+			
+			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
 			ofTranslate(-(int)scaleInnerPattern._width/2, -(int)scaleInnerPattern._height/2);
 			scaleInnerPattern.draw();
 			ofPopMatrix();
 			
-			ofPushMatrix();
-			ofRotate(180*outer.getPhi()/M_PI+90);
-			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
-			scaleOuterPattern.draw();
-			ofPopMatrix();
 			
-			ofPushMatrix();
-			ofTranslate(-(int)scaleHighlight._width/2, -(int)scaleHighlight._height/2);
-			scaleHighlight.draw();
-			ofPopMatrix();
+			
+			
 			
 			break;
 		case MUSICREED_STATE_CHORDS: 
@@ -459,42 +510,17 @@ void testApp::draw(){
 			chordBackground.draw();
 			ofPopMatrix();
 			
+			
 			ofPushMatrix();
 			ofRotate(180*inner.getPhi()/M_PI+90);
 			ofTranslate(-(int)chordPattern._width/2, -(int)chordPattern._height/2);
 			chordPattern.draw();
 			ofPopMatrix();
 			
-			ofPushMatrix();
-			ofTranslate(-(int)chordHighlight._width/2, -(int)chordHighlight._height/2);
-			chordHighlight.draw();
-			ofPopMatrix();
-			
-			break;
-		default:
-			break;
-	}
-	
-	
-	
-	switch (state) {
-		case MUSICREED_STATE_SCALES:
-			
-			
-			ofPushMatrix();
-			ofRotate(180*outer.getPhi()/M_PI+90);
-			ofTranslate(-(int)scaleOuterPattern._width/2, -(int)scaleOuterPattern._height/2);
-					
-			for(vector <scale>::iterator iter=scales.begin();iter!=scales.end();iter++) {
-				glColor4f(1.0f, 1.0f, 1.0f,iter==currentScale ? 1.0f : 0.25f);
-				iter->texture->draw();
-			}
-			ofPopMatrix();
-			
-		
-			break;
-		case MUSICREED_STATE_CHORDS: 
-			
+//			ofPushMatrix();
+//			ofTranslate(-(int)chordHighlight._width/2, -(int)chordHighlight._height/2);
+//			chordHighlight.draw();
+//			ofPopMatrix();
 			
 			if (bDown || bAltKeyDown) {
 				
@@ -508,6 +534,7 @@ void testApp::draw(){
 				citer->texture->draw();
 				ofPopMatrix();
 				
+			
 				
 				vector<float> notes;
 				notes.push_back(note);
@@ -515,21 +542,39 @@ void testApp::draw(){
 					notes.push_back(note+*iter);
 				}
 				
+				glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+				ofPushMatrix();
+				ofRotate(180*inner.getPhi()/M_PI+90);
+				ofTranslate(-(int)(notesTextures.front()->_width)/2, -(int)(notesTextures.front()->_height)/2);
 				
 				for (vector<float>::iterator iter = notes.begin(); iter!=notes.end();iter++) {
-					ofPushMatrix();
-					ofRotate(90+(*iter)*60);
-					ofTranslate(-(int)chordMask._width/2, -(int)chordMask._height/2);
-					chordMask.draw();
-					ofPopMatrix();
+					vector<ofxiTexture*>::iterator niter = notesTextures.begin()+(((int)((*iter+firstNote)*2) % 12)+12) % 12;
+					(*niter)->draw();
 				}
 				
+				ofPopMatrix();
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+				
+				//				for (vector<float>::iterator iter = notes.begin(); iter!=notes.end();iter++) {
+				//					ofPushMatrix();
+				//					ofRotate(90+(*iter)*60);
+				//					ofTranslate(-(int)chordMask._width/2, -(int)chordMask._height/2);
+				//					chordMask.draw();
+				//					ofPopMatrix();
+				//				}
+				
 			}
-
+			
+			
+			
 			break;
 		default:
 			break;
 	}
+	
+	
+	
+	
 	
 	glColor4f(1.0f, 1.0f, 1.0f,1.0f);
 	
@@ -553,7 +598,10 @@ void testApp::draw(){
 		}
 	}
 	
-	
+	ofPushMatrix();
+	ofTranslate(-(int)scaleHighlight._width/2, -(int)scaleHighlight._height/2);
+	scaleHighlight.draw();
+	ofPopMatrix();
 	
 	ofPopMatrix();
 	

@@ -96,14 +96,17 @@ public:
 	ofxiTexture scaleBackground;
 	ofxiTexture chordBackground;
 	ofxiTexture scaleHighlight;
-	ofxiTexture chordHighlight;
+//	ofxiTexture chordHighlight;
 //	ofxiTexture shadow;
 	
 	ofxiTexture chordNeedle;
 	ofxiTexture chordPattern;
-	ofxiTexture chordMask;
+//	ofxiTexture chordMask;
 	
 	ofxiTexture keysTexture;
+	
+	ofxiTexture lockTexture;
+	ofxiTexture unlockTexture;
 		
 	ofPoint center;
 	float scaleFactor;
@@ -131,6 +134,7 @@ public:
 	vector <scale> scales;
 	vector <scale>::iterator  currentScale;
 	vector <float> leaves;
+	vector <ofxiTexture*> notesTextures;
 	
 	ofTrueTypeFont ttf;
 	int mode;
