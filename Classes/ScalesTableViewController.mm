@@ -184,6 +184,18 @@
 	return title ;
 }
 
+/*
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section 
+{
+	UIView *headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)] autorelease];
+	[headerView setBackgroundColor:[UIColor blackColor]];
+	//	if (section == integerRepresentingYourSectionOfInterest)
+//		[headerView setBackgroundColor:[UIColor redColor]];
+//	else 
+//		[headerView setBackgroundColor:[UIColor clearColor]];
+	return headerView;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.
