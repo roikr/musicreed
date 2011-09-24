@@ -9,6 +9,7 @@
 #define VERTICAL_KEYS_NUMBER 16
 #define HORIZONTAL_KEYS_NUMBER 8
 #define STRUM_DELAY 50
+#define VERTICAL_HEADER_HEIGHT 44
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -144,33 +145,13 @@ void testApp::setup(){
 	
 	setState( MUSICREED_STATE_SCALES,0);
 	
-	int colorsArray[] = {0x111e14,0x26362b,0x0f1f1d,0x030f19,0x253738,0x1e2b2f,0x414740,0x505956,0x7e7b6a};
-	vector<ofColor> colors;
-	for (int i=0; i< sizeof(colorsArray)/sizeof(int); i++) {
-		ofColor color;
-		color.r=colorsArray[i]>>16;
-		color.g=(colorsArray[i]>>8) & 0xFF;
-		color.b=colorsArray[i] & 0xFF;
-		color.a=255;
-		
-		colors.push_back(color);
-	}
-	
-	/*
-	ofColor color;
-	color.r=150;
-	color.g=40;
-	color.b=60;
-	color.a=255;
-	*/
-	
 	int height = ofGetHeight()/VERTICAL_KEYS_NUMBER;
 	int width = ofGetWidth()/4;
 	
 	
 	
 	for (int i=0; i<VERTICAL_KEYS_NUMBER; i++) {
-		noteButtons.push_back(ofxButton(ofRectangle(0, ofGetHeight()-(i+1)* height,ofGetWidth(), height),colors[i % colors.size()]));
+		noteButtons.push_back(ofxButton(ofRectangle(0, ofGetHeight()-(i+1)* height,ofGetWidth(), height))); // ,colors[i % colors.size()]
 	}
 		
 	
@@ -178,7 +159,7 @@ void testApp::setup(){
 	width = ofGetHeight()/5;
 	
 	for (int i=0; i<HORIZONTAL_KEYS_NUMBER; i++) {
-		chordButtons.push_back(ofxButton(ofRectangle(0, ofGetWidth()-(i+1)* height,ofGetHeight(), height),colors[i % colors.size()]));
+		chordButtons.push_back(ofxButton(ofRectangle(0, ofGetWidth()-(i+1)* height,ofGetHeight(), height))); // ,colors[i % colors.size()]
 	}
 	
 	
@@ -193,7 +174,7 @@ void testApp::resume() {
 //	inner.loadTextures();
 //	outer.loadTextures();
 	
-	keysTexture.load(ofToDataPath("keys_texture.pvr"),OFX_TEXTURE_TYPE_PVR);
+	keysTexture.load(ofToDataPath("KEYBOARD_TEXTURE.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleBackground.load(ofToDataPath("PRODUCT.pvr"),OFX_TEXTURE_TYPE_PVR);
 	chordBackground.load(ofToDataPath("INNER.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleHighlight.load(ofToDataPath("LIGHTNING.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -1060,6 +1041,9 @@ void testApp::setAltChords() {
 }
 
 void testApp::setKeys() {
+	
+	int colorsArray[] = {0x253738,0x414740,0x1a332f,0x1e2b2f};
+		
 	keysNames.clear();
 	
 	
@@ -1069,9 +1053,19 @@ void testApp::setKeys() {
 			int i = distance(currentScale->notes.begin(),iter);
 			float knote = firstNote+currentScale->notes[(i+mode) % currentScale->notes.size()]-currentScale->notes[mode];
 			keysNames.push_back(findNote(firstScaleNote+i,knote));
+			
 			printf("note: %i, %f, %s\n",firstScaleNote+i,knote,keysNames.back().c_str());
 					 
 		}
+		
+		int funcArray[] = {1,0,0,2,3,0,0};
+		for (int i=0; i<  VERTICAL_KEYS_NUMBER ; i++) {
+			noteButtons[i].setColor(ofxHexToColor(colorsArray[funcArray[i % 7]])); 
+		}
+		for (int i=0; i<  HORIZONTAL_KEYS_NUMBER; i++) {
+			chordButtons[i].setColor(ofxHexToColor(colorsArray[funcArray[i % 7]])); 
+		}
+
 	} else {
 		for (vector<float>::iterator iter=currentScale->notes.begin(); iter!=currentScale->notes.end(); iter++) {
 			int i = distance(currentScale->notes.begin(),iter);
@@ -1079,6 +1073,13 @@ void testApp::setKeys() {
 			
 			keysNames.push_back(findNote(evalScaleNote(knote),knote));
 							
+		}
+		
+		for (int i=0; i<  VERTICAL_KEYS_NUMBER ; i++) {
+			noteButtons[i].setColor(ofxHexToColor(colorsArray[0])); 
+		}
+		for (int i=0; i<  HORIZONTAL_KEYS_NUMBER; i++) {
+			chordButtons[i].setColor(ofxHexToColor(colorsArray[0])); 
 		}
 	}
 	
