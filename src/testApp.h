@@ -22,6 +22,7 @@ struct scale {
 	vector<float> notes;
 	string layerName;
 	ofxiTexture *texture;
+	ofColor color;
 };
 
 struct chord {
@@ -97,7 +98,7 @@ public:
 	ofxiTexture chordBackground;
 	ofxiTexture scaleHighlight;
 //	ofxiTexture chordHighlight;
-//	ofxiTexture shadow;
+	ofxiTexture shadow;
 	
 	ofxiTexture chordNeedle;
 	ofxiTexture chordPattern;

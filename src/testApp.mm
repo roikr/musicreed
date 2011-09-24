@@ -72,6 +72,12 @@ void testApp::setup(){
 		
 		xml.popTag();
 		s.layerName = xml.getAttribute("scale", "layer", "", i);
+		
+		
+		s.color = ofxHexStringToColor(xml.getAttribute("scale","color","",i));
+		
+		printf("scale: %i, red: %f, green:%f, blue: %f\n",i,s.color.r,s.color.g,s.color.b);
+		
 		s.texture = new ofxiTexture();
 		//printf("scale: %i, leaf: %i, first:%.2f, notes: %i, last: %.2f\n",i,s.leaf,s.firstNote,(int)s.notes.size(),note);
 		scales.push_back(s);
@@ -192,7 +198,7 @@ void testApp::resume() {
 	chordBackground.load(ofToDataPath("INNER.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleHighlight.load(ofToDataPath("LIGHTNING.pvr"),OFX_TEXTURE_TYPE_PVR);
 //	chordHighlight.load(ofToDataPath("chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
-//	shadow.load(ofToDataPath("shadow.pvr"),OFX_TEXTURE_TYPE_PVR);
+	shadow.load(ofToDataPath("PRODUCT_SHADOW.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	scaleNeedle.load(ofToDataPath("NEEDLE.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleInnerPattern.load(ofToDataPath("INNER_BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -444,13 +450,15 @@ void testApp::draw(){
 	ofTranslate(center.x,center.y);
 	ofScale(scaleFactor, scaleFactor, 1);
 
-//	ofPushMatrix();
-//	ofTranslate(-(int)shadow._width/2, -(int)shadow._height/2);
-//	shadow.draw();
-//	ofPopMatrix();
-	
+		
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
+			ofPushMatrix();
+			ofTranslate(-(int)shadow._width/2, -(int)shadow._height/2);
+			shadow.draw();
+			ofPopMatrix();
+			
+			
 			ofPushMatrix();
 			ofTranslate(-(int)scaleBackground._width/2, -(int)scaleBackground._height/2);
 			scaleBackground.draw();
@@ -542,7 +550,9 @@ void testApp::draw(){
 					notes.push_back(note+*iter);
 				}
 				
-				glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+				//glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+				ofSetColor(currentScale->color.r,currentScale->color.g,currentScale->color.b);
+
 				ofPushMatrix();
 				ofRotate(180*inner.getPhi()/M_PI+90);
 				ofTranslate(-(int)(notesTextures.front()->_width)/2, -(int)(notesTextures.front()->_height)/2);
@@ -553,8 +563,9 @@ void testApp::draw(){
 				}
 				
 				ofPopMatrix();
-				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+								
 				//				for (vector<float>::iterator iter = notes.begin(); iter!=notes.end();iter++) {
 				//					ofPushMatrix();
 				//					ofRotate(90+(*iter)*60);
