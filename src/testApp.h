@@ -98,7 +98,7 @@ public:
 	ofxiTexture chordBackground;
 	ofxiTexture scaleHighlight;
 //	ofxiTexture chordHighlight;
-	ofxiTexture shadow;
+//	ofxiTexture shadow;
 	
 	ofxiTexture chordNeedle;
 	ofxiTexture chordPattern;

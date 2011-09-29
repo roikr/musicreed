@@ -10,6 +10,8 @@
 #define HORIZONTAL_KEYS_NUMBER 8
 #define STRUM_DELAY 50
 #define VERTICAL_HEADER_HEIGHT 44
+#define VERTICAL_SCALE_FACTOR 0.44
+#define VERTICAL_CENTER_X 0 // -30
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -166,6 +168,8 @@ void testApp::setup(){
 	bAnim = false;
 	bLock = false;
 	bPlayTaqsim = false;
+	
+	lastKey = pointToKey(ofPoint(480,320));
 }
 
 
@@ -179,10 +183,10 @@ void testApp::resume() {
 	chordBackground.load(ofToDataPath("INNER.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleHighlight.load(ofToDataPath("LIGHTNING.pvr"),OFX_TEXTURE_TYPE_PVR);
 //	chordHighlight.load(ofToDataPath("chord_highlight.pvr"),OFX_TEXTURE_TYPE_PVR);
-	shadow.load(ofToDataPath("PRODUCT_SHADOW.pvr"),OFX_TEXTURE_TYPE_PVR);
+//	shadow.load(ofToDataPath("PRODUCT_SHADOW.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	scaleNeedle.load(ofToDataPath("NEEDLE.pvr"),OFX_TEXTURE_TYPE_PVR);
-	scaleInnerPattern.load(ofToDataPath("INNER_BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
+	scaleInnerPattern.load(ofToDataPath("INNER_BASIC_GRAPHICS_BLACK.pvr"),OFX_TEXTURE_TYPE_PVR);
 	scaleOuterPattern.load(ofToDataPath("BASIC_GRAPHICS.pvr"),OFX_TEXTURE_TYPE_PVR);
 	
 	chordNeedle.load(ofToDataPath("INNER_NEEDLE.pvr"),OFX_TEXTURE_TYPE_PVR);
@@ -434,10 +438,10 @@ void testApp::draw(){
 		
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
-			ofPushMatrix();
-			ofTranslate(-(int)shadow._width/2, -(int)shadow._height/2);
-			shadow.draw();
-			ofPopMatrix();
+//			ofPushMatrix();
+//			ofTranslate(-(int)shadow._width/2, -(int)shadow._height/2);
+//			shadow.draw();
+//			ofPopMatrix();
 			
 			
 			ofPushMatrix();
@@ -451,7 +455,7 @@ void testApp::draw(){
 			ofPopMatrix();
 			
 			ofPushMatrix();
-			ofRotate(180*inner.getPhi()/M_PI+90);
+//			ofRotate(180*inner.getPhi()/M_PI+90);
 			if (bLock) {
 				ofTranslate(-(int)unlockTexture._width/2, -(int)unlockTexture._height/2);
 				unlockTexture.draw();
@@ -570,6 +574,15 @@ void testApp::draw(){
 	
 	glColor4f(1.0f, 1.0f, 1.0f,1.0f);
 	
+	switch (state) {
+		case MUSICREED_STATE_SCALES:
+			ofPushMatrix();
+			ofTranslate(-(int)scaleHighlight._width/2, -(int)scaleHighlight._height/2);
+			scaleHighlight.draw();
+			ofPopMatrix();
+			break;
+	}
+	
 	if (!bAnim && !bLock) {
 		
 		switch (state) {
@@ -590,10 +603,8 @@ void testApp::draw(){
 		}
 	}
 	
-	ofPushMatrix();
-	ofTranslate(-(int)scaleHighlight._width/2, -(int)scaleHighlight._height/2);
-	scaleHighlight.draw();
-	ofPopMatrix();
+	
+	
 	
 	ofPopMatrix();
 	
@@ -899,8 +910,8 @@ void testApp::setState(int state,int rotDuration) {
 	this->state = state;
 	switch (state) {
 		case MUSICREED_STATE_SCALES:
-			targetScaleFactor = 0.55;
-			targetCenter = ofPoint(-30,ofGetHeight()/2);
+			targetScaleFactor = VERTICAL_SCALE_FACTOR;
+			targetCenter = ofPoint(VERTICAL_CENTER_X,ofGetHeight()/2);
 			break;
 		case MUSICREED_STATE_CHORDS:
 			bLock = false;
@@ -935,8 +946,8 @@ void testApp::lock(bool bLock) {
 		outer.setRadii(100, 500);
 		outer.setLock(true);
 	} else {
-		targetScaleFactor = 0.55;
-		targetCenter = ofPoint(-30,ofGetHeight()/2);
+		targetScaleFactor = VERTICAL_SCALE_FACTOR;
+		targetCenter = ofPoint(VERTICAL_CENTER_X,ofGetHeight()/2);
 		outer.setRadii(200, 500);
 		outer.setLock(false);
 	}  
