@@ -76,7 +76,7 @@
 			displayLinkSupported = TRUE;
 		
 		//[self.view addSubview:viewController.view];
-		
+		ofxiPhoneSetDimensions(480,320);
 				
     }
     
